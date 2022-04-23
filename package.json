@@ -5,16 +5,27 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "export": "next export",
+    "static": "next build && next export",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "12.1.5",
+    "next-optimized-images": "^2.6.2",
     "react": "18.0.0",
     "react-dom": "18.0.0"
   },
   "devDependencies": {
     "eslint": "8.13.0",
-    "eslint-config-next": "12.1.5"
+    "eslint-config-next": "12.1.5",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^9.0.0",
+    "next-compose-plugins": "^2.2.1",
+    "responsive-loader": "^2.3.0",
+    "sharp": "^0.30.4",
+    "svg-sprite-loader": "^6.0.11",
+    "webp-loader": "^0.6.0"
   }
 }
