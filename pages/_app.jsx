@@ -5,6 +5,8 @@
 
 import "../styles/globals.scss";
 
-export default ({ Component, pageProps }) => {
+const UchikoshiFesApp = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
 };
+
+export default UchikoshiFesApp;

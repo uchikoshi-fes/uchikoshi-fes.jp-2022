@@ -6,7 +6,7 @@
 import Head from "next/head";
 import styles from "../styles/Index.module.scss";
 
-export default () => {
+const Index = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -37,3 +37,5 @@ export default () => {
     </div>
   );
 };
+
+export default Index;
