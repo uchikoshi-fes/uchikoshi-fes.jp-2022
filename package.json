@@ -24,6 +24,7 @@
     "imagemin-svgo": "^9.0.0",
     "next-compose-plugins": "^2.2.1",
     "responsive-loader": "^2.3.0",
+    "sass": "^1.50.1",
     "sharp": "^0.30.4",
     "svg-sprite-loader": "^6.0.11",
     "webp-loader": "^0.6.0"
