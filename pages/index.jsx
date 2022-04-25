@@ -3,38 +3,36 @@
  * This file is licensed under the MIT License, see /LICENSE file.
  */
 
-import Head from "next/head";
+// components
+import NextSeo from "next-seo";
+// styles
 import styles from "../styles/Index.module.scss";
 
 const Index = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>第43回打越祭公式サイト (浅野学園2022年度文化祭)</title>
-        <meta name="description" content="ここって何書けばいいと思う？" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <h1 className={`${styles.title} non-break`}>
+            第43回
+            <wbr />
+            打越祭
+            <wbr />
+            公式サイト
+          </h1>
 
-      <main className={styles.main}>
-        <h1 className={`${styles.title} non-break`}>
-          第43回
-          <wbr />
-          打越祭
-          <wbr />
-          公式サイト
-        </h1>
+          <p className={styles.description}>
+            浅野学園 2022 年度文化祭
+            <br />
+            誠意制作中！
+          </p>
+        </main>
 
-        <p className={styles.description}>
-          浅野学園 2022 年度文化祭
-          <br />
-          誠意制作中！
-        </p>
-      </main>
-
-      <footer className={styles.footer}>
-        Copyright &copy; 2022 uchikoshi-fes
-      </footer>
-    </div>
+        <footer className={styles.footer}>
+          Copyright &copy; 2022 uchikoshi-fes
+        </footer>
+      </div>
+    </>
   );
 };
 
