@@ -1,7 +1,17 @@
 {
   "name": "uchikoshi-fes.jp-2022",
   "version": "0.1.0",
-  "private": true,
+  "description": "第43回打越祭公式サイト",
+  "homepage": "https://github.com/uchikoshi-fes/uchikoshi-fes.jp-2022#readme",
+  "bugs": {
+    "url": "https://github.com/uchikoshi-fes/uchikoshi-fes.jp-2022/issues"
+  },
+  "license": "MIT",
+  "author": "uchikoshi-fes",
+  "contributors": [
+    "TwoSquirrels"
+  ],
+  "repository": "github:uchikoshi-fes/uchikoshi-fes.jp-2022",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -28,5 +38,6 @@
     "sharp": "^0.30.4",
     "svg-sprite-loader": "^6.0.11",
     "webp-loader": "^0.6.0"
-  }
+  },
+  "private": true
 }
