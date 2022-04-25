@@ -1,20 +1,46 @@
+/*
+ * © 2022 uchikoshi-fes
+ * This file is licensed under the MIT License, see /LICENSE file.
+ */
+
+// classes
+
+.hide {
+  // アニメーションの為 visibility: hidden; ではなく
+  opacity: 0.0;
+  // ちなみに当たり判定消すために
+  pointer-events: none;
+}
+
+@media screen and (max-width: 32em) {
+  .wide-only {
+    display: none;
+  }
+}
+
+.non-break {
+  word-break: keep-all;
+}
+
+.ellipsis {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// common
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: system-ui;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.non-break {
-  word-break: keep-all;
 }
