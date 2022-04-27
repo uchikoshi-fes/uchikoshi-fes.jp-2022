@@ -1,2 +1,50 @@
-# uchikoshi-fes.jp-2022
-https://uchikoshi-fes.jp/ in 2022
+# 第43回打越祭公式サイト
+
+浅野学園 2022 年度文化祭のホームページの中身 (ソースコード)  
+ドメイン以外は完全に無料です。  
+  
+**ホームページ URL:** https://uchikoshi-fes.jp/  
+**開発中のプレビュー:** https://develop.uchikoshi-fes-2022.pages.dev/  
+  
+[(開発者向け) 開発の流れ](/DEVELOP.md)  
+
+## License
+
+© 2022 uchikoshi-fes  
+[MIT License](/LICENSE)  
+
+## Authors & Contributors
+
+**システム:**  
+
+- (全般) [TwoSquirrels](//github.com/TwoSquirrels)
+- (協力) 情報科の先生方
+
+**デザイン:**  
+
+- (テーマ) 文化祭実行委員 / 不明
+- (コーディング) [TwoSquirrels](//github.com/TwoSquirrles)
+
+**コンテンツ:**  
+
+- (大部分) 文化祭実行委員 / 広報部門
+- (未定) [TwoSquirrels](//github.com/TwoSquirrels)
+
+## Version
+
+**Version:** 0.1.0 (制作開始)  
+**Latest Update:** 2022/MM/DD  
+
+## Feedback & Support
+
+バグ報告や質問、提案があるなど、何か伝えたいことがある場合は、  
+GitHub アカウントをお持ちの方は [Issues](/issues) に、  
+お持ちでない方はお問い合わせフォーム (準備中) にお願いします。  
+
+## Tech Stack
+
+**Site Generator:** Next.js (React)  
+**Languages:** JSX (JavaScript, HTML), SCSS (Sass), Markdown  
+**Design:** sanitize.css, Font Awesome  
+**Hosting:** Cloudflare Pages  
+<!--**API Server:** Google Apps Script  -->
