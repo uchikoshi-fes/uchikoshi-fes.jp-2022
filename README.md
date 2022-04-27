@@ -1,12 +1,12 @@
 # 第43回打越祭公式サイト
 
 浅野学園 2022 年度文化祭のホームページの中身 (ソースコード)  
-ドメイン以外は完全に無料です。  
+ドメイン以外は完全に無料で運用してます。  
   
 **ホームページ URL:** https://uchikoshi-fes.jp/  
 **開発中のプレビュー:** https://develop.uchikoshi-fes-2022.pages.dev/  
   
-[(開発者向け) 開発の流れ](/DEVELOP.md)  
+(開発者向け) [開発の流れ](/DEVELOP.md)  
 
 ## License
 
