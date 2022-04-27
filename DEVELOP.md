@@ -7,7 +7,7 @@
 簡易的な [Git Flow](//dev.classmethod.jp/articles/introduce-git-flow/) で開発をします。  
 
 - `main` : 本番用 / リリース用 (`develop` から merge する)
-- `develop` : 開発版 (ここで直接は開発せず、 `feature/*` ブランチを切る)
+- `develop` : 開発版 (ここで直接は開発せず、 `feature/*` ブランチを切る。ただし多少の Fix はここでやってもよいです)
 - `feature/*` : それぞれの機能など (Issues の ID を最初につけたり)
 - `hotfix/*` : 緊急修正用 (`main` から切る)
 
