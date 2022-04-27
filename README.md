@@ -17,18 +17,17 @@
 
 **システム:**  
 
-- (全般) [TwoSquirrels](//github.com/TwoSquirrels)
+- (全般) 文化祭実行委員 / 広報部門 / [TwoSquirrels](//github.com/TwoSquirrels)
 - (協力) 情報科の先生方
 
 **デザイン:**  
 
-- (テーマ) 文化祭実行委員 / 不明
-- (コーディング) [TwoSquirrels](//github.com/TwoSquirrles)
+- (テーマ) 文化祭実行委員 / 不明 (執行部？)
+- (コーディング) 文化祭実行委員 / 広報部門 / [TwoSquirrels](//github.com/TwoSquirrles)
 
 **コンテンツ:**  
 
-- (大部分) 文化祭実行委員 / 広報部門
-- (未定) [TwoSquirrels](//github.com/TwoSquirrels)
+- (全般) 文化祭実行委員 / 広報部門
 
 ## Version
 
