@@ -22,9 +22,9 @@ const Index = () => {
           </h1>
 
           <p className={styles.description}>
-            浅野学園 2022 年度文化祭
+            浅野学園2022年度文化祭
             <br />
-            誠意制作中！
+            鋭意制作中！
           </p>
         </main>
 
