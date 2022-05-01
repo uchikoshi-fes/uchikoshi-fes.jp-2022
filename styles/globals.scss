@@ -7,7 +7,7 @@
 
 .hide {
   // アニメーションの為 visibility: hidden; ではなく
-  opacity: 0.0;
+  opacity: 0;
   // ちなみに当たり判定消すために
   pointer-events: none;
 }
