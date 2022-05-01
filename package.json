@@ -31,6 +31,7 @@
   "devDependencies": {
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
+    "eslint-config-prettier": "^8.5.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.2",
