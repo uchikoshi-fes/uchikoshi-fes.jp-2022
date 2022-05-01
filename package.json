@@ -17,7 +17,8 @@
     "build": "next build",
     "export": "next export",
     "static": "next build && next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "next": "12.1.5",
@@ -35,6 +36,7 @@
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^9.0.0",
     "next-compose-plugins": "^2.2.1",
+    "prettier": "2.6.2",
     "responsive-loader": "^2.3.0",
     "sass": "^1.50.1",
     "sharp": "^0.30.4",
