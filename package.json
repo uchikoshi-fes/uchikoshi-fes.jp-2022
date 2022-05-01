@@ -18,6 +18,9 @@
     "export": "next export",
     "static": "next build && next export",
     "lint": "next lint",
+    "textlint": "textlint .",
+    "textlint:fix": "textlint --fix .",
+    "textlint:dry-run": "textlint --fix --dry-run --format diff .",
     "format": "prettier --write ."
   },
   "dependencies": {
