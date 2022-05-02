@@ -21,7 +21,8 @@
     "lint:text": "textlint .",
     "lint:text:fix": "textlint --fix .",
     "lint:text:dry-run": "textlint --fix --dry-run --format diff .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.1.5",
@@ -36,10 +37,12 @@
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^7.0.4",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^9.0.0",
+    "lint-staged": "^12.4.1",
     "next-compose-plugins": "^2.2.1",
     "prettier": "2.6.2",
     "responsive-loader": "^2.3.0",
