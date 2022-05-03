@@ -18,5 +18,8 @@
       "strict": true
     },
     "no-nfd": true
+  },
+  "filters": {
+    "comments": true
   }
 }
