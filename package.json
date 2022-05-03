@@ -21,9 +21,9 @@
     "lintfix": "run-p lint:*:fix",
     "lint:next": "next lint",
     "lint:next:fix": "next lint --fix",
-    "lint:text": "textlint .",
-    "lint:text:fix": "textlint --fix .",
-    "lint:text:dry-run": "textlint --fix --dry-run --format diff .",
+    "lint:text": "textlint --cache .",
+    "lint:text:fix": "textlint --cache --fix .",
+    "lint:text:dry-run": "textlint --cache --fix --dry-run --format diff .",
     "format": "prettier --write .",
     "prepare": "husky install"
   },
