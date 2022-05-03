@@ -20,7 +20,16 @@
       "strict": true
     },
     "no-nfd": true,
-    "prefer-tari-tari": true
+    "prefer-tari-tari": true,
+    "preset-ja-spacing": {
+      "ja-space-around-code": {
+        "before": true,
+        "after": true
+      },
+      "ja-space-between-half-and-full-width": {
+        "space": "always"
+      }
+    }
   },
   "filters": {
     "comments": true
