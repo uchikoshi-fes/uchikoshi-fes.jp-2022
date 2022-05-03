@@ -7,6 +7,9 @@
   },
   "rules": {
     "@textlint-ja/textlint-rule-no-insert-dropping-sa": true,
+    "ja-hiragana-fukushi": true,
+    "ja-hiragana-hojodoushi": true,
+    "ja-hiragana-keishikimeishi": true,
     "ja-no-inappropriate-words": true,
     "ja-no-abusage": true,
     "ja-no-mixed-period": true,
