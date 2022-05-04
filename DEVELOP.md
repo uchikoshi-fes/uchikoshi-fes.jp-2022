@@ -15,14 +15,32 @@
 
 ### Next.js
 
-コマンドを使える必要があります。  
-`npm run dev` でプレビューサーバーを起動でき、  
-`npm run static` で静的エクスポートができます。
+コマンドを使える必要があります。
+
+- `npm install` : 必要なライブラリを全てインストール
+- `npm run dev` : プレビューサーバーを起動
+- `npm run static` : 静的エクスポート
+- `npm run lint` : コードや文章の校正
+
+### Lint
+
+何らかの都合により一部分だけ lint を無効化したいときは、  
+ESLint の場合は [ESLint のコメントでのルール制御 - Qiita](//qiita.com/nju33/items/2d0cfea4fffbfdbff87a) の方法で、  
+textlint の場合は [textlint-filter-rule-comments](//github.com/textlint/textlint-filter-rule-comments) を入れているためその機能でできます。  
+また一部分だけ Prettier のフォーマットを無視させたい場合は [Ignoring Code - Prettier](//prettier.io/docs/en/ignore.html) の方法でできます。
+
+### Git
+
+git-hooks によって commit 時に lint と format が走ります。  
+lint はキャッシュされるため、変更点だけのチェックとなります。  
+lint でエラーが出た場合は commit できないので、  
+修正してからコミットし直してください。
 
 ### Deploy
 
-GitHub に push した際に、この repository と連携している Cloudflare Pages プロジェクト上で、  
-自動でビルドが走り deploy されます。
+GitHub に push した際、この repository と連携している Cloudflare Pages プロジェクト上で、  
+自動でビルドが走り deploy されます。  
+また push 時に GitHub Actions によって lint が走ります。
 
 ## Flow
 
@@ -32,7 +50,7 @@ GitHub に push した際に、この repository と連携している Cloudflar
    このとき、 `*` は Issues の ID や機能名を初め動詞で、  
    さらに初めの文字が大文字の Snake_case で命名する。  
    またできるだけ簡潔にする。  
-   例: `feature/#13_Add_form`
+   例: `feature/#13_Add_form`, `feature/Create_layout`
 2. その機能を開発する  
    細かい単位で commit しましょう。  
    また commit message は丁寧に書きましょう。  
