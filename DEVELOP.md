@@ -21,7 +21,7 @@
 
 ### Deploy
 
-GitHub に push した際に、この repository と連携している Cloudflare Pages プロジェクト上で、  
+GitHub に push した際、この repository と連携している Cloudflare Pages プロジェクト上で、  
 自動でビルドが走り deploy されます。
 
 ## Flow
