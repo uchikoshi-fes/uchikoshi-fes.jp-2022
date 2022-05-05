@@ -21,6 +21,7 @@
 - `npm run dev` : プレビューサーバーを起動
 - `npm run static` : 静的エクスポート
 - `npm run lint` : コードや文章の校正
+- `npm test` : 単体テスト
 
 ### Lint
 
@@ -29,12 +30,22 @@ ESLint の場合は [ESLint のコメントでのルール制御 - Qiita](//qiit
 textlint の場合は [textlint-filter-rule-comments](//github.com/textlint/textlint-filter-rule-comments) を入れているためその機能でできます。  
 また一部分だけ Prettier のフォーマットを無視させたい場合は [Ignoring Code - Prettier](//prettier.io/docs/en/ignore.html) の方法でできます。
 
+### Test
+
+test は複雑なところほど入念に書きましょう。
+
 ### Git
 
 git-hooks によって commit 時に lint と format が走ります。  
 lint はキャッシュされるため、変更点だけのチェックとなります。  
 lint でエラーが出た場合は commit できないので、  
-修正してからコミットし直してください。
+修正してから commit し直してください。
+
+test が成功しない通らない状態で commit をしてもいいですが、  
+Pull Request 時には test が成功するようにしてください。
+
+push 時に GitHub Actions にて自動で lint と test が走るようにしています。  
+これらを参考にしながら開発しましょう。
 
 ### Deploy
 
