@@ -14,6 +14,7 @@ jobs:
           node-version: 16
           cache: npm
       - run: npm install
+
       - name: Lint
         id: lint
         run: |
@@ -22,13 +23,15 @@ jobs:
           cat lint.log
           echo "::set-output name=stdout::$(jq -sR . lint.log)"
           exit $exit_code
-      - uses: sarisia/actions-status-discord@v1
+
+      - name: Send failure message to Discord with embed
+        uses: sarisia/actions-status-discord@v1
         if: failure()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          title: Lint でエラーが発生しました！今すぐ修整してください！
+          title: Lint でエラーが発生しました。今すぐ修整してください！
           url: "${{ github.server_url }}/${{ github.repository }}/\
-            actions/runs/${{ github.run_id }}?check_suite_focus=true"
+            actions/runs/${{ github.run_id }}"
           description: |-
             ```
             ${{ fromJson(steps.lint.outputs.stdout) }}
@@ -36,6 +39,44 @@ jobs:
           color: 0xff3333
           username: GitHub Actions
           avatar_url: https://github.com/actions.png
+
+      - name: Send failure mention to Discord
+        uses: actions/github-script@v6
+        if: failure()
+        env:
+          ACTOR: ${{ github.actor }}
+          JOB_URL: "${{ github.server_url }}/${{ github.repository }}/\
+            actions/runs/${{ github.run_id }}"
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          USER_ID: ${{ secrets.DISCORD_USER_ID }}
+        with:
+          script: |
+            // prepare
+            const { ACTOR, JOB_URL, WEBHOOK, USER_ID } = process.env;
+            if (!USER_ID) return;
+            const userId = JSON.parse(USER_ID)[ACTOR];
+            if (!userId || userId.constructor.name === "Function") return;
+            // send
+            const https = require("https");
+            WEBHOOK.split("\n").forEach((url) => {
+              const request = https.request(url, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              });
+              const body = JSON.stringify({
+                username: "GitHub Actions",
+                avatar_url: "https://github.com/actions.png",
+                content: `<@${userId}> ` +
+                  "Lint でエラーが発生しました。今すぐ修整してください！\n" +
+                  "バグによるエラーの場合は `Re-run` で再実行してください。\n" +
+                  JOB_URL
+              });
+              request.write(body);
+              request.end();
+            });
+
   test:
     name: Test
     runs-on: ubuntu-latest
