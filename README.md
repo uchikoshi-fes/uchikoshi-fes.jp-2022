@@ -50,7 +50,8 @@ GitHub アカウントをお持ちの方は [Issues](/issues) に、
 **Site Generator:** Next.js (React)  
 **Languages:** JSX (JavaScript, HTML), SCSS (Sass), Markdown  
 **Design:** sanitize.css, Font Awesome  
-**Linters:** ESLint, textlint  
+**Lint:** ESLint, textlint, GitHub Actions  
+**Test:** Jest, GitHub Actions  
 **Hosting:** Cloudflare Pages
 
 <!--**API Server:** Google Apps Script  -->
