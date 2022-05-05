@@ -15,16 +15,21 @@ jobs:
           cache: npm
       - run: npm install
       - name: Lint
-        run: npm run lint
+        id: lint
+        run: |
+          npm run lint | cat > lint.log
+          exit_code=${PIPESTATUS[0]}
+          cat lint.log
+          echo "::set-output name=stdout::$(sed -z 's/\n/\\n/g' lint.log)"
+          exit $exit_code
       - uses: sarisia/actions-status-discord@v1
         if: failure()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           title: Lint でエラーが発生しました！今すぐ修整してください！
           url: "${{ github.server_url }}/${{ github.repository }}/\
-            actions/runs/${{ github.run_id }}"
-          description: バグによりエラーになっている場合は、
-            `Re-run` で再度実行してください。
+            actions/runs/${{ github.run_id }}?check_suite_focus=true"
+          description: ${{ steps.lint.outputs.stdout }}
           color: 0xff3333
           username: GitHub Actions
           avatar_url: https://github.com/actions.png
