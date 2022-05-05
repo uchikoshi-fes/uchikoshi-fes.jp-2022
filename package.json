@@ -26,7 +26,7 @@
     "lint:text:fix": "textlint --cache --fix .",
     "lint:text:dry-run": "textlint --cache --fix --dry-run --format diff .",
     "format": "prettier --write .",
-    "test": "jest --watch",
+    "test": "jest",
     "prepare": "husky install"
   },
   "dependencies": {
