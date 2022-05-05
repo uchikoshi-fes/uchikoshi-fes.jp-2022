@@ -29,7 +29,10 @@ jobs:
           title: Lint でエラーが発生しました！今すぐ修整してください！
           url: "${{ github.server_url }}/${{ github.repository }}/\
             actions/runs/${{ github.run_id }}?check_suite_focus=true"
-          description: ${{ fromJson(steps.lint.outputs.stdout) }}
+          description: |-
+            ```
+            ${{ fromJson(steps.lint.outputs.stdout) }}
+            ```
           color: 0xff3333
           username: GitHub Actions
           avatar_url: https://github.com/actions.png
