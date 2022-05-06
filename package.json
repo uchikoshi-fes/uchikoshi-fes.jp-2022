@@ -19,7 +19,7 @@
     "export": "next export",
     "static": "run-s build export",
     "lint": "run-p lint:*",
-    "lintfix": "run-p lint:*:fix",
+    "lintfix": "run-s --continue-on-error lint:*:fix",
     "lint:next": "next lint",
     "lint:next:fix": "next lint --fix",
     "lint:text": "textlint --cache .",
