@@ -17,7 +17,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "static": "next build && next export",
+    "static": "run-s build export",
     "lint": "run-p lint:*",
     "lintfix": "run-p lint:*:fix",
     "lint:next": "next lint",
