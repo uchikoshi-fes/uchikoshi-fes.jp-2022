@@ -17,9 +17,9 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "static": "next build && next export",
+    "static": "run-s build export",
     "lint": "run-p lint:*",
-    "lintfix": "run-p lint:*:fix",
+    "lintfix": "run-s --continue-on-error lint:*:fix",
     "lint:next": "next lint",
     "lint:next:fix": "next lint --fix",
     "lint:text": "textlint --cache .",
@@ -30,12 +30,22 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^9.0.0",
     "next": "12.1.5",
+    "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^2.6.2",
     "next-seo": "^5.4.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "sanitize.css": "^13.0.0"
+    "responsive-loader": "^2.3.0",
+    "sanitize.css": "^13.0.0",
+    "sass": "^1.50.1",
+    "sharp": "^0.30.4",
+    "svg-sprite-loader": "^6.0.11",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -45,20 +55,11 @@
     "eslint-config-next": "12.1.5",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.4",
-    "imagemin-gifsicle": "^7.0.0",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.2",
-    "imagemin-svgo": "^9.0.0",
     "jest": "^28.0.3",
     "jest-environment-jsdom": "^28.0.2",
     "lint-staged": "^12.4.1",
-    "next-compose-plugins": "^2.2.1",
     "npm-run-all": "^4.1.5",
     "prettier": "2.6.2",
-    "responsive-loader": "^2.3.0",
-    "sass": "^1.50.1",
-    "sharp": "^0.30.4",
-    "svg-sprite-loader": "^6.0.11",
     "textlint": "^12.1.1",
     "textlint-filter-rule-comments": "^1.2.2",
     "textlint-plugin-jsx": "^1.1.2",
@@ -77,8 +78,7 @@
     "textlint-rule-no-mix-dearu-desumasu": "^5.0.0",
     "textlint-rule-no-nfd": "^1.0.2",
     "textlint-rule-prefer-tari-tari": "^1.0.3",
-    "textlint-rule-preset-ja-spacing": "^2.2.0",
-    "webp-loader": "^0.6.0"
+    "textlint-rule-preset-ja-spacing": "^2.2.0"
   },
   "private": true
 }
