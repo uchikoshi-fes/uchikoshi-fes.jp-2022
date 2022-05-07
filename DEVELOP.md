@@ -7,8 +7,8 @@
 簡易的な [Git Flow](//dev.classmethod.jp/articles/introduce-git-flow/) で開発をします。
 
 - `main` : 本番用 / リリース用 (`develop` から merge する)
-- `develop` : 開発版 (ここで直接は開発せず、 `feature/*` ブランチを切る。ただし administrators のみ多少の Fix はここでやってもよいです)
-- `feature/*` : それぞれの機能など (Issues の ID を最初につけたり)
+- `develop` : 開発版 (ここで直接は開発せず、 `feature/*` ブランチを切る。バージョンアップの時のみ直接コミットしてよい。)
+- `feature/*` : それぞれの機能など (バグ修正等、機能でなくてもいい)
 - `hotfix/*` : 緊急修正用 (`main` から切る)
 
 `release` branch は使用しません。
@@ -64,6 +64,7 @@ GitHub に push した際、この repository と連携している Cloudflare P
    例: `feature/#13_Add_form`, `feature/Create_layout`
 2. その機能を開発する  
    細かい単位で commit しましょう。  
+   ブランチと関係のないことは別のブランチを切ってやりましょう。  
    また commit message は丁寧に書きましょう。  
    「何を」「なぜ」が重要です。  
    初めに以下の例のようなフォーマットで動詞を書きましょう。  
@@ -76,13 +77,12 @@ GitHub に push した際、この repository と連携している Cloudflare P
 ### バージョンアップ
 
 1. [`develop` branch の preview](//develop.uchikoshi-fes-2022.pages.dev/) を確認する
-2. `package.json` の `"version"` を更新する
-3. `README.md` の Version: を更新する  
-   (括弧の中) に主な更新点を記述。
-4. `main` branch に Pull Request を投げる
-5. 別の人からチェックを受ける
-6. Pull Request を merge する
-7. Merge Commit に tag をつける  
+2. `develop` branch で `package.json` の `"version"` を更新し、  
+   `README.md` の `Version:` を更新して `(括弧の中)` に主な更新点を記述。
+3. `main` branch に Pull Request を投げる
+4. 別の人からチェックを受ける
+5. Pull Request を merge する
+6. Merge Commit に tag をつける  
    例: `v1.2.3`
 
 ### 緊急修正
