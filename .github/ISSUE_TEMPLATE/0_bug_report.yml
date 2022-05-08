@@ -1,0 +1,90 @@
+name: バグ報告 (Bug Report)
+description: 誤動作の報告はこちら
+title: "[Bug]: "
+labels: ["bug", "Needs Triage"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: 問題が生じたURL全体を入力してください。
+      placeholder: https://uchikoshi-fes.jp/
+      value: https://uchikoshi-fes.jp/
+    validations:
+      required: true
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: 現在の状況
+      description: 発生中の問題を簡潔明瞭に記入してください。
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: スクリーンショット
+      description: 添付していただけると状況把握が容易くなりありがたいです。
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: 期待する挙動
+      description: 期待する挙動を簡潔明瞭に記入してください。
+    validations:
+      required: true
+  - type: dropdown
+    id: operating-systems
+    attributes:
+      label: OS
+      description: 問題に遭遇したオペレーティングシステムを教えてください。（複数選択可）
+      multiple: true
+      options:
+        - Windows
+        - Linux
+        - macOS
+        - iOS
+        - iPadOS
+        - Android
+        - その他
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: ブラウザ
+      description: 問題に遭遇したブラウザを教えてください。（複数選択可）
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - その他
+    validations:
+      required: true
+  - type: textarea
+    id: environments
+    attributes:
+      label: 環境情報
+      description: OSを複数選択した場合やブラウザ等の詳細情報を記載したい場合などにこちらを利用してください。
+      placeholder: |
+        Windows - Microsoft Edge (Version 101.0.1210.39)
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: 関連するログ出力
+      description: 存在する場合は、関連するログの出力をコピーしてペーストしてください。 これは自動的にコードにフォーマットされるので、バックティックは不要です。
+      render: Shell
+  - type: textarea
+    id: supplementary-information
+    attributes:
+      label: 補足情報
+      description: |
+        さらなる情報や詳しく説明したいことがありましたらこちらへ記述してください。
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "ご記入ありがとうございました。"
