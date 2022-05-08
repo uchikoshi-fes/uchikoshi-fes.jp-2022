@@ -1,0 +1,15 @@
+name: その他 (Others)
+description: 上記のいずれにも当てはまらない場合はこちら
+labels: ["Needs Triage"]
+body:
+  - type: textarea
+    id: content
+    attributes:
+      label: 伝達事項
+      description: サイト開発者に伝えたいことを記述してください。
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "ご記入ありがとうございました。"
