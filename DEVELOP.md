@@ -30,6 +30,18 @@ ESLint の場合は [ESLint のコメントでのルール制御 - Qiita](//qiit
 textlint の場合は [textlint-filter-rule-comments](//github.com/textlint/textlint-filter-rule-comments) を入れているためその機能でできます。  
 また一部分だけ Prettier のフォーマットを無視させたい場合は [Ignoring Code - Prettier](//prettier.io/docs/en/ignore.html) の方法でできます。
 
+#### 「かた」と読む「方」が [ja-hiragana-keishikimeishi](//github.com/lostandfound/textlint-rule-ja-hiragana-keishikimeishi) に `漢字よりもひらがなで表記したほうが読みやすい形式名詞` の「ほう」として判定されてしまう場合
+
+このような場合 [textlint-filter-rule-comments](//github.com/textlint/textlint-filter-rule-comments) で無効化するのではなく、  
+できるだけ「場合」や「人」など別の表現で置き換えましょう。
+
+これは、「かた」として「方」を書いているつもりでも「ほう」と読み間違えてしまう可能性があるので、  
+それを防止するためです。
+
+もちろん引用など、文章校正を受けたくない場合はコメントでのルール制御を行うべきですが、  
+そのような場合は [ja-hiragana-keishikimeishi](//github.com/lostandfound/textlint-rule-ja-hiragana-keishikimeishi) のみではなく  
+ルールを指定せずに全てのルールを無効化するべきです。
+
 ### Test
 
 test は複雑なところほど入念に書きましょう。
