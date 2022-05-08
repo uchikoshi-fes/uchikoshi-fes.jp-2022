@@ -38,7 +38,7 @@
 ## Feedback & Support
 
 バグ報告や質問、提案があるなど、何か伝えたいことがある場合は、  
-GitHub アカウントをお持ちの場合は [Issues](/issues) に、  
+GitHub アカウントをお持ちの場合は [Issues](//github.com/uchikoshi-fes/uchikoshi-fes.jp-2022/issues) に、  
 お持ちでない場合はお問い合わせフォーム (準備中) にお願いします。
 
 ## Tech Stack
