@@ -33,7 +33,7 @@
 ## Version
 
 **Version:** 0.1.0 (制作開始)  
-**Latest Update:** 2022/MM/DD
+**Latest Update:** 2022/05/09
 
 ## Feedback & Support
 
