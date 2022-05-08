@@ -1,0 +1,16 @@
+name: 質問 (Question)
+description: 質問事項はこちら
+title: "[Q&A]: "
+labels: ["Q&A"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: 質問事項
+      description: サイト開発者への質問を記述してください。
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "ご記入ありがとうございました。"
