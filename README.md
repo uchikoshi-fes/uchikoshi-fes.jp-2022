@@ -37,13 +37,9 @@
 
 ## Feedback & Support
 
-<!-- textlint-disable ja-hiragana-keishikimeishi -->
-
 バグ報告や質問、提案があるなど、何か伝えたいことがある場合は、  
-GitHub アカウントをお持ちの方は [Issues](/issues) に、  
-お持ちでない方はお問い合わせフォーム (準備中) にお願いします。
-
-<!-- textlint-enable ja-hiragana-keishikimeishi -->
+GitHub アカウントをお持ちの場合は [Issues](/issues) に、  
+お持ちでない場合はお問い合わせフォーム (準備中) にお願いします。
 
 ## Tech Stack
 
