@@ -1,0 +1,31 @@
+name: 開発環境への提案 (For Develop)
+description: ウェブページに直接影響しないものはこちら
+title: "[DX]: "
+labels: ["for develop", "Needs Triage"]
+body:
+  - type: textarea
+    id: improvement_target
+    attributes:
+      label: 改善対象の事柄
+      description: 簡潔明瞭に記入してください。
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: 期待する挙動
+      description: 改善後に期待する挙動を簡潔明瞭に記入してください。
+    validations:
+      required: true
+  - type: textarea
+    id: supplementary-information
+    attributes:
+      label: 補足情報
+      description: |
+        さらなる情報や詳しく説明したいことがありましたらこちらへ記述してください。
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "ご記入ありがとうございました。"

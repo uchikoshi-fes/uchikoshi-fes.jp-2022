@@ -1,3 +1,5 @@
+### Node.js
+
 # Logs
 logs
 *.log
@@ -102,3 +104,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+### Original
+
+# Next.js export output
+out
+
+# Optional textlint cache
+.textlintcache

@@ -1,0 +1,16 @@
+name: 新機能リクエスト (Feature Request)
+description: 新規に追加するものはこちら
+title: "[要望]: "
+labels: ["enhancement", "Needs Triage"]
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: リクエスト
+      description: 追加したい機能について記述してください。
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "ご記入ありがとうございました。"

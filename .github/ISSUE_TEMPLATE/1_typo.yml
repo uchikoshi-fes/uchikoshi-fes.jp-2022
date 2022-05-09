@@ -1,0 +1,49 @@
+name: タイポ報告 (Typo Report)
+description: 誤字、脱字、誤記、誤用の報告はこちら
+title: "[Typo]: "
+labels: ["typo", "priority: HIGH"]
+body:
+  - type: markdown
+    attributes:
+      value: "不適切な表現の指摘などは **改善提案** をお使いください。"
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: 対象となる文字列が存在しているURL全体を入力してください。
+      placeholder: https://uchikoshi-fes.jp/
+      value: https://uchikoshi-fes.jp/
+    validations:
+      required: true
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: 現在の状況
+      description: 対象となる文字列を入力してください。
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: スクリーンショット
+      description: 添付していただけると状況把握が容易くなりありがたいです。
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: あるべき姿
+      description: 本来あるべき正しい状態を入力してください。
+    validations:
+      required: true
+  - type: textarea
+    id: supplementary-information
+    attributes:
+      label: 補足情報
+      description: |
+        さらなる情報や詳しく説明したいことがありましたらこちらへ記述してください。
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "ご記入ありがとうございました。"
