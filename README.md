@@ -11,7 +11,14 @@
 ## License
 
 © 2022 uchikoshi-fes  
-[MIT License](/LICENSE)
+`SPDX-License-Identifier: (CC-BY-NC-4.0 WITH MIT)`
+
+特に断りのないファイルは [CC BY-NC 4.0](/LICENSE) ですが、  
+例外として一部のファイルは [MIT License](/LICENSE_exceptions/MIT) です。  
+(例外のファイルはそのファイルの上部にコメントでライセンスを明記しています。)
+
+基本的に記事や画像などのコンテンツは `CC-BY-NC-4.0` 、  
+ソースコードは `MIT` としています。
 
 ## Authors & Contributors
 
