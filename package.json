@@ -30,22 +30,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "imagemin-gifsicle": "^7.0.0",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.2",
-    "imagemin-svgo": "^9.0.0",
     "next": "12.1.5",
-    "next-compose-plugins": "^2.2.1",
-    "next-optimized-images": "^2.6.2",
     "next-seo": "^5.4.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "responsive-loader": "^2.3.0",
     "sanitize.css": "^13.0.0",
-    "sass": "^1.50.1",
-    "sharp": "^0.30.4",
-    "svg-sprite-loader": "^6.0.11",
-    "webp-loader": "^0.6.0"
+    "sass": "^1.50.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
