@@ -3,7 +3,7 @@
  * This file is licensed under the MIT License, see /LICENSE file.
  */
 
-/** @type {import('next').NextConfig} */
+/** @type {import("next").NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   images: {
