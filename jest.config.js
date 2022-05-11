@@ -1,3 +1,6 @@
+// (c) 2022 Vercel, Inc.
+// SPDX-License-Identifier: MIT
+
 const nextJest = require("next/jest");
 
 const createJestConfig = nextJest({

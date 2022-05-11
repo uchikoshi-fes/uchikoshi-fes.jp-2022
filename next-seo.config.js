@@ -1,7 +1,4 @@
-/*
- * © 2022 uchikoshi-fes
- * This file is licensed under the MIT License, see /LICENSE file.
- */
+// SPDX-License-Identifier: MIT
 
 export const SITE_NAME = "第43回打越祭公式サイト";
 export const DEFAULT_TITLE = `${SITE_NAME} (浅野学園2022年度文化祭)`;

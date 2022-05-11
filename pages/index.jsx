@@ -1,8 +1,3 @@
-/*
- * © 2022 uchikoshi-fes
- * This file is licensed under the MIT License, see /LICENSE file.
- */
-
 // components
 import NextSeo from "next-seo";
 // styles

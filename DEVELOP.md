@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MIT -->
+
 # 開発の流れ
 
 ## Basics
