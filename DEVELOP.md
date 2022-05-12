@@ -15,6 +15,13 @@
 
 `release` branch は使用しません。
 
+### License
+
+新しいファイルを作る際、  
+そのファイルが記事の JSX ファイルなら 1 行目に行コメントで `SPDX-License-Identifier: CC-BY-NC-4.0` と、  
+記事や画像などのコンテンツではないプログラムのファイルは同じように `SPDX-License-Identifier: MIT` と書いてください。  
+記事の MDX ファイルや画像ファイルへのライセンスの記述は不要です。
+
 ### Next.js
 
 コマンドを使える必要があります。
