@@ -70,5 +70,9 @@
     "textlint-rule-prefer-tari-tari": "^1.0.3",
     "textlint-rule-preset-ja-spacing": "^2.2.0"
   },
+  "packageManager": "pnpm@7.1.0",
+  "engines": {
+    "npm": "This project is configured to use pnpm."
+  },
   "private": true
 }
