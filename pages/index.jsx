@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: CC-BY-NC-4.0
+
 // components
 import NextSeo from "next-seo";
 // styles
