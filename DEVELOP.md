@@ -26,11 +26,11 @@
 
 コマンドを使える必要があります。
 
-- `npm install` : 必要なライブラリを全てインストール
-- `npm run dev` : プレビューサーバーを起動
-- `npm run static` : 静的エクスポート
-- `npm run lint` : コードや文章の校正
-- `npm test` : 単体テスト
+- `pnpm install` : 必要なライブラリを全てインストール
+- `pnpm dev` : プレビューサーバーを起動
+- `pnpm static` : 静的エクスポート
+- `pnpm lint` : コードや文章の校正
+- `pnpm test` : 単体テスト
 
 ### Lint
 
