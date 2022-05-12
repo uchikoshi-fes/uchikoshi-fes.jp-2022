@@ -12,7 +12,7 @@
 
 ## License
 
-© 2022 uchikoshi-fes  
+© 2022 浅野学園生徒会  
 `SPDX-License-Identifier: (CC-BY-NC-4.0 WITH MIT)`
 
 特に断りのないファイルは [CC BY-NC 4.0](/LICENSE) ですが、  

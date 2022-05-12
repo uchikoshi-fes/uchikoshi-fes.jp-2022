@@ -24,7 +24,7 @@ const Index = () => {
         </main>
 
         <footer className={styles.footer}>
-          Copyright &copy; 2022 uchikoshi-fes
+          Copyright &copy; 2022 浅野学園生徒会
         </footer>
       </div>
     </>
