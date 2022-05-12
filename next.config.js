@@ -1,7 +1,4 @@
-/*
- * © 2022 uchikoshi-fes
- * This file is licensed under the MIT License, see /LICENSE file.
- */
+// SPDX-License-Identifier: MIT
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {

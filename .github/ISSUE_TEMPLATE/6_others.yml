@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 name: その他 (Others)
 description: 上記のいずれにも当てはまらない場合はこちら
 labels: ["Needs Triage"]
