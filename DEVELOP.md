@@ -22,14 +22,14 @@
 記事や画像などのコンテンツではないプログラムのファイルは同じように `SPDX-License-Identifier: MIT` と書いてください。  
 記事の MDX ファイルや画像ファイルへのライセンスの記述は不要です。
 
-### Next.js
+### pnpm
 
 コマンドを使える必要があります。
 
 - `corepack enable` : pnpm を有効にする
 - `pnpm install` : 必要なライブラリを全てインストール
-- `pnpm dev` : プレビューサーバーを起動
-- `pnpm static` : 静的エクスポート
+- `pnpm dev` : Next.js のプレビューサーバーを起動
+- `pnpm static` : Next.js の静的エクスポート
 - `pnpm lint` : コードや文章の校正
 - `pnpm test` : 単体テスト
 
