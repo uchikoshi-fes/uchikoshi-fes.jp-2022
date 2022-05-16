@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: MIT
+
+run = ["pnpm", "exec", "run-p", "dev", "test" "lint"]
+entrypoint = "DEVELOP.md"
+onBoot = ["corepack", "enable"]
+language = "nodejs"
+
+[env]
+
+[interpreter]
+command = "pnpm install"
+
+[unitTest]
