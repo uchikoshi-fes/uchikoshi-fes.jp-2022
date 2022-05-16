@@ -26,6 +26,7 @@
 
 コマンドを使える必要があります。
 
+- `corepack enable` : pnpm を有効にする
 - `pnpm install` : 必要なライブラリを全てインストール
 - `pnpm dev` : プレビューサーバーを起動
 - `pnpm static` : 静的エクスポート
