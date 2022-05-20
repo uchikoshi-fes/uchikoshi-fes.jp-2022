@@ -1,54 +1,54 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@testing-library/jest-dom': ^5.16.4
-  '@testing-library/react': ^13.2.0
-  '@textlint-ja/textlint-rule-no-insert-dropping-sa': ^2.0.1
+  '@testing-library/jest-dom': 5.16.4
+  '@testing-library/react': 13.2.0
+  '@textlint-ja/textlint-rule-no-insert-dropping-sa': 2.0.1
   '@textlint/ast-node-types': 12.1.1
   '@textlint/types': 12.1.1
   eslint: 8.13.0
   eslint-config-next: 12.1.5
-  eslint-config-prettier: ^8.5.0
-  husky: ^7.0.4
-  jest: ^28.0.3
-  jest-environment-jsdom: ^28.0.2
-  lint-staged: ^12.4.1
+  eslint-config-prettier: 8.5.0
+  husky: 7.0.4
+  jest: 28.1.0
+  jest-environment-jsdom: 28.1.0
+  lint-staged: 12.4.1
   next: 12.1.5
-  next-seo: ^5.4.0
-  npm-run-all: ^4.1.5
+  next-seo: 5.4.0
+  npm-run-all: 4.1.5
   prettier: 2.6.2
   react: 18.0.0
   react-dom: 18.0.0
-  sanitize.css: ^13.0.0
-  sass: ^1.50.1
-  textlint: ^12.1.1
-  textlint-filter-rule-comments: ^1.2.2
-  textlint-plugin-jsx: ^1.1.2
-  textlint-rule-ja-hiragana-fukushi: ^1.3.0
-  textlint-rule-ja-hiragana-hojodoushi: ^1.0.4
-  textlint-rule-ja-hiragana-keishikimeishi: ^1.1.0
-  textlint-rule-ja-no-abusage: ^3.0.0
-  textlint-rule-ja-no-inappropriate-words: ^2.0.0
-  textlint-rule-ja-no-mixed-period: ^2.1.1
-  textlint-rule-ja-unnatural-alphabet: ^2.0.1
-  textlint-rule-no-doubled-conjunction: ^2.0.2
-  textlint-rule-no-doubled-conjunctive-particle-ga: ^2.0.4
-  textlint-rule-no-doubled-joshi: ^4.0.1
-  textlint-rule-no-dropping-the-ra: ^3.0.0
-  textlint-rule-no-empty-section: ^1.1.0
-  textlint-rule-no-mix-dearu-desumasu: ^5.0.0
-  textlint-rule-no-nfd: ^1.0.2
-  textlint-rule-prefer-tari-tari: ^1.0.3
-  textlint-rule-preset-ja-spacing: ^2.2.0
+  sanitize.css: 13.0.0
+  sass: 1.52.0
+  textlint: 12.1.1
+  textlint-filter-rule-comments: 1.2.2
+  textlint-plugin-jsx: 1.1.2
+  textlint-rule-ja-hiragana-fukushi: 1.3.0
+  textlint-rule-ja-hiragana-hojodoushi: 1.0.4
+  textlint-rule-ja-hiragana-keishikimeishi: 1.1.0
+  textlint-rule-ja-no-abusage: 3.0.0
+  textlint-rule-ja-no-inappropriate-words: 2.0.0
+  textlint-rule-ja-no-mixed-period: 2.1.1
+  textlint-rule-ja-unnatural-alphabet: 2.0.1
+  textlint-rule-no-doubled-conjunction: 2.0.2
+  textlint-rule-no-doubled-conjunctive-particle-ga: 2.0.4
+  textlint-rule-no-doubled-joshi: 4.0.1
+  textlint-rule-no-dropping-the-ra: 3.0.0
+  textlint-rule-no-empty-section: 1.1.0
+  textlint-rule-no-mix-dearu-desumasu: 5.0.0
+  textlint-rule-no-nfd: 1.0.2
+  textlint-rule-prefer-tari-tari: 1.0.3
+  textlint-rule-preset-ja-spacing: 2.2.0
   typescript: 4.6.4
 
 dependencies:
-  next: 12.1.5_fpdaum3iwfasizdhihgy7u2hmi
+  next: 12.1.5_vzojlqrd7igqaet47yvzqcy7xq
   next-seo: 5.4.0_dtzmyspcyj3erncazrhasijzmy
   react: 18.0.0
   react-dom: 18.0.0_react@18.0.0
   sanitize.css: 13.0.0
-  sass: 1.51.0
+  sass: 1.52.0
 
 devDependencies:
   '@testing-library/jest-dom': 5.16.4
@@ -1457,7 +1457,7 @@ packages:
     dev: true
 
   /array-find-index/1.0.2:
-    resolution: {integrity: sha1-3wEKoSh+Fku9pvlyOwqWoexBh6E=}
+    resolution: {integrity: sha512-M1HQyIXcBGtVywBt8WVdim+lrNaK7VHp99Qt5pSNziXznKHViIBbXWtfRTpEFpF/c4FdfxNAsCCwPp5phBYJtw==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -1507,7 +1507,7 @@ packages:
     dev: true
 
   /assign-symbols/1.0.0:
-    resolution: {integrity: sha1-WWZ/QfrdTyDMvCu5a41Pf3jsA2c=}
+    resolution: {integrity: sha512-Q+JC7Whu8HhmTdBph/Tq59IoRtoy6KAm5zzPv00WdujX82lbAL8K7WVjne7vdCsAmbF4AYaDOPyO3k0kl8qIrw==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -1527,7 +1527,7 @@ packages:
     dev: true
 
   /asynckit/0.4.0:
-    resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=}
+    resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: true
 
   /atob/2.1.2:
@@ -1631,7 +1631,7 @@ packages:
     dev: false
 
   /boundary/1.0.1:
-    resolution: {integrity: sha1-TWfcJgLAzBbdm85+v4fpSCkPWBI=}
+    resolution: {integrity: sha512-AaLhxHwYVh55iOTJncV3DE5o7RakEUSSj64XXEWRTiIhlp7aDI8qR0vY/k8Uw0Z234VjZi/iG/WxfrvqYPUCww==}
     dev: true
 
   /brace-expansion/1.1.11:
@@ -1745,11 +1745,11 @@ packages:
     dev: true
 
   /charenc/0.0.2:
-    resolution: {integrity: sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=}
+    resolution: {integrity: sha512-yrLQ/yVUFXkzg7EDQsPieE/53+0RlaWTs+wBrvW36cyilJ2SaDWfl4Yj7MtLTXleV9uEKefbAGUPv2/iWSooRA==}
     dev: true
 
   /check-ends-with-period/1.0.1:
-    resolution: {integrity: sha1-19KdYUy8PtFatUGQ9P2k3qoxQdg=}
+    resolution: {integrity: sha512-vhGWpphk52Q1CiU2YHpWhOOKyI1FMCVPfPO7X6M6fN60JbnzZCwnf9cgR+T4LDSZGCDd1mqzgCdIcffEFBrUFQ==}
     dependencies:
       array.prototype.find: 2.2.0
       emoji-regex: 6.5.1
@@ -2259,7 +2259,7 @@ packages:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.13.0
       eslint-plugin-react: 7.29.1_eslint@8.13.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.13.0
-      next: 12.1.5_fpdaum3iwfasizdhihgy7u2hmi
+      next: 12.1.5_vzojlqrd7igqaet47yvzqcy7xq
       typescript: 4.6.4
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
@@ -4423,12 +4423,12 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.1.5_fpdaum3iwfasizdhihgy7u2hmi
+      next: 12.1.5_vzojlqrd7igqaet47yvzqcy7xq
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
     dev: false
 
-  /next/12.1.5_fpdaum3iwfasizdhihgy7u2hmi:
+  /next/12.1.5_vzojlqrd7igqaet47yvzqcy7xq:
     resolution: {integrity: sha512-YGHDpyfgCfnT5GZObsKepmRnne7Kzp7nGrac07dikhutWQug7hHg85/+sPJ4ZW5Q2pDkb+n0FnmLkmd44htIJQ==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -4451,7 +4451,7 @@ packages:
       postcss: 8.4.5
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
-      sass: 1.51.0
+      sass: 1.52.0
       styled-jsx: 5.0.1_react@18.0.0
     optionalDependencies:
       '@next/swc-android-arm-eabi': 12.1.5
@@ -5240,8 +5240,8 @@ packages:
     resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
     dev: false
 
-  /sass/1.51.0:
-    resolution: {integrity: sha512-haGdpTgywJTvHC2b91GSq+clTKGbtkkZmVAb82jZQN/wTy6qs8DdFm2lhEQbEwrY0QDRgSQ3xDurqM977C3noA==}
+  /sass/1.52.0:
+    resolution: {integrity: sha512-6EnTglag2oVD8sNJCxUi2Jd3ICH9tJ5Mqudt/gIZNBR2uKJUBZuTpW9O1t04SkDLP7VFa76FCWTV2rwchqM8Kw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
