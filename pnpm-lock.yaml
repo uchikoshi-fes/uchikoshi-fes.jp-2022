@@ -20,7 +20,7 @@ specifiers:
   react: 18.1.0
   react-dom: 18.1.0
   sanitize.css: 13.0.0
-  sass: 1.52.0
+  sass: 1.52.1
   textlint: 12.1.1
   textlint-filter-rule-comments: 1.2.2
   textlint-plugin-jsx: 1.1.2
@@ -43,12 +43,12 @@ specifiers:
   typescript: 4.6.4
 
 dependencies:
-  next: 12.1.5_vzojlqrd7igqaet47yvzqcy7xq
+  next: 12.1.5_kvkc6ikdrma2aflqa6jt7hov3m
   next-seo: 5.4.0_dtzmyspcyj3erncazrhasijzmy
   react: 18.0.0
   react-dom: 18.0.0_react@18.0.0
   sanitize.css: 13.0.0
-  sass: 1.52.0
+  sass: 1.52.1
 
 devDependencies:
   '@testing-library/jest-dom': 5.16.4
@@ -4396,12 +4396,12 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.1.5_vzojlqrd7igqaet47yvzqcy7xq
+      next: 12.1.5_kvkc6ikdrma2aflqa6jt7hov3m
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
     dev: false
 
-  /next/12.1.5_vzojlqrd7igqaet47yvzqcy7xq:
+  /next/12.1.5_kvkc6ikdrma2aflqa6jt7hov3m:
     resolution: {integrity: sha512-YGHDpyfgCfnT5GZObsKepmRnne7Kzp7nGrac07dikhutWQug7hHg85/+sPJ4ZW5Q2pDkb+n0FnmLkmd44htIJQ==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -4424,7 +4424,7 @@ packages:
       postcss: 8.4.5
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
-      sass: 1.52.0
+      sass: 1.52.1
       styled-jsx: 5.0.1_react@18.0.0
     optionalDependencies:
       '@next/swc-android-arm-eabi': 12.1.5
@@ -5208,8 +5208,8 @@ packages:
     resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
     dev: false
 
-  /sass/1.52.0:
-    resolution: {integrity: sha512-6EnTglag2oVD8sNJCxUi2Jd3ICH9tJ5Mqudt/gIZNBR2uKJUBZuTpW9O1t04SkDLP7VFa76FCWTV2rwchqM8Kw==}
+  /sass/1.52.1:
+    resolution: {integrity: sha512-fSzYTbr7z8oQnVJ3Acp9hV80dM1fkMN7mSD/25mpcct9F7FPBMOI8krEYALgU1aZoqGhQNhTPsuSmxjnIvAm4Q==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
