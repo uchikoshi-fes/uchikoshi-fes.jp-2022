@@ -30,12 +30,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "next": "12.1.5",
+    "next": "12.1.6",
     "next-seo": "5.4.0",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "sanitize.css": "13.0.0",
-    "sass": "1.52.0"
+    "sass": "1.52.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "5.16.4",
@@ -43,10 +43,10 @@
     "@textlint-ja/textlint-rule-no-insert-dropping-sa": "2.0.1",
     "@textlint/ast-node-types": "12.1.1",
     "@textlint/types": "12.1.1",
-    "eslint": "8.13.0",
-    "eslint-config-next": "12.1.5",
+    "eslint": "8.16.0",
+    "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.5.0",
-    "husky": "7.0.4",
+    "husky": "8.0.1",
     "jest": "28.1.0",
     "jest-environment-jsdom": "28.1.0",
     "lint-staged": "12.4.1",
