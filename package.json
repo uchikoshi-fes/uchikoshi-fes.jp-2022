@@ -27,7 +27,7 @@
     "lint:text:dry-run": "textlint --cache --fix --dry-run --format diff .",
     "format": "prettier --write .",
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install || [ $? = 127 ]"
   },
   "dependencies": {
     "next": "12.1.6",
