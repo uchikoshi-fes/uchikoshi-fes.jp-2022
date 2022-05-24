@@ -40,7 +40,7 @@ specifiers:
   textlint-rule-no-nfd: 1.0.2
   textlint-rule-prefer-tari-tari: 1.0.3
   textlint-rule-preset-ja-spacing: 2.2.0
-  typescript: 4.6.4
+  typescript: 4.7.2
 
 dependencies:
   next: 12.1.6_r4x3shsibbhjfvhxzsevzwdixm
