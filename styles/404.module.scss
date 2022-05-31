@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MIT
+
+.container {
+  height: 100vh;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status {
+  text-align: center;
+  font-size: 6rem;
+}
+
+.text {
+  text-align: center;
+  font-size: 2rem;
+}
