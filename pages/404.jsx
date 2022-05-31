@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 // styles
 import styles from "../styles/404.module.scss";
 
