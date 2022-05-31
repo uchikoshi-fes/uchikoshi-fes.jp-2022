@@ -3,7 +3,7 @@
 // styles
 import styles from "../styles/404.module.scss";
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <div className={styles.container}>
       <div>
@@ -12,4 +12,6 @@ export default function NotFound() {
       </div>
     </div>
   );
-}
+};
+
+export default NotFound;
