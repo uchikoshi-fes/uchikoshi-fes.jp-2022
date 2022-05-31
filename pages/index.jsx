@@ -1,7 +1,4 @@
-/*
- * © 2022 uchikoshi-fes
- * This file is licensed under the MIT License, see /LICENSE file.
- */
+// SPDX-License-Identifier: CC-BY-NC-4.0
 
 // components
 import NextSeo from "next-seo";
@@ -29,7 +26,7 @@ const Index = () => {
         </main>
 
         <footer className={styles.footer}>
-          Copyright &copy; 2022 uchikoshi-fes
+          Copyright &copy; 2022 浅野学園生徒会
         </footer>
       </div>
     </>

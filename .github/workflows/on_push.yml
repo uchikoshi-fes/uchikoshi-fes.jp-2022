@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 name: on push
 
 on: push
@@ -8,16 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: npm
-      - run: npm install
+          cache: pnpm
+      - run: pnpm install
 
       - name: Lint
         id: lint
         run: |
-          npm run lint | cat > lint.log
+          pnpm lint | cat > lint.log
           exit_code=${PIPESTATUS[0]}
           cat lint.log
           echo "::set-output name=stdout::$(jq -sR . lint.log)"
@@ -81,10 +84,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: npm
-      - run: npm install
+          cache: pnpm
+      - run: pnpm install
       - name: Test
-        run: npm test
+        run: pnpm test
