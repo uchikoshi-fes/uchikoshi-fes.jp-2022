@@ -29,6 +29,7 @@
 - (全般) 文化祭実行委員 / 広報部門 / [TwoSquirrels](//github.com/TwoSquirrels)
 - (協力) 情報科の先生方
 - (協力) [Mogyuchi さん](//github.com/Mogyuchi)
+- (協力) [gendaineko2222 さん](//github.com/gendaineko2222)
 
 **デザイン:**
 
