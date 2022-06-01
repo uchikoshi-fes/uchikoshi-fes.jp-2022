@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 // styles
-import styles from "../styles/404.module.scss";
+import styles from "./404.module.scss";
 
 const NotFound = () => {
   return (
