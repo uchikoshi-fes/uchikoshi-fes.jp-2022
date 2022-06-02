@@ -3,7 +3,7 @@
 // components
 import NextSeo from "next-seo";
 // styles
-import styles from "../styles/Index.module.scss";
+import styles from "./index.module.scss";
 
 const Index = () => {
   return (
