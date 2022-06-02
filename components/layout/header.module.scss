@@ -1,0 +1,10 @@
+// SPDX-License-Identifier: MIT
+
+$header-height: 48px;
+
+.header {
+  position: fixed;
+  height: $header-height;
+  width: 100vw;
+  box-shadow: 0px -8px 8px 12px rgba(64, 64, 64, 0.5);
+}

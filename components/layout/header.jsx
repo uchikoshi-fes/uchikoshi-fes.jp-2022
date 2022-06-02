@@ -3,10 +3,11 @@
 // components
 import Menu from "./menu";
 // styles
+import styles from "./header.module.scss";
 
 const Header = () => {
   return (
-    <header>
+    <header className={styles.header}>
       ヘッダ
       <Menu />
     </header>
