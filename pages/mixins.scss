@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: MIT
+
+@mixin wide-only {
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+}
+
+@mixin non-break {
+  word-break: keep-all;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
