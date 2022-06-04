@@ -1,0 +1,73 @@
+// SPDX-License-Identifier: CC-BY-NC-4.0
+
+# 見出し 1
+
+## 見出し 2
+
+### 見出し 3
+
+#### 見出し 4
+
+##### 見出し 5
+
+###### 見出し 6
+
+- リスト 1
+  - ネスト リスト 1_1
+    - ネスト リスト 1_1_1
+    - ネスト リスト 1_1_2
+  - ネスト リスト 1_2
+- リスト 2
+- リスト 3
+
+1. 番号付きリスト 1
+   1. 番号付きリスト 1_1
+   2. 番号付きリスト 1_2
+2. 番号付きリスト 2
+3. 番号付きリスト 3
+
+> お世話になります。xxx です。
+>
+> ご連絡いただいた、バグの件ですが、仕様です。
+
+> お世話になります。xxx です。
+>
+> ご連絡いただいた、バグの件ですが、仕様です。
+>
+> > お世話になります。 yyy です。
+> >
+> > あの新機能バグってるっすね
+
+```js
+import { Client } from "discord.js";
+const client = new Client({ intents: 38263 });
+
+client.once("ready", () => console.log(client.user.tag));
+
+client.login(process.env.TOKEN);
+```
+
+normal _italic_ normal
+normal _italic_ normal
+
+normal **bold** normal
+normal **bold** normal
+
+normal **_bold_** normal
+normal **_bold_** normal
+
+---
+
+---
+
+---
+
+---
+
+[Google 先生](https://www.google.co.jp/)
+
+[こっちから google][google]
+その他の文章
+[こっちからも google][google]
+
+[google]: https://www.google.co.jp/
