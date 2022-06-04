@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-import { getAllPostNames, getPostData } from "../../src/getMdx";
 import { serialize } from "next-mdx-remote/serialize";
+
+import { getAllPostNames, getPostData } from "../../src/getMdx";
 import RenderPost from "../../components/RenderPost";
 
 const Post = ({ postData, mdxSource }) => {
@@ -20,7 +21,7 @@ const getStaticPaths = async () => {
   const paths = fileNames.map((fileName) => ({ params: { slug: fileName } }));
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
 
