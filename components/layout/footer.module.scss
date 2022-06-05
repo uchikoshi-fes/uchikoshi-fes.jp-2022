@@ -1,7 +1,18 @@
 // SPDX-License-Identifier: MIT
 
+@use "../../pages/mixins" as *;
+
 .footer {
-  width: 100%;
-  background-color: #444;
-  color: #ddd;
+  @include outermost-container;
+  background-color: #474b42;
+  color: #f8f4e6;
+
+  > div {
+    margin: 1em 0em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    align-content: space-around;
+    gap: 0.5em;
+  }
 }
