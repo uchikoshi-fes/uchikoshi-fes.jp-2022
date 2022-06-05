@@ -6,11 +6,13 @@
 .top {
   height: 100vh;
   height: 100dvh;
+  width: 100%;
   padding-top: header.$header-height;
   background-color: #b9d08b;
 
   > div {
     height: 100%;
+    width: 100%;
     padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
