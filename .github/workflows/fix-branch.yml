@@ -11,25 +11,20 @@ on:
       - "main"
       - "develop"
 jobs:
-  into_main:
+  change-base_branch:
+    name: Change base branch
     if: |
-      startsWith(github.head_ref, 'hotfix/') && github.base_ref == 'develop'
+      ( github.base_ref == 'develop' && ( startsWith(github.head_ref, 'hotfix/') || startsWith(github.head_ref, 'release/') ) )
+      || ( github.base_ref == 'main' && ! ( startsWith(github.head_ref, 'hotfix/') || startsWith(github.head_ref, 'release/') || github.head_ref == 'develop' ) )
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      PR_NUMBER: ${{ github.event.number }}
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
-      - run: gh pr edit --base main
-  into_develop:
-    if: |
-      ! ( startsWith(github.head_ref, 'hotfix/') || github.head_ref == 'develop' ) && github.base_ref == 'main'
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
-      - run: gh pr edit --base develop
+      - run: |
+          if ${{ github.base_ref == 'develop' }}; then
+            gh pr edit $PR_NUMBER --base main
+          else
+            gh pr edit $PR_NUMBER --base develop
+          fi
