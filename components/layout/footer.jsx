@@ -2,6 +2,8 @@
 
 // styles
 import styles from "./footer.module.scss";
+// config
+import PACKAGE from "../../package";
 
 const Footer = () => {
   return (
@@ -26,6 +28,16 @@ const Footer = () => {
             target="_blank"
           >
             神奈川県横浜市神奈川区子安台1丁目3-1
+          </a>
+        </span>
+        <span>
+          v{PACKAGE.version}{" "}
+          <a
+            href="https://github.com/uchikoshi-fes/uchikoshi-fes.jp-2022"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            サイトの中身
           </a>
         </span>
         <small>Copyright &copy; 2022 浅野学園生徒会</small>
