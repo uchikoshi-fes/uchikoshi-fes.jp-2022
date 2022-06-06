@@ -1,11 +1,23 @@
 // SPDX-License-Identifier: MIT
 
 $header-height: 48px;
+$header-padding: $header-height / 4;
+$line-height: $header-height - $header-padding * 2;
 
 .header {
   position: fixed;
   height: $header-height;
   width: 100%;
+  padding: $header-padding;
+  display: flex;
+  align-items: center;
   background-color: #f8f4e6;
-  box-shadow: 0px -8px 8px 12px rgba(64, 64, 64, 0.5);
+  box-shadow: 0px -4px 4px 6px rgba(64, 64, 64, 0.25);
+}
+
+.index-link {
+  height: 100%;
+  text-decoration: none;
+  line-height: $line-height;
+  font-size: $line-height;
 }
