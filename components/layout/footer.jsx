@@ -43,15 +43,6 @@ const Footer = () => {
           </a>
         </span>
         <span>
-          <a
-            href="https://maps.app.goo.gl/oHHMCEr89Cpeu6XEA"
-            rel="noreferrer noopener"
-            target="_blank"
-          >
-            神奈川県横浜市神奈川区子安台1丁目3-1
-          </a>
-        </span>
-        <span>
           v{PACKAGE.version}{" "}
           <a
             href="https://github.com/uchikoshi-fes/uchikoshi-fes.jp-2022"

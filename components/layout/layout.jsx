@@ -2,6 +2,7 @@
 
 // components
 import Header from "./header";
+import Outline from "./outline";
 import Footer from "./footer";
 // styles
 
@@ -10,6 +11,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <main>{children}</main>
+      <Outline />
       <Footer />
     </>
   );
