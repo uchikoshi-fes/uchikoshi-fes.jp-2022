@@ -9,6 +9,27 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div>
+        {/*<span>TODO: LINE のボタン</span>*/}
+        <span>
+          <a
+            href="https://twitter.com/uchikoshifes?ref_src=twsrc%5Etfw"
+            rel="noreferrer noopener"
+            target="_blank"
+            className="twitter-follow-button"
+            data-show-count="false"
+          >
+            @uchikoshifesさんをフォロー
+          </a>
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"
+          ></script>
+        </span>
+        {/*<span>TODO: Instagram のボタン</span>*/}
+        {/*<span>TODO: YouTube のボタン</span>*/}
+      </div>
+      <div>
         {/*<span>お問い合わせ</span>*/}
         {/*<span>プライバシー</span>*/}
         {/*<span>ライセンス</span>*/}
