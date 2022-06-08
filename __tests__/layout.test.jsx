@@ -7,7 +7,7 @@ import "@testing-library/jest-dom";
 import Layout from "../components/layout/layout";
 import Header from "../components/layout/header";
 import Menu from "../components/layout/menu";
-//import Outline from "../components/layout/outline";
+import Outline from "../components/layout/outline";
 import Footer from "../components/layout/footer";
 
 describe("Layout", () => {
@@ -24,16 +24,19 @@ describe("Layout", () => {
     // TODO: メニュー制作時にテスト追加
   });
   test("開催概要の最低限のテキスト", () => {
-    // TODO: 開催概要制作時にコメントアウト解除
-    //render(<Outline />);
-    //expect(screen.getByText(/開催概要/)).toBeInTheDocument();
-    //expect(screen.getByText(/雨天決行/)).toBeInTheDocument();
+    render(<Outline />);
+    expect(screen.getByText(/開催概要/)).toBeInTheDocument();
+    expect(screen.getByText(/日程/)).toBeInTheDocument();
+    expect(screen.getByText(/9.+18.+19|９.+１８.+１９/)).toBeInTheDocument();
+    expect(screen.getByText(/雨天決行/)).toBeInTheDocument();
+    expect(screen.getByText(/アクセス/)).toBeInTheDocument();
+    expect(screen.getByText(/浅野中学校・高等学校/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/〒221-0012 神奈川県横浜市神奈川区子安台１丁目３-１/)
+    ).toBeInTheDocument();
   });
   test("フッタの最低限のテキスト", () => {
     render(<Footer />);
-    expect(
-      screen.getByText(/神奈川県横浜市神奈川区子安台1丁目3-1/)
-    ).toBeInTheDocument();
     expect(screen.getByText(/© 2022 浅野学園生徒会/)).toBeInTheDocument();
   });
 });
