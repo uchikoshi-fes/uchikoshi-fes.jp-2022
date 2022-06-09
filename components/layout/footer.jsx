@@ -16,6 +16,8 @@ const Footer = () => {
             rel="noreferrer noopener"
             target="_blank"
             className="twitter-follow-button"
+            data-size="large"
+            data-lang="ja"
             data-show-count="false"
           >
             @uchikoshifesさんをフォロー
