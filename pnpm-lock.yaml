@@ -20,7 +20,7 @@ specifiers:
   react: 18.1.0
   react-dom: 18.1.0
   sanitize.css: 13.0.0
-  sass: 1.52.1
+  sass: 1.52.3
   textlint: 12.1.1
   textlint-filter-rule-comments: 1.2.2
   textlint-plugin-jsx: 1.1.2
@@ -43,13 +43,13 @@ specifiers:
   typescript: 4.7.2
 
 dependencies:
-  next: 12.1.6_4lr7wgrejdc22b7ck6oq24c2o4
+  next: 12.1.6_w7w6p5sxz4k2ajlc3jerjxkr7e
   next-seo: 5.4.0_2mgcgz5qhsdxw4fgpqzqeafmkq
   npm-run-all: 4.1.5
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
   sanitize.css: 13.0.0
-  sass: 1.52.1
+  sass: 1.52.3
 
 devDependencies:
   '@testing-library/jest-dom': 5.16.4
@@ -2193,7 +2193,7 @@ packages:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.17.0
       eslint-plugin-react: 7.30.0_eslint@8.17.0
       eslint-plugin-react-hooks: 4.5.0_eslint@8.17.0
-      next: 12.1.6_4lr7wgrejdc22b7ck6oq24c2o4
+      next: 12.1.6_w7w6p5sxz4k2ajlc3jerjxkr7e
       typescript: 4.7.2
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
@@ -4335,12 +4335,12 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.1.6_4lr7wgrejdc22b7ck6oq24c2o4
+      next: 12.1.6_w7w6p5sxz4k2ajlc3jerjxkr7e
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
     dev: false
 
-  /next/12.1.6_4lr7wgrejdc22b7ck6oq24c2o4:
+  /next/12.1.6_w7w6p5sxz4k2ajlc3jerjxkr7e:
     resolution: {integrity: sha512-cebwKxL3/DhNKfg9tPZDQmbRKjueqykHHbgaoG4VBRH3AHQJ2HO0dbKFiS1hPhe1/qgc2d/hFeadsbPicmLD+A==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -4363,7 +4363,7 @@ packages:
       postcss: 8.4.5
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
-      sass: 1.52.1
+      sass: 1.52.3
       styled-jsx: 5.0.2_7dyza7lwefzwx6jyet74qauufm
     optionalDependencies:
       '@next/swc-android-arm-eabi': 12.1.6
@@ -5153,8 +5153,8 @@ packages:
     resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
     dev: false
 
-  /sass/1.52.1:
-    resolution: {integrity: sha512-fSzYTbr7z8oQnVJ3Acp9hV80dM1fkMN7mSD/25mpcct9F7FPBMOI8krEYALgU1aZoqGhQNhTPsuSmxjnIvAm4Q==}
+  /sass/1.52.3:
+    resolution: {integrity: sha512-LNNPJ9lafx+j1ArtA7GyEJm9eawXN8KlA1+5dF6IZyoONg1Tyo/g+muOsENWJH/2Q1FHbbV4UwliU0cXMa/VIA==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
