@@ -23,7 +23,7 @@ const Footer = () => {
           <script
             async
             src="https://platform.twitter.com/widgets.js"
-            charset="utf-8"
+            charSet="utf-8"
           ></script>
         </span>
         {/*<span>TODO: Instagram のボタン</span>*/}
