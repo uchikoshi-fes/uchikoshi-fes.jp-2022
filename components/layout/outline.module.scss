@@ -10,9 +10,7 @@
 
 .map {
   width: 100vw;
-  width: 100dvw;
   margin: 1rem calc(50% - 50vw);
-  margin: 1rem calc(50% - 50dvw);
   aspect-ratio: 4 / 3;
 
   @media screen and (min-width: 800px) {
