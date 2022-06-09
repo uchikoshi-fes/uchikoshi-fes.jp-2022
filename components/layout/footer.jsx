@@ -39,19 +39,10 @@ const Footer = () => {
             rel="noreferrer noopener"
             target="_blank"
           >
-            浅野学園公式サイト
+            浅野学園公式サイトはこちら
           </a>
         </span>
-        <span>
-          v{PACKAGE.version}{" "}
-          <a
-            href="https://github.com/uchikoshi-fes/uchikoshi-fes.jp-2022"
-            rel="noreferrer noopener"
-            target="_blank"
-          >
-            サイトの中身
-          </a>
-        </span>
+        <small>v{PACKAGE.version}</small>
         <small>Copyright &copy; 2022 浅野学園生徒会</small>
       </div>
     </footer>
