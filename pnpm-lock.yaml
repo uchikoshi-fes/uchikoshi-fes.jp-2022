@@ -10,8 +10,8 @@ specifiers:
   eslint-config-next: 12.1.6
   eslint-config-prettier: 8.5.0
   husky: 8.0.1
-  jest: 28.1.0
-  jest-environment-jsdom: 28.1.0
+  jest: 28.1.1
+  jest-environment-jsdom: 28.1.1
   lint-staged: 13.0.1
   next: 12.1.6
   next-seo: 5.4.0
@@ -61,8 +61,8 @@ devDependencies:
   eslint-config-next: 12.1.6_nzshthnlaonqmukjkmouqgrnhe
   eslint-config-prettier: 8.5.0_eslint@8.17.0
   husky: 8.0.1
-  jest: 28.1.0
-  jest-environment-jsdom: 28.1.0
+  jest: 28.1.1
+  jest-environment-jsdom: 28.1.1
   lint-staged: 13.0.1
   prettier: 2.6.2
   textlint: 12.1.1
@@ -3380,8 +3380,8 @@ packages:
       pretty-format: 28.1.1
     dev: true
 
-  /jest-environment-jsdom/28.1.0:
-    resolution: {integrity: sha512-8n6P4xiDjNVqTWv6W6vJPuQdLx+ZiA3dbYg7YJ+DPzR+9B61K6pMVJrSs2IxfGRG4J7pyAUA5shQ9G0KEun78w==}
+  /jest-environment-jsdom/28.1.1:
+    resolution: {integrity: sha512-41ZvgSoPNcKG5q3LuuOcAczdBxRq9DbZkPe24okN6ZCmiZdAfFtPg3z+lOtsT1fM6OAERApKT+3m0MRDQH2zIA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     dependencies:
       '@jest/environment': 28.1.1
@@ -3670,8 +3670,8 @@ packages:
       supports-color: 8.1.1
     dev: true
 
-  /jest/28.1.0:
-    resolution: {integrity: sha512-TZR+tHxopPhzw3c3560IJXZWLNHgpcz1Zh0w5A65vynLGNcg/5pZ+VildAd7+XGOu6jd58XMY/HNn0IkZIXVXg==}
+  /jest/28.1.1:
+    resolution: {integrity: sha512-qw9YHBnjt6TCbIDMPMpJZqf9E12rh6869iZaN08/vpOGgHJSAaLLUn6H8W3IAEuy34Ls3rct064mZLETkxJ2XA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
@@ -3681,6 +3681,7 @@ packages:
         optional: true
     dependencies:
       '@jest/core': 28.1.1
+      '@jest/types': 28.1.1
       import-local: 3.1.0
       jest-cli: 28.1.1
     transitivePeerDependencies:
