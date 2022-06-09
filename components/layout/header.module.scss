@@ -11,6 +11,7 @@ $line-height: $header-height - $header-padding * 2;
   padding: $header-padding;
   display: flex;
   align-items: center;
+  z-index: 1;
   background-color: #f8f4e6;
   box-shadow: 0px -4px 4px 6px rgba(64, 64, 64, 0.25);
 }
