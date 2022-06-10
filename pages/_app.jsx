@@ -4,6 +4,7 @@
 import { useRouter } from "next/router";
 // components
 import { DefaultSeo } from "next-seo";
+import Layout from "../components/layout/layout";
 // styles
 import "sanitize.css";
 import "sanitize.css/forms.css";
@@ -20,7 +21,9 @@ const UchikoshiFesApp = ({ Component, pageProps }) => {
   return (
     <>
       <DefaultSeo {...SEO(router)} />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 };
