@@ -12,8 +12,8 @@
   > div {
     width: 100%;
     margin: 0px 1em;
-    font-size: 4vw;
-    font-size: 4dvw;
+    font-size: min(4vw, 3rem);
+    font-size: min(4dvw, 3rem);
   }
 }
 
