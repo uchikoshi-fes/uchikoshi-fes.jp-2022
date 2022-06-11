@@ -25,7 +25,9 @@ const Index = () => {
           </p>
         </div>
       </div>
-      <Countdown />
+      <div className={styles["countdown-container"]}>
+        <Countdown />
+      </div>
     </>
   );
 };

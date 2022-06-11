@@ -16,15 +16,16 @@ const Countdown = () => {
   }, [now]);
   return (
     <div className={styles.countdown}>
-      <p>
+      <div>
         文化祭まで、
-        <br />
-        あと
-        <span suppressHydrationWarning>
-          {1 + Math.floor((FES_FIRST_DAY - now) / 86400000)}
-        </span>
-        日！
-      </p>
+        <div className={styles.remaining}>
+          あと
+          <span className={styles.number} suppressHydrationWarning>
+            {1 + Math.floor((FES_FIRST_DAY - now) / 86400000)}
+          </span>
+          日！
+        </div>
+      </div>
     </div>
   );
 };
