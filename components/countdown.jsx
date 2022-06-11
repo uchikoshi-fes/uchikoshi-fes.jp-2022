@@ -17,7 +17,7 @@ const Countdown = () => {
   return (
     <div className={styles.countdown}>
       <div>
-        文化祭まで、
+        文化祭開幕まで、
         <div className={styles.remaining}>
           あと
           <span className={styles.number} suppressHydrationWarning>
