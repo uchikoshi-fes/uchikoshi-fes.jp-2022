@@ -16,7 +16,7 @@ jobs:
     if: |
       ( github.base_ref == 'develop' && ( startsWith(github.head_ref, 'hotfix/') || startsWith(github.head_ref, 'release/') ) )
       || ( github.base_ref == 'main' && ! ( startsWith(github.head_ref, 'hotfix/') || startsWith(github.head_ref, 'release/') || github.head_ref == 'develop' ) )
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GH_REPO: ${{ github.repository }}
