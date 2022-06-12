@@ -3,7 +3,7 @@
 // styles
 import styles from "./footer.module.scss";
 // config
-import PACKAGE from "package";
+import PACKAGE from "@/package";
 
 const Footer = () => {
   return (

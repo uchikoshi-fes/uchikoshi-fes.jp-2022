@@ -4,11 +4,11 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 // components
-import Layout from "../components/layout/layout";
-import Header from "../components/layout/header";
-import Menu from "../components/layout/menu";
-import Outline from "../components/layout/outline";
-import Footer from "../components/layout/footer";
+import Layout from "@/components/layout/layout";
+import Header from "@/components/layout/header";
+import Menu from "@/components/layout/menu";
+import Outline from "@/components/layout/outline";
+import Footer from "@/components/layout/footer";
 
 describe("Layout", () => {
   test("レイアウトの子要素", () => {

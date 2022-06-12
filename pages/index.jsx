@@ -2,7 +2,7 @@
 
 // components
 import NextSeo from "next-seo";
-import Countdown from "../components/countdown";
+import Countdown from "@/components/countdown";
 // styles
 import styles from "./index.module.scss";
 

@@ -2,7 +2,7 @@
 
 // components
 import Link from "next/link";
-import Menu from "@/components/layout/menu";
+import Menu from "./menu";
 // styles
 import styles from "./header.module.scss";
 
