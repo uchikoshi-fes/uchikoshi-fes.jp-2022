@@ -2,6 +2,7 @@
 
 // components
 import NextSeo from "next-seo";
+import Countdown from "../components/countdown";
 // styles
 import styles from "./index.module.scss";
 
@@ -23,6 +24,9 @@ const Index = () => {
             鋭意制作中！
           </p>
         </div>
+      </div>
+      <div className={styles["countdown-container"]}>
+        <Countdown />
       </div>
     </>
   );
