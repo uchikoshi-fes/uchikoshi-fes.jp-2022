@@ -2,7 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/package": ["package"],
+      "@/next-seo.config": ["next-seo.config"],
+      "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"]
     }
   }
 }
