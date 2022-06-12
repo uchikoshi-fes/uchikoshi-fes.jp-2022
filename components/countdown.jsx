@@ -12,11 +12,13 @@ export const FES_END = FES_FIRST_DAY + 86400000 + 18 * 3600000; // 18:00
 const Remaining = () => {
   const [now, setNow] = React.useState();
   React.useEffect(() => {
-    setTimeout(() => setNow(Date.now()), 1000);
-  }, [now]);
+    setInterval(() => setNow(Date.now()), 1000);
+  }, []);
 
-  if (now === undefined) return <></>;
-  else
+  if (now === undefined) {
+    setTimeout(() => setNow(Date.now()), 0);
+    return <></>;
+  } else
     return (
       <>
         あと
