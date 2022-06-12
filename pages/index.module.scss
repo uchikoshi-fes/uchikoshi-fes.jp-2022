@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
-@use "../components/mixins" as *;
-@use "../components/layout/header.module" as header;
+@use "@/components/mixins" as *;
+@use "@/components/layout/header.module" as header;
 
 .top {
   height: 100vh;

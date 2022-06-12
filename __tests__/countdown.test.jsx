@@ -4,7 +4,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 // components
-import Countdown from "../components/countdown";
+import Countdown from "@/components/countdown";
 
 describe("Countdown", () => {
   test("最低限のテキスト", () => {

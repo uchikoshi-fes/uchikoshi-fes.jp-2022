@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-import { SITE_NAME, genTitle } from "../next-seo.config";
+import { SITE_NAME, genTitle } from "@/next-seo.config";
 
 describe("next-seo", () => {
   test("正しいタイトル", () => {
