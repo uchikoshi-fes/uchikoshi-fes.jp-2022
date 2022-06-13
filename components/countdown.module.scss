@@ -1,0 +1,35 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins" as *;
+
+.countdown {
+  width: 100%;
+  border: 4px solid #333631;
+  aspect-ratio: 2 / 1;
+  display: flex;
+  align-items: center;
+
+  > div {
+    width: 100%;
+    margin: 0 1em;
+    font-size: min(4vw, 3rem);
+    font-size: min(4dvw, 3rem);
+  }
+}
+
+.remaining {
+  text-align: center;
+}
+
+.number {
+  margin: 0 0.05em;
+  padding: 0 0.05em;
+  font-size: 5em;
+  line-height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent calc(100% - 0.4em),
+    #b9d08b calc(100% - 0.4em) calc(100% - 0.2em),
+    transparent calc(100% - 0.2em)
+  );
+}

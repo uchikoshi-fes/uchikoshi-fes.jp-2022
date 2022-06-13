@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MIT -->
+
 # 開発の流れ
 
 ## Basics
@@ -13,15 +15,23 @@
 
 `release` branch は使用しません。
 
-### Next.js
+### License
+
+新しいファイルを作る際、  
+そのファイルが記事の JSX ファイルなら 1 行目に行コメントで `SPDX-License-Identifier: CC-BY-NC-4.0` と、  
+記事や画像などのコンテンツではないプログラムのファイルは同じように `SPDX-License-Identifier: MIT` と書いてください。  
+記事の MDX ファイルや画像ファイルへのライセンスの記述は不要です。
+
+### pnpm
 
 コマンドを使える必要があります。
 
-- `npm install` : 必要なライブラリを全てインストール
-- `npm run dev` : プレビューサーバーを起動
-- `npm run static` : 静的エクスポート
-- `npm run lint` : コードや文章の校正
-- `npm test` : 単体テスト
+- `corepack enable` : pnpm を有効にする
+- `pnpm install` : 必要なライブラリを全てインストール
+- `pnpm dev` : Next.js のプレビューサーバーを起動
+- `pnpm static` : Next.js の静的エクスポート
+- `pnpm lint` : コードや文章の校正
+- `pnpm test` : 単体テスト
 
 ### Lint
 

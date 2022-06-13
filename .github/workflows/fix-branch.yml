@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: MIT
+
+name: Fix branch
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+    branches:
+      - "main"
+      - "develop"
+jobs:
+  change-base_branch:
+    name: Change base branch
+    if: |
+      ( github.base_ref == 'develop' && ( startsWith(github.head_ref, 'hotfix/') || startsWith(github.head_ref, 'release/') ) )
+      || ( github.base_ref == 'main' && ! ( startsWith(github.head_ref, 'hotfix/') || startsWith(github.head_ref, 'release/') || github.head_ref == 'develop' ) )
+    runs-on: ubuntu-20.04
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      PR_NUMBER: ${{ github.event.number }}
+    steps:
+      - run: |
+          if ${{ github.base_ref == 'develop' }}; then
+            gh pr edit $PR_NUMBER --base main
+          else
+            gh pr edit $PR_NUMBER --base develop
+          fi

@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: MIT
+
+name: Auto PR
+
+on: create
+
+jobs:
+  pr:
+    if: github.event.ref_type == 'branch' && ! github.event.repository.fork
+    name: Create PR
+    runs-on: ubuntu-20.04
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup git
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config push.default current
+      - name: Create a pull request
+        run: |
+          ISSUE=`echo "${{ github.event.ref }}" | grep -oE '#[0-9]+'`
+          if ${{ startsWith(github.event.ref, 'hotfix/') }}; then
+            if git diff --quiet origin/main; then
+              git commit --allow-empty -m "empty commit"
+              git push
+            fi
+            gh pr create --draft --base main --assignee ${{ github.event.sender.login }} --title "${{ github.event.ref }}" --body "close $ISSUE"
+          else
+            if git diff --quiet origin/develop; then
+              git commit --allow-empty -m "empty commit"
+              git push
+            fi
+            gh pr create --draft --base develop --assignee ${{ github.event.sender.login }} --title "${{ github.event.ref }}" --body "close $ISSUE"
+          fi

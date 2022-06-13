@@ -1,9 +1,6 @@
-/*
- * © 2022 uchikoshi-fes
- * This file is licensed under the MIT License, see /LICENSE file.
- */
+// SPDX-License-Identifier: MIT
 
-import { SITE_NAME, genTitle } from "../next-seo.config";
+import { SITE_NAME, genTitle } from "@/next-seo.config";
 
 describe("next-seo", () => {
   test("正しいタイトル", () => {

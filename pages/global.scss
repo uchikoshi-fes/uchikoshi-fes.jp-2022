@@ -1,0 +1,25 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins";
+
+// classes
+
+.hide {
+  // アニメーションの為 visibility: hidden; ではなく
+  opacity: 0;
+  // ちなみに当たり判定消すために
+  pointer-events: none;
+}
+
+// common
+
+body {
+  padding: 0;
+  margin: 0;
+  color: #333631;
+  background-color: #f8f4e6;
+}
+
+a {
+  color: inherit;
+}

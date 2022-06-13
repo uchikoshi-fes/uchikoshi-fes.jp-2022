@@ -1,3 +1,6 @@
+// (c) 2022 Vercel, Inc.
+// SPDX-License-Identifier: MIT
+
 const nextJest = require("next/jest");
 
 const createJestConfig = nextJest({
@@ -9,6 +12,8 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   //setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
+    "^@/package": "<rootDir>/package",
+    "^@/next-seo.config": "<rootDir>/next-seo.config",
     // Handle module aliases (this will be automatically configured for you soon)
     "^@/components/(.*)$": "<rootDir>/components/$1",
     "^@/pages/(.*)$": "<rootDir>/pages/$1",
