@@ -36,7 +36,7 @@ export default (router) => {
     ],
     twitter: {
       cardType: "summary_large_image",
-      site: "@uchikoshifes_official",
+      site: "@uchikoshifes",
     },
     openGraph: {
       url,
