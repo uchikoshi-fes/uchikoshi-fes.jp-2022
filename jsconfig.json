@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/package": ["package"],
+      "@/next-seo.config": ["next-seo.config"],
+      "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"]
+    }
+  }
+}
