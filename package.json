@@ -52,7 +52,7 @@
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "lint-staged": "13.0.1",
-    "prettier": "2.6.2",
+    "prettier": "2.7.0",
     "textlint": "12.1.1",
     "textlint-filter-rule-comments": "1.2.2",
     "textlint-plugin-jsx": "1.1.2",

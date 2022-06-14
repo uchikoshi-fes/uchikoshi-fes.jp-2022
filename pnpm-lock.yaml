@@ -16,7 +16,7 @@ specifiers:
   next: 12.1.6
   next-seo: 5.4.0
   npm-run-all: 4.1.5
-  prettier: 2.6.2
+  prettier: 2.7.0
   react: 18.1.0
   react-dom: 18.1.0
   sanitize.css: 13.0.0
@@ -64,7 +64,7 @@ devDependencies:
   jest: 28.1.1
   jest-environment-jsdom: 28.1.1
   lint-staged: 13.0.1
-  prettier: 2.6.2
+  prettier: 2.7.0
   textlint: 12.1.1
   textlint-filter-rule-comments: 1.2.2_textlint@12.1.1
   textlint-plugin-jsx: 1.1.2_typescript@4.7.3
@@ -4807,8 +4807,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.6.2:
-    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
+  /prettier/2.7.0:
+    resolution: {integrity: sha512-nwoX4GMFgxoPC6diHvSwmK/4yU8FFH3V8XWtLQrbj4IBsK2pkYhG4kf/ljF/haaZ/aii+wNJqISrCDPgxGWDVQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
