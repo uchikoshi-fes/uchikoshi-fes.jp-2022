@@ -17,12 +17,11 @@ export default (router) => {
     (router.locale === router.defaultLocale ? "" : router.locale) +
     router.asPath;
 
+  // Cloudflare Pages ではプレビューを判定して noindex は不要
+  // Ref: https://github.com/uchikoshi-fes/uchikoshi-fes.jp-2022/issues/93#issuecomment-1154838583
   return {
     titleTemplate: genTitle("%s"),
     defaultTitle: DEFAULT_TITLE,
-    ...(process.env.APP_ENV === "production"
-      ? {}
-      : { dangerouslySetAllPagesToNoIndex: true }),
     description: DESCRIPTION,
     canonical: url,
     additionalMetaTags: [
