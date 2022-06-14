@@ -20,9 +20,6 @@ export default (router) => {
   return {
     titleTemplate: genTitle("%s"),
     defaultTitle: DEFAULT_TITLE,
-    ...(process.env.APP_ENV === "production"
-      ? {}
-      : { dangerouslySetAllPagesToNoIndex: true }),
     description: DESCRIPTION,
     canonical: url,
     additionalMetaTags: [
