@@ -42,7 +42,7 @@
 
 ## Version
 
-**Version:** 0.2.0 (最低限の要素を追加)  
+**Version:** 0.2.1 (noindex になるバグを修整)  
 **Latest Update:** 2022/06/13
 
 ## Feedback & Support
