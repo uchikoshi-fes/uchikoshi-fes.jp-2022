@@ -8,7 +8,7 @@ jobs:
   pr:
     if: github.event.ref_type == 'branch' && ! github.event.repository.fork
     name: Create PR
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:

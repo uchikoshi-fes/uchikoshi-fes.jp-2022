@@ -4,6 +4,7 @@
 import { useRouter } from "next/router";
 // components
 import { DefaultSeo } from "next-seo";
+import Layout from "@/components/layout/layout";
 // styles
 import "sanitize.css";
 import "sanitize.css/forms.css";
@@ -13,14 +14,16 @@ import "sanitize.css/system-ui.css";
 import "sanitize.css/ui-monospace.css";
 import "./global.scss";
 // config
-import SEO from "../next-seo.config";
+import SEO from "@/next-seo.config";
 
 const UchikoshiFesApp = ({ Component, pageProps }) => {
   const router = useRouter();
   return (
     <>
       <DefaultSeo {...SEO(router)} />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 };
