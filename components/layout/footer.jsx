@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 
+// components
+import Link from "@/components/base/link";
 // styles
 import styles from "./footer.module.scss";
 // config
@@ -11,17 +13,15 @@ const Footer = () => {
       <div>
         {/*<span>TODO: LINE のボタン</span>*/}
         <span>
-          <a
+          <Link
             href="https://twitter.com/uchikoshifes?ref_src=twsrc%5Etfw"
-            rel="noreferrer noopener"
-            target="_blank"
             className="twitter-follow-button"
             data-size="large"
             data-lang="ja"
             data-show-count="false"
           >
             @uchikoshifesさんをフォロー
-          </a>
+          </Link>
           <script
             async
             src="https://platform.twitter.com/widgets.js"
@@ -36,13 +36,9 @@ const Footer = () => {
         {/*<span>プライバシー</span>*/}
         {/*<span>ライセンス</span>*/}
         <span>
-          <a
-            href="https://www.asano.ed.jp/"
-            rel="noreferrer noopener"
-            target="_blank"
-          >
+          <Link href="https://www.asano.ed.jp/">
             浅野学園公式サイトはこちら
-          </a>
+          </Link>
         </span>
         <small>v{PACKAGE.version}</small>
         <small>Copyright &copy; 2022 浅野学園生徒会</small>
