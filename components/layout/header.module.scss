@@ -4,17 +4,12 @@ $header-height: 48px;
 $header-padding: $header-height / 4;
 $line-height: $header-height - $header-padding * 2;
 
-// prevent margin collapsing
-.wrapper::before {
-  content: "";
-  display: table;
-}
-
 .header {
   position: fixed;
   height: $header-height;
   width: 100%;
   padding: $header-padding;
+  top: 0;
   display: flex;
   align-items: center;
   z-index: 1;
