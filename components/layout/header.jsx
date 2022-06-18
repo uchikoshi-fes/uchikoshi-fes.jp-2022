@@ -8,12 +8,14 @@ import styles from "./header.module.scss";
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-      <Link href="/">
-        <a className={styles["index-link"]}>浅野学園打越祭</a>
-      </Link>
-      <Menu />
-    </header>
+    <div className={styles.wrapper}>
+      <header className={styles.header}>
+        <Link href="/">
+          <a className={styles["index-link"]}>浅野学園打越祭</a>
+        </Link>
+        <Menu />
+      </header>
+    </div>
   );
 };
 
