@@ -4,6 +4,9 @@ name: Maintain code quality
 
 on: push
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: Lint
