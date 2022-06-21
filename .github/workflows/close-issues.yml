@@ -9,6 +9,10 @@ on:
     branches:
       - "develop"
 
+permissions:
+  issues: write
+  pull-requests: read
+
 jobs:
   close:
     if: github.event.pull_request.merged
