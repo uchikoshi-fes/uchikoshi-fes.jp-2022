@@ -4,6 +4,11 @@ name: Auto PR
 
 on: create
 
+permissions:
+  contents: write
+  pull-requests: write
+  repository-projects: write
+
 jobs:
   pr:
     if: github.event.ref_type == 'branch' && ! github.event.repository.fork
