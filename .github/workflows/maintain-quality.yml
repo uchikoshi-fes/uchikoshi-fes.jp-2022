@@ -2,11 +2,15 @@
 
 name: Maintain code quality
 
-on: push
+on: [push, pull_request]
+
+permissions:
+  contents: read
 
 jobs:
   lint:
     name: Lint
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.fork
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -81,6 +85,7 @@ jobs:
 
   test:
     name: Test
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.fork
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
