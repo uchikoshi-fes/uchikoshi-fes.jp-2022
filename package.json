@@ -31,7 +31,7 @@
     "prepare": "husky install || [ $? = 127 ]"
   },
   "dependencies": {
-    "@mdx-js/loader": "2.1.1",
+    "@mdx-js/loader": "2.1.2",
     "@next/mdx": "12.1.6",
     "@fortawesome/fontawesome-svg-core": "6.1.1",
     "@fortawesome/free-brands-svg-icons": "6.1.1",
