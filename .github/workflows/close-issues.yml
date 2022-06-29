@@ -22,8 +22,9 @@ jobs:
       GH_REPO: ${{ github.repository }}
       PR_NUMBER: ${{ github.event.number }}
     steps:
-      - run: |
-          ISSUES=`gh pr view $PR_NUMBER --json body --jq .body |
-                  grep -oP --ignore-case '(^|\W)((close|resolve)(|s|d)|fix(|es|ed)) #[\d]+(?=\W|$)' |
-                  grep -oP '#[\d]+'`
-          echo $ISSUES | xargs -n1 gh issue close || true
+      - name: Close issues
+        run: |
+          gh pr view $PR_NUMBER --json body --jq .body |
+          grep -oP --ignore-case '(^|\W)((close|resolve)(|s|d)|fix(|es|ed)) #[\d]+(?=\W|$)' |
+          grep -oP '#[\d]+' |
+          xargs -n1 gh issue close || true
