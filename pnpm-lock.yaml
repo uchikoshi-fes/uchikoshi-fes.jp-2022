@@ -26,7 +26,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   sanitize.css: 13.0.0
-  sass: 1.52.3
+  sass: 1.53.0
   textlint: 12.1.1
   textlint-filter-rule-comments: 1.2.2
   textlint-plugin-jsx: 1.1.2
@@ -55,13 +55,13 @@ dependencies:
   '@fortawesome/react-fontawesome': 0.1.18_sdfg7szeivrzzj63kiqxwaxkwu
   '@mdx-js/loader': 2.1.2_webpack@5.73.0
   '@next/mdx': 12.1.6_todqhrvd7cvbb36hzi2r6xttgq
-  next: 12.1.6_gavd5pnq4qbraoev5wiz2uq3l4
+  next: 12.1.6_vw6lqu5akgozotmk76o25gzoxq
   next-seo: 5.4.0_2nrpme5s5xmpdgccbbbdwhosda
   npm-run-all: 4.1.5
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   sanitize.css: 13.0.0
-  sass: 1.52.3
+  sass: 1.53.0
 
 devDependencies:
   '@testing-library/jest-dom': 5.16.4
@@ -2551,7 +2551,7 @@ packages:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.18.0
       eslint-plugin-react: 7.30.0_eslint@8.18.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.18.0
-      next: 12.1.6_gavd5pnq4qbraoev5wiz2uq3l4
+      next: 12.1.6_vw6lqu5akgozotmk76o25gzoxq
       typescript: 4.7.4
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
@@ -5173,12 +5173,12 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.1.6_gavd5pnq4qbraoev5wiz2uq3l4
+      next: 12.1.6_vw6lqu5akgozotmk76o25gzoxq
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /next/12.1.6_gavd5pnq4qbraoev5wiz2uq3l4:
+  /next/12.1.6_vw6lqu5akgozotmk76o25gzoxq:
     resolution: {integrity: sha512-cebwKxL3/DhNKfg9tPZDQmbRKjueqykHHbgaoG4VBRH3AHQJ2HO0dbKFiS1hPhe1/qgc2d/hFeadsbPicmLD+A==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -5201,7 +5201,7 @@ packages:
       postcss: 8.4.5
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      sass: 1.52.3
+      sass: 1.53.0
       styled-jsx: 5.0.2_5wvcx74lvxq2lfpc5x4ihgp2jm
     optionalDependencies:
       '@next/swc-android-arm-eabi': 12.1.6
@@ -6053,8 +6053,8 @@ packages:
     resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
     dev: false
 
-  /sass/1.52.3:
-    resolution: {integrity: sha512-LNNPJ9lafx+j1ArtA7GyEJm9eawXN8KlA1+5dF6IZyoONg1Tyo/g+muOsENWJH/2Q1FHbbV4UwliU0cXMa/VIA==}
+  /sass/1.53.0:
+    resolution: {integrity: sha512-zb/oMirbKhUgRQ0/GFz8TSAwRq2IlR29vOUJZOx0l8sV+CkHUfHa4u5nqrG+1VceZp7Jfj59SVW9ogdhTvJDcQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
