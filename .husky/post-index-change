@@ -4,20 +4,19 @@
 
 . "$(dirname "$0")/_/husky.sh"
 
-if [ $2 -eq 1 ]; then
+if [ "$2" -eq 1 ]; then
   exit 0
 fi
 
 PACKAGE_FILE_REGEX="^(package\.json|pnpm-lock\.yaml)"
 PACKAGES="$(git diff --cached --name-only | grep -E "$PACKAGE_FILE_REGEX" || :)"
-if [[ ${PACKAGES[@]} ]]; then
-  echo "📦 $(echo $PACKAGES | tr '\n' ' ')が変更されました。pnpm install を実行します..."
-  pnpm install --frozen-lockfile && :
-  if [ $? -ne 0 ]; then
-    echo "🚨 pnpm install に失敗しました。restore を実行します..."
-    git restore --staged .
-    exit 1
-  fi
-else
+if [ -z "$PACKAGES" ]; then
   echo "🧊 依存関係は変更されていません。"
+  exit 0
+fi
+echo "📦 $(echo "$PACKAGES" | tr '\n' ' ')が変更されました。pnpm install を実行します..."
+if ! pnpm install --frozen-lockfile; then
+  echo "🚨 pnpm install に失敗しました。restore を実行します..."
+  git restore --staged .
+  exit 1
 fi
