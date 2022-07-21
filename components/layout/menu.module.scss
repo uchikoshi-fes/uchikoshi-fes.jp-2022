@@ -1,0 +1,11 @@
+// SPDX-License-Identifier: MIT
+
+@use "./header.module" as header;
+
+.hamburger {
+  height: header.$header-height;
+  width: header.$header-height;
+  border: 0;
+  line-height: header.$content-height;
+  font-size: header.$content-height;
+}
