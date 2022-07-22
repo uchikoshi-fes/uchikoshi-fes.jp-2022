@@ -2,10 +2,48 @@
 
 @use "./header.module" as header;
 
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+.container {
+  position: relative;
+}
+
 .hamburger {
   height: header.$header-height;
   width: header.$header-height;
   border: 0;
   line-height: header.$content-height;
   font-size: header.$content-height;
+}
+
+.narrow {
+  position: fixed;
+  height: 100vh;
+  height: 100dvh;
+  width: 320px;
+  top: 0;
+  left: -320px;
+  z-index: 2;
+  background-color: #f8f4e6;
+  transition: left 0.4s $easeOutQuart;
+}
+
+.narrow-open {
+  left: 0;
+  box-shadow: 0 0 4px 2px rgba(64, 64, 64, 0.25);
+}
+
+.narrow-closebutton {
+  height: header.$header-height;
+  width: 100%;
+  border: 0;
+  padding-left: header.$content-padding * 2;
+  line-height: header.$content-height;
+  font-size: header.$content-height;
+  text-align: left;
+}
+
+.narrow-content {
+  padding: 32px 20%;
+  overflow-y: auto;
 }
