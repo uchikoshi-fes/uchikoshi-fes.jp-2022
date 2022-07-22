@@ -17,13 +17,18 @@ const Menu = ({ narrow }) => {
     <nav className={styles.container}>
       {narrow ? (
         <>
-          <button className={styles.hamburger} onClick={() => setOpen(true)}>
+          <button
+            title="目次を開く"
+            className={styles.hamburger}
+            onClick={() => setOpen(true)}
+          >
             <FontAwesomeIcon icon={faBars} />
           </button>
           <div
             className={`${styles.narrow} ${open ? styles["narrow-open"] : ""}`}
           >
             <button
+              title="目次を閉じる"
               className={styles["narrow-closebutton"]}
               onClick={() => setOpen(false)}
             >
