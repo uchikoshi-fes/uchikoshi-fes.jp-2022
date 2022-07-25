@@ -26,6 +26,12 @@ const NarrowMenu = () => {
       >
         <FontAwesomeIcon icon={faBars} />
       </button>
+      {open && (
+        <div
+          className={styles["narrow-open-background"]}
+          onClick={() => setOpen(false)}
+        ></div>
+      )}
       <div className={`${styles.narrow} ${open ? styles["narrow-open"] : ""}`}>
         <button
           title="目次を閉じる"

@@ -16,6 +16,16 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
   font-size: header.$content-height;
 }
 
+.narrow-open-background {
+  position: fixed;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
 .narrow {
   position: fixed;
   height: 100vh;
@@ -23,7 +33,7 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 320px;
   top: 0;
   left: -320px;
-  z-index: 2;
+  z-index: 3;
   background-color: #f8f4e6;
   transition: left 0.4s $easeOutQuart;
 }
