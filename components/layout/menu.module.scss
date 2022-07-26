@@ -6,12 +6,16 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 .container {
   position: relative;
+  height: 100%;
 }
 
+// narrow
+
 .hamburger {
-  height: header.$header-height;
-  width: header.$header-height;
+  height: 100%;
+  aspect-ratio: 1;
   border: 0;
+  padding: header.$content-padding;
   line-height: header.$content-height;
   font-size: header.$content-height;
 }
@@ -54,6 +58,54 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .narrow-content {
-  padding: 32px 20%;
-  overflow-y: auto;
+  height: calc(100% - header.$header-height);
+
+  > ul {
+    height: 100%;
+    margin: 0;
+    padding: 48px 0;
+    overflow-y: auto;
+
+    > li > a {
+      width: 100%;
+      padding: 1em 2em;
+      display: block;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+}
+
+.narrow-active > a {
+  border-right: 8px solid;
+  color: #ce5242;
+}
+
+// wide
+
+.wide {
+  height: 100%;
+
+  > ul {
+    height: 100%;
+    margin: 0;
+
+    > li {
+      height: 100%;
+      margin: 0;
+      padding: 0 (header.$content-padding / 2);
+      display: inline-block;
+
+      > a {
+        height: 100%;
+        padding: header.$content-padding (header.$content-padding / 2);
+        display: block;
+      }
+    }
+  }
+}
+
+.wide-active > a {
+  border-bottom: (header.$content-padding / 2) solid;
+  color: #ce5242;
 }

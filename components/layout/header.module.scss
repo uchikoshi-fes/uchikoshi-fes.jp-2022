@@ -15,21 +15,11 @@ $content-padding: ($header-height - $content-height) / 2;
   z-index: 1;
   background-color: #f8f4e6;
   box-shadow: 0 -4px 4px 6px rgba(64, 64, 64, 0.25);
-
-  > * {
-    margin: 0;
-    border: 0;
-    padding: $content-padding ($content-padding / 2);
-    display: block;
-  }
 }
 
 .index-link {
+  padding: $content-padding ($content-padding / 2);
   text-decoration: none;
   line-height: $content-height;
   font-size: $content-height;
-
-  > * {
-    display: inline-block;
-  }
 }
