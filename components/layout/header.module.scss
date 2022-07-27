@@ -17,9 +17,16 @@ $content-padding: ($header-height - $content-height) / 2;
   box-shadow: 0 -4px 4px 6px rgba(64, 64, 64, 0.25);
 }
 
-.index-link {
-  padding: $content-padding ($content-padding / 2);
-  text-decoration: none;
-  line-height: $content-height;
-  font-size: $content-height;
+.site-name {
+  height: 100%;
+  flex: 1;
+
+  > a {
+    height: 100%;
+    padding: $content-padding ($content-padding / 2);
+    display: inline-block;
+    text-decoration: none;
+    line-height: $content-height;
+    font-size: $content-height;
+  }
 }

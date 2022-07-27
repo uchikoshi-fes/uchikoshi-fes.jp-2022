@@ -24,9 +24,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       {isClient && isNarrow && <Menu narrow />}
-      <Link href="/" className={styles["index-link"]}>
-        浅野学園打越祭
-      </Link>
+      <div className={styles["site-name"]}>
+        <Link href="/">浅野学園打越祭</Link>
+      </div>
       {isClient && !isNarrow && <Menu />}
     </header>
   );

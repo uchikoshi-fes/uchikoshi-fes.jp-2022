@@ -89,6 +89,7 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
   > ul {
     height: 100%;
     margin: 0;
+    padding: 0 header.$content-padding;
 
     > li {
       height: 100%;
