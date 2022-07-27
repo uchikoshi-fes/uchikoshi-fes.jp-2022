@@ -44,10 +44,13 @@ const MenuLinks = ({ narrow }) => {
   );
 };
 
-const NarrowMenu = () => {
+const NarrowMenu = ({ setScrollable }) => {
   const [open, setOpen] = React.useState(false);
   const router = Router.useRouter();
 
+  React.useEffect(() => {
+    setScrollable(!open);
+  }, [open]);
   router.events.on("routeChangeStart", () => setOpen(false));
 
   return (
@@ -89,10 +92,10 @@ const WideMenu = () => {
   );
 };
 
-const Menu = ({ narrow }) => {
+const Menu = ({ narrow, setScrollable }) => {
   return (
     <nav className={styles.container}>
-      {narrow ? <NarrowMenu /> : <WideMenu />}
+      {narrow ? <NarrowMenu setScrollable={setScrollable} /> : <WideMenu />}
     </nav>
   );
 };

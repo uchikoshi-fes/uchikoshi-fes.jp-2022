@@ -17,13 +17,13 @@ const useClient = () => {
   return isClient;
 };
 
-const Header = () => {
+const Header = ({ setScrollable }) => {
   const isClient = useClient();
   const isNarrow = useMediaQuery({ query: "(max-width: 600px)" });
 
   return (
     <header className={styles.header}>
-      {isClient && isNarrow && <Menu narrow />}
+      {isClient && isNarrow && <Menu narrow setScrollable={setScrollable} />}
       <div className={styles["site-name"]}>
         <Link href="/">浅野学園打越祭</Link>
       </div>
