@@ -34,11 +34,11 @@ jobs:
               git commit --allow-empty -m "empty commit"
               git push
             fi
-            gh pr create --draft --base main --assignee ${{ github.event.sender.login }} --title "${{ github.event.ref }}" --body "close $ISSUE" --project $PROJECT
+            gh pr create --draft --base main --assignee ${{ github.event.sender.login }} --title "${{ github.event.ref }}" --body "close $ISSUE"
           else
             if git diff --quiet origin/develop; then
               git commit --allow-empty -m "empty commit"
               git push
             fi
-            gh pr create --draft --base develop --assignee ${{ github.event.sender.login }} --title "${{ github.event.ref }}" --body "close $ISSUE" --project $PROJECT
+            gh pr create --draft --base develop --assignee ${{ github.event.sender.login }} --title "${{ github.event.ref }}" --body "close $ISSUE"
           fi

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# SPDX-License-Identifier: MIT
+
+. "$(dirname "$0")/_/husky.sh"
+
+if [ "$3" -ne 1 ]; then
+  exit 0
+fi
+
+die(){
+  _die_STATUS=$?
+  echo "$1" >&2
+  exit $_die_STATUS
+}
+
+if ! (type gh > /dev/null 2>&1); then
+  exit 0
+fi
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+case "${BRANCH}" in
+  HEAD|main|develop) exit 0;
+esac
+
+ISSUES=$(echo "${BRANCH}" | grep -oE '#[0-9]+' | tr -d '#' | sort -nr || :)
+
+if [ -z "$ISSUES" ]; then
+  die "💡 issue が連携されていません。"
+fi
+
+for issue in $ISSUES; do
+  gh --repo uchikoshi-fes/uchikoshi-fes.jp-2022 issue view "$issue" || die "🚨 issue $issue を見つけられませんでした。[uchikoshi-fes/uchikoshi-fes.jp-2022]"
+done
