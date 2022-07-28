@@ -27,23 +27,26 @@ describe("Layout", () => {
     render(<Header />);
     expect(screen.getByText(/打越祭/)).toBeInTheDocument();
   });
-  test("PC レイアウト時メニューの最低限のテキスト", () => {
+  const testMenuLinks = () =>
+    [
+      { href: "/", name: "トップ" },
+      { href: "/sponsors", name: "スポンサー" },
+      { href: "/orgs/", name: "団体一覧" },
+      { href: "/map/", name: "校内マップ" },
+      { href: "/events/", name: "イベント" },
+      { href: "/articles/", name: "記事" },
+    ].forEach(({ href, name }) => {
+      const link = screen.getByText(name);
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute("href", href);
+    });
+  test("PC レイアウト時メニューの最低限のリンク", () => {
     render(<Menu />);
-    expect(screen.getByText(/トップ/)).toBeInTheDocument();
-    expect(screen.getByText(/スポンサー/)).toBeInTheDocument();
-    expect(screen.getByText(/団体一覧/)).toBeInTheDocument();
-    expect(screen.getByText(/校内マップ/)).toBeInTheDocument();
-    expect(screen.getByText(/イベント/)).toBeInTheDocument();
-    expect(screen.getByText(/記事/)).toBeInTheDocument();
+    testMenuLinks();
   });
-  test("モバイルレイアウト時メニューの最低限のテキスト", () => {
+  test("モバイル時メニューの最低限のリンク", () => {
     render(<Menu narrow setScrollable={jest.fn()} />);
-    expect(screen.getByText(/トップ/)).toBeInTheDocument();
-    expect(screen.getByText(/スポンサー/)).toBeInTheDocument();
-    expect(screen.getByText(/団体一覧/)).toBeInTheDocument();
-    expect(screen.getByText(/校内マップ/)).toBeInTheDocument();
-    expect(screen.getByText(/イベント/)).toBeInTheDocument();
-    expect(screen.getByText(/記事/)).toBeInTheDocument();
+    testMenuLinks();
   });
   test("開催概要の最低限のテキスト", () => {
     render(<Outline />);
