@@ -12,10 +12,21 @@ import Menu from "@/components/layout/menu";
 import Outline from "@/components/layout/outline";
 import Footer from "@/components/layout/footer";
 
-jest.mock("next/router");
-Router.useRouter = jest.fn(() => ({
-  pathname: "/",
-  events: { on: jest.fn() },
+jest.mock("next/router", () => ({
+  useRouter: () => ({
+    query: {},
+    pathname: "/",
+    asPath: "/",
+    route: "/",
+    reload: jest.fn(),
+    back: jest.fn(),
+    push: jest.fn(),
+    prefetch: jest.fn(),
+    beforePopState: jest.fn(),
+    events: { on: jest.fn() },
+    isFallback: false,
+    staticContext: {},
+  }),
 }));
 
 describe("Layout", () => {
