@@ -1,0 +1,116 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins" as *;
+@use "./header.module" as header;
+
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+.container {
+  position: relative;
+  height: 100%;
+}
+
+// narrow
+
+.hamburger {
+  height: 100%;
+  aspect-ratio: 1;
+  border: 0;
+  padding: header.$content-padding;
+  line-height: header.$content-height;
+  font-size: header.$content-height;
+}
+
+.narrow-open-background {
+  position: fixed;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.narrow {
+  position: fixed;
+  height: 100vh;
+  height: 100dvh;
+  width: 320px;
+  top: 0;
+  left: -320px;
+  z-index: 3;
+  background-color: #f8f4e6;
+  transition: left 0.4s $easeOutQuart;
+}
+
+.narrow-open {
+  left: 0;
+  box-shadow: 0 0 4px 2px rgba(64, 64, 64, 0.25);
+}
+
+.narrow-closebutton {
+  height: header.$header-height;
+  width: 100%;
+  border: 0;
+  padding-left: header.$content-padding * 2;
+  line-height: header.$content-height;
+  font-size: header.$content-height;
+  text-align: left;
+}
+
+.narrow-content {
+  height: calc(100% - header.$header-height);
+
+  > ul {
+    height: 100%;
+    margin: 0;
+    padding: 48px 0;
+    overflow-y: auto;
+
+    > li > a {
+      width: 100%;
+      padding: 1em 2em;
+      display: block;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+}
+
+.narrow-active > a {
+  border-right: 8px solid;
+  color: #ce5242;
+}
+
+// wide
+
+.wide {
+  height: 100%;
+  max-width: calc(100vw - 320px);
+  overflow-x: auto;
+
+  > ul {
+    height: 100%;
+    margin: 0;
+    padding: 0 header.$content-padding;
+    display: flex;
+    @include non-break;
+
+    > li {
+      height: 100%;
+      margin: 0;
+      padding: 0 (header.$content-padding / 2);
+
+      > a {
+        height: 100%;
+        padding: header.$content-padding (header.$content-padding / 2);
+        display: block;
+      }
+    }
+  }
+}
+
+.wide-active > a {
+  border-bottom: (header.$content-padding / 2) solid;
+  color: #ce5242;
+}
