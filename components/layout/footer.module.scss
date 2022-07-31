@@ -6,13 +6,17 @@
   @include outermost-container;
   background-color: #474b42;
   color: #f8f4e6;
+}
 
-  > div {
-    margin: 1em 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    align-content: space-around;
-    gap: 0.5em;
-  }
+.sns {
+  margin: 1em 0;
+}
+
+.others {
+  margin: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  align-content: space-around;
+  gap: 0.5em;
 }
