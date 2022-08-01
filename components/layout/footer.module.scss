@@ -12,6 +12,23 @@
   margin: 1em 0;
 }
 
+.menu {
+  margin: 1em 0;
+}
+
+.menu-title {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+.menu-links {
+  margin: 0.5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  alifn-content: space-around;
+  gap: 0.5em;
+}
+
 .others {
   margin: 1em 0;
   display: flex;
