@@ -71,8 +71,24 @@ describe("Layout", () => {
       screen.getByText(/〒221-0012 神奈川県横浜市神奈川区子安台１丁目３-１/)
     ).toBeInTheDocument();
   });
-  test("フッタの最低限のテキスト", () => {
+  test("フッタの最低限のテキストとリンク", () => {
     render(<Footer />);
     expect(screen.getByText(/© 2022 浅野学園生徒会/)).toBeInTheDocument();
+    [
+      { href: "/", name: "トップ" },
+      { href: "/sponsors", name: "スポンサー" },
+      { href: "/orgs/", name: "団体一覧" },
+      { href: "/map/", name: "校内マップ" },
+      { href: "/events/", name: "イベント" },
+      { href: "/articles/", name: "記事" },
+      { href: "/contact", name: "お問い合わせ" },
+      { href: "/privacy", name: "プライバシーポリシー" },
+      { href: "/licenses", name: "ライセンス" },
+      { href: "https://www.asano.ed.jp/", name: /浅野学園公式サイト/ },
+    ].forEach(({ href, name }) => {
+      const link = screen.getByText(name);
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute("href", href);
+    });
   });
 });
