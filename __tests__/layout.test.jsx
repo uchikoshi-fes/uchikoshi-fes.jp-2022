@@ -84,7 +84,7 @@ describe("Layout", () => {
       { href: "/contact", name: "お問い合わせ" },
       { href: "/privacy", name: "プライバシーポリシー" },
       { href: "/licenses", name: "ライセンス" },
-      { href: "https://www.asano.ed.jp/", name: "浅野学園公式サイト" },
+      { href: "https://www.asano.ed.jp/", name: /浅野学園公式サイト/ },
     ].forEach(({ href, name }) => {
       const link = screen.getByText(name);
       expect(link).toBeInTheDocument();
