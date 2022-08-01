@@ -6,6 +6,7 @@ import Link from "@/components/base/link";
 import styles from "./footer.module.scss";
 // config
 import PACKAGE from "@/package";
+import { links as menuLinks } from "@/components/layout/menu";
 
 const Sns = () => {
   return (
@@ -33,6 +34,21 @@ const Sns = () => {
   );
 };
 
+const Menu = () => {
+  return (
+    <nav className={styles.menu}>
+      <h2 className={styles["menu-title"]}>目次</h2>
+      <ul className={styles["menu-links"]}>
+        {menuLinks.map(({ href, name }) => (
+          <li key={href}>
+            <Link href={href}>{name}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
 const Others = () => {
   return (
     <div className={styles.others}>
@@ -50,6 +66,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Sns />
+      <Menu />
       <Others />
     </footer>
   );

@@ -11,16 +11,16 @@ import styles from "./menu.module.scss";
 // icons
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const MenuLinks = ({ narrow }) => {
-  const links = [
-    { href: "/", name: "トップ" },
-    { href: "/sponsors", name: "スポンサー" },
-    { href: "/orgs/", name: "団体一覧" },
-    { href: "/map/", name: "校内マップ" },
-    { href: "/events/", name: "イベント" },
-    { href: "/articles/", name: "記事" },
-  ];
+const links = [
+  { href: "/", name: "トップ" },
+  { href: "/sponsors", name: "スポンサー" },
+  { href: "/orgs/", name: "団体一覧" },
+  { href: "/map/", name: "校内マップ" },
+  { href: "/events/", name: "イベント" },
+  { href: "/articles/", name: "記事" },
+];
 
+const MenuLinks = ({ narrow }) => {
   const router = Router.useRouter();
 
   return (
@@ -100,4 +100,5 @@ const Menu = ({ narrow, setScrollable }) => {
   );
 };
 
+export { links };
 export default Menu;
