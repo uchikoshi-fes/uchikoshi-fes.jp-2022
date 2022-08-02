@@ -8,7 +8,9 @@ const Link = ({ href, children, ...props }) => {
   if (href.startsWith("/") || href === "")
     return (
       <NextLink href={href}>
-        <a {...props}>{children}</a>
+        <a href={href} {...props}>
+          {children}
+        </a>
       </NextLink>
     );
   // external link
