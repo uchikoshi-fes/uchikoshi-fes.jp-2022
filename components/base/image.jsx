@@ -4,6 +4,8 @@ const customLoader = ({ src }) => {
   return src;
 };
 
-export default function Image(props) {
+const Image = ({ ...props }) => {
   return <NextImage {...props} loader={customLoader} />;
-}
+};
+
+export default Image;

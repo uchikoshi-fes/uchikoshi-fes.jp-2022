@@ -2,9 +2,7 @@
 
 import NextLink from "next/link";
 
-const Link = (props) => {
-  const { href, children } = props;
-
+const Link = ({ href, children, ...props }) => {
   // internal link
   if (href.startsWith("/") || href === "")
     return (
