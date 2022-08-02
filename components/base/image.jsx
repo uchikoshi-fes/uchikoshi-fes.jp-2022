@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+
+// components
 import NextImage from "next/image";
 
 const customLoader = ({ src }) => {

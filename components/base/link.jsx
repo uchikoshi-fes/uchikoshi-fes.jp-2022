@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 
+// components
 import NextLink from "next/link";
 
 const Link = ({ href, children, ...props }) => {
