@@ -15,6 +15,7 @@ const customJestConfig = {
     "^@/package": "<rootDir>/package",
     "^@/next-seo.config": "<rootDir>/next-seo.config",
     // Handle module aliases (this will be automatically configured for you soon)
+    "^@/hooks/(.*)$": "<rootDir>/hooks/$1",
     "^@/components/(.*)$": "<rootDir>/components/$1",
     "^@/pages/(.*)$": "<rootDir>/pages/$1",
   },
