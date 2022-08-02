@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-// next
+// hooks
 import { useRouter } from "next/router";
 // components
 import { DefaultSeo } from "next-seo";
