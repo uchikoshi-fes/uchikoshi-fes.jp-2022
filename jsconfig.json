@@ -4,6 +4,7 @@
     "paths": {
       "@/package": ["package"],
       "@/next-seo.config": ["next-seo.config"],
+      "@/hooks/*": ["hooks/*"],
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"]
     }
