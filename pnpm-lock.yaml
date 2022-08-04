@@ -39,7 +39,7 @@ specifiers:
   textlint-rule-ja-no-inappropriate-words: 2.0.0
   textlint-rule-ja-no-mixed-period: 2.1.1
   textlint-rule-ja-unnatural-alphabet: 2.0.1
-  textlint-rule-no-doubled-conjunction: 2.0.2
+  textlint-rule-no-doubled-conjunction: 2.0.3
   textlint-rule-no-doubled-conjunctive-particle-ga: 2.0.4
   textlint-rule-no-doubled-joshi: 4.0.1
   textlint-rule-no-dropping-the-ra: 3.0.0
@@ -91,7 +91,7 @@ devDependencies:
   textlint-rule-ja-no-inappropriate-words: 2.0.0
   textlint-rule-ja-no-mixed-period: 2.1.1_lnfvi5qkchyz6ykl3uzwwdbugi
   textlint-rule-ja-unnatural-alphabet: 2.0.1
-  textlint-rule-no-doubled-conjunction: 2.0.2_lnfvi5qkchyz6ykl3uzwwdbugi
+  textlint-rule-no-doubled-conjunction: 2.0.3_lnfvi5qkchyz6ykl3uzwwdbugi
   textlint-rule-no-doubled-conjunctive-particle-ga: 2.0.4_lnfvi5qkchyz6ykl3uzwwdbugi
   textlint-rule-no-doubled-joshi: 4.0.1_lnfvi5qkchyz6ykl3uzwwdbugi
   textlint-rule-no-dropping-the-ra: 3.0.0_lnfvi5qkchyz6ykl3uzwwdbugi
@@ -6819,8 +6819,8 @@ packages:
       regx: 1.0.4
     dev: true
 
-  /textlint-rule-no-doubled-conjunction/2.0.2_lnfvi5qkchyz6ykl3uzwwdbugi:
-    resolution: {integrity: sha512-w9J2Tp8hpvlfQj9UXEgXMuUZ8lqWFcLl6y1FQDD8SadXOsKyJl4+U9h/YH3ruTi2/F+vCksY8vAytnck/ApSWg==}
+  /textlint-rule-no-doubled-conjunction/2.0.3_lnfvi5qkchyz6ykl3uzwwdbugi:
+    resolution: {integrity: sha512-sM7hEndsiyzr0nxldGHwdXHmWwqNSCdtyYOyZ4rQYYhMR2gropvcQSJI6FULs0k74v1qRqC5UIsFqB+Sw4hzkA==}
     dependencies:
       kuromojin: 3.0.0
       sentence-splitter: 3.2.2
