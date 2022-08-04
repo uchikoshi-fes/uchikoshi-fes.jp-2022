@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 
+// react
+import React from "react";
 // hooks
 import { useMediaQuery } from "react-responsive";
 import useClient from "@/hooks/client";
