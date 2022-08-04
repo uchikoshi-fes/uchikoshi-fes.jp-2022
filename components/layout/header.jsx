@@ -4,19 +4,12 @@
 import React from "react";
 // hooks
 import { useMediaQuery } from "react-responsive";
+import useClient from "@/hooks/client";
 // components
 import Link from "@/components/base/link";
 import Menu from "./menu";
 // styles
 import styles from "./header.module.scss";
-
-const useClient = () => {
-  const [isClient, setIsClient] = React.useState(false);
-  React.useEffect(() => {
-    if (typeof window !== "undefined") setIsClient(true);
-  }, []);
-  return isClient;
-};
 
 const Header = ({ setScrollable }) => {
   const isClient = useClient();

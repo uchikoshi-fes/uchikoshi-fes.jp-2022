@@ -2,6 +2,8 @@
 
 // react
 import React from "react";
+// hooks
+import useClient from "@/hooks/client";
 // styles
 import styles from "./countdown.module.scss";
 
@@ -10,24 +12,22 @@ export const FES_START = FES_FIRST_DAY + 9 * 3600000; // 09:00
 export const FES_END = FES_FIRST_DAY + 86400000 + 18 * 3600000; // 18:00
 
 const Remaining = () => {
-  const [now, setNow] = React.useState();
+  const isClient = useClient();
+  const [now, setNow] = React.useState(Date.now());
   React.useEffect(() => {
-    setInterval(() => setNow(Date.now()), 1000);
-  }, []);
+    if (isClient) setInterval(() => setNow(Date.now()), 1000);
+  }, [isClient]);
 
-  if (now === undefined) {
-    setTimeout(() => setNow(Date.now()), 0);
-    return <></>;
-  } else
-    return (
-      <>
-        あと
-        <span className={styles.number}>
-          {1 + Math.floor((FES_FIRST_DAY - now) / 86400000)}
-        </span>
-        日！
-      </>
-    );
+  if (!isClient) return <></>;
+  return (
+    <>
+      あと
+      <span className={styles.number}>
+        {1 + Math.floor((FES_FIRST_DAY - now) / 86400000)}
+      </span>
+      日！
+    </>
+  );
 };
 
 const Countdown = () => {
