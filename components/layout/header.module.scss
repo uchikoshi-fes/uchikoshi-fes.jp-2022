@@ -7,7 +7,7 @@ $content-height: $header-height / 2;
 $content-padding: ($header-height - $content-height) / 2;
 
 .header {
-  position: fixed;
+  position: sticky;
   height: $header-height;
   width: 100%;
   top: 0;
