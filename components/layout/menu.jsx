@@ -51,7 +51,7 @@ const NarrowMenu = ({ setScrollable }) => {
 
   React.useEffect(() => {
     setScrollable(!open);
-  }, [open]);
+  }, [setScrollable, open]);
   router.events.on("routeChangeStart", () => setOpen(false));
 
   return (
