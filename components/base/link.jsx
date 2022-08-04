@@ -2,6 +2,11 @@
 
 // components
 import NextLink from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// styles
+import styles from "./link.module.scss";
+// icons
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const Link = ({ href, children, ...props }) => {
   // internal link
@@ -18,6 +23,10 @@ const Link = ({ href, children, ...props }) => {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
         {children}
+        <FontAwesomeIcon
+          icon={faArrowUpRightFromSquare}
+          className={styles["external-icon"]}
+        />
       </a>
     );
 };
