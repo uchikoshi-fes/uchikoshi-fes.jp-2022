@@ -29,6 +29,12 @@ jest.mock("next/router", () => ({
   }),
 }));
 
+window.IntersectionObserver = jest.fn(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn(),
+}));
+
 describe("Layout", () => {
   test("レイアウトの子要素", () => {
     render(<Layout>[LEYOUT-CHILDREN]</Layout>);
