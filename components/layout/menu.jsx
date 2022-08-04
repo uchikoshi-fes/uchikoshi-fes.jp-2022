@@ -2,6 +2,7 @@
 
 // react
 import React from "react";
+// next
 import Router from "next/router";
 // components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -2,6 +2,7 @@
 
 // react
 import React from "react";
+// hooks
 import { useMediaQuery } from "react-responsive";
 // components
 import Link from "@/components/base/link";
