@@ -49,6 +49,12 @@ const NarrowMenu = ({ setScrollable }) => {
   const [open, setOpen] = React.useState(false);
   const router = Router.useRouter();
 
+  /*
+   * setScrollable を変更することはないだろうが、
+   * 依存性的に変更されることも考慮すべきである。
+   * そして setScrollable が変更された際は呼び直すのが適切と考えられる。
+   * 以上のことから依存配列に setScrollable を追加する。
+   */
   React.useEffect(() => {
     setScrollable(!open);
   }, [setScrollable, open]);
