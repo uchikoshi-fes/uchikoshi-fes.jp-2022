@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-// next
+// react
 import React from "react";
 // styles
 import styles from "./countdown.module.scss";

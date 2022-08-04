@@ -1,21 +1,21 @@
 // SPDX-License-Identifier: MIT
 
 // components
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NextLink from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // styles
 import styles from "./link.module.scss";
 // icons
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
-const Link = (props) => {
-  const { href, children } = props;
-
+const Link = ({ href, children, ...props }) => {
   // internal link
   if (href.startsWith("/") || href === "")
     return (
       <NextLink href={href}>
-        <a {...props}>{children}</a>
+        <a href={href} {...props}>
+          {children}
+        </a>
       </NextLink>
     );
   // external link
