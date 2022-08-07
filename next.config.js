@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: MIT
 
-const withPlugins = require("next-compose-plugins");
-
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -11,17 +9,19 @@ const nextConfig = {
   },
 };
 
-const plugins = [];
-
-plugins.push([
-  require("@next/mdx")({
-    extension: /\.mdx?$/,
-    options: {
-      remarkPlugins: [],
-      rehypePlugins: [],
-      // If you use `MDXProvider`, uncomment the following line.
-      // providerImportSource: "@mdx-js/react",
-    },
-  }),
-]);
-module.exports = withPlugins(plugins, nextConfig);
+module.exports = () => {
+  const plugins = [
+    require("@next/mdx")({
+      extension: /\.mdx?$/,
+      options: {
+        remarkPlugins: [],
+        rehypePlugins: [],
+        // If you use `MDXProvider`, uncomment the following line.
+        // providerImportSource: "@mdx-js/react",
+      },
+    }),
+  ];
+  return plugins.reduce((acc, plugin) => plugin(acc), {
+    ...nextConfig,
+  });
+};
