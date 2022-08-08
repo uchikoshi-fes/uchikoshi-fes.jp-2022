@@ -12,8 +12,7 @@
   > div {
     width: 100%;
     margin: 0 1em;
-    font-size: min(4vw, 3rem);
-    font-size: min(4dvw, 3rem);
+    font-size: max(1em, 3vw);
     text-align: center;
   }
 }
@@ -25,7 +24,7 @@
 .number {
   margin: 0 0.05em;
   padding: 0 0.05em;
-  font-size: 5em;
+  font-size: max(4em, 16vw);
   line-height: 100%;
   background: linear-gradient(
     to bottom,

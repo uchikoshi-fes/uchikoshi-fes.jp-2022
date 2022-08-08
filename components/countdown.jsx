@@ -76,7 +76,7 @@ const Countdown = () => {
         {!isClient ? (
           <>(読込中...)</>
         ) : now < FES_START ? (
-          <Remaining now={now + 86400000} />
+          <Remaining now={now} />
         ) : (
           <>文化祭始まったよ！</>
         )}
