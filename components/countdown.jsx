@@ -7,9 +7,22 @@ import useClient from "@/hooks/client";
 // styles
 import styles from "./countdown.module.scss";
 
-const FES_FIRST_DAY = 1663426800000; // 2022/09/18
-const FES_START = FES_FIRST_DAY + 9 * 3600000; // 09:00
-const FES_END = FES_FIRST_DAY + 86400000 + 18 * 3600000; // 18:00
+const TZ = 9 * 3600000;
+
+const FES_TIMES = [
+  // 2022/09/18 9:00~18:00
+  {
+    name: "文化祭１日目",
+    start: Date.UTC(2022, 8, 18, 9, 0) - TZ,
+    end: Date.UTC(2022, 8, 18, 18, 0) - TZ,
+  },
+  // 2022/09/19 9:00~18:00
+  {
+    name: "文化祭２日目",
+    start: Date.UTC(2022, 8, 19, 9, 0) - TZ,
+    end: Date.UTC(2022, 8, 19, 18, 0) - TZ,
+  },
+];
 
 const padZero = (padded) => padded.toString().padStart(2, "0");
 
@@ -22,37 +35,44 @@ const Counter = ({ unit, children }) => {
   );
 };
 
-const Remaining = ({ now }) => {
+const Remaining = ({ start, now }) => {
   const remaining = {
-    // 残り日数だけは開始日の 00:00 を基準にして切り上げる
-    days: Math.ceil((FES_FIRST_DAY - now) / 86400000),
-    hours: Math.floor((FES_START - now) / 3600000),
-    minutes: Math.floor((FES_START - now) / 60000),
-    seconds: Math.floor((FES_START - now) / 1000),
+    hours: Math.floor((start - now) / 3600000),
+    minutes: Math.floor((start - now) / 60000),
+    seconds: Math.floor((start - now) / 1000),
   };
 
-  return (
-    <>
-      <div className={styles.left}>文化祭開幕まで、</div>
-      あと
-      {remaining.hours > 100 ? (
-        <Counter unit="日">{remaining.days}</Counter>
-      ) : remaining.minutes > 100 ? (
-        <>
-          <Counter unit="時間">{padZero(remaining.hours)}</Counter>
-          <Counter unit="分">{padZero(remaining.minutes % 60)}</Counter>
-        </>
-      ) : remaining.seconds > 100 ? (
-        <>
-          <Counter unit="分">{padZero(remaining.minutes)}</Counter>
-          <Counter unit="秒">{padZero(remaining.seconds % 60)}</Counter>
-        </>
-      ) : (
-        <Counter unit="秒">{padZero(remaining.seconds)}</Counter>
-      )}
-      ！
-    </>
-  );
+  // 残り 100 時間以内でない場合は日数
+  if (remaining.hours >= 100) {
+    return (
+      <Counter unit="日">
+        {Math.ceil((new Date(start).setHours(0, 0, 0, 0) - now) / 86400000)}
+      </Counter>
+    );
+  }
+
+  // 残り 100 分以内でない場合は時間と分
+  if (remaining.minutes >= 100) {
+    return (
+      <>
+        <Counter unit="時間">{padZero(remaining.hours)}</Counter>
+        <Counter unit="分">{padZero(remaining.minutes % 60)}</Counter>
+      </>
+    );
+  }
+
+  // 残り 100 秒以内でない場合は時間と分と秒
+  if (remaining.seconds >= 100) {
+    return (
+      <>
+        <Counter unit="分">{padZero(remaining.minutes)}</Counter>
+        <Counter unit="秒">{padZero(remaining.seconds % 60)}</Counter>
+      </>
+    );
+  }
+
+  // 残り 100 秒以内の場合は秒
+  return <Counter unit="秒">{padZero(remaining.seconds)}</Counter>;
 };
 
 const Countdown = () => {
@@ -62,7 +82,7 @@ const Countdown = () => {
   React.useEffect(() => {
     clearInterval(intervalId);
     if (!isClient) return;
-    // TODO: FES_START に近づいたら感覚を狭くする
+    // TODO: FES_1ST_START に近づいたら感覚を狭くする
     setIntervalId(
       setInterval(() => {
         setNow(Date.now());
@@ -75,15 +95,27 @@ const Countdown = () => {
       <div>
         {!isClient ? (
           <>(読込中...)</>
-        ) : now < FES_START ? (
-          <Remaining now={now} />
         ) : (
-          <>文化祭始まったよ！</>
+          (() => {
+            const fes = FES_TIMES.find((fes) => now <= fes.end);
+            // 文化祭終了後
+            if (!fes) return <>2022 年度の文化祭は終了しました</>;
+            // 文化祭開催中
+            if (now > fes.start) return <>{fes.name}開催中</>;
+            // 文化祭開始前
+            return (
+              <>
+                <div className={styles.left}>{fes.name}開幕まで</div>
+                あと
+                <Remaining start={fes.start} now={now} />！
+              </>
+            );
+          })()
         )}
       </div>
     </div>
   );
 };
 
-export { FES_FIRST_DAY, FES_START, FES_END };
+export { FES_TIMES };
 export default Countdown;
