@@ -80,21 +80,26 @@ const Countdown = () => {
   const [now, setNow] = React.useState(Date.now());
   const [intervalMs, setIntervalMs] = React.useState(1000);
   const [intervalId, setIntervalId] = React.useState();
-  React.useEffect(() => {
-    clearInterval(intervalId);
-    if (!isClient) return;
-    setIntervalId(
-      setInterval(() => {
-        setNow(Date.now());
-        // 残りが 100 秒以内になったら 250ms で更新、それ以外は 1000ms で更新
-        if (FES_TIMES.some((time) => time.start - now < 100000)) {
-          if (intervalMs > 250) setIntervalMs(250);
-        } else {
-          if (intervalMs > 1000) setIntervalMs(1000);
-        }
-      }, intervalMs)
-    );
-  }, [isClient, intervalMs]);
+  React.useEffect(
+    () => {
+      clearInterval(intervalId);
+      if (!isClient) return;
+      setIntervalId(
+        setInterval(() => {
+          setNow(Date.now());
+          // 残りが 100 秒以内になったら 250ms で更新、それ以外は 1000ms で更新
+          if (FES_TIMES.some((time) => time.start - now < 100000)) {
+            if (intervalMs > 250) setIntervalMs(250);
+          } else {
+            if (intervalMs > 1000) setIntervalMs(1000);
+          }
+        }, intervalMs)
+      );
+    },
+    // intervalId と now が変わっても更新する必要はないので、警告を出さない
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [isClient, intervalMs]
+  );
 
   return (
     <div className={styles.countdown}>
