@@ -78,17 +78,23 @@ const Remaining = ({ start, now }) => {
 const Countdown = () => {
   const isClient = useClient();
   const [now, setNow] = React.useState(Date.now());
+  const [intervalMs, setIntervalMs] = React.useState(1000);
   const [intervalId, setIntervalId] = React.useState();
   React.useEffect(() => {
     clearInterval(intervalId);
     if (!isClient) return;
-    // TODO: FES_1ST_START に近づいたら感覚を狭くする
     setIntervalId(
       setInterval(() => {
         setNow(Date.now());
-      }, 10)
+        // 残りが 100 秒以内になったら 250ms で更新、それ以外は 1000ms で更新
+        if (FES_TIMES.some((time) => time.start - now < 100000)) {
+          if (intervalMs > 250) setIntervalMs(250);
+        } else {
+          if (intervalMs > 1000) setIntervalMs(1000);
+        }
+      }, intervalMs)
     );
-  }, [isClient]);
+  }, [isClient, intervalMs]);
 
   return (
     <div className={styles.countdown}>
