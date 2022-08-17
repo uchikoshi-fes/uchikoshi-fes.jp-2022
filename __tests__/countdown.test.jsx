@@ -6,6 +6,11 @@ import "@testing-library/jest-dom";
 // components
 import Countdown from "@/components/countdown";
 
+// Date.prototype.setHours のタイムゾーンを +9 に固定
+Date.prototype.setHours = jest.fn(function setHours(hoursValue, ...minutes) {
+  return this.setUTCHours(hoursValue - 9, ...minutes);
+});
+
 const testRemaining = (
   {
     year = 2022,
