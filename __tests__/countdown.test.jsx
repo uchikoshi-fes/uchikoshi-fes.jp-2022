@@ -224,6 +224,112 @@ describe("Countdown", () => {
     ]);
   });
 
+  describe("文化祭２日目開催前", () => {
+    // 文化祭１日目終了直後
+    testRemaining({ month: 9, day: 18, hour: 18, minute: 0, second: 1 }, [
+      { type: "text", text: /文化祭２日目開幕まで/ },
+      { type: "counter", unit: "時間", number: "14" },
+      { type: "counter", unit: "分", number: "59" },
+    ]);
+
+    // 9 時間前付近
+    testRemaining({ month: 9, day: 18, hour: 23, minute: 59, second: 59 }, [
+      { type: "text", text: /文化祭２日目開幕まで/ },
+      { type: "counter", unit: "時間", number: "09" },
+      { type: "counter", unit: "分", number: "00" },
+    ]);
+    testRemaining({ month: 9, day: 19, hour: 0, minute: 0, second: 1 }, [
+      { type: "text", text: /文化祭２日目開幕まで/ },
+      { type: "counter", unit: "時間", number: "08" },
+      { type: "counter", unit: "分", number: "59" },
+    ]);
+
+    // 100 分前付近
+    testRemaining(
+      { month: 9, day: 19, hour: 7, minute: 19, second: 59, millisecond: 500 },
+      [
+        { type: "text", text: /文化祭２日目開幕まで/ },
+        { type: "counter", unit: "時間", number: "01" },
+        { type: "counter", unit: "分", number: "40" },
+      ]
+    );
+    testRemaining(
+      { month: 9, day: 19, hour: 7, minute: 20, second: 0, millisecond: 500 },
+      [
+        { type: "text", text: /文化祭２日目開幕まで/ },
+        { type: "counter", unit: "分", number: "99" },
+        { type: "counter", unit: "秒", number: "59" },
+      ]
+    );
+
+    // 50 分前付近
+    testRemaining(
+      { month: 9, day: 19, hour: 8, minute: 9, second: 59, millisecond: 500 },
+      [
+        { type: "text", text: /文化祭２日目開幕まで/ },
+        { type: "counter", unit: "分", number: "50" },
+        { type: "counter", unit: "秒", number: "00" },
+      ]
+    );
+    testRemaining(
+      { month: 9, day: 19, hour: 8, minute: 10, second: 0, millisecond: 500 },
+      [
+        { type: "text", text: /文化祭２日目開幕まで/ },
+        { type: "counter", unit: "分", number: "49" },
+        { type: "counter", unit: "秒", number: "59" },
+      ]
+    );
+
+    // 100 秒前付近
+    testRemaining(
+      { month: 9, day: 19, hour: 8, minute: 58, second: 19, millisecond: 500 },
+      [
+        { type: "text", text: /文化祭２日目開幕まで/ },
+        { type: "counter", unit: "分", number: "01" },
+        { type: "counter", unit: "秒", number: "40" },
+      ]
+    );
+    testRemaining(
+      { month: 9, day: 19, hour: 8, minute: 58, second: 20, millisecond: 500 },
+      [
+        { type: "text", text: /文化祭２日目開幕まで/ },
+        { type: "counter", unit: "秒", number: "99" },
+      ]
+    );
+
+    // 50 秒前付近
+    testRemaining(
+      { month: 9, day: 19, hour: 8, minute: 59, second: 9, millisecond: 500 },
+      [
+        { type: "text", text: /文化祭２日目開幕まで/ },
+        { type: "counter", unit: "秒", number: "50" },
+      ]
+    );
+    testRemaining(
+      { month: 9, day: 19, hour: 8, minute: 59, second: 10, millisecond: 500 },
+      [
+        { type: "text", text: /文化祭２日目開幕まで/ },
+        { type: "counter", unit: "秒", number: "49" },
+      ]
+    );
+
+    // 開催直前
+    testRemaining(
+      { month: 9, day: 19, hour: 8, minute: 59, second: 58, millisecond: 500 },
+      [
+        { type: "text", text: /文化祭２日目開幕まで/ },
+        { type: "counter", unit: "秒", number: "01" },
+      ]
+    );
+    testRemaining(
+      { month: 9, day: 19, hour: 8, minute: 59, second: 59, millisecond: 500 },
+      [
+        { type: "text", text: /文化祭２日目開幕まで/ },
+        { type: "counter", unit: "秒", number: "00" },
+      ]
+    );
+  });
+
   describe("文化祭２日目開催中", () => {
     testRemaining({ month: 9, day: 19, hour: 9, minute: 0, second: 1 }, [
       { type: "text", text: /文化祭２日目/ },
