@@ -208,4 +208,34 @@ describe("Countdown", () => {
       ]
     );
   });
+
+  describe("文化祭１日目開催中", () => {
+    testRemaining({ month: 9, day: 18, hour: 9, minute: 0, second: 1 }, [
+      { type: "text", text: /文化祭１日目/ },
+      { type: "text", text: /開催中/ },
+    ]);
+    testRemaining({ month: 9, day: 18, hour: 12, minute: 0, second: 0 }, [
+      { type: "text", text: /文化祭１日目/ },
+      { type: "text", text: /開催中/ },
+    ]);
+    testRemaining({ month: 9, day: 18, hour: 17, minute: 59, second: 59 }, [
+      { type: "text", text: /文化祭１日目/ },
+      { type: "text", text: /開催中/ },
+    ]);
+  });
+
+  describe("文化祭２日目開催中", () => {
+    testRemaining({ month: 9, day: 19, hour: 9, minute: 0, second: 1 }, [
+      { type: "text", text: /文化祭２日目/ },
+      { type: "text", text: /開催中/ },
+    ]);
+    testRemaining({ month: 9, day: 19, hour: 12, minute: 0, second: 0 }, [
+      { type: "text", text: /文化祭２日目/ },
+      { type: "text", text: /開催中/ },
+    ]);
+    testRemaining({ month: 9, day: 19, hour: 17, minute: 59, second: 59 }, [
+      { type: "text", text: /文化祭２日目/ },
+      { type: "text", text: /開催中/ },
+    ]);
+  });
 });
