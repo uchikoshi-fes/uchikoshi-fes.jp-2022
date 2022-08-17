@@ -29,7 +29,9 @@ const padZero = (padded) => padded.toString().padStart(2, "0");
 const Counter = ({ unit, children }) => {
   return (
     <>
-      <span className={styles.number}>{children}</span>
+      <span className={styles.number} data-testid={`counter-${unit}`}>
+        {children}
+      </span>
       {unit}
     </>
   );
