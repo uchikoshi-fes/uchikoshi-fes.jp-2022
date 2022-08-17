@@ -348,51 +348,63 @@ describe("Countdown", () => {
   describe("文化祭終了後", () => {
     testRemaining({ month: 9, day: 19, hour: 18, minute: 0, second: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ month: 9, day: 20 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ month: 10, day: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ month: 11, day: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ month: 12, day: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ year: 2023, month: 1, day: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ year: 2023, month: 4, day: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ year: 2023, month: 9, day: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ year: 2023, month: 10, day: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ year: 2024, month: 4, day: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ year: 2030, month: 4, day: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
     testRemaining({ year: 2040, month: 4, day: 1 }, [
       { type: "text", text: /2022 年度の文化祭は/ },
-      { type: "text", text: /終了しました/ },
+      { type: "text", text: /終了/ },
+      { type: "text", text: /しました/ },
     ]);
   });
 });

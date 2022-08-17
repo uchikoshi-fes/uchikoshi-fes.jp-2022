@@ -29,7 +29,7 @@ const padZero = (padded) => padded.toString().padStart(2, "0");
 const Counter = ({ unit, children }) => {
   return (
     <>
-      <span className={styles.number} data-testid={`counter-${unit}`}>
+      <span className={styles.enhance} data-testid={`counter-${unit}`}>
         {children}
       </span>
       {unit}
@@ -105,27 +105,42 @@ const Countdown = () => {
 
   return (
     <div className={styles.countdown}>
-      <div>
-        {!isClient ? (
-          <>(読込中...)</>
-        ) : (
-          (() => {
-            const fes = FES_TIMES.find((fes) => now <= fes.end);
-            // 文化祭終了後
-            if (!fes) return <>2022 年度の文化祭は終了しました</>;
-            // 文化祭開催中
-            if (now > fes.start) return <>{fes.name}開催中</>;
-            // 文化祭開始前
+      {!isClient ? (
+        <>(読込中...)</>
+      ) : (
+        (() => {
+          const fes = FES_TIMES.find((fes) => now <= fes.end);
+          // 文化祭終了後
+          if (!fes) {
             return (
-              <>
-                <div className={styles.left}>{fes.name}開幕まで</div>
-                あと
-                <Remaining start={fes.start} now={now} />！
-              </>
+              <div>
+                2022 年度の文化祭は
+                <br />
+                <span className={styles.enhance}>終了</span>
+                <br />
+                しました
+              </div>
             );
-          })()
-        )}
-      </div>
+          }
+          // 文化祭開催中
+          if (now > fes.start) {
+            return (
+              <div>
+                <div className={styles.left}>{fes.name}</div>
+                <span className={styles.enhance}>開催中</span>
+              </div>
+            );
+          }
+          // 文化祭開始前
+          return (
+            <div>
+              <div className={styles.left}>{fes.name}開幕まで</div>
+              あと
+              <Remaining start={fes.start} now={now} />！
+            </div>
+          );
+        })()
+      )}
     </div>
   );
 };
