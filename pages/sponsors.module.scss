@@ -1,0 +1,7 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins" as *;
+
+.sponsors {
+  @include outermost-container;
+}
