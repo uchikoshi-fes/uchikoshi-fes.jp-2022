@@ -6,6 +6,11 @@
   position: relative;
   @include outermost-container;
   overflow: hidden;
+
+  > article {
+    border-top: 2px solid;
+    padding: 1em 0;
+  }
 }
 
 .map {
