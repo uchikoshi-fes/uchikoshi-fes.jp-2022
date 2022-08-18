@@ -28,7 +28,7 @@
 }
 
 .top-text {
-  background-color: rgba(#fbfaf5, 0.5);
+  background-color: rgba($color-base, 0.5);
 
   > div {
     padding: header.$header-height 2rem 0;
