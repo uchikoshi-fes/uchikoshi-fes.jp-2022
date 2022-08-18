@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MIT
+
+// colors
+// 基本的に色は [和色大辞典](https://www.colordic.org/w) にある色を使います。
+
+// primary colors
+$color-main: #333631; // 黒緑
+$color-base: #fbfaf5; // 生成り色
+$color-accent: #b7282e; // 茜色
+
+// secondary colors
+$color-accent-light: rgba($color-accent, 0.667);
+$color-accent-lighter: rgba($color-accent, 0.333);
+$color-black-light: rgba(black, 0.667);
+$color-black-lighter: rgba(black, 0.333);
+
+// aliases
+$color-marker: $color-accent-lighter;
+$color-shadow: $color-black-lighter;
