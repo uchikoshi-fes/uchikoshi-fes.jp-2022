@@ -1,15 +1,17 @@
 // SPDX-License-Identifier: MIT
 
 @use "@/components/mixins" as *;
+@use "@/components/variables" as *;
 @use "@/components/layout/header.module" as header;
 
 .top {
+  position: relative;
   height: calc(95vh - 5vw);
   height: calc(95dvh - 5dvw);
   width: 100%;
   margin-top: 0 - header.$header-height;
-  position: relative;
-  background-color: #b9d08b;
+  padding-top: header.$header-height;
+  background-color: rgba($color-accent, 0.2);
 
   > div {
     position: absolute;

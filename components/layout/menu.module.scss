@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 @use "@/components/mixins" as *;
+@use "@/components/variables" as *;
 @use "./header.module" as header;
 
 $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -39,13 +40,13 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
   top: 0;
   left: -320px;
   z-index: 3;
-  background-color: #f8f4e6;
+  background-color: $color-base;
   transition: left 0.4s $easeOutQuart;
 }
 
 .narrow-open {
   left: 0;
-  box-shadow: 0 0 4px 2px rgba(64, 64, 64, 0.25);
+  box-shadow: 0 0 4px 2px $color-shadow;
 }
 
 .narrow-closebutton {
@@ -79,7 +80,7 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 .narrow-active > a {
   border-right: 8px solid;
-  color: #ce5242;
+  color: $color-accent;
 }
 
 // wide
@@ -112,5 +113,5 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 .wide-active > a {
   border-bottom: (header.$content-padding / 2) solid;
-  color: #ce5242;
+  color: $color-accent;
 }

@@ -14,7 +14,7 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const links = [
   { href: "/", name: "トップ" },
-  { href: "/sponsors", name: "スポンサー" },
+  //{ href: "/sponsors", name: "スポンサー" },
   { href: "/orgs/", name: "団体一覧" },
   { href: "/map/", name: "校内マップ" },
   { href: "/events/", name: "イベント" },
