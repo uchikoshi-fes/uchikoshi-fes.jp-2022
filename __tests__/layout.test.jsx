@@ -47,7 +47,7 @@ describe("Layout", () => {
   const testMenuLinks = () =>
     [
       { href: "/", name: "トップ" },
-      { href: "/sponsors", name: "スポンサー" },
+      //{ href: "/sponsors", name: "スポンサー" },
       { href: "/orgs/", name: "団体一覧" },
       { href: "/map/", name: "校内マップ" },
       { href: "/events/", name: "イベント" },
@@ -82,7 +82,7 @@ describe("Layout", () => {
     expect(screen.getByText(/© 2022 浅野学園生徒会/)).toBeInTheDocument();
     [
       { href: "/", name: "トップ" },
-      { href: "/sponsors", name: "スポンサー" },
+      //{ href: "/sponsors", name: "スポンサー" },
       { href: "/orgs/", name: "団体一覧" },
       { href: "/map/", name: "校内マップ" },
       { href: "/events/", name: "イベント" },
