@@ -31,7 +31,7 @@ const Index = () => {
             <p className={styles.description}>
               浅野学園2022年度文化祭
               <br />
-              鋭意制作中！
+              スローガン：雲外蒼天
             </p>
           </div>
         </div>
