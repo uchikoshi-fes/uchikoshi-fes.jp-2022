@@ -12,20 +12,25 @@ const Sns = () => {
   return (
     <div className={styles.sns}>
       <div className={styles["sns-line"]}>
-        <Link href="https://lin.ee/fKKlJHd">公式 LINE を友だち追加</Link>
+        <Link href="https://lin.ee/fKKlJHd" noIcon>
+          公式 LINE を友だち追加
+        </Link>
       </div>
       <div className={styles["sns-youtube"]}>
-        <Link href="https://youtube.com/channel/UCIfMXvUdm7UiFLBmV8ZmQcA">
+        <Link
+          href="https://youtube.com/channel/UCIfMXvUdm7UiFLBmV8ZmQcA"
+          noIcon
+        >
           公式 Youtube をチャンネル登録
         </Link>
       </div>
       <div className={styles["sns-twitter"]}>
-        <Link href="https://twitter.com/uchikoshifes">
+        <Link href="https://twitter.com/uchikoshifes" noIcon>
           公式 Twitter をフォロー
         </Link>
       </div>
       <div className={styles["sns-instagram"]}>
-        <Link href="https://instagram.com/uchikoshifes">
+        <Link href="https://instagram.com/uchikoshifes" noIcon>
           公式 Instagram をフォロー
         </Link>
       </div>
