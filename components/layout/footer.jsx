@@ -1,9 +1,17 @@
 // SPDX-License-Identifier: MIT
 
 // components
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "@/components/base/link";
 // styles
 import styles from "./footer.module.scss";
+// icons
+import {
+  faLine,
+  faYoutube,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 // config
 import PACKAGE from "@/package";
 import { links as menuLinks } from "@/components/layout/menu";
@@ -13,6 +21,9 @@ const Sns = () => {
     <div className={styles.sns}>
       <div className={styles["sns-line"]}>
         <Link href="https://lin.ee/fKKlJHd" noIcon>
+          <span className={styles["sns-icon"]}>
+            <FontAwesomeIcon icon={faLine} />
+          </span>
           公式 LINE を友だち追加
         </Link>
       </div>
@@ -21,16 +32,25 @@ const Sns = () => {
           href="https://youtube.com/channel/UCIfMXvUdm7UiFLBmV8ZmQcA"
           noIcon
         >
+          <span className={styles["sns-icon"]}>
+            <FontAwesomeIcon icon={faYoutube} />
+          </span>
           公式 Youtube をチャンネル登録
         </Link>
       </div>
       <div className={styles["sns-twitter"]}>
         <Link href="https://twitter.com/uchikoshifes" noIcon>
+          <span className={styles["sns-icon"]}>
+            <FontAwesomeIcon icon={faTwitter} />
+          </span>
           公式 Twitter をフォロー
         </Link>
       </div>
       <div className={styles["sns-instagram"]}>
         <Link href="https://instagram.com/uchikoshifes" noIcon>
+          <span className={styles["sns-icon"]}>
+            <FontAwesomeIcon icon={faInstagram} />
+          </span>
           公式 Instagram をフォロー
         </Link>
       </div>
