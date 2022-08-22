@@ -1,12 +1,27 @@
 // SPDX-License-Identifier: MIT
 
 // components
+import { Timeline as TwitterTL } from "react-twitter-widgets";
 import Link from "@/components/base/link";
 // styles
 import styles from "./footer.module.scss";
 // config
 import PACKAGE from "@/package";
 import { links as menuLinks } from "@/components/layout/menu";
+
+const Tweets = ({ tweetLimit }) => {
+  return (
+    <article className={styles["tweets"]}>
+      <h2>公式 Twitter の最新ツイート</h2>
+      <div className={styles["twitter-tl"]}>
+        <TwitterTL
+          dataSource={{ sourceType: "profile", screenName: "uchikoshifes" }}
+          options={{ tweetLimit }}
+        />
+      </div>
+    </article>
+  );
+};
 
 const Sns = () => {
   return (
@@ -64,11 +79,14 @@ const Others = () => {
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <Sns />
-      <Menu />
-      <Others />
-    </footer>
+    <>
+      <Tweets />
+      <footer className={styles.footer}>
+        <Sns />
+        <Menu />
+        <Others />
+      </footer>
+    </>
   );
 };
 

@@ -3,6 +3,16 @@
 @use "@/components/mixins" as *;
 @use "@/components/variables" as *;
 
+.tweets {
+  @include outermost-container;
+  margin: 1rem 0;
+}
+
+.twitter-tl {
+  height: 560px;
+  overflow: auto;
+}
+
 .footer {
   @include outermost-container;
   // フッターの色は反転させる
