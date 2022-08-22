@@ -35,7 +35,7 @@ const Sns = () => {
           <span className={styles["sns-icon"]}>
             <FontAwesomeIcon icon={faYoutube} />
           </span>
-          公式 Youtube をチャンネル登録
+          公式 YouTube をチャンネル登録
         </Link>
       </div>
       <div className={styles["sns-twitter"]}>
