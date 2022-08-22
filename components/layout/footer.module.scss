@@ -11,7 +11,36 @@
 }
 
 .sns {
+  width: 20em;
+  max-width: 100%;
   margin: 2em 0;
+
+  > div {
+    margin: 1em 0;
+    color: white;
+
+    > a {
+      display: block;
+      padding: 0.5em;
+      text-decoration: none;
+    }
+  }
+}
+
+.sns-line {
+  background-color: $color-line;
+}
+
+.sns-youtube {
+  background-color: $color-youtube;
+}
+
+.sns-twitter {
+  background-color: $color-twitter;
+}
+
+.sns-instagram {
+  background-color: $color-instagram;
 }
 
 .menu {

@@ -11,25 +11,24 @@ import { links as menuLinks } from "@/components/layout/menu";
 const Sns = () => {
   return (
     <div className={styles.sns}>
-      {/*<div>TODO: LINE のボタン</div>*/}
-      <div>
-        <Link
-          href="https://twitter.com/uchikoshifes?ref_src=twsrc%5Etfw"
-          className="twitter-follow-button"
-          data-size="large"
-          data-lang="ja"
-          data-show-count="false"
-        >
-          @uchikoshifesさんをフォロー
-        </Link>
-        <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charSet="utf-8"
-        ></script>
+      <div className={styles["sns-line"]}>
+        <Link href="https://lin.ee/fKKlJHd">公式 LINE を友だち追加</Link>
       </div>
-      {/*<div>TODO: Instagram のボタン</div>*/}
-      {/*<div>TODO: YouTube のボタン</div>*/}
+      <div className={styles["sns-youtube"]}>
+        <Link href="https://youtube.com/channel/UCIfMXvUdm7UiFLBmV8ZmQcA">
+          公式 Youtube をチャンネル登録
+        </Link>
+      </div>
+      <div className={styles["sns-twitter"]}>
+        <Link href="https://twitter.com/uchikoshifes">
+          公式 Twitter をフォロー
+        </Link>
+      </div>
+      <div className={styles["sns-instagram"]}>
+        <Link href="https://instagram.com/uchikoshifes">
+          公式 Instagram をフォロー
+        </Link>
+      </div>
     </div>
   );
 };
