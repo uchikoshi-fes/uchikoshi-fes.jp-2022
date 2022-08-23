@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 // components
+import { InView } from "react-intersection-observer";
 import { Timeline as TwitterTL } from "react-twitter-widgets";
 import Link from "@/components/base/link";
 // styles
@@ -13,12 +14,21 @@ const Tweets = ({ tweetLimit }) => {
   return (
     <article className={styles["tweets"]}>
       <h2>公式 Twitter の最新ツイート</h2>
-      <div className={styles["twitter-tl"]}>
-        <TwitterTL
-          dataSource={{ sourceType: "profile", screenName: "uchikoshifes" }}
-          options={{ tweetLimit }}
-        />
-      </div>
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <div className={styles["twitter-tl"]} ref={ref}>
+            {inView && (
+              <TwitterTL
+                dataSource={{
+                  sourceType: "profile",
+                  screenName: "uchikoshifes",
+                }}
+                options={{ tweetLimit }}
+              />
+            )}
+          </div>
+        )}
+      </InView>
     </article>
   );
 };
