@@ -1,4 +1,24 @@
 // SPDX-License-Identifier: MIT
 
+.schedule {
+  width: 100%;
+
+  > tbody {
+    // 準備中のため
+    text-align: center;
+    opacity: 0.8;
+  }
+}
+
 .asano-radio {
+  border: 4px solid;
+  padding: 1rem;
+}
+
+.youtube-container {
+  margin: 1rem 0;
+}
+
+.schedule-container {
+  margin: 1rem 0;
 }
