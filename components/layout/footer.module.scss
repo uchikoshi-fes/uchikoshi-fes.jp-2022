@@ -9,8 +9,20 @@
 }
 
 .twitter-tl {
+  position: relative;
   height: 560px;
   overflow: auto;
+
+  &::before {
+    content: "(読込中...)";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+  }
 }
 
 .footer {
