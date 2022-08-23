@@ -81,6 +81,19 @@ describe("Layout", () => {
     render(<Footer />);
     expect(screen.getByText(/© 2022 浅野学園生徒会/)).toBeInTheDocument();
     [
+      { href: "https://lin.ee/fKKlJHd", name: "公式 LINE を友だち追加" },
+      {
+        href: "https://youtube.com/channel/UCIfMXvUdm7UiFLBmV8ZmQcA",
+        name: "公式 YouTube をチャンネル登録",
+      },
+      {
+        href: "https://twitter.com/uchikoshifes",
+        name: "公式 Twitter をフォロー",
+      },
+      {
+        href: "https://instagram.com/uchikoshifes",
+        name: "公式 Instagram をフォロー",
+      },
       { href: "/", name: "トップ" },
       //{ href: "/sponsors", name: "スポンサー" },
       { href: "/orgs/", name: "団体一覧" },
