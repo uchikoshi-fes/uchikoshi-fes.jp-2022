@@ -3,6 +3,8 @@
 @use "@/components/mixins" as *;
 @use "@/components/variables" as *;
 
+$easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
+
 .footer {
   @include outermost-container;
   // フッターの色は反転させる
@@ -11,7 +13,65 @@
 }
 
 .sns {
+  width: 20em;
+  max-width: 100%;
   margin: 2em 0;
+
+  > div {
+    margin: 1em 0;
+    color: white;
+
+    > a {
+      display: block;
+      padding: 0.5em 0.75em;
+      text-decoration: none;
+      transition: 0.3s $easeOutSine;
+
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+}
+
+.sns-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  text-align: center;
+}
+
+.sns-line {
+  background-color: $color-line;
+
+  > a:hover {
+    color: $color-line;
+  }
+}
+
+.sns-youtube {
+  background-color: $color-youtube;
+
+  > a:hover {
+    color: $color-youtube;
+  }
+}
+
+.sns-twitter {
+  background-color: $color-twitter;
+
+  > a:hover {
+    color: $color-twitter;
+  }
+}
+
+.sns-instagram {
+  background-color: $color-instagram;
+
+  > a:hover {
+    color: $color-instagram;
+  }
 }
 
 .menu {
