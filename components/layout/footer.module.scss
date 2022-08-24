@@ -5,6 +5,28 @@
 
 $easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
 
+.tweets {
+  @include outermost-container;
+  margin: 1rem 0;
+}
+
+.twitter-tl {
+  position: relative;
+  height: 560px;
+  overflow: auto;
+
+  &::before {
+    content: "(読込中...)";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+  }
+}
+
 .footer {
   @include outermost-container;
   // フッターの色は反転させる

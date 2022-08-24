@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 
 // components
+import { InView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Timeline as TwitterTL } from "react-twitter-widgets";
 import Link from "@/components/base/link";
 // styles
 import styles from "./footer.module.scss";
@@ -15,6 +17,29 @@ import {
 // config
 import PACKAGE from "@/package";
 import { links as menuLinks } from "@/components/layout/menu";
+
+const Tweets = ({ tweetLimit }) => {
+  return (
+    <article className={styles["tweets"]}>
+      <h2>公式 Twitter の最新ツイート</h2>
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <div className={styles["twitter-tl"]} ref={ref}>
+            {inView && (
+              <TwitterTL
+                dataSource={{
+                  sourceType: "profile",
+                  screenName: "uchikoshifes",
+                }}
+                options={{ tweetLimit }}
+              />
+            )}
+          </div>
+        )}
+      </InView>
+    </article>
+  );
+};
 
 const Sns = () => {
   return (
@@ -88,11 +113,14 @@ const Others = () => {
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <Sns />
-      <Menu />
-      <Others />
-    </footer>
+    <>
+      <Tweets />
+      <footer className={styles.footer}>
+        <Sns />
+        <Menu />
+        <Others />
+      </footer>
+    </>
   );
 };
 
