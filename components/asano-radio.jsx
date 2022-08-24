@@ -7,14 +7,16 @@ import Link from "@/components/base/link";
 // styles
 import styles from "./asano-radio.module.scss";
 
-// 番組表データ: https://docs.google.com/spreadsheets/d/1RG_a3mT8D_l1l8yx_eqrapjpBuBapCX5S_D9c5lM2Bg/edit?usp=drivesdk
+// 番組表データは以下の Google Spreadsheet を元に作成しています。
+// https://docs.google.com/spreadsheets/d/1RG_a3mT8D_l1l8yx_eqrapjpBuBapCX5S_D9c5lM2Bg/edit?usp=drivesdk
+// 付属の Apps Script で JSON に変換できますが、表記ブレなどの細かな修正は手動でする必要があります。
 const SCHEDULE = [
   {
     title: "day 1",
     date: "2022/09/18",
     programs: [
       {
-        title: "OP",
+        title: "オープニング",
         type: "special",
         start: "09:45",
         end: "10:00",
@@ -65,12 +67,6 @@ const SCHEDULE = [
         title: "田園調布学園",
         type: "special",
         start: "12:00",
-        end: "12:15",
-      },
-      {
-        title: "田園調布学園",
-        type: "special",
-        start: "12:15",
         end: "12:30",
       },
       {
@@ -122,7 +118,7 @@ const SCHEDULE = [
         end: "15:20",
       },
       {
-        title: "ED",
+        title: "エンディング",
         type: "special",
         start: "15:20",
         end: "15:35",
@@ -134,7 +130,7 @@ const SCHEDULE = [
     date: "2022/09/19",
     programs: [
       {
-        title: "OP",
+        title: "オープニング",
         type: "special",
         start: "09:45",
         end: "10:00",
@@ -164,7 +160,7 @@ const SCHEDULE = [
         end: "11:05",
       },
       {
-        title: "浅野学園吹奏楽部",
+        title: "吹奏楽部",
         type: "guests",
         start: "11:10",
         end: "11:25",
@@ -185,12 +181,6 @@ const SCHEDULE = [
         title: "田園調布学園",
         type: "special",
         start: "12:00",
-        end: "12:15",
-      },
-      {
-        title: "田園調布学園",
-        type: "special",
-        start: "12:15",
         end: "12:30",
       },
       {
@@ -215,24 +205,12 @@ const SCHEDULE = [
         title: "ディベート（仮称）",
         type: "special",
         start: "13:25",
-        end: "13:40",
-      },
-      {
-        title: "ディベート（仮称）",
-        type: "special",
-        start: "13:40",
         end: "13:55",
       },
       {
         title: "フリートークwith文実幹部",
         type: "free",
         start: "14:00",
-        end: "14:30",
-      },
-      {
-        title: "フリートークwith文実幹部",
-        type: "free",
-        start: "14:30",
         end: "15:00",
       },
       {
@@ -242,7 +220,7 @@ const SCHEDULE = [
         end: "15:20",
       },
       {
-        title: "ED",
+        title: "エンディング",
         type: "special",
         start: "15:20",
         end: "15:35",
@@ -268,7 +246,7 @@ const Schedule = () => {
           </thead>
           <tbody>
             {programs.map(({ title, type, start, end }) => (
-              <tr key={title}>
+              <tr key={`${title}-${start}`}>
                 <td>
                   {start} ~ {end}
                 </td>
