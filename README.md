@@ -43,7 +43,7 @@
 ## Version
 
 **Version:** 1.0.0 (いったんの正式リリース)  
-**Latest Update:** 2022/08/24
+**Latest Update:** 2022/08/25
 
 ## Feedback & Support
 
