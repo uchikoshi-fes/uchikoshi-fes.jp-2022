@@ -6,6 +6,11 @@
   position: relative;
   @include outermost-container;
   overflow: hidden;
+
+  > article {
+    border-top: 2px solid;
+    padding: 1em 0;
+  }
 }
 
 .map {
@@ -15,7 +20,7 @@
 
   @media screen and (min-width: 800px) {
     width: 100%;
-    margin: 1rem 0%;
+    margin: 1rem 0;
   }
 
   > iframe {

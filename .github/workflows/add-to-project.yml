@@ -1,0 +1,55 @@
+# SPDX-License-Identifier: MIT
+
+name: Add to project
+
+on:
+  pull_request_target:
+    types:
+      - opened
+  issues:
+    types:
+      - opened
+
+permissions:
+  issues: write
+  pull-requests: write
+  repository-projects: write
+
+jobs:
+  add-to-project:
+    name: Add to project
+    if: |
+      ! github.event.repository.fork
+    runs-on: ubuntu-20.04
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ISSUE: ${{ github.event.issue.node_id }}
+      PR: ${{ github.event.pull_request.node_id }}
+      PROJECT: "PRO_kwLOHN6Cbc4A3AnY"
+    steps:
+      - run: |
+          if [ -n "$ISSUE" ]; then
+            gh api graphql \
+              -F "target=$ISSUE" \
+              -F "projectId=$PROJECT" \
+              -f query='
+                mutation($target: ID!, $projectId: ID!) {
+                  updateIssue(input: {id: $target, projectIds: [$projectId]}) {
+                    issue {
+                      number
+                    }
+                  }
+                }'
+          else
+            gh api graphql \
+              -F "target=$PR" \
+              -F "projectId=$PROJECT" \
+              -f query='
+                mutation($target: ID!, $projectId: ID!) {
+                updatePullRequest(input: {pullRequestId: $target, projectIds: [$projectId]}) {
+                  pullRequest{
+                    number
+                  }
+                }
+              }'
+          fi

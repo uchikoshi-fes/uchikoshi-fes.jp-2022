@@ -3,12 +3,37 @@
 // test
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+// react
+import Router from "next/router";
 // components
 import Layout from "@/components/layout/layout";
 import Header from "@/components/layout/header";
 import Menu from "@/components/layout/menu";
 import Outline from "@/components/layout/outline";
 import Footer from "@/components/layout/footer";
+
+jest.mock("next/router", () => ({
+  useRouter: () => ({
+    query: {},
+    pathname: "/",
+    asPath: "/",
+    route: "/",
+    reload: jest.fn(),
+    back: jest.fn(),
+    push: jest.fn(),
+    prefetch: jest.fn(),
+    beforePopState: jest.fn(),
+    events: { on: jest.fn() },
+    isFallback: false,
+    staticContext: {},
+  }),
+}));
+
+window.IntersectionObserver = jest.fn(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn(),
+}));
 
 describe("Layout", () => {
   test("レイアウトの子要素", () => {
@@ -19,9 +44,26 @@ describe("Layout", () => {
     render(<Header />);
     expect(screen.getByText(/打越祭/)).toBeInTheDocument();
   });
-  test("メニューの最低限のテキスト", () => {
+  const testMenuLinks = () =>
+    [
+      { href: "/", name: "トップ" },
+      //{ href: "/sponsors", name: "スポンサー" },
+      { href: "/orgs/", name: "団体一覧" },
+      { href: "/map/", name: "校内マップ" },
+      { href: "/events/", name: "イベント" },
+      { href: "/articles/", name: "記事" },
+    ].forEach(({ href, name }) => {
+      const link = screen.getByText(name);
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute("href", href);
+    });
+  test("PC レイアウト時メニューの最低限のリンク", () => {
     render(<Menu />);
-    // TODO: メニュー制作時にテスト追加
+    testMenuLinks();
+  });
+  test("モバイル時メニューの最低限のリンク", () => {
+    render(<Menu narrow setScrollable={jest.fn()} />);
+    testMenuLinks();
   });
   test("開催概要の最低限のテキスト", () => {
     render(<Outline />);
@@ -35,8 +77,37 @@ describe("Layout", () => {
       screen.getByText(/〒221-0012 神奈川県横浜市神奈川区子安台１丁目３-１/)
     ).toBeInTheDocument();
   });
-  test("フッタの最低限のテキスト", () => {
+  test("フッタの最低限のテキストとリンク", () => {
     render(<Footer />);
     expect(screen.getByText(/© 2022 浅野学園生徒会/)).toBeInTheDocument();
+    [
+      { href: "https://lin.ee/fKKlJHd", name: "公式 LINE を友だち追加" },
+      {
+        href: "https://youtube.com/channel/UCIfMXvUdm7UiFLBmV8ZmQcA",
+        name: "公式 YouTube をチャンネル登録",
+      },
+      {
+        href: "https://twitter.com/uchikoshifes",
+        name: "公式 Twitter をフォロー",
+      },
+      {
+        href: "https://instagram.com/uchikoshifes",
+        name: "公式 Instagram をフォロー",
+      },
+      { href: "/", name: "トップ" },
+      //{ href: "/sponsors", name: "スポンサー" },
+      { href: "/orgs/", name: "団体一覧" },
+      { href: "/map/", name: "校内マップ" },
+      { href: "/events/", name: "イベント" },
+      { href: "/articles/", name: "記事" },
+      { href: "/contact", name: "お問い合わせ" },
+      { href: "/privacy", name: "プライバシーポリシー" },
+      { href: "/licenses", name: "ライセンス" },
+      { href: "https://www.asano.ed.jp/", name: /浅野学園公式サイト/ },
+    ].forEach(({ href, name }) => {
+      const link = screen.getByText(name);
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute("href", href);
+    });
   });
 });

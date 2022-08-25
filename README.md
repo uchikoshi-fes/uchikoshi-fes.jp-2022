@@ -42,8 +42,8 @@
 
 ## Version
 
-**Version:** 0.2.1 (noindex になるバグを修整)  
-**Latest Update:** 2022/06/13
+**Version:** 1.0.0 (いったんの正式リリース)  
+**Latest Update:** 2022/08/25
 
 ## Feedback & Support
 

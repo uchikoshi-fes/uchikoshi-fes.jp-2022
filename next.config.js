@@ -1,11 +1,24 @@
 // SPDX-License-Identifier: MIT
 
 /** @type {import("next").NextConfig} */
-const nextConfig = {
+let config = {
   reactStrictMode: true,
+  pageExtensions: ["js", "jsx", "md", "mdx"],
   images: {
     loader: "custom",
   },
 };
 
-module.exports = nextConfig;
+config = require("@next/mdx")({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    // If you use `MDXProvider`, uncomment the following line.
+    // providerImportSource: "@mdx-js/react",
+  },
+})(config);
+
+console.log(config);
+
+module.exports = () => config;

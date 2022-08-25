@@ -4,6 +4,11 @@ name: Auto PR
 
 on: create
 
+permissions:
+  contents: write
+  pull-requests: write
+  repository-projects: write
+
 jobs:
   pr:
     if: github.event.ref_type == 'branch' && ! github.event.repository.fork
@@ -11,6 +16,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PROJECT: "uchikoshi-fes.jp-2022"
     steps:
       - uses: actions/checkout@v3
         with:

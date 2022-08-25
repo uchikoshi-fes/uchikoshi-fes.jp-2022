@@ -3,13 +3,17 @@
 name: Fix branch
 
 on:
-  pull_request:
+  pull_request_target:
     types:
       - opened
       - reopened
     branches:
       - "main"
       - "develop"
+
+permissions:
+  pull-requests: write
+
 jobs:
   change-base_branch:
     name: Change base branch

@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: MIT
+
+name: Close issues
+
+on:
+  pull_request_target:
+    types:
+      - closed
+    branches:
+      - "develop"
+
+permissions:
+  issues: write
+  pull-requests: read
+
+jobs:
+  close:
+    if: github.event.pull_request.merged
+    runs-on: ubuntu-20.04
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      PR_NUMBER: ${{ github.event.number }}
+    steps:
+      - name: Close issues
+        run: |
+          gh pr view $PR_NUMBER --json body --jq .body |
+          grep -oP --ignore-case '(^|\W)((close|resolve)(|s|d)|fix(|es|ed)) #[\d]+(?=\W|$)' |
+          grep -oP '#[\d]+' |
+          xargs -n1 gh issue close || true

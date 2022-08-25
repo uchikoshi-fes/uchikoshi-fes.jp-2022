@@ -1,22 +1,44 @@
 // SPDX-License-Identifier: MIT
 
 @use "@/components/mixins" as *;
+@use "@/components/variables" as *;
 @use "@/components/layout/header.module" as header;
 
 .top {
-  height: 100vh;
-  height: 100dvh;
+  position: relative;
+  height: calc(95vh - 5vw);
+  height: calc(95dvh - 5dvw);
   width: 100%;
-  padding-top: header.$header-height;
-  background-color: #b9d08b;
+  margin-top: 0 - header.$header-height;
+  background-color: rgba($color-accent, 0.2);
 
   > div {
+    position: absolute;
     height: 100%;
     width: 100%;
-    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.top-image {
+  object-fit: cover;
+  object-position: 40% 20%;
+  filter: blur(1px);
+}
+
+.top-text {
+  background-color: rgba($color-base, 0.5);
+
+  > div {
+    padding: header.$header-height 2rem 0;
+    height: 32rem;
+    max-height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
   }
 }
@@ -30,7 +52,7 @@
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 0;
   line-height: 1.5;
   font-size: 1.5rem;
   text-align: center;
