@@ -8,7 +8,7 @@ import styles from "./link.module.scss";
 // icons
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
-const Link = ({ href, children, ...props }) => {
+const Link = ({ href, noIcon = false, children, ...props }) => {
   // internal link
   if (href.startsWith("/") || href === "")
     return (
@@ -23,10 +23,12 @@ const Link = ({ href, children, ...props }) => {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
         {children}
-        <FontAwesomeIcon
-          icon={faArrowUpRightFromSquare}
-          className={styles["external-icon"]}
-        />
+        {!noIcon && (
+          <FontAwesomeIcon
+            icon={faArrowUpRightFromSquare}
+            className={styles["external-icon"]}
+          />
+        )}
       </a>
     );
 };

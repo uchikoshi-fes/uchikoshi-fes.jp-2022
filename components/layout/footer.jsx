@@ -1,35 +1,84 @@
 // SPDX-License-Identifier: MIT
 
 // components
+import { InView } from "react-intersection-observer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Timeline as TwitterTL } from "react-twitter-widgets";
 import Link from "@/components/base/link";
 // styles
 import styles from "./footer.module.scss";
+// icons
+import {
+  faLine,
+  faYoutube,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 // config
 import PACKAGE from "@/package";
 import { links as menuLinks } from "@/components/layout/menu";
 
+const Tweets = ({ tweetLimit }) => {
+  return (
+    <article className={styles["tweets"]}>
+      <h2>公式 Twitter の最新ツイート</h2>
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <div className={styles["twitter-tl"]} ref={ref}>
+            {inView && (
+              <TwitterTL
+                dataSource={{
+                  sourceType: "profile",
+                  screenName: "uchikoshifes",
+                }}
+                options={{ tweetLimit }}
+              />
+            )}
+          </div>
+        )}
+      </InView>
+    </article>
+  );
+};
+
 const Sns = () => {
   return (
     <div className={styles.sns}>
-      {/*<div>TODO: LINE のボタン</div>*/}
-      <div>
-        <Link
-          href="https://twitter.com/uchikoshifes?ref_src=twsrc%5Etfw"
-          className="twitter-follow-button"
-          data-size="large"
-          data-lang="ja"
-          data-show-count="false"
-        >
-          @uchikoshifesさんをフォロー
+      <div className={styles["sns-line"]}>
+        <Link href="https://lin.ee/fKKlJHd" noIcon>
+          <span className={styles["sns-icon"]}>
+            <FontAwesomeIcon icon={faLine} />
+          </span>
+          公式 LINE を友だち追加
         </Link>
-        <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charSet="utf-8"
-        ></script>
       </div>
-      {/*<div>TODO: Instagram のボタン</div>*/}
-      {/*<div>TODO: YouTube のボタン</div>*/}
+      <div className={styles["sns-youtube"]}>
+        <Link
+          href="https://youtube.com/channel/UCIfMXvUdm7UiFLBmV8ZmQcA"
+          noIcon
+        >
+          <span className={styles["sns-icon"]}>
+            <FontAwesomeIcon icon={faYoutube} />
+          </span>
+          公式 YouTube をチャンネル登録
+        </Link>
+      </div>
+      <div className={styles["sns-twitter"]}>
+        <Link href="https://twitter.com/uchikoshifes" noIcon>
+          <span className={styles["sns-icon"]}>
+            <FontAwesomeIcon icon={faTwitter} />
+          </span>
+          公式 Twitter をフォロー
+        </Link>
+      </div>
+      <div className={styles["sns-instagram"]}>
+        <Link href="https://instagram.com/uchikoshifes" noIcon>
+          <span className={styles["sns-icon"]}>
+            <FontAwesomeIcon icon={faInstagram} />
+          </span>
+          公式 Instagram をフォロー
+        </Link>
+      </div>
     </div>
   );
 };
@@ -64,11 +113,14 @@ const Others = () => {
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <Sns />
-      <Menu />
-      <Others />
-    </footer>
+    <>
+      <Tweets />
+      <footer className={styles.footer}>
+        <Sns />
+        <Menu />
+        <Others />
+      </footer>
+    </>
   );
 };
 
