@@ -34,6 +34,8 @@ const Top = () => {
           <p className={styles.description}>
             浅野学園2022年度文化祭
             <br />
+            9/18(日)・9/19(月)
+            <br />
             スローガン：雲外蒼天
           </p>
         </div>
