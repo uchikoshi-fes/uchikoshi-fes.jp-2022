@@ -6,8 +6,8 @@ import ReactPlayer from "react-player";
 import Image from "@/components/base/image";
 import Slogan from "@/components/slogan";
 import Countdown from "@/components/countdown";
-import AsanoRadio from "@/components/asano-radio";
 import PromotionVideos from "@/components/promotion-videos";
+import AsanoRadio from "@/components/asano-radio";
 // styles
 import styles from "./index.module.scss";
 
@@ -54,11 +54,11 @@ const Index = () => {
       <div className={styles["countdown-container"]}>
         <Countdown />
       </div>
-      <div className={styles["asano-radio-container"]}>
-        <AsanoRadio />
-      </div>
       <div className={styles["pv-container"]}>
         <PromotionVideos />
+      </div>
+      <div className={styles["asano-radio-container"]}>
+        <AsanoRadio />
       </div>
     </>
   );
