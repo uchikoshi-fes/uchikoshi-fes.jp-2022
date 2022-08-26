@@ -52,20 +52,18 @@
 
 .schedule-table {
   flex: 1;
+  table-layout: fixed;
 
   > thead {
     color: $color-base;
 
     > tr {
       height: 3rem;
+      width: 100%;
       background-color: $color-accent;
 
       &:first-child {
         font-size: 1.2em;
-
-        > th {
-          width: 100%;
-        }
       }
 
       &:nth-child(even) {
