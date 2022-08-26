@@ -317,10 +317,16 @@ const Schedule = () => {
                             className={styles["attached-icon"]}
                           />
                           {title instanceof Array
-                            ? title.flatMap((text, i) =>
-                                // eslint-disable-next-line react/jsx-key
-                                i === 0 ? text : [<wbr />, text]
-                              )
+                            ? title
+                                .flatMap((text, i) =>
+                                  // eslint-disable-next-line react/jsx-key
+                                  i === 0 ? text : [<wbr />, text]
+                                )
+                                .map((elem, i) => (
+                                  <React.Fragment key={`${i}-${elem}`}>
+                                    {elem}
+                                  </React.Fragment>
+                                ))
                             : title}
                         </td>
                       </tr>
