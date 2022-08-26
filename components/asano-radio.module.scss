@@ -77,6 +77,14 @@
       background-color: rgba($color-main, 0.1);
     }
 
+    &:not(:hover) > td:nth-child(2) > span:last-child > span:nth-child(2) {
+      display: none;
+    }
+
+    &:hover > td:nth-child(2) > span:last-child > span:nth-child(1) {
+      display: none;
+    }
+
     > td {
       height: 100%;
       padding: 0;

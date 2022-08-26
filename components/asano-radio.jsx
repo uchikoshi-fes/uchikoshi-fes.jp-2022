@@ -20,6 +20,7 @@ import {
 // https://docs.google.com/spreadsheets/d/1RG_a3mT8D_l1l8yx_eqrapjpBuBapCX5S_D9c5lM2Bg/edit?usp=drivesdk
 // 付属の Apps Script で JSON に変換できますが、表記ブレなどの細かな修正は手動でする必要があります。
 // title を Array にした場合、それぞれの string の間に <wbr /> が挿入されます。
+// hover でセルのホバー時に上書きされるタイトルを指定することができます。
 const SCHEDULE = [
   {
     title: "day 1",
@@ -39,6 +40,7 @@ const SCHEDULE = [
       },
       {
         title: "物理部展♯2022",
+        hover: "物理部展丼2022",
         type: "guests",
         start: "10:20",
         end: "10:35",
@@ -244,6 +246,16 @@ const timeStrToMinutes = (timeString) => {
   return parseInt(hour) * 60 + parseInt(minute);
 };
 
+const joinElement = (array, separator) =>
+  array
+    .flatMap((value, index) =>
+      // eslint-disable-next-line react/jsx-key
+      index === 0 ? [value] : [separator, value]
+    )
+    .map((elem, index) => (
+      <React.Fragment key={`${index}-${elem}`}>{elem}</React.Fragment>
+    ));
+
 const Schedule = () => {
   return (
     <article className={styles.schedule}>
@@ -274,7 +286,7 @@ const Schedule = () => {
                 </tr>
               </thead>
               <tbody>
-                {programs.map(({ title, type, start, end }, index) => {
+                {programs.map(({ title, hover, type, start, end }, index) => {
                   const prevMinutes = timeStrToMinutes(
                     programs[index - 1]?.end ?? start
                   );
@@ -316,18 +328,19 @@ const Schedule = () => {
                             }
                             className={styles["attached-icon"]}
                           />
-                          {title instanceof Array
-                            ? title
-                                .flatMap((text, i) =>
-                                  // eslint-disable-next-line react/jsx-key
-                                  i === 0 ? text : [<wbr />, text]
-                                )
-                                .map((elem, i) => (
-                                  <React.Fragment key={`${i}-${elem}`}>
-                                    {elem}
-                                  </React.Fragment>
-                                ))
-                            : title}
+                          <span>
+                            <span>
+                              {title instanceof Array
+                                ? joinElement(title, <wbr />)
+                                : title}
+                            </span>
+                            <span>
+                              {((hover) =>
+                                hover instanceof Array
+                                  ? joinElement(hover, <wbr />)
+                                  : hover)(hover ?? title)}
+                            </span>
+                          </span>
                         </td>
                       </tr>
                     </React.Fragment>
