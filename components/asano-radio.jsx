@@ -170,7 +170,7 @@ const Schedule = () => {
 
   return (
     <article className={styles.schedule}>
-      <h3>番組表</h3>
+      <h3>番組表 (暫定版)</h3>
       <div>
         <div>
           {SCHEDULE.map(({ title, date, programs }) => (
