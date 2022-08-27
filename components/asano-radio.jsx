@@ -5,7 +5,9 @@ import React from "react";
 // hooks
 import useClient from "@/hooks/client";
 // components
+import { InView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactPlayer from "react-player";
 import Link from "@/components/base/link";
 // styles
 import styles from "./asano-radio.module.scss";
@@ -34,6 +36,25 @@ const joinElement = (array, separator) =>
       {value}
     </React.Fragment>
   ));
+
+const Live = ({ channelId }) => {
+  return (
+    <InView triggerOnce>
+      {({ inView, ref }) => (
+        <div className={styles.live} ref={ref}>
+          {inView && (
+            <ReactPlayer
+              url={`https://www.youtube.com/embed/live_stream?channel=${channelId}`}
+              width="100%"
+              height="100%"
+              controls
+            />
+          )}
+        </div>
+      )}
+    </InView>
+  );
+};
 
 const ScheduleTable = ({ title, date, programs, now }) => {
   const isToday =
@@ -193,7 +214,7 @@ const AsanoRadio = () => {
     <article className={styles["asano-radio"]}>
       <h2>アサノラジオ局</h2>
       <div className={styles["youtube-container"]}>
-        {/* TODO: YouTube ライブ/アーカイブ動画が自動で埋め込まれるようにする */}
+        <Live channelId="UC8gGRNYCfqQ2vkPEGwFnr8w" />
       </div>
       <div className={styles["schedule-container"]}>
         <Schedule />
