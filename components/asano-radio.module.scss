@@ -3,6 +3,18 @@
 @use "@/components/mixins" as *;
 @use "@/components/variables" as *;
 
+@keyframes flash {
+  0% {
+    background-color: mix($color-base, $color-accent);
+  }
+  50% {
+    background-color: mix($color-base, $color-accent, 25%);
+  }
+  100% {
+    background-color: mix($color-base, $color-accent);
+  }
+}
+
 .attached-icon {
   margin-right: 0.5em;
 }
@@ -68,6 +80,23 @@
 
 .schedule-time {
   width: 5em;
+}
+
+.schedule-on-air > td {
+  position: relative;
+  color: $color-base;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: -1;
+    animation: flash 2s ease infinite;
+  }
 }
 
 .schedule-start {

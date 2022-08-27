@@ -2,6 +2,8 @@
 
 // react
 import React from "react";
+// hooks
+import useClient from "@/hooks/client";
 // components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "@/components/base/link";
@@ -18,6 +20,8 @@ import {
 // config
 import { SCHEDULE } from "./asano-radio-schedule.js";
 
+const TZ = 9 * 3600000;
+
 const timeStrToMinutes = (timeString) => {
   const [hour, minute] = timeString.split(":");
   return parseInt(hour) * 60 + parseInt(minute);
@@ -31,7 +35,15 @@ const joinElement = (array, separator) =>
     </React.Fragment>
   ));
 
-const ScheduleTable = ({ title, date, programs }) => {
+const ScheduleTable = ({ title, date, programs, now }) => {
+  const isToday =
+    new Date(now).toLocaleDateString("ja-JP", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }) === date;
+  const nowMinutes = ((now + TZ) / 60000) % 1440;
+
   return (
     <table className={styles["schedule-table"]}>
       <thead>
@@ -66,7 +78,15 @@ const ScheduleTable = ({ title, date, programs }) => {
             <React.Fragment key={`${title}-${start}`}>
               {startMinutes !== prevMinutes && (
                 // 休憩時間の空白
-                <tr>
+                <tr
+                  className={
+                    isToday &&
+                    prevMinutes <= nowMinutes &&
+                    startMinutes > nowMinutes
+                      ? styles["schedule-on-air"]
+                      : ""
+                  }
+                >
                   <td
                     colSpan="2"
                     style={{
@@ -76,6 +96,13 @@ const ScheduleTable = ({ title, date, programs }) => {
                 </tr>
               )}
               <tr
+                className={
+                  isToday &&
+                  startMinutes <= nowMinutes &&
+                  endMinutes > nowMinutes
+                    ? styles["schedule-on-air"]
+                    : ""
+                }
                 style={{
                   height: `${(endMinutes - startMinutes) / 5}em`,
                 }}
@@ -129,6 +156,18 @@ const ScheduleTable = ({ title, date, programs }) => {
 };
 
 const Schedule = () => {
+  const isClient = useClient();
+  const [now, setNow] = React.useState(Date.now());
+  const [intervalId, setIntervalId] = React.useState(null);
+  React.useEffect(() => {
+    clearInterval(intervalId);
+    if (!isClient) return;
+    intervalId = setInterval(() => {
+      setNow(Date.now());
+    }, 1000);
+    setIntervalId(intervalId);
+  }, [isClient]);
+
   return (
     <article className={styles.schedule}>
       <h3>番組表</h3>
@@ -139,6 +178,7 @@ const Schedule = () => {
               title={title}
               date={date}
               programs={programs}
+              now={now}
               key={title}
             />
           ))}
