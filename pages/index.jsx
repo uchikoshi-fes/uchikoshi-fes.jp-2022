@@ -2,6 +2,7 @@
 
 // components
 import NextSeo from "next-seo";
+import { BrowserView as DesktopView, MobileView } from "react-device-detect";
 import ReactPlayer from "react-player";
 import Image from "@/components/base/image";
 import Slogan from "@/components/slogan";
@@ -22,6 +23,31 @@ const Top = () => {
           className={styles["top-image"]}
         />
       </div>
+      <DesktopView>
+        <ReactPlayer
+          url="https://youtu.be/To5jTMIBWeA"
+          playing
+          loop
+          controls={false}
+          muted
+          width="100%"
+          height="100%"
+          config={{
+            youtube: {
+              playerVars: {
+                autoplay: 1,
+                controls: 0,
+                disablekb: 1,
+                fs: 0,
+                iv_load_policy: 3,
+                loop: 1,
+                modestbranding: 1,
+              },
+            },
+          }}
+          className={styles["top-video"]}
+        />
+      </DesktopView>
       <div className={styles["top-text"]}>
         <div>
           <h1 className={styles.title}>
