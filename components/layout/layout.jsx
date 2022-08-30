@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       className={`${styles.layout} ${scrollable ? "" : styles["stop-scroll"]}`}
     >
       <Header setScrollable={setScrollable} />
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
       <Outline />
       <Footer />
     </div>

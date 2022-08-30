@@ -11,29 +11,8 @@ const Index = () => {
   return (
     <>
       <div className={styles.top}>
-        <div>
-          <Image
-            src="/souichiro.jpeg"
-            alt=""
-            layout="fill"
-            className={styles["top-image"]}
-          />
-        </div>
-        <div className={styles["top-text"]}>
-          <div>
-            <h1 className={styles.title}>
-              第43回
-              <wbr />
-              打越祭
-              <wbr />
-              公式サイト
-            </h1>
-            <p className={styles.description}>
-              浅野学園2022年度文化祭
-              <br />
-              スローガン：雲外蒼天
-            </p>
-          </div>
+        <div className={styles["slogan-wrap"]}>
+          <div className={styles.slogan} />
         </div>
       </div>
       <div className={styles["countdown-container"]}>

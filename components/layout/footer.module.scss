@@ -42,12 +42,14 @@ $easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
   > div {
     margin: 1em 0;
     color: white;
+    border-radius: 100vh;
 
     > a {
       display: block;
       padding: 0.5em 0.75em;
       text-decoration: none;
       transition: 0.3s $easeOutSine;
+      border-radius: 100vh;
 
       &:hover {
         background-color: white;
@@ -109,7 +111,7 @@ $easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
   margin: 0.5em 0;
   display: flex;
   flex-wrap: wrap;
-  alifn-content: space-around;
+  align-content: space-around;
   gap: 0.5em;
 }
 

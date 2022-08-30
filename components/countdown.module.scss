@@ -5,27 +5,38 @@
 
 .countdown {
   width: 100%;
-  border: 4px solid $color-main;
-  aspect-ratio: 2 / 1;
   display: flex;
   align-items: center;
 
   > div {
     width: 100%;
-    margin: 0 1em;
     font-size: max(1em, 3vw);
     text-align: center;
   }
 }
 
 .left {
+  font-size: 35px;
   text-align: left;
+
+  @include mq("sm") {
+    font-size: 22px;
+  }
+}
+
+.small {
+  font-size: 35px;
+
+  @include mq("sm") {
+    font-size: 22px;
+  }
 }
 
 .enhance {
+  font-family: "Noto Sans JP", sans-serif;
   margin: 0 0.05em;
   padding: 0 0.05em;
-  font-size: max(4em, 16vw);
+  font-size: max(120px, 12vw);
   line-height: 100%;
   background: linear-gradient(
     to bottom,

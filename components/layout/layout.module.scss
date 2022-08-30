@@ -1,4 +1,9 @@
 // SPDX-License-Identifier: MIT
+@use "./header.module" as header;
+
+.main {
+  padding-top: header.$header-height;
+}
 
 .layout {
   position: absolute;
@@ -6,7 +11,6 @@
   width: 100%;
   top: 0;
   left: 0;
-  overflow: auto;
 }
 
 .stop-scroll {

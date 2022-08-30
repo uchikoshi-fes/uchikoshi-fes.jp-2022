@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 // hooks
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 // components
 import { DefaultSeo } from "next-seo";
@@ -23,6 +24,11 @@ config.autoAddCss = false;
 
 const UchikoshiFesApp = ({ Component, pageProps }) => {
   const router = useRouter();
+
+  useEffect(() => {
+    document.body.classList.remove("fixed");
+  });
+
   return (
     <>
       <DefaultSeo {...SEO(router)} />

@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 
+// react
+import React from "react";
 // components
 import NextLink from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +12,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const Link = ({ href, noIcon = false, children, ...props }) => {
   // internal link
-  if (href.startsWith("/") || href === "")
+  if (href.startsWith("/") || href === "") {
     return (
       <NextLink href={href}>
         <a href={href} {...props}>
@@ -18,8 +20,8 @@ const Link = ({ href, noIcon = false, children, ...props }) => {
         </a>
       </NextLink>
     );
-  // external link
-  else
+    // external link
+  } else {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
         {children}
@@ -31,6 +33,7 @@ const Link = ({ href, noIcon = false, children, ...props }) => {
         )}
       </a>
     );
+  }
 };
 
 export default Link;
