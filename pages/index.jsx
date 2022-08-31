@@ -5,6 +5,7 @@ import NextSeo from "next-seo";
 import ReactPlayer from "react-player";
 import Image from "@/components/base/image";
 import Slogan from "@/components/slogan";
+import Location from "@/components/location";
 import Countdown from "@/components/countdown";
 import PromotionVideos from "@/components/promotion-videos";
 import AsanoRadio from "@/components/asano-radio";
@@ -52,6 +53,9 @@ const Index = () => {
       </div>
       <div className={styles["slogan-container"]}>
         <Slogan />
+      </div>
+      <div className={styles["location-container"]}>
+        <Location />
       </div>
       <div className={styles["countdown-container"]}>
         <Countdown />

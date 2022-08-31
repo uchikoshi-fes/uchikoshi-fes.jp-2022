@@ -1,0 +1,24 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins" as *;
+
+.location {
+  > h2 {
+    @include non-break;
+  }
+}
+
+.google-maps-container {
+  width: 100vw;
+  margin: 1rem calc(50% - 50vw);
+  aspect-ratio: 4 / 3;
+
+  @media screen and (min-width: 800px) {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+.icon {
+  margin-right: 0.25em;
+}
