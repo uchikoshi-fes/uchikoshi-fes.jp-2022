@@ -114,7 +114,7 @@ const Others = () => {
 const Footer = () => {
   return (
     <>
-      <Tweets />
+      <Tweets tweetLimit={5} />
       <footer className={styles.footer}>
         <Sns />
         <Menu />
