@@ -179,15 +179,12 @@ const ScheduleTable = ({ title, date, programs, now }) => {
 const Schedule = () => {
   const isClient = useClient();
   const [now, setNow] = React.useState(Date.now());
-  const [intervalId, setIntervalId] = React.useState(null);
   React.useEffect(() => {
-    clearInterval(intervalId);
     if (!isClient) return;
-    setIntervalId(
-      setInterval(() => {
-        setNow(Date.now());
-      }, 1000)
-    );
+    const intervalId = setInterval(() => {
+      setNow(Date.now());
+    }, 1000);
+    return () => clearInterval(intervalId);
   }, [isClient]);
 
   return (
