@@ -8,12 +8,25 @@ import styles from "./link.module.scss";
 // icons
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
-const Link = ({ href, noIcon = false, children, ...props }) => {
+const resetScroll = () => {
+  window.scrollTo(0, 0);
+  for (const container of document.getElementsByClassName("page-container")) {
+    container.scrollTo(0, 0);
+  }
+};
+
+const Link = ({ href, scroll = true, noIcon = false, children, ...props }) => {
   // internal link
   if (href.startsWith("/") || href === "")
     return (
-      <NextLink href={href}>
-        <a href={href} {...props}>
+      <NextLink href={href} scroll={scroll}>
+        <a
+          href={href}
+          {...props}
+          onClick={() => {
+            if (scroll) resetScroll();
+          }}
+        >
           {children}
         </a>
       </NextLink>
