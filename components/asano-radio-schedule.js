@@ -144,7 +144,7 @@ export const SCHEDULE = [
         end: "10:35",
       },
       {
-        title: "Ikoth。",
+        title: "iKoth。",
         type: "guests",
         start: "10:35",
         end: "10:50",
