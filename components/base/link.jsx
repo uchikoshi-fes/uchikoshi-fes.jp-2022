@@ -28,14 +28,11 @@ const Link = ({ href, scroll = true, noIcon = false, children, ...props }) => {
           href={href}
           {...props}
           onClick={() => {
-            if (scroll) {
-              // ページがロードされたらスクロールをリセット
-              router.events.on(
-                "routeChangeComplete",
-                function onTransitioned() {
-                  resetScroll();
-                  router.events.off("routeChangeComplete", onTransitioned);
-                }
+            if (!scroll) {
+              // 一度だけページ遷移時のスクロールリセットを無効化する
+              router.events.off("routeChangeComplete", resetScroll);
+              router.events.once("routeChangeComplete", () =>
+                router.events.on("routeChangeComplete", resetScroll)
               );
             }
           }}
@@ -59,4 +56,5 @@ const Link = ({ href, scroll = true, noIcon = false, children, ...props }) => {
     );
 };
 
+export { resetScroll };
 export default Link;
