@@ -81,7 +81,7 @@
     "textlint-rule-no-nfd": "1.0.2",
     "textlint-rule-prefer-tari-tari": "1.0.3",
     "textlint-rule-preset-ja-spacing": "2.2.0",
-    "typescript": "4.7.4"
+    "typescript": "4.8.2"
   },
   "packageManager": "pnpm@7.9.5",
   "private": true
