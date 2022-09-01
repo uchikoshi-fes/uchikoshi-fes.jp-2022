@@ -183,10 +183,11 @@ const Schedule = () => {
   React.useEffect(() => {
     clearInterval(intervalId);
     if (!isClient) return;
-    intervalId = setInterval(() => {
-      setNow(Date.now());
-    }, 1000);
-    setIntervalId(intervalId);
+    setIntervalId(
+      setInterval(() => {
+        setNow(Date.now());
+      }, 1000)
+    );
   }, [isClient]);
 
   return (
