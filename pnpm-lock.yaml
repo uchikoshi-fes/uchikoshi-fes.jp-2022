@@ -29,7 +29,7 @@ specifiers:
   react-responsive: 9.0.0-beta.10
   react-twitter-widgets: 1.11.0
   sanitize.css: 13.0.0
-  sass: 1.54.2
+  sass: 1.54.8
   textlint: 12.2.1
   textlint-filter-rule-comments: 1.2.2
   textlint-plugin-jsx: 1.1.2
@@ -58,7 +58,7 @@ dependencies:
   '@fortawesome/react-fontawesome': 0.2.0_6j2wdqxompc6mcokhxkpep2gqu
   '@mdx-js/loader': 2.1.3_webpack@5.73.0
   '@next/mdx': 12.2.5_lxjbxddvrv4pp3tp7ggvwvqozm
-  next: 12.2.5_2ripihjq6lppj6jnclx3dq3pdi
+  next: 12.2.5_dhg45i3gnsriaqh36fr7b2fkfu
   next-seo: 5.5.0_3xcjr4wz26biff45sz3jtokgje
   npm-run-all: 4.1.5
   react: 18.2.0
@@ -67,7 +67,7 @@ dependencies:
   react-responsive: 9.0.0-beta.10_react@18.2.0
   react-twitter-widgets: 1.11.0_react@18.2.0
   sanitize.css: 13.0.0
-  sass: 1.54.2
+  sass: 1.54.8
 
 devDependencies:
   '@testing-library/jest-dom': 5.16.4
@@ -5260,12 +5260,12 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.2.5_2ripihjq6lppj6jnclx3dq3pdi
+      next: 12.2.5_dhg45i3gnsriaqh36fr7b2fkfu
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /next/12.2.5_2ripihjq6lppj6jnclx3dq3pdi:
+  /next/12.2.5_dhg45i3gnsriaqh36fr7b2fkfu:
     resolution: {integrity: sha512-tBdjqX5XC/oFs/6gxrZhjmiq90YWizUYU6qOWAfat7zJwrwapJ+BYgX2PmiacunXMaRpeVT4vz5MSPSLgNkrpA==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -5289,7 +5289,7 @@ packages:
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      sass: 1.54.2
+      sass: 1.54.8
       styled-jsx: 5.0.4_lxeixztqul6ae7cp3cpkyxlhzm
       use-sync-external-store: 1.2.0_react@18.2.0
     optionalDependencies:
@@ -6190,8 +6190,8 @@ packages:
     resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
     dev: false
 
-  /sass/1.54.2:
-    resolution: {integrity: sha512-wbVV26sejsCIbBScZZtNkvnrB/bVCQ8hSlZ01D9nzsVh9zLqCkWrlpvTb3YEb6xsuNi9cx75hncqwikHFSz7tw==}
+  /sass/1.54.8:
+    resolution: {integrity: sha512-ib4JhLRRgbg6QVy6bsv5uJxnJMTS2soVcCp9Y88Extyy13A8vV0G1fAwujOzmNkFQbR3LvedudAMbtuNRPbQww==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
