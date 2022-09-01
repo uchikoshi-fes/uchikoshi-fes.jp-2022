@@ -16,7 +16,7 @@ describe("AsanoRadio", () => {
   test("最低限のテキストとリンク", () => {
     render(<AsanoRadio />);
     expect(screen.getByText("アサノラジオ局")).toBeInTheDocument();
-    expect(screen.getByText("番組表")).toBeInTheDocument();
+    expect(screen.getByText(/番組表/)).toBeInTheDocument();
     const youtubeLink = screen.getByText("アサノラジオ局の YouTube チャンネル");
     expect(youtubeLink).toBeInTheDocument();
     expect(youtubeLink).toHaveAttribute(
