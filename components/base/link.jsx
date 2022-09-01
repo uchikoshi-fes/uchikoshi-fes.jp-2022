@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 
+// hooks
+import { useRouter } from "next/router";
 // components
 import NextLink from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,6 +18,8 @@ const resetScroll = () => {
 };
 
 const Link = ({ href, scroll = true, noIcon = false, children, ...props }) => {
+  const router = useRouter();
+
   // internal link
   if (href.startsWith("/") || href === "")
     return (
@@ -24,7 +28,16 @@ const Link = ({ href, scroll = true, noIcon = false, children, ...props }) => {
           href={href}
           {...props}
           onClick={() => {
-            if (scroll) resetScroll();
+            if (scroll) {
+              // ページがロードされたらスクロールをリセット
+              router.events.on(
+                "routeChangeComplete",
+                function onTransitioned() {
+                  resetScroll();
+                  router.events.off("routeChangeComplete", onTransitioned);
+                }
+              );
+            }
           }}
         >
           {children}
