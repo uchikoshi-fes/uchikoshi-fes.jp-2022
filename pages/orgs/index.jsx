@@ -7,10 +7,43 @@ import { NextSeo } from "next-seo";
 import Link from "@/components/base/link";
 // styles
 import styles from "./index.module.scss";
-// constants
-import { CATEGORIES, ORGANIZATIONS } from "@/constants/organizations";
+// others
+import fetchOrganizations from "@/components/organizations/fetch";
 
-const Organizations = () => {
+const CATEGORIES = [
+  { id: "exhibition", name: "展示" },
+  { id: "cafe", name: "喫茶" },
+  { id: "amusement", name: "アミューズメント" },
+  { id: "performance", name: "公演" },
+  { id: "stage", name: "ステージ" },
+  { id: "field", name: "グラウンド" },
+  { id: "band", name: "バンド" },
+  { id: "stand", name: "屋台" },
+  { id: "shop", name: "販売" },
+];
+
+const AREAS = [
+  { id: "hkF1", name: "本館１階" },
+  { id: "hkF2", name: "本館２階" },
+  { id: "cgtF1", name: "中学棟１階" },
+  { id: "cgtF2", name: "中学棟２階" },
+  { id: "cgtF3", name: "中学棟３階" },
+  { id: "cgtF4", name: "中学棟４階" },
+  { id: "cgtF5", name: "中学棟５階" },
+  { id: "kktB1", name: "高校棟地下１階" },
+  { id: "kktF1", name: "高校棟１階" },
+  { id: "kktF2", name: "高校棟２階" },
+  { id: "kktF3", name: "高校棟３階" },
+  { id: "kktF4", name: "高校棟４階" },
+  { id: "kktF5", name: "高校棟５階" },
+  { id: "arnF1", name: "アリーナ１階" },
+  { id: "arnF2", name: "アリーナ２階" },
+  { id: "swsr", name: "清話書林" },
+  { id: "grnd", name: "グラウンド" },
+  { id: "", name: "その他" },
+];
+
+const Organizations = ({ organizations }) => {
   const [categoryId, setCategoryId] = React.useState(CATEGORIES[0].id);
 
   return (
@@ -27,13 +60,21 @@ const Organizations = () => {
             ))}
           </ul>
           <ul className={styles.organizations}>
-            {ORGANIZATIONS.filter(
-              ({ category }) => category === categoryId
-            ).map(({ id, name }) => (
-              <li key={id}>
-                <Link href={id}>{name}</Link>
-              </li>
-            ))}
+            {organizations
+              .filter((org) => org.categoryId === categoryId)
+              .map(({ id, title, areaId, room, name, thumbnail }) => (
+                <li key={id}>
+                  <Link href={`/orgs/${id}`}>
+                    {title}
+                    <br />
+                    {AREAS.find(({ id }) => id === areaId).name}
+                    <br />
+                    {room}
+                    <br />
+                    {name}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </div>
       </article>
@@ -41,4 +82,9 @@ const Organizations = () => {
   );
 };
 
+const getStaticProps = async () => {
+  return { props: { organizations: await fetchOrganizations() } };
+};
+
+export { CATEGORIES, AREAS, getStaticProps };
 export default Organizations;
