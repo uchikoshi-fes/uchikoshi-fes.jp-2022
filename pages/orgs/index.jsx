@@ -7,8 +7,8 @@ import { NextSeo } from "next-seo";
 import Link from "@/components/base/link";
 // styles
 import styles from "./index.module.scss";
-// confif
-import { CATEGORIES, ORGANIZATIONS } from "./organizations";
+// constants
+import { CATEGORIES, ORGANIZATIONS } from "@/constants/organizations";
 
 const Organizations = () => {
   const [categoryId, setCategoryId] = React.useState(CATEGORIES[0].id);
