@@ -7,7 +7,7 @@ import { GoogleMaps } from "@/components/layout/outline";
 // styles
 import styles from "./location.module.scss";
 // icons
-import { faRoute } from "@fortawesome/free-solid-svg-icons";
+import { faRoute, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 
 const Location = () => {
   return (
@@ -26,6 +26,20 @@ const Location = () => {
             現在地からのルート
           </Link>
         </p>
+      </article>
+      <article>
+        <h3>事前予約</h3>
+        <p>
+          文化祭に来場する際は、事前に予約が必要です。
+          <br />
+          予約は先着順で受け付けております。
+          <br />
+          予約に関しては、以下のページをご覧ください。
+        </p>
+        <Link href="/reserve" className={styles["reserve-link"]}>
+          事前予約ページ
+          <FontAwesomeIcon icon={faAnglesRight} className={styles.icon} />
+        </Link>
       </article>
     </article>
   );
