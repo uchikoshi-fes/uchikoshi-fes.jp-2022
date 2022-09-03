@@ -22,8 +22,8 @@ const fetchOrganizations = async () => {
   // エリアでソート
   organizations.sort(
     (a, b) =>
-      AREAS.findIndexOf(({ id }) => id === a.area) -
-      AREAS.findIndexOf(({ id }) => id === b.area)
+      AREAS.findIndex(({ id }) => id === a.area) -
+      AREAS.findIndex(({ id }) => id === b.area)
   );
   return organizations;
 };
