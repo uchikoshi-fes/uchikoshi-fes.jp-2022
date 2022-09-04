@@ -20,6 +20,8 @@
 }
 
 .live {
+  width: 100vw;
+  margin: 1rem calc(50% - 50vw);
   aspect-ratio: 16 / 9;
   background-color: $color-main;
 
