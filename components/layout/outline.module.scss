@@ -2,6 +2,15 @@
 
 @use "@/components/mixins" as *;
 
+.map {
+  height: 100%;
+
+  > iframe {
+    height: 100%;
+    width: 100%;
+  }
+}
+
 .outline {
   position: relative;
   @include outermost-container;
@@ -13,7 +22,7 @@
   }
 }
 
-.map {
+.map-container {
   width: 100vw;
   margin: 1rem calc(50% - 50vw);
   aspect-ratio: 4 / 3;
@@ -21,10 +30,5 @@
   @media screen and (min-width: 800px) {
     width: 100%;
     margin: 1rem 0;
-  }
-
-  > iframe {
-    height: 100%;
-    width: 100%;
   }
 }
