@@ -36,7 +36,10 @@
   table-layout: fixed;
 
   > thead {
+    position: sticky;
+    top: 0;
     color: $color-base;
+    background-color: $color-base;
 
     > tr {
       height: 3rem;
@@ -79,6 +82,7 @@
         > div {
           position: absolute;
           width: 100%;
+          z-index: -1;
         }
       }
 
