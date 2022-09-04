@@ -34,7 +34,7 @@ const NOTES = [
     ),
   },
   {
-    title: "予約申し込みについて",
+    title: "予約申し込みの注意",
     Description: () => (
       <ul>
         <li>
@@ -94,6 +94,7 @@ const Reserve = () => {
         </p>
         <article>
           <h2>注意事項</h2>
+          <p>同意の上、チェックを入れてください。</p>
           {NOTES.map(({ title, Description }, index) => (
             <>
               <label className={styles.note} key={index}>
