@@ -9,7 +9,6 @@
   height: calc(95vh - 5vw);
   height: calc(95dvh - 5dvw);
   width: 100%;
-  margin-top: 0 - header.$header-height;
   background-color: rgba($color-accent, 0.2);
 
   > div {
@@ -30,6 +29,7 @@
 
 .top-text {
   background-color: rgba($color-base, 0.5);
+  text-shadow: 0 0 16px $color-base;
 
   > div {
     padding: header.$header-height 2rem 0;
@@ -56,9 +56,34 @@
   line-height: 1.5;
   font-size: 1.5rem;
   text-align: center;
+  font-weight: bold;
+}
+
+.top-container {
+  margin-top: 0 - header.$header-height;
+}
+
+.location-container {
+  @include outermost-container;
+  margin: 3rem 0;
+}
+
+.slogan-container {
+  @include outermost-container;
+  margin: 3rem 0;
 }
 
 .countdown-container {
-  margin: 12.5% 0;
   @include outermost-container;
+  margin: 3rem 0;
+}
+
+.pv-container {
+  @include outermost-container;
+  margin: 3rem 0;
+}
+
+.asano-radio-container {
+  @include outermost-container;
+  margin: 3rem 0;
 }
