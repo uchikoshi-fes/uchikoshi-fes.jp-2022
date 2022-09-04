@@ -52,30 +52,31 @@ const Organizations = ({ organizations }) => {
       <article className={styles.orgs}>
         <h1>参加団体一覧</h1>
         <div className={styles["organizations-window"]}>
-          <ul className={styles.categories}>
-            {CATEGORIES.map(({ id, name }) => (
-              <li className={id == categoryId ? styles.active : ""} key={id}>
-                <button onClick={() => setCategoryId(id)}>{name}</button>
-              </li>
-            ))}
-          </ul>
-          <ul className={styles.organizations}>
-            {organizations
-              .filter((org) => org.categoryId === categoryId)
-              .map(({ id, title, areaId, room, name, thumbnail }) => (
-                <li key={id}>
-                  <Link href={`/orgs/${id}`}>
-                    {title}
-                    <br />
-                    {AREAS.find(({ id }) => id === areaId).name}
-                    <br />
-                    {room}
-                    <br />
-                    {name}
-                  </Link>
+          <div>
+            <ul className={styles.categories}>
+              {CATEGORIES.map(({ id, name }) => (
+                <li className={id == categoryId ? styles.active : ""} key={id}>
+                  <button onClick={() => setCategoryId(id)}>{name}</button>
                 </li>
               ))}
-          </ul>
+            </ul>
+            <ul className={styles.organizations}>
+              {organizations
+                .filter((org) => org.categoryId === categoryId)
+                .map(({ id, title, areaId, room, name }) => (
+                  <li key={id}>
+                    <Link href={`/orgs/${id}`}>
+                      <div className={styles.title}>{title}</div>
+                      <div className={styles.area}>
+                        {AREAS.find(({ id }) => id === areaId)?.name}
+                      </div>
+                      <div className={styles.room}>{room}</div>
+                      <div className={styles.name}>{name || title}</div>
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
         </div>
       </article>
     </>

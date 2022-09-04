@@ -1,7 +1,98 @@
 // SPDX-License-Identifier: MIT
 
 @use "@/components/mixins" as *;
+@use "@/components/variables" as *;
+@use "@/components/layout/header.module" as header;
 
 .orgs {
   @include outermost-container;
+}
+
+.organizations-window {
+  width: 100%;
+  overflow-x: auto;
+
+  > div {
+    min-width: 48rem;
+  }
+}
+
+.categories {
+  height: 4rem;
+  margin: 0;
+  padding: 0;
+  top: header.$header-height;
+  display: flex;
+  list-style: none;
+  background-color: $color-base;
+
+  > li {
+    flex: 1;
+
+    :hover {
+      background-color: $color-accent-lighter;
+    }
+
+    > button {
+      height: 100%;
+      width: 100%;
+      border: none;
+    }
+  }
+}
+
+.active {
+  color: $color-base;
+  background-color: $color-accent;
+}
+
+.organizations {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    height: 4rem;
+
+    &:nth-child(even) {
+      background-color: rgba($color-main, 0.1);
+    }
+
+    :hover {
+      background-color: $color-accent-lighter;
+    }
+
+    > a {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      text-decoration: none;
+
+      > div:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.title {
+  min-width: 18rem;
+  flex: 2;
+}
+
+.area {
+  min-width: 10rem;
+  flex: 1;
+}
+
+.room {
+  min-width: 10rem;
+  flex: 1;
+}
+
+.name {
+  min-width: 10rem;
+  flex: 1;
 }
