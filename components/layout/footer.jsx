@@ -45,7 +45,7 @@ const Sns = () => {
   return (
     <div className={styles.sns}>
       <div className={styles["sns-line"]}>
-        <Link href="https://lin.ee/fKKlJHd" noIcon>
+        <Link href="https://line.me/R/ti/p/@136ffgbc" noIcon>
           <span className={styles["sns-icon"]}>
             <FontAwesomeIcon icon={faLine} />
           </span>
@@ -53,10 +53,7 @@ const Sns = () => {
         </Link>
       </div>
       <div className={styles["sns-youtube"]}>
-        <Link
-          href="https://youtube.com/channel/UCIfMXvUdm7UiFLBmV8ZmQcA"
-          noIcon
-        >
+        <Link href="https://youtube.com/c/uchikoshi-fes" noIcon>
           <span className={styles["sns-icon"]}>
             <FontAwesomeIcon icon={faYoutube} />
           </span>
