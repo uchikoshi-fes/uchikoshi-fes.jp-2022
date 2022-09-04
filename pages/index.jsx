@@ -8,7 +8,6 @@ import Slogan from "@/components/slogan";
 import Location from "@/components/location";
 import Countdown from "@/components/countdown";
 import PromotionVideos from "@/components/promotion-videos";
-import AsanoRadio from "@/components/asano-radio";
 // styles
 import styles from "./index.module.scss";
 
@@ -62,9 +61,6 @@ const Index = () => {
       </div>
       <div className={styles["pv-container"]}>
         <PromotionVideos />
-      </div>
-      <div className={styles["asano-radio-container"]}>
-        <AsanoRadio />
       </div>
     </>
   );

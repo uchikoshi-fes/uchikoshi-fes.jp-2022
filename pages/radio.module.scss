@@ -117,58 +117,49 @@
   bottom: 0;
 }
 
-.schedule {
-  > h3 {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
+.schedule > div {
+  position: relative;
+  max-height: 480px;
+  width: 100%;
+  border: 2px solid;
+  aspect-ratio: 1 / 2;
 
   > div {
-    position: relative;
-    max-height: 480px;
-    width: 100%;
-    aspect-ratio: 1 / 2;
-    border-top: 4px solid;
-    border-bottom: 4px solid;
+    height: 100%;
+    padding: 0 0 60px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
 
-    > div {
-      height: 100%;
-      padding: 0 0 60px;
-      display: flex;
-      flex-direction: column;
-      overflow-y: scroll;
+    @media (min-width: 720px) {
+      flex-direction: row;
 
-      @media (min-width: 720px) {
-        flex-direction: row;
-
-        > table:not(:first-child) {
-          border-left: 4px solid;
-        }
+      > table:not(:first-child) {
+        border-left: 4px solid;
       }
     }
+  }
 
-    &::after {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      display: block;
-      pointer-events: none;
-      box-shadow: 0 -120px 60px -60px $color-base inset;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: block;
+    pointer-events: none;
+    box-shadow: 0 -120px 60px -60px $color-base inset;
   }
 }
 
 .asano-radio {
-  border: 4px solid;
-  padding: 1rem;
+  @include outermost-container;
 }
 
 .youtube-container {
-  margin: 1rem -1rem;
+  margin: 1rem 0;
 }
 
 .schedule-container {
-  margin: 1rem -1rem;
+  margin: 1rem 0;
 }
