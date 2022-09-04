@@ -48,7 +48,7 @@ const Organizations = ({ organizations }) => {
 
   return (
     <>
-      <NextSeo title="参加団体一覧" openGraph={{ title: "団体一覧" }} />
+      <NextSeo title="団体一覧" openGraph={{ title: "参加団体一覧" }} />
       <article className={styles.orgs}>
         <h1>参加団体一覧</h1>
         <div className={styles["organizations-window"]}>
