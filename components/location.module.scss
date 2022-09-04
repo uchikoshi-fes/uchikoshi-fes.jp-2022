@@ -1,0 +1,37 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins" as *;
+@use "@/components/variables" as *;
+
+.icon {
+  margin: 0 0.25em;
+}
+
+.location {
+  > h2 {
+    @include non-break;
+  }
+}
+
+.google-maps-container {
+  width: 100vw;
+  margin: 1rem calc(50% - 50vw);
+  aspect-ratio: 4 / 3;
+
+  @media screen and (min-width: 800px) {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+.reserve-link {
+  height: 6rem;
+  width: 100%;
+  border: 4px solid $color-accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: $color-base;
+  background-color: $color-accent-light;
+}
