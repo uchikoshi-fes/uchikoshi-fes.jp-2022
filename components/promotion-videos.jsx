@@ -10,6 +10,10 @@ import styles from "./promotion-videos.module.scss";
 
 const PV_ALL = [
   {
+    name: "第２弾",
+    url: "https://youtu.be/QW1T18FOJfA",
+  },
+  {
     name: "第１弾",
     url: "https://youtu.be/To5jTMIBWeA",
   },
