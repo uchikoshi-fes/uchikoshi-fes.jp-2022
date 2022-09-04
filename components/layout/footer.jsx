@@ -22,7 +22,7 @@ const Tweets = ({ tweetLimit }) => {
   return (
     <article className={styles["tweets"]}>
       <h2>公式 Twitter の最新ツイート</h2>
-      <InView triggerOnce>
+      <InView triggerOnce rootMargin="200px">
         {({ inView, ref }) => (
           <div className={styles["twitter-tl"]} ref={ref}>
             {inView && (
@@ -111,7 +111,7 @@ const Others = () => {
 const Footer = () => {
   return (
     <>
-      <Tweets />
+      <Tweets tweetLimit={5} />
       <footer className={styles.footer}>
         <Sns />
         <Menu />
