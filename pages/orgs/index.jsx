@@ -55,7 +55,12 @@ const Organizations = ({ organizations }) => {
           <div>
             <ul className={styles.categories}>
               {CATEGORIES.map(({ id, name }) => (
-                <li className={id == categoryId ? styles.active : ""} key={id}>
+                <li
+                  className={`${styles[`category-${id}`]} ${
+                    id == categoryId ? styles.active : ""
+                  }`}
+                  key={id}
+                >
                   <button onClick={() => setCategoryId(id)}>{name}</button>
                 </li>
               ))}
@@ -63,18 +68,19 @@ const Organizations = ({ organizations }) => {
             <ul className={styles.organizations}>
               {organizations
                 .filter((org) => org.categoryId === categoryId)
-                .map(({ id, title, areaId, room, name }) => (
-                  <li key={id}>
-                    <Link href={`/orgs/${id}`}>
-                      <div className={styles.title}>{title}</div>
-                      <div className={styles.area}>
-                        {AREAS.find(({ id }) => id === areaId)?.name}
-                      </div>
-                      <div className={styles.room}>{room}</div>
-                      <div className={styles.name}>{name || title}</div>
-                    </Link>
-                  </li>
-                ))}
+                .map(({ id, title, areaId, room, name }) => {
+                  const area = AREAS.find(({ id }) => id === areaId);
+                  return (
+                    <li key={id}>
+                      <Link href={`/orgs/${id}`}>
+                        <div className={styles.title}>{title}</div>
+                        <div className={styles.area}>{area?.name}</div>
+                        <div className={styles.room}>{room}</div>
+                        <div className={styles.name}>{name || title}</div>
+                      </Link>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
         </div>
