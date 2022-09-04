@@ -47,6 +47,7 @@ describe("Layout", () => {
   const testMenuLinks = () =>
     [
       { href: "/", name: "トップ" },
+      { href: "/reserve", name: "事前予約" },
       //{ href: "/sponsors", name: "スポンサー" },
       { href: "/orgs/", name: "団体一覧" },
       { href: "/map/", name: "校内マップ" },
@@ -98,6 +99,7 @@ describe("Layout", () => {
         name: "公式 Instagram をフォロー",
       },
       { href: "/", name: "トップ" },
+      { href: "/reserve", name: "事前予約" },
       //{ href: "/sponsors", name: "スポンサー" },
       { href: "/orgs/", name: "団体一覧" },
       { href: "/map/", name: "校内マップ" },
