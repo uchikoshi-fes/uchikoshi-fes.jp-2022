@@ -12,8 +12,12 @@
     "ja-hiragana-keishikimeishi": true,
     "ja-no-inappropriate-words": true,
     "ja-no-abusage": true,
-    "ja-no-mixed-period": true,
-    "ja-unnatural-alphabet": true,
+    "ja-unnatural-alphabet": {
+      "allow": [
+        "/([A-GＡ-Ｇ]・?)*[A-GＡ-Ｇ]組/",
+        "/([A-GＡ-Ｇ]・?)*[A-GＡ-Ｇ]教室/"
+      ]
+    },
     "no-doubled-conjunction": true,
     "no-doubled-conjunctive-particle-ga": true,
     "no-doubled-joshi": true,

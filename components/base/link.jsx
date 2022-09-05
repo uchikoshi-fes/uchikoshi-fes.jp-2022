@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
-// react
-import React from "react";
+// hooks
+import { useRouter } from "next/router";
 // components
 import NextLink from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,12 +10,33 @@ import styles from "./link.module.scss";
 // icons
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
-const Link = ({ href, noIcon = false, children, ...props }) => {
+const resetScroll = () => {
+  window.scrollTo(0, 0);
+  for (const container of document.getElementsByClassName("page-container")) {
+    container.scrollTo(0, 0);
+  }
+};
+
+const Link = ({ href, scroll = true, noIcon = false, children, ...props }) => {
+  const router = useRouter();
+
   // internal link
   if (href.startsWith("/") || href === "") {
     return (
-      <NextLink href={href}>
-        <a href={href} {...props}>
+      <NextLink href={href} scroll={scroll}>
+        <a
+          href={href}
+          {...props}
+          onClick={() => {
+            if (!scroll) {
+              // 一度だけページ遷移時のスクロールリセットを無効化する
+              router.events.off("routeChangeComplete", resetScroll);
+              router.events.once("routeChangeComplete", () =>
+                router.events.on("routeChangeComplete", resetScroll)
+              );
+            }
+          }}
+        >
           {children}
         </a>
       </NextLink>
@@ -36,4 +57,5 @@ const Link = ({ href, noIcon = false, children, ...props }) => {
   }
 };
 
+export { resetScroll };
 export default Link;

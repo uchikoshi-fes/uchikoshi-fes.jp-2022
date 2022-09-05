@@ -14,11 +14,13 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const links = [
   { href: "/", name: "トップ" },
+  { href: "/reserve", name: "事前予約" },
   //{ href: "/sponsors", name: "スポンサー" },
-  { href: "/orgs", name: "団体一覧" },
-  { href: "/map", name: "校内マップ" },
-  { href: "/events", name: "イベント" },
-  { href: "/articles", name: "記事" },
+  { href: "/orgs/", name: "団体一覧" },
+  { href: "/map/", name: "校内マップ" },
+  { href: "/events/", name: "イベント" },
+  { href: "/radio", name: "アサノラジオ" },
+  { href: "/articles/", name: "記事" },
 ];
 
 const MenuLinks = ({ narrow }) => {
@@ -62,6 +64,7 @@ const NarrowMenu = ({ setScrollable }) => {
    */
   React.useEffect(() => {
     setScrollable(!open);
+    return () => setScrollable(true);
   }, [setScrollable, open]);
 
   const handleOpen = (isOpen) => {

@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 
+// react
+import React from "react";
 // hooks
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -18,16 +20,19 @@ import "./global.scss";
 // config
 import { config } from "@fortawesome/fontawesome-svg-core";
 import SEO from "@/next-seo.config";
+// others
+import { resetScroll } from "@/components/base/link";
 
 // why: https://fontawesome.com/docs/web/use-with/react/use-with
 config.autoAddCss = false;
 
 const UchikoshiFesApp = ({ Component, pageProps }) => {
   const router = useRouter();
-
-  useEffect(() => {
+  React.useEffect(() => {
     document.body.classList.remove("fixed");
-  });
+    router.events.on("routeChangeComplete", resetScroll);
+    return () => router.events.off("routeChangeComplete", resetScroll);
+  }, []);
 
   return (
     <>

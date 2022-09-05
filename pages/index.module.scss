@@ -9,11 +9,7 @@
   height: 100vh;
   height: 100dvh;
   width: 100%;
-  background-image: url("/souichiro.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin-top: -(header.$header-height);
+  background-color: rgba($color-accent, 0.2);
 
   &::after {
     content: "";
@@ -56,9 +52,34 @@
   line-height: 1.5;
   font-size: 1.5rem;
   text-align: center;
+  font-weight: bold;
+}
+
+.top-container {
+  margin-top: 0 - header.$header-height;
+}
+
+.location-container {
+  @include outermost-container;
+  margin: 3rem 0;
+}
+
+.slogan-container {
+  @include outermost-container;
+  margin: 3rem 0;
 }
 
 .countdown-container {
-  margin: 12.5% 0;
   @include outermost-container;
+  margin: 3rem 0;
+}
+
+.pv-container {
+  @include outermost-container;
+  margin: 3rem 0;
+}
+
+.asano-radio-container {
+  @include outermost-container;
+  margin: 3rem 0;
 }

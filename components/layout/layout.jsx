@@ -14,7 +14,9 @@ const Layout = ({ children }) => {
 
   return (
     <div
-      className={`${styles.layout} ${scrollable ? "" : styles["stop-scroll"]}`}
+      className={`page-container ${styles.layout} ${
+        scrollable ? "" : styles["stop-scroll"]
+      }`}
     >
       <Header setScrollable={setScrollable} />
       <main className={styles.main}>{children}</main>

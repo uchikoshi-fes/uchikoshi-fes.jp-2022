@@ -42,8 +42,8 @@
 
 ## Version
 
-**Version:** 1.0.0 (いったんの正式リリース)  
-**Latest Update:** 2022/08/25
+**Version:** 1.1.0 (予約フォーム追加)  
+**Latest Update:** 2022/09/05
 
 ## Feedback & Support
 
