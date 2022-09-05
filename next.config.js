@@ -4,10 +4,25 @@
 let config = {
   reactStrictMode: true,
   pageExtensions: ["js", "jsx", "md", "mdx"],
-  images: {
-    loader: "custom",
-  },
 };
+
+config =
+  process.env.CF_PAGES_BRANCH === "main"
+    ? {
+        ...config,
+        env: { isProduct: true },
+        images: {
+          loader: "imgix",
+          path: "https://uchikoshi-fes-2022.imgix.net/",
+        },
+      }
+    : {
+        ...config,
+        env: { isProduct: false },
+        images: {
+          loader: "custom",
+        },
+      };
 
 config = require("@next/mdx")({
   extension: /\.mdx?$/,
