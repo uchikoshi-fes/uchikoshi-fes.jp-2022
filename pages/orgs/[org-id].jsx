@@ -28,20 +28,20 @@ const Organization = ({
     <>
       <NextSeo
         title={title}
-        openGraph={{ title: `参加団体「${title}」by ${name}` }}
+        openGraph={{ title: `参加団体「${title}」${name ? `by ${name}` : ""}` }}
       />
       <article className={styles.organization}>
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.category}>
           <span className={styles.label}>カテゴリー: </span>
           <span className={styles.value}>
-            {CATEGORIES.find(({ id }) => id === categoryId).name}
+            {CATEGORIES.find(({ id }) => id === categoryId)?.name}
           </span>
         </div>
         <div className={styles.area}>
           <span className={styles.label}>場所: </span>
           <span className={styles.value}>
-            {AREAS.find(({ id }) => id === areaId).name}
+            {AREAS.find(({ id }) => id === areaId)?.name}
             {room && <> / {room}</>}
           </span>
         </div>
