@@ -9,7 +9,11 @@
   height: 100vh;
   height: 100dvh;
   width: 100%;
-  background-color: rgba($color-accent, 0.2);
+  background-image: url("/souichiro.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: -(header.$header-height);
 
   &::after {
     content: "";
