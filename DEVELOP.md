@@ -6,7 +6,7 @@
 
 ### Branch
 
-簡易的な [Git Flow](//dev.classmethod.jp/articles/introduce-git-flow/) で開発をします。
+簡易的な [Git Flow](https://dev.classmethod.jp/articles/introduce-git-flow/) で開発をします。
 
 - `main` : 本番用 / リリース用 (`develop` から merge する)
 - `develop` : 開発版 (ここで直接は開発せず、 `feature/*` ブランチを切る。バージョンアップの時のみ直接コミットしてよい。)
@@ -36,20 +36,20 @@
 ### Lint
 
 何らかの都合により一部分だけ lint を無効化したいときは、  
-ESLint の場合は [ESLint のコメントでのルール制御 - Qiita](//qiita.com/nju33/items/2d0cfea4fffbfdbff87a) の方法で、  
-textlint の場合は [textlint-filter-rule-comments](//github.com/textlint/textlint-filter-rule-comments) を入れているためその機能でできます。  
-また一部分だけ Prettier のフォーマットを無視させたい場合は [Ignoring Code - Prettier](//prettier.io/docs/en/ignore.html) の方法でできます。
+ESLint の場合は [ESLint のコメントでのルール制御 - Qiita](https://qiita.com/nju33/items/2d0cfea4fffbfdbff87a) の方法で、  
+textlint の場合は [textlint-filter-rule-comments](https://github.com/textlint/textlint-filter-rule-comments) を入れているためその機能でできます。  
+また一部分だけ Prettier のフォーマットを無視させたい場合は [Ignoring Code - Prettier](https://prettier.io/docs/en/ignore.html) の方法でできます。
 
-#### 「かた」と読む「方」が [ja-hiragana-keishikimeishi](//github.com/lostandfound/textlint-rule-ja-hiragana-keishikimeishi) に `漢字よりもひらがなで表記したほうが読みやすい形式名詞` の「ほう」として判定されてしまう場合
+#### 「かた」と読む「方」が [ja-hiragana-keishikimeishi](https://github.com/lostandfound/textlint-rule-ja-hiragana-keishikimeishi) に `漢字よりもひらがなで表記したほうが読みやすい形式名詞` の「ほう」として判定されてしまう場合
 
-このような場合 [textlint-filter-rule-comments](//github.com/textlint/textlint-filter-rule-comments) で無効化するのではなく、  
+このような場合 [textlint-filter-rule-comments](https://github.com/textlint/textlint-filter-rule-comments) で無効化するのではなく、  
 できるだけ「場合」や「人」など別の表現で置き換えましょう。
 
 これは、「かた」として「方」を書いているつもりでも「ほう」と読み間違えてしまう可能性があるので、  
 それを防止するためです。
 
 もちろん引用など、文章校正を受けたくない場合はコメントでのルール制御を行うべきですが、  
-そのような場合は [ja-hiragana-keishikimeishi](//github.com/lostandfound/textlint-rule-ja-hiragana-keishikimeishi) のみではなく  
+そのような場合は [ja-hiragana-keishikimeishi](https://github.com/lostandfound/textlint-rule-ja-hiragana-keishikimeishi) のみではなく  
 ルールを指定せずに全てのルールを無効化するべきです。
 
 ### Test
@@ -98,7 +98,7 @@ GitHub に push した際、この repository と連携している Cloudflare P
 
 ### バージョンアップ
 
-1. [`develop` branch の preview](//develop.uchikoshi-fes-2022.pages.dev/) を確認する
+1. [`develop` branch の preview](https://develop.uchikoshi-fes-2022.pages.dev/) を確認する
 2. `develop` branch で `package.json` の `"version"` を更新し、  
    `README.md` の `Version:` を更新して `(括弧の中)` に主な更新点を記述。
 3. `main` branch に Pull Request を投げる
