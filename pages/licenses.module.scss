@@ -1,6 +1,25 @@
 // SPDX-License-Identifier: MIT
 
 @use "@/components/mixins" as *;
+@use "@/components/variables" as *;
+
+.license-name {
+  font-weight: bold;
+  color: $color-accent;
+}
+
+.license-text {
+  max-height: 24rem;
+  padding: 1rem;
+  overflow: auto;
+  color: $color-base;
+  background: $color-main;
+}
+
+.contributor {
+  font-weight: bold;
+  color: $color-accent;
+}
 
 .licenses {
   @include outermost-container;

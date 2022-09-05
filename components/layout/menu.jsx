@@ -14,10 +14,12 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const links = [
   { href: "/", name: "トップ" },
+  { href: "/reserve", name: "来場申し込み" },
   //{ href: "/sponsors", name: "スポンサー" },
   { href: "/orgs/", name: "団体一覧" },
   { href: "/map/", name: "校内マップ" },
   { href: "/events/", name: "イベント" },
+  //{ href: "/radio", name: "アサノラジオ" },
   { href: "/articles/", name: "記事" },
 ];
 
@@ -57,6 +59,7 @@ const NarrowMenu = ({ setScrollable }) => {
    */
   React.useEffect(() => {
     setScrollable(!open);
+    return () => setScrollable(true);
   }, [setScrollable, open]);
   router.events.on("routeChangeStart", () => setOpen(false));
 

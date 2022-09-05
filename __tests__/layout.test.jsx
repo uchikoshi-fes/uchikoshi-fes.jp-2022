@@ -47,10 +47,12 @@ describe("Layout", () => {
   const testMenuLinks = () =>
     [
       { href: "/", name: "トップ" },
+      { href: "/reserve", name: "来場申し込み" },
       //{ href: "/sponsors", name: "スポンサー" },
       { href: "/orgs/", name: "団体一覧" },
       { href: "/map/", name: "校内マップ" },
       { href: "/events/", name: "イベント" },
+      //{ href: "/radio", name: "アサノラジオ" },
       { href: "/articles/", name: "記事" },
     ].forEach(({ href, name }) => {
       const link = screen.getByText(name);
@@ -81,9 +83,12 @@ describe("Layout", () => {
     render(<Footer />);
     expect(screen.getByText(/© 2022 浅野学園生徒会/)).toBeInTheDocument();
     [
-      { href: "https://lin.ee/fKKlJHd", name: "公式 LINE を友だち追加" },
       {
-        href: "https://youtube.com/channel/UCIfMXvUdm7UiFLBmV8ZmQcA",
+        href: "https://line.me/R/ti/p/@136ffgbc",
+        name: "公式 LINE を友だち追加",
+      },
+      {
+        href: "https://youtube.com/c/uchikoshi-fes",
         name: "公式 YouTube をチャンネル登録",
       },
       {
@@ -95,10 +100,12 @@ describe("Layout", () => {
         name: "公式 Instagram をフォロー",
       },
       { href: "/", name: "トップ" },
+      { href: "/reserve", name: "来場申し込み" },
       //{ href: "/sponsors", name: "スポンサー" },
       { href: "/orgs/", name: "団体一覧" },
       { href: "/map/", name: "校内マップ" },
       { href: "/events/", name: "イベント" },
+      //{ href: "/radio", name: "アサノラジオ" },
       { href: "/articles/", name: "記事" },
       { href: "/contact", name: "お問い合わせ" },
       { href: "/privacy", name: "プライバシーポリシー" },
