@@ -52,6 +52,7 @@ describe("Layout", () => {
       { href: "/orgs/", name: "団体一覧" },
       { href: "/map/", name: "校内マップ" },
       { href: "/events/", name: "イベント" },
+      { href: "/radio", name: "アサノラジオ" },
       { href: "/articles/", name: "記事" },
     ].forEach(({ href, name }) => {
       const link = screen.getByText(name);

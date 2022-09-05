@@ -5,12 +5,13 @@ import React from "react";
 // hooks
 import useClient from "@/hooks/client";
 // components
+import { NextSeo } from "next-seo";
 import { InView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactPlayer from "react-player";
 import Link from "@/components/base/link";
 // styles
-import styles from "./asano-radio.module.scss";
+import styles from "./radio.module.scss";
 // icons
 import {
   faClock,
@@ -20,7 +21,7 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 // config
-import { SCHEDULE } from "./asano-radio-schedule.js";
+import SCHEDULE from "./radio-schedule.json";
 
 const TZ = 9 * 3600000;
 
@@ -39,20 +40,23 @@ const joinElement = (array, separator) =>
 
 const Live = ({ channelId }) => {
   return (
-    <InView triggerOnce>
-      {({ inView, ref }) => (
-        <div className={styles.live} ref={ref}>
-          {inView && (
-            <ReactPlayer
-              url={`https://www.youtube.com/embed/live_stream?channel=${channelId}`}
-              width="100%"
-              height="100%"
-              controls
-            />
-          )}
-        </div>
-      )}
-    </InView>
+    <>
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <div className={styles.live} ref={ref}>
+            {inView && (
+              <ReactPlayer
+                url={`https://www.youtube.com/embed/live_stream?channel=${channelId}`}
+                width="100%"
+                height="100%"
+                controls
+              />
+            )}
+          </div>
+        )}
+      </InView>
+      <p>ラジオが放送中でないときは「動画を再生できません」と表示されます。</p>
+    </>
   );
 };
 
@@ -189,7 +193,7 @@ const Schedule = () => {
 
   return (
     <article className={styles.schedule}>
-      <h3>番組表 (暫定版)</h3>
+      <h2>番組表 (暫定版)</h2>
       <div>
         <div>
           {SCHEDULE.map(({ title, date, programs }) => (
@@ -209,22 +213,25 @@ const Schedule = () => {
 
 const AsanoRadio = () => {
   return (
-    <article className={styles["asano-radio"]}>
-      <h2>アサノラジオ局</h2>
-      <div className={styles["youtube-container"]}>
-        <Live channelId="UC8gGRNYCfqQ2vkPEGwFnr8w" />
-      </div>
-      <div className={styles["schedule-container"]}>
-        <Schedule />
-      </div>
-      <p>
-        これまでのアサノラジオのアーカイブは、
-        <Link href="https://youtube.com/channel/UC8gGRNYCfqQ2vkPEGwFnr8w">
-          アサノラジオ局の YouTube チャンネル
-        </Link>
-        をご覧ください。
-      </p>
-    </article>
+    <>
+      <NextSeo title="アサノラジオ" openGraph={{ title: "アサノラジオ局" }} />
+      <article className={styles["asano-radio"]}>
+        <h1>アサノラジオ局</h1>
+        <div className={styles["youtube-container"]}>
+          <Live channelId="UC8gGRNYCfqQ2vkPEGwFnr8w" />
+        </div>
+        <div className={styles["schedule-container"]}>
+          <Schedule />
+        </div>
+        <p>
+          これまでのアサノラジオのアーカイブは、
+          <Link href="https://youtube.com/channel/UC8gGRNYCfqQ2vkPEGwFnr8w">
+            アサノラジオ局の YouTube チャンネル
+          </Link>
+          をご覧ください。
+        </p>
+      </article>
+    </>
   );
 };
 
