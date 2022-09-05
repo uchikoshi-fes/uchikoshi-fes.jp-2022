@@ -16,10 +16,8 @@ const Contact = () => {
       <NextSeo title="お問い合わせ" openGraph={{ title: "お問い合わせ" }} />
       <article className={styles.contact}>
         <h1>お問い合わせ</h1>
-        <h2>浅野学園</h2>
-        <p>
-          <FontAwesomeIcon icon={faPhone} /> 045-421-3281
-        </p>
+        <h2>打越祭</h2>
+        <p>uchikoshi-support@asano.ed.jp</p>
         <h2>本サイト</h2>
         <p>
           <Link href="https://github.com/uchikoshi-fes/uchikoshi-fes.jp-2022/issues">
