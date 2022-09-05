@@ -72,7 +72,6 @@
     "textlint-rule-ja-hiragana-keishikimeishi": "1.1.0",
     "textlint-rule-ja-no-abusage": "3.0.0",
     "textlint-rule-ja-no-inappropriate-words": "2.0.0",
-    "textlint-rule-ja-no-mixed-period": "2.1.1",
     "textlint-rule-ja-unnatural-alphabet": "2.0.1",
     "textlint-rule-no-doubled-conjunction": "2.0.4",
     "textlint-rule-no-doubled-conjunctive-particle-ga": "2.0.4",
