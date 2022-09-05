@@ -28,16 +28,14 @@ const Location = () => {
         </p>
       </article>
       <article>
-        <h3>事前予約</h3>
+        <h3>来場申し込み (抽選制)</h3>
         <p>
-          文化祭に来場する際は、事前に予約が必要です。
+          文化祭に来場する際は、事前の申し込みが必要です。
           <br />
-          予約は抽選で受け付けております。
-          <br />
-          予約に関しては、以下のページをご覧ください。
+          申し込みに関しては、以下のページをご覧ください。
         </p>
         <Link href="/reserve" className={styles["reserve-link"]}>
-          事前予約ページ
+          来場申し込みページ
           <FontAwesomeIcon icon={faAnglesRight} className={styles.icon} />
         </Link>
       </article>
