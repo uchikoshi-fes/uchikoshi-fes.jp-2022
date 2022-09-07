@@ -6,24 +6,38 @@ import React from "react";
 import dynamic from "next/dynamic";
 // components
 import { NextSeo } from "next-seo";
+import { MDXProvider } from "@mdx-js/react";
 import Link from "@/components/base/link";
+import Image from "@/components/base/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // styles
 import styles from "./organization.module.scss";
+// icons
+import {
+  faTag,
+  faLocationDot,
+  faPeopleGroup,
+} from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 // config
 import { CATEGORIES, AREAS } from "./index";
 import fetchOrganizations from "@/components/organizations/fetch";
 
+const importOrganization = (id) =>
+  import(`@/components/organizations/${id}.mdx`);
+
 const Organization = ({
   id,
-  categoryId,
   title,
+  categoryId,
   areaId,
   room,
   name,
   url,
   twitter,
-  Description,
 }) => {
+  const Description = dynamic(() => importOrganization(id));
+
   return (
     <>
       <NextSeo
@@ -31,56 +45,76 @@ const Organization = ({
         openGraph={{ title: `参加団体「${title}」${name ? `by ${name}` : ""}` }}
       />
       <article className={styles.organization}>
-        <h1 className={styles.title}>{title}</h1>
-        <div className={styles.category}>
-          <span className={styles.label}>カテゴリー: </span>
-          <span className={styles.value}>
-            {CATEGORIES.find(({ id }) => id === categoryId)?.name}
-          </span>
-        </div>
-        <div className={styles.area}>
-          <span className={styles.label}>場所: </span>
-          <span className={styles.value}>
-            {AREAS.find(({ id }) => id === areaId)?.name}
-            {room && <> / {room}</>}
-          </span>
-        </div>
-        <div className={styles.name}>
-          <span className={styles.label}>団体名: </span>
-          <span className={styles.value}>{name}</span>
-        </div>
-        {url && (
-          <div className={styles.url}>
-            <span className={styles.label}>Web サイト</span>
-            <span className={styles.value}>
-              <Link href={url}>{url}</Link>
-            </span>
+        <h1>{title}</h1>
+        <div className={styles.meta}>
+          <div>
+            <FontAwesomeIcon icon={faTag} />
+            <Link href={`/orgs/?category=${categoryId}`}>
+              {CATEGORIES.find(({ id }) => id === categoryId)?.name}
+            </Link>
           </div>
-        )}
-        {twitter && (
-          <div className={styles.twitter}>
-            <span className={styles.label}>Twitter: </span>
-            <span className={styles.value}>
+          <div>
+            <FontAwesomeIcon icon={faLocationDot} />
+            <Link href={`/map/${areaId}`}>
+              {AREAS.find(({ id }) => id === areaId)?.name}
+            </Link>
+            {room && <div className={styles.room}>{room}</div>}
+          </div>
+          <div>
+            <FontAwesomeIcon icon={faPeopleGroup} />
+            {url ? <Link href={url}>{name || "有志"}</Link> : name || "有志"}
+          </div>
+          {twitter && (
+            <div>
+              <FontAwesomeIcon icon={faTwitter} />
               <Link href={`https://twitter.com/${twitter}`}>@{twitter}</Link>
-            </span>
-          </div>
-        )}
-        <pre>{/*<Description />*/}</pre>
+            </div>
+          )}
+        </div>
+        <div className={styles.description}>
+          <MDXProvider
+            components={{
+              p: ({ children }) => (
+                <pre className={styles.paragraph}>{children}</pre>
+              ),
+              a: Link,
+              img: ({
+                title,
+                src,
+                alt = "",
+                layout = "intrinsic",
+                objectFit = "contain",
+                height = 450,
+                width = 600,
+                ...props
+              }) => (
+                <div className={styles.image}>
+                  <Image
+                    title={title}
+                    src={src}
+                    alt={alt}
+                    layout={layout}
+                    objectFit={objectFit}
+                    height={height}
+                    width={width}
+                    {...props}
+                  />
+                  <div>{title}</div>
+                </div>
+              ),
+            }}
+          >
+            <Description />
+          </MDXProvider>
+        </div>
       </article>
     </>
   );
 };
 
 const getStaticProps = async ({ params }) => {
-  const mdxModule = await import(
-    `@/components/organizations/${params["org-id"]}.mdx`
-  );
-  return {
-    props: {
-      id: params["org-id"],
-      ...mdxModule.META,
-    },
-  };
+  const id = params["org-id"];
+  return { props: { id, ...(await importOrganization(id)).META } };
 };
 
 const getStaticPaths = async () => {
