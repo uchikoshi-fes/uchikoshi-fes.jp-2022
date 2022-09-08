@@ -15,9 +15,7 @@ const CATEGORIES = [
   { id: "cafe", name: "喫茶" },
   { id: "amusement", name: "アミューズメント" },
   { id: "performance", name: "公演" },
-  { id: "stage", name: "ステージ" },
   { id: "field", name: "グラウンド" },
-  { id: "band", name: "バンド" },
   { id: "stand", name: "屋台" },
   { id: "shop", name: "販売" },
 ];
