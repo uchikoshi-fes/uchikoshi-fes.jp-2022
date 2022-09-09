@@ -13,7 +13,7 @@ import styles from "./header.module.scss";
 
 const Header = ({ setScrollable }) => {
   const isClient = useClient();
-  const isNarrow = useMediaQuery({ query: "(max-width: 600px)" });
+  const isNarrow = useMediaQuery({ query: "(max-width: 900px)" });
 
   return (
     <header className={styles.header}>

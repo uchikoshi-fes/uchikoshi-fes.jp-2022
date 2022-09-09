@@ -8,7 +8,11 @@ const customLoader = ({ src }) => {
 };
 
 const Image = ({ ...props }) => {
-  return <NextImage {...props} loader={customLoader} />;
+  return process.env.isProduct ? (
+    <NextImage {...props} />
+  ) : (
+    <NextImage {...props} loader={customLoader} />
+  );
 };
 
 export default Image;
