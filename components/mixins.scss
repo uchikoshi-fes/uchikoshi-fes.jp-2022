@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 
+@use "@/components/variables" as *;
+
 $breakpoints: (
   "sm": 576px,
   "md": 768px,
@@ -31,5 +33,25 @@ $breakpoints: (
 
 @mixin outermost-container {
   width: 100%;
-  padding: 1rem max(12.5%, 50% - 400px);
+  padding: 1rem max(10%, 50% - 600px);
+}
+
+@mixin section-padding {
+  padding: 80px 0;
+}
+
+@mixin section-title {
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  margin-top: 0;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: $color-accent;
+    margin: 15px auto 0;
+  }
 }

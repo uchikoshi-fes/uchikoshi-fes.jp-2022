@@ -63,7 +63,17 @@
   margin-top: 0 - header.$header-height;
 }
 
-.location-container {
+.access-container {
+  @include outermost-container;
+  margin: 3rem 0;
+  background-color: $color-gray;
+
+  @include mq("sm") {
+    padding: 0;
+  }
+}
+
+.reserve-container {
   @include outermost-container;
   margin: 3rem 0;
 }

@@ -1,0 +1,35 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins.scss" as *;
+@use "@/components/variables" as *;
+
+.slogan {
+  padding: 1rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+
+  > div {
+    padding: 120px 0;
+
+    > p {
+      padding: 15px 0;
+    }
+  }
+}
+
+.small-title {
+  font-size: 13px;
+  margin: 0;
+  margin-bottom: 10px;
+  letter-spacing: 0.1rem;
+  color: $color-accent;
+}
+
+.large-title {
+  font-size: 48px;
+  letter-spacing: 0.2rem;
+  margin: 0;
+}

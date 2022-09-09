@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 @use "@/components/mixins" as *;
+@use "@/components/variables" as *;
 
 .map {
   height: 100%;
@@ -17,7 +18,7 @@
   overflow: hidden;
 
   > article {
-    border-top: 2px solid;
+    border-top: 1px solid $color-black-lighter;
     padding: 1em 0;
   }
 }

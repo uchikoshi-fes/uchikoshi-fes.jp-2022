@@ -1,0 +1,89 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins" as *;
+@use "@/components/variables" as *;
+
+.access {
+  @include section-padding;
+}
+
+.access-title {
+  @include section-title;
+}
+
+.access-content-wrap {
+  display: flex;
+  margin-top: 50px;
+  gap: 40px;
+
+  @include mq("sm") {
+    display: block;
+  }
+}
+
+.access-content {
+  ul {
+    padding: 0;
+    padding-inline-start: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  p {
+    margin: 5px 0;
+    color: $color-black-light;
+
+    @include mq("sm") {
+      font-size: 15px;
+    }
+  }
+
+  @include mq("sm") {
+    @include outermost-container;
+  }
+}
+
+.access-content-title {
+  letter-spacing: 0.1rem;
+  position: relative;
+  padding-left: 20px;
+
+  &::before {
+    content: "";
+    width: 10px;
+    height: 1px;
+    background-color: $color-black-light;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+}
+
+.map {
+  width: 50%;
+  height: 400px;
+
+  @include mq("sm") {
+    width: 100vw;
+    height: 300px;
+  }
+}
+
+.route-button {
+  display: flex;
+  gap: 5px;
+  padding: 12px;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  border: 2px solid $color-black-lighter;
+  text-decoration: none;
+  margin-top: 20px;
+
+  &:hover {
+    border: 2px solid $color-main;
+    transition: border 0.6s ease-in-out;
+  }
+}

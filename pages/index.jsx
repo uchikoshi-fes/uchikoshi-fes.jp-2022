@@ -4,10 +4,11 @@
 import NextSeo from "next-seo";
 import ReactPlayer from "react-player";
 import Image from "@/components/base/image";
-import Slogan from "@/components/slogan";
-import Location from "@/components/location";
-import Countdown from "@/components/countdown";
-import PromotionVideos from "@/components/promotion-videos";
+import Slogan from "@/components/top/slogan";
+import Access from "@/components/top/access";
+import Reserve from "@/components/top/reserve";
+import Countdown from "@/components/top/countdown";
+import PromotionVideos from "@/components/top/promotion-videos";
 // styles
 import styles from "./index.module.scss";
 
@@ -30,8 +31,11 @@ const Index = () => {
       <div className={styles["slogan-container"]}>
         <Slogan />
       </div>
-      <div className={styles["location-container"]}>
-        <Location />
+      <div className={styles["access-container"]}>
+        <Access />
+      </div>
+      <div className={styles["reserve-container"]}>
+        <Reserve />
       </div>
       <div className={styles["countdown-container"]}>
         <Countdown />

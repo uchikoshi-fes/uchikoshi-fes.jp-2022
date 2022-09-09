@@ -1,0 +1,86 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins.scss" as *;
+@use "@/components/variables" as *;
+
+.reserve {
+  @include section-padding;
+}
+
+.reserve-title {
+  @include section-title;
+}
+
+.reserve-content {
+  margin-top: 40px;
+
+  > p {
+    text-align: center;
+    line-height: 2rem;
+
+    @include mq("sm") {
+      line-height: 1.5rem;
+      font-size: 15px;
+    }
+  }
+}
+
+.reserve-link {
+  width: 300px;
+  max-width: 100%;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid $color-black-lighter;
+  padding: 15px;
+  margin: 30px auto 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+  }
+
+  &:hover {
+    &::before {
+      border-top: 1px solid $color-main;
+      border-bottom: 1px solid $color-main;
+      animation: border-animation-1 250ms linear forwards;
+    }
+
+    &::after {
+      border-right: 1px solid $color-main;
+      border-left: 1px solid $color-main;
+      animation: border-animation-2 250ms linear forwards;
+    }
+  }
+}
+
+@keyframes border-animation-1 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: calc(100% + 2px);
+  }
+}
+
+@keyframes border-animation-2 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: calc(100% + 2px);
+  }
+}
