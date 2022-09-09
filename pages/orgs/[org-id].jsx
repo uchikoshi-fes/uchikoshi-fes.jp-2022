@@ -36,7 +36,11 @@ const Organization = ({
   url,
   twitter,
 }) => {
-  const Description = dynamic(() => importOrganization(id));
+  const Description = dynamic(() => importOrganization(id), {
+    loading: () => (
+      <div className={styles["description-loading"]}>(読込中...)</div>
+    ),
+  });
 
   return (
     <>
