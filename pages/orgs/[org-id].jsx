@@ -21,10 +21,11 @@ import {
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 // config
 import { CATEGORIES, AREAS } from "./index";
-import fetchOrganizations from "@/components/organizations/fetch";
-
-const importOrganization = (id) =>
-  import(`@/components/organizations/${id}.mdx`);
+import {
+  fetchOrganizations,
+  fetchOrganization,
+  fetchOrganizationDescription,
+} from "@/components/organizations/fetch";
 
 const Organization = ({
   id,
@@ -35,8 +36,9 @@ const Organization = ({
   name,
   url,
   twitter,
+  logo,
 }) => {
-  const Description = dynamic(() => importOrganization(id), {
+  const Description = dynamic(() => fetchOrganizationDescription(id), {
     loading: () => (
       <div className={styles["description-loading"]}>(読込中...)</div>
     ),
@@ -49,6 +51,15 @@ const Organization = ({
         openGraph={{ title: `参加団体「${title}」${name ? `by ${name}` : ""}` }}
       />
       <article className={styles.organization}>
+        <Image
+          src={`${id}/${logo}`}
+          alt={title}
+          title={`${title}ロゴ`}
+          layout="responsive"
+          height={300}
+          width={300}
+          className={styles.logo}
+        />
         <h1>{title}</h1>
         <div className={styles.meta}>
           <div>
@@ -117,8 +128,7 @@ const Organization = ({
 };
 
 const getStaticProps = async ({ params }) => {
-  const id = params["org-id"];
-  return { props: { id, ...(await importOrganization(id)).META } };
+  return { props: await fetchOrganization(params["org-id"]) };
 };
 
 const getStaticPaths = async () => {

@@ -7,6 +7,10 @@ let config = {
   images: {
     loader: "custom",
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) config.resolve.fallback.fs = false;
+    return config;
+  },
 };
 
 config = require("@next/mdx")({

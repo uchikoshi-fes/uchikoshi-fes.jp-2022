@@ -8,7 +8,7 @@ import Link from "@/components/base/link";
 // styles
 import styles from "./index.module.scss";
 // others
-import fetchOrganizations from "@/components/organizations/fetch";
+import { fetchOrganizations } from "@/components/organizations/fetch";
 
 const CATEGORIES = [
   { id: "exhibition", name: "展示" },
