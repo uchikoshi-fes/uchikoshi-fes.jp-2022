@@ -5,6 +5,8 @@
 
 .reserve {
   @include section-padding;
+  border-bottom: 1px solid $color-border;
+  padding-bottom: 144px;
 }
 
 .reserve-title {
