@@ -51,42 +51,47 @@ const Organization = ({
         openGraph={{ title: `参加団体「${title}」${name ? `by ${name}` : ""}` }}
       />
       <article className={styles.organization}>
-        <Image
-          src={`${id}/${logo}`}
-          alt={title}
-          title={`${title}ロゴ`}
-          layout="responsive"
-          height={300}
-          width={300}
-          className={styles.logo}
-        />
-        <h1>{title}</h1>
-        <div className={styles.meta}>
-          <div>
-            <FontAwesomeIcon icon={faTag} />
-            <Link href={`/orgs/?category=${categoryId}`}>
-              {CATEGORIES.find(({ id }) => id === categoryId)?.name}
-            </Link>
-          </div>
-          <div>
-            <FontAwesomeIcon icon={faLocationDot} />
-            <Link href={`/map/${areaId}`}>
-              {AREAS.find(({ id }) => id === areaId)?.name}
-            </Link>
-            {room && <div className={styles.room}>{room}</div>}
-          </div>
-          <div>
-            <FontAwesomeIcon icon={faPeopleGroup} />
-            {url ? <Link href={url}>{name || "有志"}</Link> : name || "有志"}
-          </div>
-          {twitter && (
-            <div>
-              <FontAwesomeIcon icon={faTwitter} />
-              <Link href={`https://twitter.com/${twitter}`}>@{twitter}</Link>
+        <div className={styles.info}>
+          {logo && (
+            <div className={styles.logo}>
+              <Image
+                src={`${id}/${logo}`}
+                alt={title}
+                title={`${title}ロゴ`}
+                layout="responsive"
+                height={408}
+                width={400}
+              />
             </div>
           )}
+          <div className={styles.meta}>
+            <div>
+              <FontAwesomeIcon icon={faTag} size="lg" />
+              <Link href={`/orgs/?category=${categoryId}`}>
+                {CATEGORIES.find(({ id }) => id === categoryId)?.name}
+              </Link>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faLocationDot} size="lg" />
+              <Link href={`/map/${areaId}`}>
+                {AREAS.find(({ id }) => id === areaId)?.name}
+              </Link>
+              {room && <div className={styles.room}>{room}</div>}
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faPeopleGroup} size="lg" />
+              {url ? <Link href={url}>{name || "有志"}</Link> : name || "有志"}
+            </div>
+            {twitter && (
+              <div>
+                <FontAwesomeIcon icon={faTwitter} size="lg" />
+                <Link href={`https://twitter.com/${twitter}`}>@{twitter}</Link>
+              </div>
+            )}
+          </div>
         </div>
         <div className={styles.description}>
+          <h1>{title}</h1>
           <MDXProvider
             components={{
               p: ({ children }) => (
@@ -121,6 +126,9 @@ const Organization = ({
           >
             <Description />
           </MDXProvider>
+        </div>
+        <div className={styles.back}>
+          <Link href={`/orgs?category=${categoryId}`}>参加団体一覧へ戻る</Link>
         </div>
       </article>
     </>
