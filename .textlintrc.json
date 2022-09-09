@@ -15,7 +15,8 @@
     "ja-unnatural-alphabet": {
       "allow": [
         "/([A-GＡ-Ｇ]・?)*[A-GＡ-Ｇ]組/",
-        "/([A-GＡ-Ｇ]・?)*[A-GＡ-Ｇ]教室/"
+        "/([A-GＡ-Ｇ]・?)*[A-GＡ-Ｇ]教室/",
+        "/ハンドボールコート([A-GＡ-Ｇ]・?)*[A-GＡ-Ｇ]/"
       ]
     },
     "no-doubled-conjunction": true,
