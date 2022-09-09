@@ -42,8 +42,8 @@
 
 ## Version
 
-**Version:** 1.1.0 (予約フォーム追加)  
-**Latest Update:** 2022/09/05
+**Version:** 1.1.1 (予約ページ調整)  
+**Latest Update:** 2022/09/09
 
 ## Feedback & Support
 
