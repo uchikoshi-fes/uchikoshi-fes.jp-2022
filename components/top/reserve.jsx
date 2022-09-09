@@ -33,7 +33,7 @@ const Reserve = () => {
         </p>
         <Link href="/reserve" className={styles["reserve-link"]}>
           来場申し込みページ
-          <FontAwesomeIcon icon={faAngleRight} className={styles.icon} />
+          <FontAwesomeIcon icon={faAngleRight} />
         </Link>
       </motion.div>
     </section>

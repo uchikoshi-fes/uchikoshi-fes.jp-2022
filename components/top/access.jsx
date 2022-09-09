@@ -9,8 +9,7 @@ import Link from "@/components/base/link";
 // styles
 import styles from "./access.module.scss";
 // icons
-import { faRoute, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
-import Image from "@/components/base/image";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const GoogleMaps = () => {
   return (
@@ -69,13 +68,8 @@ const Access = () => {
               href="https://www.google.co.jp/maps/dir//%E3%80%92221-0012+%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E7%A5%9E%E5%A5%88%E5%B7%9D%E5%8C%BA%E5%AD%90%E5%AE%89%E5%8F%B0%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%91+%E6%B5%85%E9%87%8E%E4%B8%AD%E5%AD%A6%E6%A0%A1%E3%83%BB%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1/"
               noIcon={true}
             >
-              <Image
-                src="/icons/google-map-icon.svg"
-                width="24px"
-                height="24px"
-                alt=""
-              />
               現在地からのルート
+              <FontAwesomeIcon icon={faAngleRight} />
             </Link>
           </ul>
         </div>

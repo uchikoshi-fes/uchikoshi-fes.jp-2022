@@ -72,18 +72,10 @@
 }
 
 .route-button {
-  display: flex;
-  gap: 5px;
-  padding: 12px;
-  align-items: center;
-  justify-content: center;
-  width: 220px;
-  border: 2px solid $color-black-lighter;
-  text-decoration: none;
-  margin-top: 20px;
+  @include border-button(220px);
+  margin: 30px 0 0;
 
-  &:hover {
-    border: 2px solid $color-main;
-    transition: border 0.6s ease-in-out;
+  @include mq("sm") {
+    width: 100%;
   }
 }

@@ -55,3 +55,47 @@ $breakpoints: (
     margin: 15px auto 0;
   }
 }
+
+@mixin border-button($width) {
+  width: $width;
+  max-width: 100%;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid $color-black-lighter;
+  padding: 15px;
+  margin: 30px auto 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: calc(100% + 2px);
+    border-top: 1px solid $color-main;
+    border-bottom: 1px solid $color-main;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 2px);
+    height: 0;
+    border-right: 1px solid $color-main;
+    border-left: 1px solid $color-main;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      width: calc(100% + 2px);
+    }
+
+    &::after {
+      height: calc(100% + 2px);
+    }
+  }
+}
