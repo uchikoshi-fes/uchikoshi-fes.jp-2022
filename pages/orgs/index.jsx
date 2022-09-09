@@ -3,6 +3,7 @@
 // react
 import React from "react";
 // hooks
+import { useRouter } from "next/router";
 import { useMediaQuery } from "react-responsive";
 import useClient from "@/hooks/client";
 // components
@@ -58,9 +59,25 @@ const AREAS = [
 
 const Organizations = ({ organizations }) => {
   const isClient = useClient();
+  const router = useRouter();
   const isWide = useMediaQuery({ query: "(min-width: 800px)" });
   const isNarrow = useMediaQuery({ query: "(max-width: 450px)" });
   const [categoryId, setCategoryId] = React.useState(CATEGORIES[0].id);
+  const [categorySelected, setCategorySelected] = React.useState(false);
+  React.useEffect(() => {
+    if (!router.isReady) return;
+    if (!categorySelected) {
+      if (CATEGORIES.some(({ id }) => id === router.query.category)) {
+        setCategoryId(router.query.category);
+      }
+      setCategorySelected(true);
+      return;
+    }
+    router.replace({ query: { category: categoryId } }, undefined, {
+      shallow: true,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router.isReady, categoryId]);
 
   return (
     <>
