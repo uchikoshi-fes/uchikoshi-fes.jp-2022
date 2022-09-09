@@ -57,7 +57,8 @@ const fetchOrganizations = async () => {
   organizations.sort(
     (a, b) =>
       AREAS.findIndex(({ id }) => id === a.areaId) -
-      AREAS.findIndex(({ id }) => id === b.areaId)
+        AREAS.findIndex(({ id }) => id === b.areaId) ||
+      a.room.localeCompare(b.room)
   );
   return organizations;
 };

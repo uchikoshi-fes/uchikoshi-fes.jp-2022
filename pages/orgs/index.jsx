@@ -2,22 +2,37 @@
 
 // react
 import React from "react";
+// hooks
+import { useMediaQuery } from "react-responsive";
+import useClient from "@/hooks/client";
 // components
 import { NextSeo } from "next-seo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "@/components/base/link";
+import Image from "@/components/base/image";
 // styles
 import styles from "./index.module.scss";
+// icons
+import {
+  faFileContract,
+  faUtensils,
+  faDice,
+  faMicrophone,
+  faPersonRunning,
+  faBurger,
+  faCartShopping,
+} from "@fortawesome/free-solid-svg-icons";
 // others
 import { fetchOrganizations } from "@/components/organizations/fetch";
 
 const CATEGORIES = [
-  { id: "exhibition", name: "展示" },
-  { id: "cafe", name: "喫茶" },
-  { id: "amusement", name: "アミューズメント" },
-  { id: "performance", name: "公演" },
-  { id: "field", name: "グラウンド" },
-  { id: "stand", name: "屋台" },
-  { id: "shop", name: "販売" },
+  { id: "exhibition", name: "展示", icon: faFileContract },
+  { id: "cafe", name: "喫茶", icon: faUtensils },
+  { id: "amusement", name: "アミューズメント", icon: faDice },
+  { id: "performance", name: "公演", icon: faMicrophone },
+  { id: "field", name: "グラウンド", icon: faPersonRunning },
+  { id: "stand", name: "屋台", icon: faBurger },
+  { id: "shop", name: "販売", icon: faCartShopping },
 ];
 
 const AREAS = [
@@ -42,6 +57,9 @@ const AREAS = [
 ];
 
 const Organizations = ({ organizations }) => {
+  const isClient = useClient();
+  const isWide = useMediaQuery({ query: "(min-width: 800px)" });
+  const isNarrow = useMediaQuery({ query: "(max-width: 450px)" });
   const [categoryId, setCategoryId] = React.useState(CATEGORIES[0].id);
 
   return (
@@ -50,37 +68,70 @@ const Organizations = ({ organizations }) => {
       <article className={styles.orgs}>
         <h1>参加団体一覧</h1>
         <div className={styles["organizations-window"]}>
-          <div>
-            <ul className={styles.categories}>
-              {CATEGORIES.map(({ id, name }) => (
+          <ul className={styles.categories}>
+            {CATEGORIES.map(({ id, name, icon }) => {
+              const isActive = id === categoryId;
+              const isShowFull = !isClient || isWide || (!isNarrow && isActive);
+              return (
                 <li
                   className={`${styles[`category-${id}`]} ${
-                    id == categoryId ? styles.active : ""
+                    isActive ? styles.active : ""
                   }`}
                   key={id}
                 >
-                  <button onClick={() => setCategoryId(id)}>{name}</button>
+                  <button onClick={() => setCategoryId(id)}>
+                    <FontAwesomeIcon
+                      icon={icon}
+                      size="lg"
+                      className={isShowFull ? styles["icon-left"] : ""}
+                    />
+                    {isShowFull && name}
+                  </button>
                 </li>
-              ))}
-            </ul>
-            <ul className={styles.organizations}>
-              {organizations
-                .filter((org) => org.categoryId === categoryId)
-                .map(({ id, title, areaId, room, name }) => {
-                  const area = AREAS.find(({ id }) => id === areaId);
-                  return (
-                    <li key={id}>
-                      <Link href={`/orgs/${id}`}>
-                        <div className={styles.title}>{title}</div>
+              );
+            })}
+          </ul>
+          {isClient && isNarrow && (
+            <div
+              className={`${styles["category-narrow"]} ${
+                styles[`category-${categoryId}`]
+              }`}
+            >
+              {CATEGORIES.find(({ id }) => id === categoryId).name}
+            </div>
+          )}
+          <ul
+            className={`${styles.organizations} ${
+              styles[`category-${categoryId}`]
+            }`}
+          >
+            {organizations
+              .filter((org) => org.categoryId === categoryId)
+              .map(({ id, title, areaId, room, name, logo }) => {
+                const area = AREAS.find(({ id }) => id === areaId);
+                return (
+                  <li key={id}>
+                    <Link href={`/orgs/${id}`}>
+                      {isClient && !isNarrow && (
+                        <div className={styles.logo}>
+                          <Image
+                            src={`/orgs/${id}/${logo}`}
+                            alt=""
+                            layout="fill"
+                          />
+                        </div>
+                      )}
+                      <div className={styles.title}>{title}</div>
+                      <div className={styles["other-info"]}>
                         <div className={styles.area}>{area?.name}</div>
                         <div className={styles.room}>{room}</div>
                         <div className={styles.name}>{name || title}</div>
-                      </Link>
-                    </li>
-                  );
-                })}
-            </ul>
-          </div>
+                      </div>
+                    </Link>
+                  </li>
+                );
+              })}
+          </ul>
         </div>
       </article>
     </>

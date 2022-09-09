@@ -4,82 +4,90 @@
 @use "@/components/variables" as *;
 @use "@/components/layout/header.module" as header;
 
+.icon-left {
+  margin-right: 0.5rem;
+}
+
 .orgs {
   @include outermost-container;
 }
 
 .organizations-window {
+  max-height: 480px;
   width: 100%;
-  overflow-x: auto;
-
-  > div {
-    min-width: 48rem;
-  }
+  overflow: auto;
+  box-shadow: 0 0 4px 2px $color-shadow;
 }
 
 .categories {
-  height: 4rem;
+  position: sticky;
+  min-height: 4rem;
+  width: 100%;
   margin: 0;
   padding: 0;
-  top: header.$header-height;
+  top: 0;
   display: flex;
+  overflow-x: auto;
   list-style: none;
+  z-index: 1;
   background-color: $color-base;
 
   > li {
-    flex: 1;
+    flex: auto;
 
-    :hover {
-      background-color: $color-accent-lighter;
+    &:not(.active) {
+      box-shadow: 0 -4px 4px -2px $color-shadow inset;
     }
 
     > button {
       height: 100%;
       width: 100%;
       border: none;
+
+      &:hover {
+        background-color: rgba($color-main, 0.2);
+      }
     }
   }
 }
 
 .category-exhibition {
-  background-color: #b5e1ca;
+  background-color: #c0ffc080;
 }
 
 .category-cafe {
-  background-color: #adcae8;
+  background-color: #ffc0c080;
 }
 
 .category-amusement {
-  background-color: #d0b2e8;
+  background-color: #ffffc080;
 }
 
 .category-performance {
-  background-color: #f8c7a7;
-}
-
-.category-stage {
-  background-color: #b5e1ca;
+  background-color: #c0c0ff80;
 }
 
 .category-field {
-  background-color: #adcae8;
-}
-
-.category-band {
-  background-color: #d0b2e8;
+  background-color: #c0ffff80;
 }
 
 .category-stand {
-  background-color: #f8c7a7;
+  background-color: #ffc0ff80;
 }
 
 .category-shop {
-  background-color: #ffe699;
+  background-color: #c0c0c080;
 }
 
 .active {
-  color: $color-base;
-  background-color: $color-accent;
+  box-shadow: 0 0 4px 2px $color-shadow;
+}
+
+.category-narrow {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .organizations {
@@ -88,14 +96,12 @@
   list-style: none;
 
   > li {
-    height: 4rem;
-
-    &:nth-child(even) {
+    &:nth-child(odd) {
       background-color: rgba($color-main, 0.1);
     }
 
     :hover {
-      background-color: $color-accent-lighter;
+      background-color: rgba($color-main, 0.2);
     }
 
     > a {
@@ -103,8 +109,9 @@
       width: 100%;
       display: flex;
       align-items: center;
-      padding: 0 1rem;
+      padding: 1rem;
       text-decoration: none;
+      gap: 1rem;
 
       > div:hover {
         background-color: transparent;
@@ -113,22 +120,35 @@
   }
 }
 
+.logo {
+  position: relative;
+  height: 80px;
+  width: 80px;
+}
+
 .title {
-  min-width: 18rem;
   flex: 2;
+  font-size: 1.2rem;
+}
+
+.other-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  > div:hover {
+    background-color: transparent;
+  }
 }
 
 .area {
-  min-width: 10rem;
   flex: 1;
 }
 
 .room {
-  min-width: 10rem;
   flex: 1;
 }
 
 .name {
-  min-width: 10rem;
   flex: 1;
 }
