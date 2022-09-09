@@ -4,9 +4,18 @@
 @use "@/components/variables" as *;
 
 .countdown {
-  width: 100%;
+  width: 70%;
   display: flex;
   align-items: center;
+  margin: 0 auto;
+  padding: 50px 0;
+  letter-spacing: 0.2rem;
+
+  @include mq("sm") {
+    width: 100%;
+    letter-spacing: 0.1rem;
+    padding: 20px 5px;
+  }
 
   > div {
     width: 100%;
@@ -16,11 +25,12 @@
 }
 
 .left {
-  font-size: 35px;
+  font-size: 25px;
   text-align: left;
 
   @include mq("sm") {
-    font-size: 22px;
+    font-size: 18px;
+    padding-bottom: 5px;
   }
 }
 
@@ -38,10 +48,4 @@
   padding: 0 0.05em;
   font-size: max(120px, 12vw);
   line-height: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent calc(100% - 0.4em),
-    rgba($color-accent, 0.2) calc(100% - 0.4em) calc(100% - 0.2em),
-    transparent calc(100% - 0.2em)
-  );
 }

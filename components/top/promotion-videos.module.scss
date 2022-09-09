@@ -1,14 +1,25 @@
 // SPDX-License-Identifier: MIT
 
-@use "@/components/variables.scss" as *;
+@use "@/components/mixins" as *;
+@use "@/components/variables" as *;
 
 .promotion-videos {
-  border: 4px solid;
-  padding: 1rem 0 0;
+  border: 1px solid $color-main;
+  background-color: $color-gray;
+  padding: 50px 60px;
 
   > h2 {
     margin: 1rem;
   }
+
+  @include mq("sm") {
+    padding: 25px 0 0 0;
+  }
+}
+
+.pv-title {
+  @include section-title;
+  padding-bottom: 30px;
 }
 
 .pv-window {
@@ -37,6 +48,12 @@
 
 .pv-tab-active {
   background-color: $color-accent;
+}
+
+.pv-tab-inactive {
+  > button {
+    cursor: pointer;
+  }
 }
 
 .pv-content {

@@ -2,6 +2,8 @@
 
 // react
 import React from "react";
+// framer-motion
+import { motion } from "framer-motion";
 // hooks
 import useClient from "@/hooks/client";
 // styles
@@ -101,7 +103,15 @@ const Countdown = () => {
   );
 
   return (
-    <div className={styles.countdown}>
+    <motion.div
+      className={styles.countdown}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{
+        duration: 1,
+      }}
+      viewport={{ once: true }}
+    >
       {!isClient ? (
         <>(読込中...)</>
       ) : (
@@ -139,7 +149,7 @@ const Countdown = () => {
           );
         })()
       )}
-    </div>
+    </motion.div>
   );
 };
 
