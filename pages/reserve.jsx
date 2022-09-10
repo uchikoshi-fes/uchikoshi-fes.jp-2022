@@ -74,12 +74,17 @@ const Reserve = () => {
 
   return (
     <>
-      <NextSeo title="来場申し込み" openGraph={{ title: "来場申し込み (抽選制)" }} />
+      <NextSeo
+        title="来場申し込み"
+        openGraph={{ title: "来場申し込み (抽選制)" }}
+      />
       <article className={styles.reserve}>
         <h1>来場申し込み (抽選制)</h1>
         {!process.env.NEXT_PUBLIC_RESERVE_URL && (
           <article>
-            <h2 className={styles.warning}>現在申し込みは受け付けておりません</h2>
+            <h2 className={styles.warning}>
+              現在申し込みは受け付けておりません
+            </h2>
             <p>2022/09/05 より申し込みを受け付けます。</p>
           </article>
         )}
