@@ -77,7 +77,11 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, mapRatio }) => {
 };
 
 const getStaticProps = async ({ params }) => {
-  const imageSize = await sizeOf(`public/map/${params["map-id"]}.png`);
+  const imageSize = await sizeOf(`public/map/${params["map-id"]}.png`).catch(
+    () => {
+      return { width: 1, height: 1 };
+    }
+  );
   return {
     props: {
       ...MAPS.find(({ id }) => id === params["map-id"]),
