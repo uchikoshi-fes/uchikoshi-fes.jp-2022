@@ -4,6 +4,10 @@
 let config = {
   reactStrictMode: true,
   pageExtensions: ["js", "jsx", "md", "mdx"],
+  webpack: (config, { isServer }) => {
+    if (!isServer) config.resolve.fallback.fs = false;
+    return config;
+  },
 };
 
 config =
