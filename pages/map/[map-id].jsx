@@ -22,6 +22,7 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, mapRatio }) => {
       <NextSeo title={name} openGraph={{ title: name }} />
       <article className={styles["school-map"]}>
         <h1>{name}</h1>
+        <p>校内マップは制作中です。バージョンアップをお待ちください。</p>
         <div className={styles["map-container"]}>
           <div style={{ aspectRatio: mapRatio }} className={styles.map}>
             <Image
