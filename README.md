@@ -42,14 +42,8 @@
 
 ## Version
 
-<<<<<<< HEAD
-**Version:** 1.1.0 (予約フォーム追加)  
-**Latest Update:** 2022/09/05
-=======
 **Version:** 1.1.1 (予約ページ調整)  
 **Latest Update:** 2022/09/09
-
-> > > > > > > 957c992c8ab095838f63975e68110b099529bae4
 
 ## Feedback & Support
 
