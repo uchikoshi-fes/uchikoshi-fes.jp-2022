@@ -42,8 +42,8 @@
 
 ## Version
 
-**Version:** 1.1.1 (予約ページ調整)  
-**Latest Update:** 2022/09/09
+**Version:** 1.2.0 (団体ページ仕上げ・校内マップ仮実装)  
+**Latest Update:** 2022/09/11
 
 ## Feedback & Support
 
