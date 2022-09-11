@@ -26,15 +26,15 @@
 
 **システム:**
 
-- (全般) 文化祭実行委員 / 広報部門 / [TwoSquirrels](//github.com/TwoSquirrels)
+- (全般) 文化祭実行委員 / 広報部門 / [TwoSquirrels](https://github.com/TwoSquirrels)
 - (協力) 情報科の先生方
-- (協力) [Mogyuchi さん](//github.com/Mogyuchi)
-- (協力) [gendaineko2222 さん](//github.com/gendaineko2222)
+- (協力) [Mogyuchi さん](https://github.com/Mogyuchi)
+- (協力) [gendaineko2222 さん](https://github.com/gendaineko2222)
 
 **デザイン:**
 
 - (テーマ) 文化祭実行委員
-- (コーディング) 文化祭実行委員 / 広報部門 / [TwoSquirrels](//github.com/TwoSquirrles)
+- (コーディング) 文化祭実行委員 / 広報部門 / [TwoSquirrels](https://github.com/TwoSquirrles)
 
 **コンテンツ:**
 
@@ -42,13 +42,13 @@
 
 ## Version
 
-**Version:** 1.1.1 (予約ページ調整)  
-**Latest Update:** 2022/09/09
+**Version:** 1.2.0 (団体ページ仕上げ・校内マップ仮実装)  
+**Latest Update:** 2022/09/11
 
 ## Feedback & Support
 
 バグ報告や質問、提案があるなど、何か伝えたいことがある場合は、  
-GitHub アカウントをお持ちの場合は [Issues](//github.com/uchikoshi-fes/uchikoshi-fes.jp-2022/issues) に、  
+GitHub アカウントをお持ちの場合は [Issues](https://github.com/uchikoshi-fes/uchikoshi-fes.jp-2022/issues) に、  
 お持ちでない場合はお問い合わせフォーム (準備中) にお願いします。
 
 ## Tech Stack

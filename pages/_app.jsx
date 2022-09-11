@@ -30,7 +30,7 @@ const UchikoshiFesApp = ({ Component, pageProps }) => {
   React.useEffect(() => {
     router.events.on("routeChangeComplete", resetScroll);
     return () => router.events.off("routeChangeComplete", resetScroll);
-  }, []);
+  }, [router.events]);
 
   return (
     <>

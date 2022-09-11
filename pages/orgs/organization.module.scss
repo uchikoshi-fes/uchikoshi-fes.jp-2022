@@ -1,7 +1,115 @@
 // SPDX-License-Identifier: MIT
 
 @use "@/components/mixins" as *;
+@use "@/components/variables" as *;
 
 .organization {
   @include outermost-container;
+}
+
+.info {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  position: relative;
+  flex: 0 400px;
+  text-align: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: block;
+    pointer-events: none;
+    box-shadow: 0 0 4px 2px $color-shadow inset;
+  }
+}
+
+.meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  > div {
+    height: 4rem;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    @include non-break;
+    color: $color-base;
+    background-color: $color-accent;
+    box-shadow: 0 0 4px 2px $color-shadow inset;
+
+    > svg {
+      width: 2em;
+    }
+  }
+}
+
+.room {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.description-loading {
+  height: 100vh;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.description {
+  margin: 3rem 0;
+
+  > table {
+    width: 100%;
+
+    > thead {
+      color: $color-base;
+      background-color: $color-accent;
+
+      > tr > th {
+        padding: 0.5rem;
+      }
+    }
+
+    > tbody {
+      > tr {
+        background-color: rgba($color-main, 0.1);
+
+        &:nth-child(even) {
+          background-color: rgba($color-main, 0.2);
+        }
+
+        > td {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+}
+
+.paragraph {
+  white-space: pre-wrap;
+  font-family: system-ui;
+}
+
+.image {
+  margin: 1.5rem 0 0;
+  padding: 4px;
+  text-align: center;
+  color: $color-base;
+  background-color: $color-main;
+}
+
+.back {
+  width: 100%;
+  text-align: center;
 }
