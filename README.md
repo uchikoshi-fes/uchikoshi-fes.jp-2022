@@ -42,7 +42,7 @@
 
 ## Version
 
-**Version:** 1.2.0 (団体ページ仕上げ・校内マップ仮実装)  
+**Version:** 1.2.1 (レイヤーの高さ修整)  
 **Latest Update:** 2022/09/11
 
 ## Feedback & Support
