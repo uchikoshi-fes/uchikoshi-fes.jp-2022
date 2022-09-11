@@ -28,15 +28,26 @@
 
 .map-button {
   position: absolute;
-  padding: 0.2em 0.3em;
+  padding: 0.75em 0.1em;
   transform: translate(-50%, -50%);
   @include non-break;
-  font-size: 0.8rem;
+  white-space: nowrap;
+  font-size: 0.5rem;
   font-weight: bold;
   background-color: rgba($color-base, 0.66);
 
   @media screen and (min-width: 400px) {
+    padding: 0.1em 0.15em;
+    font-size: 0.75rem;
+  }
+
+  @media screen and (min-width: 800px) {
+    padding: 0.2em 0.3em;
     font-size: 1rem;
+  }
+
+  &:hover {
+    z-index: 1;
   }
 }
 

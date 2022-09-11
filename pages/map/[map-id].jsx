@@ -43,6 +43,15 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
               alt
             )}
             <div>
+              {texts.map((text) => (
+                <span
+                  style={{ top: `${text.y}%`, left: `${text.x}%` }}
+                  className={styles["map-button"]}
+                  key={`${text.x},${text.y}`}
+                >
+                  {text.text}
+                </span>
+              ))}
               {maps.map((map) => (
                 <Link
                   href={`/map/${map.id === "asano" ? "" : map.id}`}
@@ -52,15 +61,6 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
                 >
                   {MAPS.find(({ id }) => id === map.id).name}
                 </Link>
-              ))}
-              {texts.map((text) => (
-                <span
-                  style={{ top: `${text.y}%`, left: `${text.x}%` }}
-                  className={styles["map-button"]}
-                  key={`${text.x},${text.y}`}
-                >
-                  {text.text}
-                </span>
               ))}
             </div>
           </div>
