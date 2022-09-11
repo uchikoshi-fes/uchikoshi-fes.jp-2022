@@ -31,14 +31,14 @@ const Index = () => {
       <div className={styles["slogan-container"]}>
         <Slogan />
       </div>
+      <div className={styles["countdown-container"]}>
+        <Countdown />
+      </div>
       <div className={styles["access-container"]}>
         <Access />
       </div>
       <div className={styles["reserve-container"]}>
         <Reserve />
-      </div>
-      <div className={styles["countdown-container"]}>
-        <Countdown />
       </div>
       <div className={styles["pv-container"]}>
         <PromotionVideos />

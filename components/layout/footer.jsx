@@ -5,6 +5,7 @@ import { InView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Timeline as TwitterTL } from "react-twitter-widgets";
 import Link from "@/components/base/link";
+import Outline from "./outline";
 // styles
 import styles from "./footer.module.scss";
 // icons
@@ -20,8 +21,8 @@ import { links as menuLinks } from "@/components/layout/menu";
 
 const Tweets = ({ tweetLimit }) => {
   return (
-    <article className={styles["tweets"]}>
-      <h2>公式 Twitter の最新ツイート</h2>
+    <section className={styles["tweets"]}>
+      <h2 className={styles["tweets-title"]}>公式 Twitter</h2>
       <InView triggerOnce rootMargin="200px">
         {({ inView, ref }) => (
           <div className={styles["twitter-tl"]} ref={ref}>
@@ -37,7 +38,7 @@ const Tweets = ({ tweetLimit }) => {
           </div>
         )}
       </InView>
-    </article>
+    </section>
   );
 };
 
@@ -131,6 +132,7 @@ const Footer = () => {
   return (
     <>
       <Tweets tweetLimit={5} />
+      <Outline />
       <footer className={styles.footer}>
         <Menu />
         <Others />

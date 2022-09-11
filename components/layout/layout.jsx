@@ -4,7 +4,6 @@
 import React from "react";
 // components
 import Header from "./header";
-import Outline from "./outline";
 import Footer from "./footer";
 // styles
 import styles from "./layout.module.scss";
@@ -20,7 +19,6 @@ const Layout = ({ children }) => {
     >
       <Header setScrollable={setScrollable} />
       <main className={styles.main}>{children}</main>
-      <Outline />
       <Footer />
     </div>
   );

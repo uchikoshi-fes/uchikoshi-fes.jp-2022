@@ -35,23 +35,22 @@ const GoogleMaps = ({ scale = "13.1" }) => {
 
 const Outline = () => {
   return (
-    <div className={styles.outline}>
-      <article>
-        <h2>開催概要</h2>
-        <h3>日程</h3>
+    <section className={styles.outline}>
+      <h1 className={styles["outline-title"]}>開催概要</h1>
+      <div className={styles["outline-content"]}>
+        <h3 className={styles["outline-subtitle"]}>日程</h3>
         <p>9月18日 (日) 19日 (月)</p>
         <p>雨天決行</p>
-        <article>
-          <h3>アクセス</h3>
-          <p>浅野中学校・高等学校</p>
-          <p>〒221-0012 神奈川県横浜市神奈川区子安台１丁目３-１</p>
-          <p>JR 新子安・京急新子安より徒歩 8 分</p>
-          <div className={styles["map-container"]}>
-            <GoogleMaps scale="60" />
-          </div>
-        </article>
-      </article>
-    </div>
+      </div>
+      <div className={styles["outline-content"]}>
+        <h3 className={styles["outline-subtitle"]}>会場</h3>
+        <p>浅野中学校・高等学校</p>
+        <p>〒221-0012 神奈川県横浜市神奈川区子安台１丁目３-１</p>
+        <div className={styles["map-container"]}>
+          <GoogleMaps scale="60" />
+        </div>
+      </div>
+    </section>
   );
 };
 

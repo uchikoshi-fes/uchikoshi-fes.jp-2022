@@ -76,21 +76,27 @@
 .reserve-container {
   @include outermost-container;
   margin: 3rem 0;
+
+  @include mq("sm") {
+    margin: 0;
+  }
 }
 
 .slogan-container {
   @include outermost-container;
-  margin: 3rem 0;
 }
 
 .countdown-container {
   @include outermost-container;
-  margin: 3rem 0;
 }
 
 .pv-container {
   @include outermost-container;
-  margin: 3rem 0;
+  margin: 3rem 0 60px 0;
+
+  @include mq("sm") {
+    margin: 1rem 0;
+  }
 }
 
 .asano-radio-container {

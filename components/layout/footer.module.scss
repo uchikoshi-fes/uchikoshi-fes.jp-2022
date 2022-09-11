@@ -7,16 +7,42 @@ $easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
 
 .tweets {
   @include outermost-container;
+  padding-bottom: 20px;
   margin: 1rem 0;
+  border-top: 1px solid $color-border;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    height: calc(100% - 20px);
+    display: block;
+    pointer-events: none;
+    box-shadow: 0 -120px 60px -60px #fff inset;
+  }
+}
+
+.tweets-title {
+  @include section-title;
+  padding: 60px 0 40px;
 }
 
 .twitter-tl {
   position: relative;
-  height: 560px;
+  height: 500px;
   overflow: auto;
 
+  @include mq("sm") {
+    height: 400px;
+  }
+
   &::before {
-    content: "(読込中...)";
+    content: "Loading...";
+    color: $color-black-lighter;
+    letter-spacing: 0.1rem;
     position: absolute;
     height: 100%;
     width: 100%;

@@ -14,22 +14,62 @@
 
 .outline {
   position: relative;
-  @include outermost-container;
-  overflow: hidden;
+  padding: 80px 0 40px;
+  background-color: $color-gray;
 
-  > article {
-    border-top: 1px solid $color-border;
-    padding: 1em 0;
+  @include mq("sm") {
+    padding-bottom: 0;
+  }
+}
+
+.outline-content {
+  @include outermost-container;
+  padding-top: 5px;
+  padding-bottom: 0;
+
+  @include mq("sm") {
+    padding: 5px 25px 0;
+  }
+
+  > p {
+    letter-spacing: 0.05rem;
+    margin: 1px;
+
+    @include mq("sm") {
+      font-size: 14px;
+    }
+  }
+}
+
+.outline-title {
+  @include section-title;
+}
+
+.outline-subtitle {
+  letter-spacing: 0.1rem;
+  position: relative;
+  padding-left: 20px;
+  font-size: 18px;
+
+  &::before {
+    content: "";
+    width: 3px;
+    height: 70%;
+    background-color: $color-accent;
+    position: absolute;
+    top: 15%;
+    left: 0;
   }
 }
 
 .map-container {
-  width: 100vw;
-  margin: 1rem calc(50% - 50vw);
+  width: 100%;
+  margin: 1rem 0 0;
+  height: 30vh;
   aspect-ratio: 4 / 3;
 
-  @media screen and (min-width: 800px) {
-    width: 100%;
-    margin: 1rem 0;
+  @include mq("sm") {
+    width: 100vw;
+    margin: 1rem calc(50% - 50vw) 0;
   }
 }

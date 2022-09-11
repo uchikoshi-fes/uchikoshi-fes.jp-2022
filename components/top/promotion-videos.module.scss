@@ -4,22 +4,26 @@
 @use "@/components/variables" as *;
 
 .promotion-videos {
-  border: 1px solid $color-main;
+  border: 1px solid $color-black-lighter;
   background-color: $color-gray;
-  padding: 50px 60px;
+  padding: 30px 60px;
 
   > h2 {
     margin: 1rem;
   }
 
   @include mq("sm") {
-    padding: 25px 0 0 0;
+    padding: 20px 0 0 0;
   }
 }
 
 .pv-title {
   @include section-title;
   padding-bottom: 30px;
+
+  @include mq("sm") {
+    padding-bottom: 20px;
+  }
 }
 
 .pv-window {
