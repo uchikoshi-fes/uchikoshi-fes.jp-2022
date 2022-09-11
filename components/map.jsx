@@ -106,7 +106,7 @@ export const MAPS = [
     ],
     orgs: [
       { id: "haunted", x: 50, y: 50 },
-      { id: "jhs-1st", x: 50, y: 50 },
+      { id: "jhs1st", x: 50, y: 50 },
       { id: "mission-agent-3", x: 50, y: 50 },
     ],
     texts: [],
@@ -125,7 +125,7 @@ export const MAPS = [
       { id: "asobase", x: 50, y: 50 },
       { id: "mezauchi", x: 50, y: 50 },
       { id: "card-game", x: 50, y: 50 },
-      { id: "jhs-2nd", x: 50, y: 50 },
+      { id: "jhs2nd", x: 50, y: 50 },
       { id: "shinbei", x: 50, y: 50 },
     ],
     texts: [],

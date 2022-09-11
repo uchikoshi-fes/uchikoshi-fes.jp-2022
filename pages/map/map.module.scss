@@ -55,6 +55,23 @@ a.map-button:hover {
   color: $color-accent;
 }
 
+.organizations {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    margin: 0.5rem 0;
+    padding: 0;
+
+    > a {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
 .current {
   color: $color-accent;
 }

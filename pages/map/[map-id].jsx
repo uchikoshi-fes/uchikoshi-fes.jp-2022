@@ -10,9 +10,11 @@ import Image from "@/components/base/image";
 import styles from "./map.module.scss";
 // config
 import { MAPS } from "@/components/map";
+import { CATEGORIES } from "@/pages/orgs/index";
 // others
 import util from "util";
 import fetchImageSize from "image-size";
+import { fetchOrganization } from "@/components/organizations/fetch";
 
 const sizeOf = util.promisify(fetchImageSize);
 
@@ -65,6 +67,25 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
             </div>
           </div>
         </div>
+        {orgs.length > 0 && (
+          <article>
+            <h2>マップ内の団体</h2>
+            <ul className={styles.organizations}>
+              {orgs.map((org) => (
+                <li key={org.id}>
+                  <Link href={`/orgs/${org.id}`}>
+                    <div>{org.title}</div>
+                    <div>{org.room}</div>
+                    <div>
+                      {CATEGORIES.find(({ id }) => id === org.categoryId).name}
+                    </div>
+                    <div>{org.name}</div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </article>
+        )}
         <article>
           <h2>校内マップ一覧</h2>
           <ul>
@@ -89,12 +110,18 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
 };
 
 const getStaticProps = async ({ params }) => {
-  const image = await sizeOf(`public/map/${params["map-id"]}.png`).catch(
-    () => null
-  );
-  return {
-    props: { ...MAPS.find(({ id }) => id === params["map-id"]), image },
-  };
+  const props = MAPS.find(({ id }) => id === params["map-id"]);
+  await Promise.all([
+    (async () => {
+      props.image = await sizeOf(`public/map/${params["map-id"]}.png`).catch(
+        () => null
+      );
+    })(),
+    ...props.orgs.map(async (org) => {
+      Object.assign(org, await fetchOrganization(org.id));
+    }),
+  ]);
+  return { props };
 };
 
 const getStaticPaths = async () => {
