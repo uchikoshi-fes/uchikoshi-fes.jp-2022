@@ -28,12 +28,12 @@
 
 .map-buttons > div {
   position: absolute;
+  padding: 0.2em 0.3em;
   transform: translate(-50%, -50%);
   @include non-break;
   font-size: 0.8rem;
   font-weight: bold;
-  text-shadow: 0 0 2px $color-base;
-  filter: drop-shadow(0 0 2px $color-base);
+  background-color: rgba($color-base, 0.66);
 
   @media screen and (min-width: 400px) {
     font-size: 1rem;
