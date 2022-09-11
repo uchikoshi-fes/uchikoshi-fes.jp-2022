@@ -26,7 +26,7 @@
   width: 100%;
 }
 
-.map-buttons > div {
+.map-button {
   position: absolute;
   padding: 0.2em 0.3em;
   transform: translate(-50%, -50%);
@@ -38,6 +38,10 @@
   @media screen and (min-width: 400px) {
     font-size: 1rem;
   }
+}
+
+a.map-button:hover {
+  color: $color-accent;
 }
 
 .current {
