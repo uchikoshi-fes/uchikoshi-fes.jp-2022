@@ -16,7 +16,7 @@ import fetchImageSize from "image-size";
 
 const sizeOf = util.promisify(fetchImageSize);
 
-const SchoolMap = ({ id, name, alt, maps, orgs, texts, mapRatio }) => {
+const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
   return (
     <>
       <NextSeo title={name} openGraph={{ title: name }} />
@@ -24,13 +24,24 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, mapRatio }) => {
         <h1>{name}</h1>
         <p>校内マップは制作中です。バージョンアップをお待ちください。</p>
         <div className={styles["map-container"]}>
-          <div style={{ aspectRatio: mapRatio }} className={styles.map}>
-            <Image
-              src={`/map/${id}.png`}
-              alt={alt}
-              layout="fill"
-              objectFit="contain"
-            />
+          <div
+            style={
+              image
+                ? { aspectRatio: image.width / image.height }
+                : { minHeight: "100px" }
+            }
+            className={styles.map}
+          >
+            {image ? (
+              <Image
+                src={`/map/${id}.png`}
+                alt={alt}
+                layout="fill"
+                objectFit="contain"
+              />
+            ) : (
+              alt
+            )}
             <div className={styles["map-buttons"]}>
               {maps.map((map) => (
                 <div
@@ -77,16 +88,11 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, mapRatio }) => {
 };
 
 const getStaticProps = async ({ params }) => {
-  const imageSize = await sizeOf(`public/map/${params["map-id"]}.png`).catch(
-    () => {
-      return { width: 1, height: 1 };
-    }
+  const image = await sizeOf(`public/map/${params["map-id"]}.png`).catch(
+    () => null
   );
   return {
-    props: {
-      ...MAPS.find(({ id }) => id === params["map-id"]),
-      mapRatio: imageSize.width / imageSize.height,
-    },
+    props: { ...MAPS.find(({ id }) => id === params["map-id"]), image },
   };
 };
 
