@@ -7,6 +7,8 @@
 
 // react
 import React from "react";
+// hooks
+import useClient from "@/hooks/client";
 // components
 import { NextSeo } from "next-seo";
 import Link from "@/components/base/link";
@@ -70,7 +72,16 @@ const NOTES = [
 ];
 
 const Reserve = () => {
+  const isClient = useClient();
+  const [now, setNow] = React.useState(Date.now());
   const [checked, setChecked] = React.useState(NOTES.map(() => false));
+  React.useEffect(() => {
+    if (!isClient) return;
+    const timer = setInterval(() => {
+      setNow(Date.now());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [isClient]);
 
   return (
     <>
@@ -80,13 +91,20 @@ const Reserve = () => {
       />
       <article className={styles.reserve}>
         <h1>来場申し込み (抽選制)</h1>
-        {!process.env.NEXT_PUBLIC_RESERVE_URL && (
+        {!process.env.NEXT_PUBLIC_RESERVE_URL ? (
           <article>
             <h2 className={styles.warning}>
               現在申し込みは受け付けておりません
             </h2>
             <p>2022/09/05 より申し込みを受け付けます。</p>
           </article>
+        ) : (
+          now >= Date.UTC(2022, 8, 12, 12, 0) - 9 * 3600000 && (
+            <article>
+              <h2 className={styles.warning}>申し込み受付は終了しました</h2>
+              <p>抽選結果のご連絡は9月13日頃を予定しています。</p>
+            </article>
+          )
         )}
         <p>
           2022年9月18,19日に第43回打越祭(第２部)文化祭を開催します。
