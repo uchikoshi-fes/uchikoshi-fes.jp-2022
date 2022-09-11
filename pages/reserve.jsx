@@ -101,8 +101,8 @@ const Reserve = () => {
         ) : (
           now >= Date.UTC(2022, 8, 12, 12, 0) - 9 * 3600000 && (
             <article>
-              <h2 className={styles.warning}>申し込みは終了しました</h2>
-              <p>抽選結果は9月13日頃を予定しています。</p>
+              <h2 className={styles.warning}>申し込み受付は終了しました</h2>
+              <p>抽選結果のご連絡は9月13日頃を予定しています。</p>
             </article>
           )
         )}
