@@ -1,24 +1,11 @@
-// SPDX-License-Identifier: CC-BY-NC-4.0
+// SPDX-License-Identifier: MIT
 
 // components
-import { NextSeo } from "next-seo";
-// styles
-import styles from "./index.module.scss";
+import SchoolMap, { getStaticProps as getMapProps } from "./[map-id]";
 
-const SchoolMap = () => {
-  return (
-    <>
-      <NextSeo title="校内マップ" openGraph={{ title: "校内マップ" }} />
-      <article className={styles.map}>
-        <h1>校内マップ</h1>
-        <p>
-          このページは準備中です。
-          <br />
-          バージョンアップをお待ちください。
-        </p>
-      </article>
-    </>
-  );
+const getStaticProps = async () => {
+  return await getMapProps({ params: { "map-id": "asano" } });
 };
 
+export { getStaticProps };
 export default SchoolMap;
