@@ -8,7 +8,7 @@ export const MAPS = [
     maps: [
       { id: "main-f1", x: 66, y: 29 },
       { id: "jhs-f1", x: 56, y: 38 },
-      { id: "hs-f1", x: 79, y: 33 },
+      { id: "hs-f1", x: 79, y: 32 },
       { id: "library", x: 57, y: 18 },
       { id: "arena", x: 85, y: 52 },
       { id: "hc-a", x: 36, y: 22 },
@@ -18,6 +18,7 @@ export const MAPS = [
     texts: [
       { text: "正門", x: 98, y: 83 },
       { text: "銅像山", x: 70, y: 85 },
+      { text: "浅野ｻﾞ･ﾍﾞｽﾄ投票所", x: 71, y: 35 },
     ],
   },
   {
@@ -28,8 +29,7 @@ export const MAPS = [
       "本館前には浅野ザ・ベストの投票所があります。",
     maps: [
       { id: "asano", x: 29, y: 73 },
-      { id: "main-f2", x: 12, y: 24 },
-      { id: "hs-b1", x: 12, y: 30 },
+      { id: "main-f2", x: 12, y: 27 },
     ],
     orgs: [],
     texts: [],
@@ -76,12 +76,12 @@ export const MAPS = [
       "講堂の前の廊下は本館２階と渡り廊下で繋がっています。",
     maps: [
       { id: "main-f2", x: 79, y: 30 },
-      { id: "jhs-f1", x: 8, y: 15 },
-      { id: "jhs-f1", x: 31, y: 43 },
-      { id: "jhs-f1", x: 31, y: 85 },
-      { id: "jhs-f3", x: 8, y: 18 },
-      { id: "jhs-f3", x: 31, y: 46 },
-      { id: "jhs-f3", x: 31, y: 88 },
+      { id: "jhs-f1", x: 8, y: 18 },
+      { id: "jhs-f1", x: 31, y: 46 },
+      { id: "jhs-f1", x: 31, y: 88 },
+      { id: "jhs-f3", x: 8, y: 15 },
+      { id: "jhs-f3", x: 31, y: 43 },
+      { id: "jhs-f3", x: 31, y: 85 },
     ],
     orgs: [
       { id: "jaa-hall", x: 50, y: 50 },
@@ -98,10 +98,10 @@ export const MAPS = [
       "中央に男子トイレがあります。清話書林と渡り廊下で繋がっています。" +
       "その渡り廊下の前に、スタンプラリー景品交換所があります。",
     maps: [
-      { id: "jhs-f2", x: 10, y: 11 },
-      { id: "jhs-f2", x: 27, y: 80 },
-      { id: "jhs-f4", x: 10, y: 14 },
-      { id: "jhs-f4", x: 27, y: 83 },
+      { id: "jhs-f2", x: 10, y: 14 },
+      { id: "jhs-f2", x: 27, y: 83 },
+      { id: "jhs-f4", x: 10, y: 11 },
+      { id: "jhs-f4", x: 27, y: 80 },
       { id: "library", x: 11, y: 1 },
     ],
     orgs: [
@@ -115,7 +115,12 @@ export const MAPS = [
     id: "jhs-f4",
     name: "中学棟４階",
     alt: "中央に女子トイレがあります。",
-    maps: [],
+    maps: [
+      { id: "jhs-f3", x: 10, y: 14 },
+      { id: "jhs-f3", x: 27, y: 83 },
+      { id: "jhs-f5", x: 10, y: 11 },
+      { id: "jhs-f5", x: 27, y: 80 },
+    ],
     orgs: [
       { id: "asobase", x: 50, y: 50 },
       { id: "mezauchi", x: 50, y: 50 },
@@ -129,7 +134,10 @@ export const MAPS = [
     id: "jhs-f5",
     name: "中学棟５階",
     alt: "中央に男子トイレがあります。",
-    maps: [],
+    maps: [
+      { id: "jhs-f4", x: 10, y: 12 },
+      { id: "jhs-f4", x: 27, y: 81 },
+    ],
     orgs: [],
     texts: [],
   },
@@ -139,7 +147,10 @@ export const MAPS = [
     alt:
       "アリーナの反対側に女子トイレがあります。展示等はありません。" +
       "アリーナと繋がっています。",
-    maps: [],
+    maps: [
+      { id: "hs-f1", x: 33, y: 100 },
+      { id: "arena", x: 67, y: 100 },
+    ],
     orgs: [],
     texts: [],
   },
@@ -149,7 +160,13 @@ export const MAPS = [
     alt:
       "保健室の隣に女子トイレがあります。" +
       "高校棟前には浅野ザ・ベストの投票所があります。",
-    maps: [],
+    maps: [
+      { id: "asano", x: 25, y: 69 },
+      { id: "hs-b1", x: 47, y: 6 },
+      { id: "hs-b1", x: 61, y: 97 },
+      { id: "hs-f2", x: 47, y: 3 },
+      { id: "hs-f2", x: 61, y: 94 },
+    ],
     orgs: [],
     texts: [],
   },
@@ -159,7 +176,13 @@ export const MAPS = [
     alt:
       "アリーナの反対側に男子トイレがあります。" +
       "その手前には文化祭本部があります。本館２階と渡り廊下で繋がっています。",
-    maps: [],
+    maps: [
+      { id: "main-f2", x: 4, y: 46 },
+      { id: "hs-f1", x: 20, y: 6 },
+      { id: "hs-f1", x: 42, y: 97 },
+      { id: "hs-f3", x: 20, y: 3 },
+      { id: "hs-f3", x: 42, y: 94 },
+    ],
     orgs: [],
     texts: [],
   },
@@ -170,7 +193,13 @@ export const MAPS = [
       "アリーナの反対側に女子トイレがあります。" +
       "隣の廊下は清話書林と渡り廊下で繋がっています。" +
       "途中で本館３階を経由し、そこに男子トイレと女子トイレがあります。",
-    maps: [],
+    maps: [
+      { id: "hs-f2", x: 33, y: 6 },
+      { id: "hs-f2", x: 40, y: 97 },
+      { id: "hs-f4", x: 33, y: 3 },
+      { id: "hs-f4", x: 40, y: 94 },
+      { id: "library", x: 9, y: 21 },
+    ],
     orgs: [],
     texts: [],
   },
@@ -178,7 +207,12 @@ export const MAPS = [
     id: "hs-f4",
     name: "高校棟４階",
     alt: "アリーナの反対側に男子トイレがあります。",
-    maps: [],
+    maps: [
+      { id: "hs-f3", x: 26, y: 6 },
+      { id: "hs-f3", x: 34, y: 97 },
+      { id: "hs-f5", x: 26, y: 3 },
+      { id: "hs-f5", x: 34, y: 94 },
+    ],
     orgs: [],
     texts: [],
   },
@@ -186,7 +220,10 @@ export const MAPS = [
     id: "hs-f5",
     name: "高校棟５階",
     alt: "アリーナの反対側に女子トイレがあります。",
-    maps: [],
+    maps: [
+      { id: "hs-f4", x: 26, y: 5 },
+      { id: "hs-f4", x: 34, y: 95 },
+    ],
     orgs: [],
     texts: [],
   },
@@ -202,7 +239,10 @@ export const MAPS = [
       "普段は授業や各部活の活動場所としても活躍します。" +
       "少し歩き疲れたなと思ったら、好きな本を手に取って、" +
       "涼んでみてはいかがでしょうか。",
-    maps: [],
+    maps: [
+      { id: "jhs-f3", x: 16, y: 38 },
+      { id: "hs-f3", x: 68, y: 43 },
+    ],
     orgs: [],
     texts: [],
   },
@@ -217,7 +257,10 @@ export const MAPS = [
       "アリーナ１階の出入りは自由です。空いている席に自由にお座りください。" +
       "１階のプールと３、４階は許可なく立ち入ることはできません。" +
       "ただし、３階から高校棟地下１階への通り抜けは可能です。",
-    maps: [],
+    maps: [
+      { id: "asano", x: 7, y: 77 },
+      { id: "hs-b1", x: 40, y: 17 },
+    ],
     orgs: [],
     texts: [],
   },
@@ -230,7 +273,11 @@ export const MAPS = [
       "食べ歩きや持ち帰りはご遠慮願います。ゴミの分別にご協力ください。" +
       "列に並ぶ際は会話をお控えください。黙食やマスク会食にご協力ください。" +
       "浅野生は利用できません。",
-    maps: [],
+    maps: [
+      { id: "asano", x: 68, y: 37 },
+      { id: "jhs-f1", x: 78, y: 21 },
+      { id: "field", x: 65, y: 29 },
+    ],
     orgs: [],
     texts: [],
   },
@@ -238,7 +285,11 @@ export const MAPS = [
     id: "field",
     name: "グラウンド",
     alt: "男子トイレと女子トイレがあります。",
-    maps: [],
+    maps: [
+      { id: "asano", x: 67, y: 100 },
+      { id: "jhs-f1", x: 90, y: 50 },
+      { id: "hc-a", x: 90, y: 0 },
+    ],
     orgs: [],
     texts: [],
   },
