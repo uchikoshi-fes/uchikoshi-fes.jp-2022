@@ -29,7 +29,7 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 101;
 }
 
 .narrow {
@@ -39,7 +39,7 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 320px;
   top: 0;
   left: -320px;
-  z-index: 3;
+  z-index: 102;
   background-color: $color-base;
   transition: left 0.4s $easeOutQuart;
 }
