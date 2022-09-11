@@ -92,7 +92,7 @@ $easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 .wide {
   height: 100%;
-  max-width: calc(100vw - 320px);
+  max-width: calc(100vw - 240px);
   overflow-x: auto;
 
   > ul {

@@ -88,6 +88,17 @@
 
 .countdown-container {
   @include outermost-container;
+  margin: 3rem 0;
+}
+
+.pv-container {
+  @include outermost-container;
+  margin: 3rem 0;
+}
+
+.asano-radio-container {
+  @include outermost-container;
+  margin: 3rem 0;
 }
 
 .pv-container {

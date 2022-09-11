@@ -17,7 +17,7 @@ import styles from "./header.module.scss";
 
 const Header = ({ setScrollable }) => {
   const isClient = useClient();
-  const isNarrow = useMediaQuery({ query: "(max-width: 768px)" });
+  const isNarrow = useMediaQuery({ query: "(max-width: 900px)" });
   const { scrollY } = useScroll();
   const router = Router.useRouter();
   const [scrolled, setScrolled] = useState(false);
