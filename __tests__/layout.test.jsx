@@ -73,7 +73,7 @@ describe("Layout", () => {
     expect(screen.getByText(/日程/)).toBeInTheDocument();
     expect(screen.getByText(/9.+18.+19|９.+１８.+１９/)).toBeInTheDocument();
     expect(screen.getByText(/雨天決行/)).toBeInTheDocument();
-    expect(screen.getByText(/アクセス/)).toBeInTheDocument();
+    expect(screen.getByText(/会場/)).toBeInTheDocument();
     expect(screen.getByText(/浅野中学校・高等学校/)).toBeInTheDocument();
     expect(
       screen.getByText(/〒221-0012 神奈川県横浜市神奈川区子安台１丁目３-１/)
