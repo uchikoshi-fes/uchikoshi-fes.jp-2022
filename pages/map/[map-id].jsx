@@ -4,6 +4,7 @@
 import React from "react";
 // components
 import { NextSeo } from "next-seo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "@/components/base/link";
 import Image from "@/components/base/image";
 // styles
@@ -11,6 +12,12 @@ import styles from "./map.module.scss";
 // config
 import { MAPS } from "@/components/map";
 import { CATEGORIES } from "@/pages/orgs/index";
+// icons
+import {
+  faLocationDot,
+  faTag,
+  faPeopleGroup,
+} from "@fortawesome/free-solid-svg-icons";
 // others
 import util from "util";
 import fetchImageSize from "image-size";
@@ -73,14 +80,39 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
             <ul className={styles.organizations}>
               {orgs.map((org) => (
                 <li key={org.id}>
-                  <Link href={`/orgs/${org.id}`}>
-                    <div>{org.title}</div>
-                    <div>{org.room}</div>
-                    <div>
-                      {CATEGORIES.find(({ id }) => id === org.categoryId).name}
+                  <div className={styles["org-logo"]}>
+                    <Image
+                      src={`/orgs/${org.id}/${org.logo}`}
+                      alt=""
+                      layout="fill"
+                      height={100}
+                      width={100}
+                      objectFit="contain"
+                    />
+                  </div>
+                  <div className={styles["org-text"]}>
+                    <h3 className={styles["org-title"]}>{org.title}</h3>
+                    <div className={styles["org-meta"]}>
+                      <div>
+                        <FontAwesomeIcon icon={faLocationDot} />
+                        {org.room}
+                      </div>
+                      <div>
+                        <FontAwesomeIcon icon={faTag} />
+                        {
+                          CATEGORIES.find(({ id }) => id === org.categoryId)
+                            .name
+                        }
+                      </div>
+                      <div>
+                        <FontAwesomeIcon icon={faPeopleGroup} />
+                        {org.name}
+                      </div>
                     </div>
-                    <div>{org.name}</div>
-                  </Link>
+                  </div>
+                  <div className={styles["org-details"]}>
+                    <Link href={`/orgs/${org.id}`}>詳細を見る</Link>
+                  </div>
                 </li>
               ))}
             </ul>

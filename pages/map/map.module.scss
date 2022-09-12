@@ -56,20 +56,73 @@ a.map-button:hover {
 }
 
 .organizations {
-  margin: 1rem 0;
+  margin: 2rem 0;
   padding: 0;
   list-style: none;
 
   > li {
-    margin: 0.5rem 0;
+    position: relative;
+    margin: 1rem 0;
+    border: 4px solid $color-accent;
     padding: 0;
+    display: flex;
+    text-decoration: none;
+    color: $color-base;
+    background-color: $color-accent-light;
+  }
+}
 
-    > a {
-      height: 100%;
-      width: 100%;
-      display: block;
+.org-logo {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background-color: white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: block;
+    pointer-events: none;
+    box-shadow: 0 0 4px 2px $color-shadow inset;
+  }
+}
+
+.org-text {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.org-title {
+  margin: 0 0 0.25rem;
+  @include non-break;
+  white-space: nowrap;
+}
+
+.org-meta {
+  display: flex;
+
+  > div {
+    //flex: 1;
+    @include non-break;
+    white-space: nowrap;
+
+    > svg {
+      margin: 0 0.5em;
     }
   }
+}
+
+.org-details {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
 }
 
 .current {
