@@ -123,6 +123,13 @@ a.map-button:hover {
   bottom: 0;
   right: 0;
   padding: 0.5rem 1rem;
+
+  &:hover {
+    font-weight: bold;
+    color: $color-accent;
+    text-shadow: 0 0 8px $color-base;
+    filter: drop-shadow(0 0 4px $color-base);
+  }
 }
 
 .current {

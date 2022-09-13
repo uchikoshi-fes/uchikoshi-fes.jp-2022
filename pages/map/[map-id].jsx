@@ -86,7 +86,7 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
                       <Image
                         src={`/orgs/${org.id}/${org.logo}`}
                         alt=""
-                        layout="fill"
+                        layout="responsive"
                         height={100}
                         width={100}
                         objectFit="contain"
@@ -112,9 +112,12 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
                         </div>
                       </div>
                     </div>
-                    <div className={styles["org-details"]}>
-                      <Link href={`/orgs/${org.id}`}>詳細を見る</Link>
-                    </div>
+                    <Link
+                      href={`/orgs/${org.id}`}
+                      className={styles["org-details"]}
+                    >
+                      詳細を見る
+                    </Link>
                   </li>
                 ))}
             </ul>
