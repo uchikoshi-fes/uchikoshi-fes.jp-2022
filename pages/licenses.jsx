@@ -31,20 +31,26 @@ const Libraries = ({ packages }) => {
     <article>
       <h2>ライブラリ</h2>
       <p>本サイトでは、以下のサードパーティライブラリを使用しています。</p>
-      {packages.map((pkg) => (
-        <article key={pkg.name}>
-          <h3>
-            <Link href={pkg.repository}>{pkg.name}</Link>
-          </h3>
-          <p>
-            ライセンス:
-            <span className={styles["license-name"]}> {pkg.licenses}</span>
-          </p>
-          <pre className={styles["license-text"]}>
-            <code>{pkg.licenseText}</code>
-          </pre>
-        </article>
-      ))}
+      {packages.map((pkg) => {
+        return (
+          <article key={pkg.name}>
+            <h3>
+              <Link href={pkg.url}>{pkg.name}</Link>
+            </h3>
+            <p>
+              <>ライセンス: </>
+              <span className={styles["license-name"]}>
+                {pkg.licenses === "UNKNOWN" ? "不明" : pkg.licenses}
+              </span>
+            </p>
+            {pkg.licenseText && (
+              <pre className={styles["license-text"]}>
+                <code>{pkg.licenseText}</code>
+              </pre>
+            )}
+          </article>
+        );
+      })}
     </article>
   );
 };
@@ -93,16 +99,23 @@ const getStaticProps = async () => {
     const pkg = packagesMap[pkgName];
     packages.push({
       name: pkgName,
-      ...pkg,
-      licenseText: await fs.promises.readFile(pkg.licenseFile, "utf-8"),
+      url:
+        pkg.homepage ??
+        (pkg.repository.startsWith("https://")
+          ? pkg.repository
+          : `https://www.npmjs.com/package/${pkg.name}`),
+      licenses: pkg.licenses,
+      licenseText: pkg.licenseFile
+        ? await fs.promises.readFile(pkg.licenseFile, "utf-8").catch(() => null)
+        : null,
     });
   }
 
   const thisPackage = {
     name: PACKAGE.name,
-    licenses: PACKAGE.license,
-    licenseText: fs.readFileSync("LICENSE", "utf8"),
-    contributors: PACKAGE.contributors,
+    licenses: PACKAGE.license ?? "不明",
+    licenseText: await fs.promises.readFile("LICENSE", "utf8").catch(() => ""),
+    contributors: PACKAGE.contributors ?? [],
   };
 
   return { props: { packages, thisPackage } };
