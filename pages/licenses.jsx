@@ -101,7 +101,7 @@ const getStaticProps = async () => {
       name: pkgName,
       url:
         pkg.homepage ??
-        (pkg.repository.startsWith("https://")
+        (pkg.repository?.startsWith("https://")
           ? pkg.repository
           : `https://www.npmjs.com/package/${pkg.name}`),
       licenses: pkg.licenses,
