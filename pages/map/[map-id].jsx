@@ -78,43 +78,45 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
           <article>
             <h2>マップ内の団体</h2>
             <ul className={styles.organizations}>
-              {orgs.map((org) => (
-                <li key={org.id}>
-                  <div className={styles["org-logo"]}>
-                    <Image
-                      src={`/orgs/${org.id}/${org.logo}`}
-                      alt=""
-                      layout="fill"
-                      height={100}
-                      width={100}
-                      objectFit="contain"
-                    />
-                  </div>
-                  <div className={styles["org-text"]}>
-                    <h3 className={styles["org-title"]}>{org.title}</h3>
-                    <div className={styles["org-meta"]}>
-                      <div>
-                        <FontAwesomeIcon icon={faLocationDot} />
-                        {org.room}
-                      </div>
-                      <div>
-                        <FontAwesomeIcon icon={faTag} />
-                        {
-                          CATEGORIES.find(({ id }) => id === org.categoryId)
-                            .name
-                        }
-                      </div>
-                      <div>
-                        <FontAwesomeIcon icon={faPeopleGroup} />
-                        {org.name}
+              {orgs
+                .filter((org, i) => orgs[i + 1]?.id !== org.id)
+                .map((org) => (
+                  <li key={org.id}>
+                    <div className={styles["org-logo"]}>
+                      <Image
+                        src={`/orgs/${org.id}/${org.logo}`}
+                        alt=""
+                        layout="fill"
+                        height={100}
+                        width={100}
+                        objectFit="contain"
+                      />
+                    </div>
+                    <div className={styles["org-text"]}>
+                      <h3 className={styles["org-title"]}>{org.title}</h3>
+                      <div className={styles["org-meta"]}>
+                        <div>
+                          <FontAwesomeIcon icon={faLocationDot} />
+                          {org.room}
+                        </div>
+                        <div>
+                          <FontAwesomeIcon icon={faTag} />
+                          {
+                            CATEGORIES.find(({ id }) => id === org.categoryId)
+                              .name
+                          }
+                        </div>
+                        <div>
+                          <FontAwesomeIcon icon={faPeopleGroup} />
+                          {org.name}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className={styles["org-details"]}>
-                    <Link href={`/orgs/${org.id}`}>詳細を見る</Link>
-                  </div>
-                </li>
-              ))}
+                    <div className={styles["org-details"]}>
+                      <Link href={`/orgs/${org.id}`}>詳細を見る</Link>
+                    </div>
+                  </li>
+                ))}
             </ul>
           </article>
         )}
