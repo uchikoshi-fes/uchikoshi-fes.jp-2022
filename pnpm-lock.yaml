@@ -2149,7 +2149,7 @@ packages:
     dev: false
 
   /charenc/0.0.2:
-    resolution: {integrity: sha512-yrLQ/yVUFXkzg7EDQsPieE/53+0RlaWTs+wBrvW36cyilJ2SaDWfl4Yj7MtLTXleV9uEKefbAGUPv2/iWSooRA==}
+    resolution: {integrity: sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=}
     dev: true
 
   /chokidar/3.5.3:
@@ -2327,7 +2327,7 @@ packages:
     dev: true
 
   /crypt/0.0.2:
-    resolution: {integrity: sha512-mCxBlsHFYh9C+HVpiEacem8FEBnMXgU9gy4zmNC+SXAZNB/1idgp/aulFJ4FgCi7GPEVbfyng092GqL2k2rmow==}
+    resolution: {integrity: sha1-iNf/fsDfuG9xPch7u0LQRNPmxBs=}
     dev: true
 
   /css-mediaquery/0.1.2:
@@ -2523,7 +2523,7 @@ packages:
     dev: true
 
   /doublearray/0.0.2:
-    resolution: {integrity: sha512-aw55FtZzT6AmiamEj2kvmR6BuFqvYgKZUkfQ7teqVRNqD5UE0rw8IeW/3gieHNKQ5sPuDKlljWEn4bzv5+1bHw==}
+    resolution: {integrity: sha1-Yxhv6NNEEydtNiH2qg7F954ifvk=}
     dev: true
 
   /eastasianwidth/0.2.0:
@@ -4429,7 +4429,7 @@ packages:
     dev: false
 
   /kuromoji/0.1.1:
-    resolution: {integrity: sha512-B7ctEuhoYzRDbgsRn/3NQVee/Q4WRFVuCxkYtnQLl+t/5tw2f7JL0GQH/CQQ3gqlaEvBJgfnGNA6st09wmqkRA==}
+    resolution: {integrity: sha1-Sqvzm8zti4rZLQB6BKJr5tqEd8k=}
     dependencies:
       async: 2.6.4
       doublearray: 0.0.2
@@ -6933,7 +6933,7 @@ packages:
     dev: true
 
   /textlint-filter-rule-comments/1.2.2_textlint@12.2.1:
-    resolution: {integrity: sha512-AtyxreCPb3Hq/bd6Qd6szY1OGgnW34LOjQXAHzE8NoXbTUudQqALPdRe+hvRsf81rnmGLxBiCUXZbnbpIseFyw==}
+    resolution: {integrity: sha1-OnLElJlOBo4OSqrQ8k6nz+M4UDo=}
     peerDependencies:
       textlint: '>=6.8.0'
     dependencies:
@@ -6971,7 +6971,7 @@ packages:
     dev: true
 
   /textlint-rule-ja-hiragana-hojodoushi/1.0.4:
-    resolution: {integrity: sha512-hySzBb8zIo1akg2bneGnULo6Pfal3rYl+35bFfYRymN1xSN+Jj0cZfW166ds2bbXXA+bW+s+at5v/AGTA95b+w==}
+    resolution: {integrity: sha1-OUlfUSpQuHPgNLVdM9+NnGi55k0=}
     dependencies:
       js-yaml: 3.14.1
       kuromojin: 1.5.1
@@ -7128,7 +7128,7 @@ packages:
     dev: true
 
   /textlint-rule-no-empty-section/1.1.0:
-    resolution: {integrity: sha512-IZ+PgJdhs42YtIKS1y7hxAxpOMySEyMbLqSx2qv8aoslYGZuSPTWzDOXsNEl1d0ERx0GY4SFqKIP3BX9/KvrHQ==}
+    resolution: {integrity: sha1-E3rmuN/Kq3Wf1gaL/MGmyUG7Rgc=}
     dependencies:
       select-section: 0.4.6
     dev: true
