@@ -181,7 +181,11 @@ export const MAPS = [
       { id: "hs-f2", x: 47, y: 3 },
       { id: "hs-f2", x: 61, y: 94 },
     ],
-    orgs: [],
+    orgs: [
+      { id: "art", x: 50, y: 50 },
+      { id: "abc-bio-room", x: 50, y: 50 },
+      { id: "student-council", x: 50, y: 50 },
+    ],
     texts: [],
   },
   {
@@ -197,7 +201,10 @@ export const MAPS = [
       { id: "hs-f3", x: 20, y: 3 },
       { id: "hs-f3", x: 42, y: 94 },
     ],
-    orgs: [],
+    orgs: [
+      { id: "reunion", x: 50, y: 50 },
+      { id: "supporter", x: 50, y: 50 },
+    ],
     texts: [],
   },
   {
@@ -214,7 +221,16 @@ export const MAPS = [
       { id: "hs-f4", x: 40, y: 94 },
       { id: "library", x: 9, y: 21 },
     ],
-    orgs: [],
+    orgs: [
+      { id: "apc", x: 50, y: 50 },
+      { id: "apc", x: 50, y: 50 },
+      { id: "abc-classroom", x: 50, y: 50 },
+      { id: "a-esc-p", x: 50, y: 50 },
+      { id: "a-esc", x: 50, y: 50 },
+      { id: "a-esc", x: 50, y: 50 },
+      { id: "acc", x: 50, y: 50 },
+      { id: "acc", x: 50, y: 50 },
+    ],
     texts: [],
   },
   {
@@ -227,7 +243,16 @@ export const MAPS = [
       { id: "hs-f5", x: 26, y: 3 },
       { id: "hs-f5", x: 34, y: 94 },
     ],
-    orgs: [],
+    orgs: [
+      { id: "archerz", x: 50, y: 50 },
+      { id: "archerz", x: 50, y: 50 },
+      { id: "math", x: 50, y: 50 },
+      { id: "aoc", x: 50, y: 50 },
+      { id: "kcc", x: 50, y: 50 },
+      { id: "kcc", x: 50, y: 50 },
+      { id: "aqs-classroom", x: 50, y: 50 },
+      { id: "adu-classroom", x: 50, y: 50 },
+    ],
     texts: [],
   },
   {
@@ -238,7 +263,15 @@ export const MAPS = [
       { id: "hs-f4", x: 26, y: 5 },
       { id: "hs-f4", x: 34, y: 95 },
     ],
-    orgs: [],
+    orgs: [
+      { id: "ahsc", x: 50, y: 50 },
+      { id: "ahsc", x: 50, y: 50 },
+      { id: "ara", x: 50, y: 50 },
+      { id: "ara", x: 50, y: 50 },
+      { id: "ara", x: 50, y: 50 },
+      { id: "squirrel", x: 50, y: 50 },
+      { id: "squirrel", x: 50, y: 50 },
+    ],
     texts: [],
   },
   {
@@ -257,7 +290,10 @@ export const MAPS = [
       { id: "jhs-f3", x: 16, y: 38 },
       { id: "hs-f3", x: 68, y: 43 },
     ],
-    orgs: [],
+    orgs: [
+      { id: "alc", x: 50, y: 50 },
+      { id: "lib-committee", x: 50, y: 50 },
+    ],
     texts: [],
   },
   {
@@ -275,7 +311,12 @@ export const MAPS = [
       { id: "asano", x: 7, y: 77 },
       { id: "hs-b1", x: 40, y: 17 },
     ],
-    orgs: [],
+    orgs: [
+      { id: "awo", x: 50, y: 50 },
+      { id: "jaa-arena", x: 50, y: 50 },
+      { id: "aqs-arena", x: 50, y: 50 },
+      { id: "cooland", x: 50, y: 50 },
+    ],
     texts: [],
   },
   {
@@ -292,7 +333,15 @@ export const MAPS = [
       { id: "jhs-f1", x: 78, y: 21 },
       { id: "field", x: 65, y: 29 },
     ],
-    orgs: [],
+    orgs: [
+      { id: "polar-bear", x: 50, y: 50 },
+      { id: "takoyaki", x: 50, y: 50 },
+      { id: "frites", x: 50, y: 50 },
+      { id: "hotdog", x: 50, y: 50 },
+      { id: "popcorn", x: 50, y: 50 },
+      { id: "royal-bird", x: 50, y: 50 },
+      { id: "ice-cream", x: 50, y: 50 },
+    ],
     texts: [],
   },
   {
@@ -304,7 +353,13 @@ export const MAPS = [
       { id: "jhs-f1", x: 90, y: 11 },
       { id: "hc-a", x: 78, y: 3 },
     ],
-    orgs: [],
+    orgs: [
+      { id: "baseball", x: 50, y: 50 },
+      { id: "football", x: 50, y: 50 },
+      { id: "soccer", x: 50, y: 50 },
+      { id: "track-field", x: 50, y: 50 },
+      { id: "rocket", x: 50, y: 50 },
+    ],
     texts: [],
   },
 ];
