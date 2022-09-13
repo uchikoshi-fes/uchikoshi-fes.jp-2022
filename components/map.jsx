@@ -300,9 +300,9 @@ export const MAPS = [
     name: "グラウンド",
     alt: "男子トイレと女子トイレがあります。",
     maps: [
-      { id: "asano", x: 67, y: 100 },
-      { id: "jhs-f1", x: 90, y: 50 },
-      { id: "hc-a", x: 90, y: 0 },
+      { id: "asano", x: 97, y: 72 },
+      { id: "jhs-f1", x: 90, y: 11 },
+      { id: "hc-a", x: 78, y: 3 },
     ],
     orgs: [],
     texts: [],
