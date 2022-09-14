@@ -12,6 +12,7 @@ import useClient from "@/hooks/client";
 // components
 import { NextSeo } from "next-seo";
 import Link from "@/components/base/link";
+import { EMail } from "@/pages/contact";
 // styles
 import styles from "./reserve.module.scss";
 
@@ -118,7 +119,8 @@ const Reserve = () => {
           申し込みに関する注意事項をよく読んでからご回答いただくよう、<></>
           お願い申し上げます。
           <br />
-          お問い合わせの際は、uchikoshi-support@asano.ed.jp
+          お問い合わせの際は、
+          <EMail />
           までお願いいたします。
         </p>
         <article>
