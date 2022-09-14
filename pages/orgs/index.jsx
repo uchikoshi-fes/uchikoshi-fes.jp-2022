@@ -134,7 +134,8 @@ const Organizations = ({ organizations }) => {
                           <Image
                             src={`/orgs/${id}/${logo}`}
                             alt=""
-                            layout="fill"
+                            width={80}
+                            height={80}
                           />
                         </div>
                       )}
