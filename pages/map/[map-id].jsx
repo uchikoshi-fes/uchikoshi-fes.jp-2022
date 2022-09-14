@@ -68,16 +68,18 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
                   className={styles["map-button"]}
                   key={`${org.id}(${org.x},${org.y})`}
                 >
-                  <div className={styles["map-button-logo"]}>
-                    <Image
-                      src={`/orgs/${org.id}/${org.logo}`}
-                      alt=""
-                      layout="responsive"
-                      height={100}
-                      width={100}
-                      objectFit="contain"
-                    />
-                  </div>
+                  {org.logo && (
+                    <div className={styles["map-button-logo"]}>
+                      <Image
+                        src={`/orgs/${org.id}/${org.logo}`}
+                        alt=""
+                        layout="responsive"
+                        height={100}
+                        width={100}
+                        objectFit="contain"
+                      />
+                    </div>
+                  )}
                   {!org.logoOnly && org.title}
                 </Link>
               ))}
