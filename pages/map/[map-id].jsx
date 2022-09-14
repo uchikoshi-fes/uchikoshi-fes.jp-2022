@@ -31,7 +31,6 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
       <NextSeo title={name} openGraph={{ title: name }} />
       <article className={styles["school-map"]}>
         <h1>{name}</h1>
-        <p>校内マップは制作中です。バージョンアップをお待ちください。</p>
         <div className={styles["map-container"]}>
           <div
             style={
@@ -145,24 +144,6 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
             </ul>
           </article>
         )}
-        <article>
-          <h2>校内マップ一覧</h2>
-          <ul>
-            {MAPS.map((map) => (
-              <li key={map.id}>
-                {map.id === id ? (
-                  <span
-                    className={styles.current}
-                  >{`${map.name} \u2190 現在地`}</span>
-                ) : (
-                  <Link href={`/map/${map.id === "asano" ? "" : map.id}`}>
-                    {map.name}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </article>
       </article>
     </>
   );
