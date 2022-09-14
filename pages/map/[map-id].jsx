@@ -56,7 +56,7 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
                 <span
                   style={{ top: `${text.y}%`, left: `${text.x}%` }}
                   className={styles["map-button"]}
-                  key={`${text.x},${text.y}`}
+                  key={`${text.text}(${text.x},${text.y})`}
                 >
                   {text.text}
                 </span>
@@ -66,7 +66,7 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
                   href={`/orgs/${org.id}`}
                   style={{ top: `${org.y}%`, left: `${org.x}%` }}
                   className={styles["map-button"]}
-                  key={`${org.x},${org.y}`}
+                  key={`${org.id}(${org.x},${org.y})`}
                 >
                   <div className={styles["map-button-logo"]}>
                     <Image
@@ -86,7 +86,7 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
                   href={`/map/${map.id === "asano" ? "" : map.id}`}
                   style={{ top: `${map.y}%`, left: `${map.x}%` }}
                   className={styles["map-button"]}
-                  key={`${map.x},${map.y}`}
+                  key={`${map.id}(${map.x},${map.y})`}
                 >
                   {MAPS.find(({ id }) => id === map.id).name}
                 </Link>
