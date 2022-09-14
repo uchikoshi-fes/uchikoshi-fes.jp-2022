@@ -61,6 +61,26 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
                   {text.text}
                 </span>
               ))}
+              {orgs.map((org) => (
+                <Link
+                  href={`/orgs/${org.id}`}
+                  style={{ top: `${org.y}%`, left: `${org.x}%` }}
+                  className={styles["map-button"]}
+                  key={`${org.x},${org.y}`}
+                >
+                  <div className={styles["map-button-logo"]}>
+                    <Image
+                      src={`/orgs/${org.id}/${org.logo}`}
+                      alt=""
+                      layout="responsive"
+                      height={100}
+                      width={100}
+                      objectFit="contain"
+                    />
+                  </div>
+                  {!org.logoOnly && org.title}
+                </Link>
+              ))}
               {maps.map((map) => (
                 <Link
                   href={`/map/${map.id === "asano" ? "" : map.id}`}

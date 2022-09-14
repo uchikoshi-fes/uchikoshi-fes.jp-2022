@@ -28,21 +28,27 @@
 
 .map-button {
   position: absolute;
-  padding: 0.75em 0.1em;
+  padding: 0.075em 0.1em;
   transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
   @include non-break;
   white-space: nowrap;
   font-size: 0.5rem;
   font-weight: bold;
+  text-align: center;
   background-color: rgba($color-base, 0.66);
 
   @media screen and (min-width: 400px) {
     padding: 0.1em 0.15em;
+    gap: 0.15em;
     font-size: 0.75rem;
   }
 
   @media screen and (min-width: 800px) {
     padding: 0.2em 0.3em;
+    gap: 0.3em;
     font-size: 1rem;
   }
 
@@ -53,6 +59,16 @@
 
 a.map-button:hover {
   color: $color-accent;
+}
+
+.map-button-logo {
+  height: 10vw;
+  width: 10vw;
+
+  @media screen and (min-width: 800px) {
+    height: 3em;
+    width: 3em;
+  }
 }
 
 .organizations {
