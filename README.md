@@ -42,8 +42,8 @@
 
 ## Version
 
-**Version:** 1.2.1 (レイヤーの高さ修整)  
-**Latest Update:** 2022/09/11
+**Version:** 1.3.0 (校内マップ完成)  
+**Latest Update:** 2022/09/15
 
 ## Feedback & Support
 
