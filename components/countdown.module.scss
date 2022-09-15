@@ -13,7 +13,7 @@
   > div {
     width: 100%;
     margin: 0 1em;
-    font-size: max(1em, 3vw);
+    font-size: clamp(1em, 3vw, 2em);
     text-align: center;
   }
 }
@@ -25,7 +25,7 @@
 .enhance {
   margin: 0 0.05em;
   padding: 0 0.05em;
-  font-size: max(4em, 16vw);
+  font-size: 4em;
   line-height: 100%;
   background: linear-gradient(
     to bottom,
