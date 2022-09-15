@@ -42,14 +42,15 @@
 
 ## Version
 
-**Version:** 1.2.1 (レイヤーの高さ修整)  
-**Latest Update:** 2022/09/11
+**Version:** 1.3.0 (校内マップ完成)  
+**Latest Update:** 2022/09/15
 
 ## Feedback & Support
 
 バグ報告や質問、提案があるなど、何か伝えたいことがある場合は、  
 GitHub アカウントをお持ちの場合は [Issues](https://github.com/uchikoshi-fes/uchikoshi-fes.jp-2022/issues) に、  
-お持ちでない場合はお問い合わせフォーム (準備中) にお願いします。
+お持ちでない場合はお問い合わせ用メールにお願いします。  
+メールアドレスは [お問い合わせページ](https://uchikoshi-fes.jp/contact) からお願いします。
 
 ## Tech Stack
 

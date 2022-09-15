@@ -26,17 +26,128 @@
   width: 100%;
 }
 
-.map-buttons > div {
+.map-button {
   position: absolute;
+  padding: 0.075em 0.1em;
   transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
   @include non-break;
-  font-size: 0.8rem;
+  white-space: nowrap;
+  font-size: 0.5rem;
   font-weight: bold;
-  text-shadow: 0 0 2px $color-base;
-  filter: drop-shadow(0 0 2px $color-base);
+  text-align: center;
 
   @media screen and (min-width: 400px) {
+    padding: 0.1em 0.15em;
+    gap: 0.15em;
+    font-size: 0.75rem;
+  }
+
+  @media screen and (min-width: 800px) {
+    padding: 0.2em 0.3em;
+    gap: 0.3em;
     font-size: 1rem;
+  }
+
+  &:hover {
+    z-index: 1;
+  }
+}
+
+a.map-button {
+  background-color: rgba($color-base, 0.66);
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.map-button-logo {
+  height: 10vw;
+  width: 10vw;
+
+  @media screen and (min-width: 800px) {
+    height: 3em;
+    width: 3em;
+  }
+}
+
+.organizations {
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    position: relative;
+    margin: 1rem 0;
+    border: 4px solid $color-accent;
+    padding: 0;
+    display: flex;
+    text-decoration: none;
+    color: $color-base;
+    background-color: $color-accent-light;
+  }
+}
+
+.org-logo {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background-color: white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: block;
+    pointer-events: none;
+    box-shadow: 0 0 4px 2px $color-shadow inset;
+  }
+}
+
+.org-text {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.org-title {
+  margin: 0 0 0.25rem;
+  @include non-break;
+  white-space: nowrap;
+}
+
+.org-meta {
+  display: flex;
+
+  > div {
+    //flex: 1;
+    @include non-break;
+    white-space: nowrap;
+
+    > svg {
+      margin: 0 0.5em;
+    }
+  }
+}
+
+.org-details {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    font-weight: bold;
+    color: $color-accent;
+    text-shadow: 0 0 8px $color-base;
+    filter: drop-shadow(0 0 4px $color-base);
   }
 }
 
