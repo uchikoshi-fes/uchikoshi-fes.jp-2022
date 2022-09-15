@@ -57,7 +57,7 @@
     "@textlint-ja/textlint-rule-no-insert-dropping-sa": "2.0.1",
     "@textlint/ast-node-types": "12.2.1",
     "@textlint/types": "12.2.1",
-    "eslint": "8.23.0",
+    "eslint": "8.23.1",
     "eslint-config-next": "12.3.0",
     "eslint-config-prettier": "8.5.0",
     "husky": "8.0.1",
