@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: CC-BY-NC-4.0
+// SPDX-License-Identifier: MIT
 
 // components
 import { NextSeo } from "next-seo";
