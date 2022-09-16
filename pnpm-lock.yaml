@@ -32,6 +32,7 @@ specifiers:
   react-intersection-observer: 9.4.0
   react-player: 2.10.1
   react-responsive: 9.0.0-beta.10
+  react-stately: 3.17.0
   react-twitter-widgets: 1.11.0
   sanitize.css: 13.0.0
   sass: 1.54.9
@@ -74,6 +75,7 @@ dependencies:
   react-intersection-observer: 9.4.0_react@18.2.0
   react-player: 2.10.1_react@18.2.0
   react-responsive: 9.0.0-beta.10_react@18.2.0
+  react-stately: 3.17.0_react@18.2.0
   react-twitter-widgets: 1.11.0_react@18.2.0
   sanitize.css: 13.0.0
   sass: 1.54.9
@@ -1860,6 +1862,16 @@ packages:
       '@react-stately/select': 3.3.1_react@18.2.0
       '@react-stately/utils': 3.5.1_react@18.2.0
       '@react-types/combobox': 3.5.3_react@18.2.0
+      '@react-types/shared': 3.14.1_react@18.2.0
+      react: 18.2.0
+    dev: false
+
+  /@react-stately/data/3.6.1_react@18.2.0:
+    resolution: {integrity: sha512-+e+f8WNu7NpHVmSOBnwHNAG67aCWWRWf96zSJ2O1QBK04v/a9aMbP8m7c1Y15CWy5PLvUEJoaXaanwthTGev+w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.19.0
       '@react-types/shared': 3.14.1_react@18.2.0
       react: 18.2.0
     dev: false
@@ -7459,6 +7471,35 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       shallow-equal: 1.2.1
+    dev: false
+
+  /react-stately/3.17.0_react@18.2.0:
+    resolution: {integrity: sha512-wAclTwKXt2BoK1OLajxkW+Zl0gQer3qL/eDaNd98xvK4IYlEBxcCVXzvvzkMcOzPai2iqPFAk0w6PzMjlhUy1g==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-stately/calendar': 3.0.2_react@18.2.0
+      '@react-stately/checkbox': 3.2.1_react@18.2.0
+      '@react-stately/collections': 3.4.3_react@18.2.0
+      '@react-stately/combobox': 3.2.1_react@18.2.0
+      '@react-stately/data': 3.6.1_react@18.2.0
+      '@react-stately/datepicker': 3.0.2_react@18.2.0
+      '@react-stately/list': 3.5.3_react@18.2.0
+      '@react-stately/menu': 3.4.1_react@18.2.0
+      '@react-stately/numberfield': 3.2.1_react@18.2.0
+      '@react-stately/overlays': 3.4.1_react@18.2.0
+      '@react-stately/radio': 3.5.1_react@18.2.0
+      '@react-stately/searchfield': 3.3.1_react@18.2.0
+      '@react-stately/select': 3.3.1_react@18.2.0
+      '@react-stately/selection': 3.10.3_react@18.2.0
+      '@react-stately/slider': 3.2.1_react@18.2.0
+      '@react-stately/table': 3.4.0_react@18.2.0
+      '@react-stately/tabs': 3.2.1_react@18.2.0
+      '@react-stately/toggle': 3.4.1_react@18.2.0
+      '@react-stately/tooltip': 3.2.1_react@18.2.0
+      '@react-stately/tree': 3.3.3_react@18.2.0
+      '@react-types/shared': 3.14.1_react@18.2.0
+      react: 18.2.0
     dev: false
 
   /react-twitter-widgets/1.11.0_react@18.2.0:
