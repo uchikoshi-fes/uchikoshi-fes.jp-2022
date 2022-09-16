@@ -32,7 +32,7 @@ const UchikoshiFesApp = ({ Component, pageProps }) => {
     document.body.classList.remove("fixed");
     router.events.on("routeChangeComplete", resetScroll);
     return () => router.events.off("routeChangeComplete", resetScroll);
-  }, [router.events]);
+  }, [router.events, router.pathname]);
 
   return (
     <>
