@@ -5,6 +5,8 @@ import { NextSeo } from "next-seo";
 import Link from "@/components/base/link";
 // styles
 import styles from "./index.module.scss";
+// others
+import fs from "fs";
 
 const Articles = ({ articles }) => {
   return (
@@ -31,22 +33,17 @@ const Articles = ({ articles }) => {
 };
 
 const getStaticProps = async () => {
-  const articles = [
-    {
-      id: "a",
-      title: "タイトル A",
-      description:
-        "A の説明、A の説明、A の説明、A の説明、A の説明、A の説明、A の説明、A の説明",
-      date: new Date("2021-01-02").getTime(),
-    },
-    {
-      id: "b",
-      title: "タイトル B",
-      description:
-        "B の説明、B の説明、B の説明、B の説明、B の説明、B の説明、B の説明、B の説明",
-      date: new Date("2021-01-01").getTime(),
-    },
-  ].sort((a, b) => b.date - a.date);
+  const articleIds = (
+    await fs.promises.readdir("pages/articles/", { withFileTypes: true })
+  )
+    .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".mdx"))
+    .map((dirent) => dirent.name.replace(/\.mdx$/, ""));
+  const articles = await Promise.all(
+    articleIds.map(async (id) => ({
+      id,
+      ...(await import(`./${id}.mdx`)).META,
+    }))
+  );
   for (const { id, title, description } of articles) {
     if (description.length > 50) {
       console.warn(
@@ -55,6 +52,7 @@ const getStaticProps = async () => {
       );
     }
   }
+  articles.sort((a, b) => b.date - a.date);
   return { props: { articles } };
 };
 
