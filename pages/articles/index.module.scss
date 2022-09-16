@@ -1,7 +1,47 @@
 // SPDX-License-Identifier: MIT
 
 @use "@/components/mixins" as *;
+@use "@/components/variables" as *;
 
 .articles {
   @include outermost-container;
+}
+
+.articles-list {
+  padding: 0;
+  list-style: none;
+
+  > li {
+    margin: 2rem 0;
+    border: 1px solid;
+
+    > a {
+      height: 100%;
+      width: 100%;
+      display: block;
+      text-decoration: none;
+
+      &:hover {
+        background-color: rgba($color-main, 0.2);
+        box-shadow: 0 0 4px 2px $color-shadow;
+      }
+
+      > h2 {
+        margin: 0;
+        border-left: 8px solid $color-accent;
+        padding: 0.5rem 1rem;
+        background-color: rgba($color-main, 0.25);
+      }
+    }
+  }
+}
+
+.description {
+  padding: 0.25rem 1rem;
+}
+
+.date {
+  padding: 0 1rem 0.25rem;
+  text-align: right;
+  color: rgba($color-main, 0.5);
 }
