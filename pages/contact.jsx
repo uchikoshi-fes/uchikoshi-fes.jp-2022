@@ -7,8 +7,19 @@ import Link from "@/components/base/link";
 // styles
 import styles from "./contact.module.scss";
 // icons
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+const E_MAIL_ADDRESS = "uchikoshi-support@asano.ed.jp";
+
+const EMail = ({ address = E_MAIL_ADDRESS, subject = "お問い合わせ" }) => {
+  return (
+    <Link href={`mailto:${address}?subject=${subject}`}>
+      <FontAwesomeIcon icon={faEnvelope} />
+      <> {address}</>
+    </Link>
+  );
+};
 
 const Contact = () => {
   return (
@@ -17,7 +28,9 @@ const Contact = () => {
       <article className={styles.contact}>
         <h1>お問い合わせ</h1>
         <h2>打越祭</h2>
-        <p>uchikoshi-support@asano.ed.jp</p>
+        <p>
+          <EMail />
+        </p>
         <h2>本サイト</h2>
         <p>
           <Link href="https://github.com/uchikoshi-fes/uchikoshi-fes.jp-2022/issues">
@@ -30,4 +43,5 @@ const Contact = () => {
   );
 };
 
+export { E_MAIL_ADDRESS, EMail };
 export default Contact;
