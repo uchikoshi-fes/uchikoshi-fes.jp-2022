@@ -1,3 +1,11 @@
+import Container from "@/components/article-container";
+
+export const META = {
+  title: "飯沼副実行委員長インタビュー",
+  description: "副実行委員長の飯沼誉敬さんへのインタビューです。",
+  date: Date.UTC(2022, 8, 16, 17, 0) - 9 * 3600000,
+};
+
 **───自己紹介をお願いします。**
 
 今年度文化祭副実行委員長の飯沼誉敬です。クラスは高二 B 組です。水泳部です。
@@ -29,3 +37,5 @@
 **───最後に一言どうぞ。**
 
 副実行委員長の苦労とか色々語りましたが、楽しむことが一番なので、この文化祭を全力で楽しんでください！
+
+export default ({ children }) => <Container meta={META}>{children}</Container>;

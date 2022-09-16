@@ -1,3 +1,11 @@
+import Container from "@/components/article-container";
+
+export const META = {
+  title: "會津装飾部門長インタビュー",
+  description: "装飾部門長の會津仁成さんへのインタビューです。",
+  date: Date.UTC(2022, 8, 16, 16, 0) - 9 * 3600000,
+};
+
 **────自己紹介をお願いします。**
 
 装飾部門長の會津仁成です。
@@ -25,3 +33,5 @@
 **────最後に来場者へ一言お願いします。**
 
 僕は今年 Ms 浅野に出場するので投票お願いします。
+
+export default ({ children }) => <Container meta={META}>{children}</Container>;

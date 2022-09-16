@@ -1,3 +1,11 @@
+import Container from "@/components/article-container";
+
+export const META = {
+  title: "小原資材部門長インタビュー",
+  description: "資材部門長の小原瑞己さんへのインタビューです。",
+  date: Date.UTC(2022, 8, 16, 16, 40) - 9 * 3600000,
+};
+
 **────自己紹介をお願いします。**
 
 資材部門長の小原瑞己です。
@@ -25,3 +33,5 @@
 **────来場者の方々へ最後に一言お願いします。**
 
 僕は柔道部なんですけど、柔道部が作るたこ焼きをぜひ食べてみてください。美味しいです。
+
+export default ({ children }) => <Container meta={META}>{children}</Container>;

@@ -1,3 +1,11 @@
+import Container from "@/components/article-container";
+
+export const META = {
+  title: "松川案内部門長インタビュー",
+  description: "案内部門長の松川凌太さんへのインタビューです。",
+  date: Date.UTC(2022, 8, 16, 16, 30) - 9 * 3600000,
+};
+
 **ーインタビューお願いします。**
 
 お願いします。
@@ -37,3 +45,5 @@
 **ーありがとうございました。**
 
 ありがとうございました。
+
+export default ({ children }) => <Container meta={META}>{children}</Container>;

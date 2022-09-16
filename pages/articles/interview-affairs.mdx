@@ -1,3 +1,11 @@
+import Container from "@/components/article-container";
+
+export const META = {
+  title: "山田総務部門長インタビュー",
+  description: "総務部門長の山田大志さんへのインタビューです。",
+  date: Date.UTC(2022, 8, 16, 17, 10) - 9 * 3600000,
+};
+
 **───自己紹介をお願いします。**
 
 山田大志です。総務部門長を務めています。
@@ -29,3 +37,5 @@
 **───最後に一言お願いします。**
 
 僕らの学年は、人生最後の文化祭なので、全力で望んでいきたいと思います。来客の皆さんもぜひ楽しんでいってください。
+
+export default ({ children }) => <Container meta={META}>{children}</Container>;

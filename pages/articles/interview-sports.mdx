@@ -1,3 +1,11 @@
+import Container from "@/components/article-container";
+
+export const META = {
+  title: "柴原体育祭実行委員長インタビュー",
+  description: "体育祭実行委員長の柴原陸杜さんへのインタビューです。",
+  date: Date.UTC(2022, 8, 16, 17, 20) - 9 * 3600000,
+};
+
 **───自己紹介をお願いします。**
 
 今年度の体育祭の実行委員長だった柴原陸杜です。
@@ -33,3 +41,5 @@
 **───最後に一言お願いします。**
 
 今年はコロナもどうなるか直前までわかりませんが、間違いなく楽しい文化祭になると思うので、皆さんぜひ楽しんでください。
+
+export default ({ children }) => <Container meta={META}>{children}</Container>;
