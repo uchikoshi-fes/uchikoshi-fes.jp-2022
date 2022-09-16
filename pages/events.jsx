@@ -18,7 +18,7 @@ const Events = () => {
             <Link href="/map/jhs-f2">講堂</Link>
           </h2>
           <Image
-            src="/events/hall.jpeg"
+            src="/events/hall.png"
             alt="メロンフラッペ、ディベート、ジャグリング、劇団こぎと"
             layout="responsive"
             height="510"
@@ -30,7 +30,7 @@ const Events = () => {
             <Link href="/map/arena">アリーナ</Link>
           </h2>
           <Image
-            src="/events/arena.jpeg"
+            src="/events/arena.png"
             alt="豪華イベント勢揃い！"
             layout="responsive"
             height="510"
@@ -42,7 +42,7 @@ const Events = () => {
             <Link href="/map/field">グラウンド</Link>
           </h2>
           <Image
-            src="/events/field.jpeg"
+            src="/events/field.png"
             alt="野球、サッカー、地学部ロケット、アメフト"
             layout="responsive"
             height="510"
