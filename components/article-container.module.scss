@@ -5,6 +5,10 @@
 
 .container {
   @include outermost-container;
+
+  > h1 {
+    @include non-break;
+  }
 }
 
 .date {
