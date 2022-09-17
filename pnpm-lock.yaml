@@ -30,7 +30,7 @@ specifiers:
   react-aria: 3.19.0
   react-dom: 18.2.0
   react-intersection-observer: 9.4.0
-  react-player: 2.10.1
+  react-player: 2.11.0
   react-responsive: 9.0.0-beta.10
   react-stately: 3.17.0
   react-twitter-widgets: 1.11.0
@@ -73,7 +73,7 @@ dependencies:
   react-aria: 3.19.0_vq3pvykbfgerr5rtx4n53bcbxy
   react-dom: 18.2.0_react@18.2.0
   react-intersection-observer: 9.4.0_react@18.2.0
-  react-player: 2.10.1_react@18.2.0
+  react-player: 2.11.0_react@18.2.0
   react-responsive: 9.0.0-beta.10_react@18.2.0
   react-stately: 3.17.0_react@18.2.0
   react-twitter-widgets: 1.11.0_react@18.2.0
@@ -7447,8 +7447,8 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
 
-  /react-player/2.10.1_react@18.2.0:
-    resolution: {integrity: sha512-ova0jY1Y1lqLYxOehkzbNEju4rFXYVkr5rdGD71nsiG4UKPzRXQPTd3xjoDssheoMNjZ51mjT5ysTrdQ2tEvsg==}
+  /react-player/2.11.0_react@18.2.0:
+    resolution: {integrity: sha512-fIrwpuXOBXdEg1FiyV9isKevZOaaIsAAtZy5fcjkQK9Nhmk1I2NXzY/hkPos8V0zb/ZX416LFy8gv7l/1k3a5w==}
     peerDependencies:
       react: '>=16.6.0'
     dependencies:
