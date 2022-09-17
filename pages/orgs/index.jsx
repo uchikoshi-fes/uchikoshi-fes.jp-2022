@@ -85,71 +85,74 @@ const Organizations = ({ organizations }) => {
       <article className={styles.orgs}>
         <h1>参加団体一覧</h1>
         <div className={styles["organizations-window"]}>
-          <ul className={styles.categories}>
-            {CATEGORIES.map(({ id, name, icon }) => {
-              const isActive = id === categoryId;
-              const isShowFull = !isClient || isWide || (!isNarrow && isActive);
-              return (
-                <li
-                  className={`${styles[`category-${id}`]} ${
-                    isActive ? styles.active : ""
-                  }`}
-                  key={id}
-                >
-                  <button onClick={() => setCategoryId(id)}>
-                    <FontAwesomeIcon
-                      icon={icon}
-                      size="lg"
-                      className={isShowFull ? styles["icon-left"] : ""}
-                    />
-                    {isShowFull && name}
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-          {isClient && isNarrow && (
-            <div
-              className={`${styles["category-narrow"]} ${
-                styles[`category-${categoryId}`]
-              }`}
-            >
-              {CATEGORIES.find(({ id }) => id === categoryId).name}
-            </div>
-          )}
-          <ul
-            className={`${styles.organizations} ${
-              styles[`category-${categoryId}`]
-            }`}
-          >
-            {organizations
-              .filter((org) => org.categoryId === categoryId)
-              .map(({ id, title, areaId, room, name, logo }) => {
-                const area = AREAS.find(({ id }) => id === areaId);
+          <div>
+            <ul className={styles.categories}>
+              {CATEGORIES.map(({ id, name, icon }) => {
+                const isActive = id === categoryId;
+                const isShowFull =
+                  !isClient || isWide || (!isNarrow && isActive);
                 return (
-                  <li key={id}>
-                    <Link href={`/orgs/${id}`}>
-                      {isClient && !isNarrow && (
-                        <div className={styles.logo}>
-                          <Image
-                            src={`/orgs/${id}/${logo}`}
-                            alt=""
-                            width={80}
-                            height={80}
-                          />
-                        </div>
-                      )}
-                      <div className={styles.title}>{title}</div>
-                      <div className={styles["other-info"]}>
-                        <div className={styles.area}>{area?.name}</div>
-                        <div className={styles.room}>{room}</div>
-                        <div className={styles.name}>{name || title}</div>
-                      </div>
-                    </Link>
+                  <li
+                    className={`${styles[`category-${id}`]} ${
+                      isActive ? styles.active : ""
+                    }`}
+                    key={id}
+                  >
+                    <button onClick={() => setCategoryId(id)}>
+                      <FontAwesomeIcon
+                        icon={icon}
+                        size="lg"
+                        className={isShowFull ? styles["icon-left"] : ""}
+                      />
+                      {isShowFull && name}
+                    </button>
                   </li>
                 );
               })}
-          </ul>
+            </ul>
+            {isClient && isNarrow && (
+              <div
+                className={`${styles["category-narrow"]} ${
+                  styles[`category-${categoryId}`]
+                }`}
+              >
+                {CATEGORIES.find(({ id }) => id === categoryId).name}
+              </div>
+            )}
+            <ul
+              className={`${styles.organizations} ${
+                styles[`category-${categoryId}`]
+              }`}
+            >
+              {organizations
+                .filter((org) => org.categoryId === categoryId)
+                .map(({ id, title, areaId, room, name, logo }) => {
+                  const area = AREAS.find(({ id }) => id === areaId);
+                  return (
+                    <li key={id}>
+                      <Link href={`/orgs/${id}`}>
+                        {isClient && !isNarrow && (
+                          <div className={styles.logo}>
+                            <Image
+                              src={`/orgs/${id}/${logo}`}
+                              alt=""
+                              width={80}
+                              height={80}
+                            />
+                          </div>
+                        )}
+                        <div className={styles.title}>{title}</div>
+                        <div className={styles["other-info"]}>
+                          <div className={styles.area}>{area?.name}</div>
+                          <div className={styles.room}>{room}</div>
+                          <div className={styles.name}>{name || title}</div>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
         </div>
       </article>
     </>
