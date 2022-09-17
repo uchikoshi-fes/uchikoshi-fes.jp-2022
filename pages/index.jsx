@@ -24,7 +24,7 @@ const Top = () => {
 
 const Index = () => {
   return (
-    <>
+    <div className={styles.index}>
       <div className={styles["top-container"]}>
         <Top />
       </div>
@@ -43,7 +43,7 @@ const Index = () => {
       <div className={styles["pv-container"]}>
         <PromotionVideos />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -5,6 +5,10 @@
 
 .school-map {
   @include outermost-container;
+
+  > h1 {
+    @include page-title;
+  }
 }
 
 .map-container {

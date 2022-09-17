@@ -11,6 +11,7 @@ $easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
   margin: 1rem 0;
   border-top: 1px solid $color-border;
   position: relative;
+  margin-top: 80px;
 
   &::after {
     content: "";

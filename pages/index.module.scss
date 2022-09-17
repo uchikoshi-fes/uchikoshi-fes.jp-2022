@@ -4,6 +4,10 @@
 @use "@/components/variables" as *;
 @use "@/components/layout/header.module" as header;
 
+.index {
+  font-family: "Noto Serif JP", serif;
+}
+
 .top {
   position: relative;
   height: 100vh;

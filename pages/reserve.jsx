@@ -91,7 +91,10 @@ const Reserve = () => {
         openGraph={{ title: "来場申し込み (抽選制)" }}
       />
       <article className={styles.reserve}>
-        <h1>来場申し込み (抽選制)</h1>
+        <h1>
+          来場申し込み
+          <wbr /> (抽選制)
+        </h1>
         {!process.env.NEXT_PUBLIC_RESERVE_URL ? (
           <article>
             <h2 className={styles.warning}>

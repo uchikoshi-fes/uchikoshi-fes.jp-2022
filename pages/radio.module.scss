@@ -160,6 +160,10 @@
 
 .asano-radio {
   @include outermost-container;
+
+  > h1 {
+    @include page-title;
+  }
 }
 
 .youtube-container {

@@ -5,6 +5,11 @@
 
 .reserve {
   @include outermost-container;
+
+  > h1 {
+    @include non-break;
+    @include page-title;
+  }
 }
 
 .warning {

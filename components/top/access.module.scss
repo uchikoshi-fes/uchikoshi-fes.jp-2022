@@ -34,6 +34,7 @@
   p {
     margin: 5px 0;
     color: $color-black-light;
+    font-family: "Noto Sans JP", sans-serif;
 
     @include mq("sm") {
       font-size: 15px;

@@ -17,6 +17,7 @@ $content-padding: ($header-height - $content-height) / 2;
   align-items: center;
   z-index: 100;
   transition: all ease-in-out 500ms;
+  font-family: "Noto Serif JP", serif;
 }
 
 .site-name {

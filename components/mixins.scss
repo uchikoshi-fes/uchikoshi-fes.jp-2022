@@ -49,6 +49,7 @@ $breakpoints: (
   text-align: center;
   letter-spacing: 0.2rem;
   margin-top: 0;
+  font-family: "Noto Serif JP", sans-serif;
 
   &::after {
     content: "";
@@ -57,6 +58,28 @@ $breakpoints: (
     height: 2px;
     background: $color-accent;
     margin: 15px auto 0;
+  }
+}
+
+@mixin page-title {
+  letter-spacing: 0.1rem;
+  position: relative;
+  padding-left: 30px;
+  margin: 50px 0;
+
+  @include mq("sm") {
+    font-size: 28px;
+    margin: 20px 0 40px;
+  }
+
+  &::before {
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: $color-accent-light;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
