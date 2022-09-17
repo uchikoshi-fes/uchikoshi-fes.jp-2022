@@ -83,15 +83,19 @@ a.map-button {
   padding: 0;
   list-style: none;
 
+  svg {
+    color: $color-accent;
+  }
+
   > li {
     position: relative;
     margin: 1rem 0;
-    border: 4px solid $color-accent;
+    border: 1px solid $color-main;
     padding: 0;
     display: flex;
     text-decoration: none;
-    color: $color-base;
-    background-color: $color-accent-light;
+    color: $color-main;
+    background-color: $color-gray;
   }
 }
 
@@ -99,23 +103,13 @@ a.map-button {
   position: relative;
   height: 100px;
   width: 100px;
-  background-color: white;
-
-  &::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    display: block;
-    pointer-events: none;
-    box-shadow: 0 0 4px 2px $color-shadow inset;
-  }
+  padding: 5px;
+  background-color: $color-base;
 }
 
 .org-text {
   flex: 1;
-  padding: 0.5rem 1rem;
+  padding: 10px 15px;
   display: flex;
   flex-direction: column;
   overflow-x: auto;
@@ -148,10 +142,8 @@ a.map-button {
   padding: 0.5rem 1rem;
 
   &:hover {
-    font-weight: bold;
     color: $color-accent;
-    text-shadow: 0 0 8px $color-base;
-    filter: drop-shadow(0 0 4px $color-base);
+    transition: all 0.25s ease-in-out;
   }
 }
 
