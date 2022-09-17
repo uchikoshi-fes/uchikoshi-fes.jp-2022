@@ -15,8 +15,14 @@ import styles from "./index.module.scss";
 const Top = () => {
   return (
     <div className={styles.top}>
+      <Image src="/souichiro.jpeg" layout="fill" objectFit="cover" alt="" />
       <div className={styles["slogan-wrap"]}>
-        <div className={styles.slogan} />
+        <Image
+          src="/slogan.svg"
+          layout="fill"
+          objectFit="cover"
+          alt="スローガン"
+        />
       </div>
     </div>
   );
