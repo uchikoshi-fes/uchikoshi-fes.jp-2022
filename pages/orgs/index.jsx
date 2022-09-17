@@ -84,6 +84,10 @@ const Organizations = ({ organizations }) => {
       <NextSeo title="団体一覧" openGraph={{ title: "参加団体一覧" }} />
       <article className={styles.orgs}>
         <h1>参加団体一覧</h1>
+        <p>
+          カテゴリーごとにタブが分かれています。<></>
+          タブをクリックすると、そのカテゴリーの団体のみが表示されます。
+        </p>
         <div className={styles["organizations-window"]}>
           <div>
             <ul className={styles.categories}>
