@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 
+import ogImage from "./public/icons/og.jpg";
 import favicon from "./public/icons/favicon.ico";
 import icon from "./public/icons/icon.svg";
 import appleTouchIcon from "./public/icons/apple-touch-icon.png";
@@ -9,11 +10,12 @@ export const DEFAULT_TITLE = `${SITE_NAME} (浅野学園2022年度文化祭)`;
 export const DESCRIPTION =
   "中高一貫の男子校「浅野中学校・高等学校」の" +
   "中学生、高校生、全員で作る展示の数々をどうぞ。" +
-  "東京や川崎に近い、神奈川県横浜市にて2022年9月開催予定。" +
+  "東京や川崎に近い、神奈川県横浜市にて2022年9月開催決定。" +
   "史上最高の文化祭へ是非お越しください！";
 
 export const genTitle = (pageName) => `${pageName} - ${SITE_NAME}`;
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (router) => {
   const url =
     "https://uchikoshi-fes.jp" +
@@ -29,7 +31,7 @@ export default (router) => {
     description: DESCRIPTION,
     canonical: url,
     additionalMetaTags: [
-      { name: "theme-color", content: "#7cc28e" },
+      { name: "theme-color", content: "#b7282e" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       {
         name: "apple-mobile-web-app-status-bar-style",
@@ -38,7 +40,7 @@ export default (router) => {
       { name: "apple-mobile-web-app-title", content: "打越祭サイト" },
     ],
     twitter: {
-      cardType: "summary_large_image",
+      cardType: "summary",
       site: "@uchikoshifes",
     },
     openGraph: {
@@ -46,7 +48,14 @@ export default (router) => {
       type: "website",
       title: DEFAULT_TITLE,
       description: DESCRIPTION,
-      images: [],
+      images: [
+        {
+          url: ogImage.src,
+          width: ogImage.width,
+          height: ogImage.height,
+          alt: "打越祭ロゴ",
+        },
+      ],
       locale: "ja_JP",
       site_name: SITE_NAME,
     },
