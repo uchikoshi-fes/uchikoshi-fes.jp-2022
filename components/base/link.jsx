@@ -21,7 +21,7 @@ const Link = ({ href, scroll = true, noIcon = false, children, ...props }) => {
   const router = useRouter();
 
   // internal link
-  if (href.startsWith("/") || href === "")
+  if (href.startsWith("/") || href === "") {
     return (
       <NextLink href={href} scroll={scroll}>
         <a
@@ -41,8 +41,8 @@ const Link = ({ href, scroll = true, noIcon = false, children, ...props }) => {
         </a>
       </NextLink>
     );
-  // external link
-  else
+    // external link
+  } else {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
         {children}
@@ -54,6 +54,7 @@ const Link = ({ href, scroll = true, noIcon = false, children, ...props }) => {
         )}
       </a>
     );
+  }
 };
 
 export { resetScroll };

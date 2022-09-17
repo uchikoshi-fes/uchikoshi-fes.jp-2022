@@ -5,6 +5,7 @@ import { InView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Timeline as TwitterTL } from "react-twitter-widgets";
 import Link from "@/components/base/link";
+import Outline from "./outline";
 // styles
 import styles from "./footer.module.scss";
 // icons
@@ -20,8 +21,8 @@ import { links as menuLinks } from "@/components/layout/menu";
 
 const Tweets = ({ tweetLimit }) => {
   return (
-    <article className={styles["tweets"]}>
-      <h2>公式 Twitter の最新ツイート</h2>
+    <section className={styles["tweets"]}>
+      <h2 className={styles["tweets-title"]}>公式 Twitter</h2>
       <InView triggerOnce rootMargin="200px">
         {({ inView, ref }) => (
           <div className={styles["twitter-tl"]} ref={ref}>
@@ -37,7 +38,7 @@ const Tweets = ({ tweetLimit }) => {
           </div>
         )}
       </InView>
-    </article>
+    </section>
   );
 };
 
@@ -83,7 +84,7 @@ const Sns = () => {
 const Menu = () => {
   return (
     <nav className={styles.menu}>
-      <h2 className={styles["menu-title"]}>目次</h2>
+      <h2 className={styles["menu-title"]}>Links</h2>
       <ul className={styles["menu-links"]}>
         {menuLinks.map(({ href, name }) => (
           <li key={href}>
@@ -97,13 +98,32 @@ const Menu = () => {
 
 const Others = () => {
   return (
-    <div className={styles.others}>
-      <Link href="/contact">お問い合わせ</Link>
-      <Link href="/privacy">プライバシーポリシー</Link>
-      <Link href="/licenses">ライセンス</Link>
-      <Link href="https://www.asano.ed.jp/">浅野学園公式サイトはこちら</Link>
-      <small>v{PACKAGE.version}</small>
-      <small>Copyright &copy; 2022 浅野学園生徒会</small>
+    <nav className={styles.menu}>
+      <h2 className={styles["menu-title"]}>Others</h2>
+      <ul className={styles["menu-links"]}>
+        <li>
+          <Link href="/contact">お問い合わせ</Link>
+        </li>
+        <li>
+          <Link href="/privacy">プライバシーポリシー</Link>
+        </li>
+        <li>
+          <Link href="/licenses">ライセンス</Link>
+        </li>
+        <li>
+          <Link href="https://www.asano.ed.jp/">
+            浅野学園公式サイトはこちら
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+const Copyright = () => {
+  return (
+    <div className={styles.copyright}>
+      v{PACKAGE.version} &copy; 2022 浅野学園生徒会
     </div>
   );
 };
@@ -112,10 +132,12 @@ const Footer = () => {
   return (
     <>
       <Tweets tweetLimit={5} />
+      <Outline />
       <footer className={styles.footer}>
-        <Sns />
         <Menu />
         <Others />
+        <Sns />
+        <Copyright />
       </footer>
     </>
   );

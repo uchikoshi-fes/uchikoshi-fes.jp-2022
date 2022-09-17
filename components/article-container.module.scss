@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins" as *;
+@use "@/components/variables" as *;
+
+.container {
+  @include outermost-container;
+
+  > h1 {
+    @include non-break;
+  }
+}
+
+.date {
+  text-align: right;
+  color: rgba($color-main, 0.5);
+}
+
+.back {
+  text-align: center;
+}

@@ -3,12 +3,12 @@
 @use "@/components/mixins" as *;
 @use "@/components/variables" as *;
 
-$header-height: 48px;
-$content-height: $header-height / 2;
+$header-height: 64px;
+$content-height: 24px;
 $content-padding: ($header-height - $content-height) / 2;
 
 .header {
-  position: sticky;
+  position: fixed;
   height: $header-height;
   width: 100%;
   top: 0;
@@ -16,17 +16,18 @@ $content-padding: ($header-height - $content-height) / 2;
   display: flex;
   align-items: center;
   z-index: 100;
-  background-color: $color-base;
-  box-shadow: 0 -4px 4px 6px $color-shadow;
+  transition: all ease-in-out 500ms;
+  font-family: "Noto Serif JP", serif;
 }
 
 .site-name {
   height: 100%;
   flex: 1;
+  font-weight: 300;
 
   > a {
     height: 100%;
-    padding: $content-padding ($content-padding / 2);
+    padding: $content-padding ($content-padding / 2) 0;
     display: inline-block;
     text-decoration: none;
     line-height: $content-height;

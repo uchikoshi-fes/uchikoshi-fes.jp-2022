@@ -16,5 +16,5 @@ describe("Licenses", () => {
     expect(screen.getByText("ライブラリ")).toBeInTheDocument();
     expect(screen.getByText(/next@/)).toBeInTheDocument();
     expect(screen.getByText(/react@/)).toBeInTheDocument();
-  });
+  }, 8000);
 });

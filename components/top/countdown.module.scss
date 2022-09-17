@@ -1,0 +1,108 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins" as *;
+@use "@/components/variables" as *;
+
+.countdown {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 60px 120px;
+  letter-spacing: 0.2rem;
+  border: 1px solid $color-border;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 50%;
+    margin: -1px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-image: linear-gradient(
+      to right bottom,
+      $color-main 0%,
+      $color-border 40%,
+      $color-border 100%
+    );
+    border-image-slice: 1;
+
+    @include mq("sm") {
+      width: 60%;
+      height: 80%;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    height: 50%;
+    margin: -1px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-image: linear-gradient(
+      to left top,
+      $color-main 0%,
+      $color-border 40%,
+      $color-border 100%
+    );
+    border-image-slice: 1;
+
+    @include mq("sm") {
+      width: 60%;
+      height: 80%;
+    }
+  }
+
+  @include mq("sm") {
+    width: 100%;
+    letter-spacing: 0.1rem;
+    padding: 20px 5px;
+  }
+
+  > div {
+    width: 100%;
+    font-size: max(1em, 3vw);
+    text-align: center;
+
+    @include mq("sm") {
+      width: 90%;
+      margin: 0 auto;
+      text-align: right;
+      padding-right: 15%;
+    }
+  }
+}
+
+.left {
+  font-size: 25px;
+  text-align: left;
+
+  @include mq("sm") {
+    font-size: 18px;
+    padding-bottom: 5px;
+  }
+}
+
+.small {
+  font-size: 35px;
+
+  @include mq("sm") {
+    font-size: 18px;
+  }
+}
+
+.enhance {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0 0.05em;
+  padding: 0 0.05em;
+  font-size: max(80px, 10vw);
+  line-height: 100%;
+}

@@ -1,5 +1,20 @@
 // SPDX-License-Identifier: MIT
 
+@use "@/components/variables" as *;
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+);
+
+@mixin mq($size) {
+  @media screen and (max-width: #{map-get($breakpoints, $size)}) {
+    @content;
+  }
+}
+
 @mixin wide-only {
   @media screen and (max-width: 960px) {
     display: none;
@@ -18,5 +33,96 @@
 
 @mixin outermost-container {
   width: 100%;
-  padding: 1rem max(12.5%, 50% - 400px);
+  padding: 1rem max(10%, 50% - 600px);
+}
+
+@mixin section-padding {
+  padding: 80px 0;
+
+  @include mq("sm") {
+    padding: 60px 0;
+  }
+}
+
+@mixin section-title {
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  margin-top: 0;
+  font-family: "Noto Serif JP", sans-serif;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: $color-accent;
+    margin: 15px auto 0;
+  }
+}
+
+@mixin page-title {
+  letter-spacing: 0.1rem;
+  position: relative;
+  padding-left: 30px;
+  margin: 50px 0;
+
+  @include mq("sm") {
+    font-size: 28px;
+    margin: 20px 0 40px;
+  }
+
+  &::before {
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: $color-accent-light;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@mixin border-button($width) {
+  width: $width;
+  max-width: 100%;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid $color-black-lighter;
+  padding: 15px;
+  margin: 30px auto 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: calc(100% + 2px);
+    border-top: 1px solid $color-main;
+    border-bottom: 1px solid $color-main;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 2px);
+    height: 0;
+    border-right: 1px solid $color-main;
+    border-left: 1px solid $color-main;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      width: calc(100% + 2px);
+    }
+
+    &::after {
+      height: calc(100% + 2px);
+    }
+  }
 }

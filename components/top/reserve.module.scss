@@ -1,0 +1,30 @@
+// SPDX-License-Identifier: MIT
+
+@use "@/components/mixins.scss" as *;
+@use "@/components/variables" as *;
+
+.reserve {
+  @include section-padding;
+}
+
+.reserve-title {
+  @include section-title;
+}
+
+.reserve-content {
+  margin-top: 40px;
+
+  > p {
+    text-align: center;
+    line-height: 2rem;
+
+    @include mq("sm") {
+      line-height: 1.5rem;
+      font-size: 15px;
+    }
+  }
+}
+
+.reserve-link {
+  @include border-button(300px);
+}

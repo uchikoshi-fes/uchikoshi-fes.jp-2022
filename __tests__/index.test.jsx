@@ -13,6 +13,6 @@ window.IntersectionObserver = jest.fn(() => ({
 describe("Index", () => {
   test("最低限のテキスト", () => {
     const { getByText } = render(<Index />);
-    expect(screen.getByText(/浅野学園2022年度文化祭/)).toBeInTheDocument();
+    expect(screen.getByText(/雲外蒼天/)).toBeInTheDocument();
   });
 });

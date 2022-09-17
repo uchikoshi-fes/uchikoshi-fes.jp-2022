@@ -67,12 +67,14 @@ const Organization = ({
           <div className={styles.meta}>
             <div>
               <FontAwesomeIcon icon={faTag} size="lg" />
+              カテゴリー:&nbsp;
               <Link href={`/orgs/?category=${categoryId}`}>
                 {CATEGORIES.find(({ id }) => id === categoryId)?.name}
               </Link>
             </div>
             <div>
               <FontAwesomeIcon icon={faLocationDot} size="lg" />
+              場所:&nbsp;
               <Link href={`/map/${areaId}`}>
                 {AREAS.find(({ id }) => id === areaId)?.name}
               </Link>
@@ -80,11 +82,13 @@ const Organization = ({
             </div>
             <div>
               <FontAwesomeIcon icon={faPeopleGroup} size="lg" />
+              担当団体:&nbsp;
               {url ? <Link href={url}>{name || "有志"}</Link> : name || "有志"}
             </div>
             {twitter && (
               <div>
                 <FontAwesomeIcon icon={faTwitter} size="lg" />
+                Twitter:&nbsp;
                 <Link href={`https://twitter.com/${twitter}`}>@{twitter}</Link>
               </div>
             )}
