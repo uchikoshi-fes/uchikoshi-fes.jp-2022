@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: MIT
 
+import favicon from "./public/icons/favicon.ico";
+import icon from "./public/icons/icon.svg";
+import appleTouchIcon from "./public/icons/apple-touch-icon.png";
+
 export const SITE_NAME = "第43回打越祭公式サイト";
 export const DEFAULT_TITLE = `${SITE_NAME} (浅野学園2022年度文化祭)`;
 export const DESCRIPTION =
@@ -46,5 +50,21 @@ export default (router) => {
       locale: "ja_JP",
       site_name: SITE_NAME,
     },
+    additionalLinkTags: [
+      {
+        rel: "icon",
+        href: favicon.src,
+        sizes: "any",
+      },
+      {
+        rel: "icon",
+        href: icon.src,
+        type: "image/svg+xml",
+      },
+      {
+        rel: "apple-touch-icon",
+        href: appleTouchIcon.src,
+      },
+    ],
   };
 };
