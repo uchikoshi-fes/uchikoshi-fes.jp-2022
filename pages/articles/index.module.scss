@@ -30,6 +30,7 @@
         margin: 0;
         border-left: 8px solid $color-accent;
         padding: 0.5rem 1rem;
+        @include non-break;
         background-color: rgba($color-main, 0.25);
       }
     }
