@@ -31,7 +31,3 @@ body.fixed {
 a {
   color: inherit;
 }
-
-:where(iframe, img, input, video, select, textarea) {
-  height: 100%;
-}

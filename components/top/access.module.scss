@@ -64,11 +64,15 @@
 
 .map {
   width: 50%;
-  height: 400px;
 
   @include mq("sm") {
     width: 100vw;
     height: 300px;
+  }
+
+  > iframe {
+    height: 100%;
+    width: 100%;
   }
 }
 

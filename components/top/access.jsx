@@ -19,8 +19,8 @@ const GoogleMaps = () => {
           {inView && (
             <iframe
               src={`https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6497.057482057193!2d139.658201!3d35.491202!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185dd0cec4b9f1%3A0x61ef37511aa6ddb0!2z5rWF6YeO5Lit5a2m5qCh44O76auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1654689474523!5m2!1sja!2sjp`}
-              width="100%"
-              height="400px"
+              width="600"
+              height="450"
               style={{ border: "0" }}
               allowFullScreen=""
               loading="lazy"
