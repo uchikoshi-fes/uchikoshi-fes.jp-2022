@@ -25,6 +25,11 @@
   aspect-ratio: 16 / 9;
   background-color: $color-main;
 
+  @media screen and (min-width: 800px) {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
   iframe {
     width: 100%;
     height: 100%;
@@ -141,7 +146,7 @@
       flex-direction: row;
 
       > table:not(:first-child) {
-        border-left: 4px solid;
+        border-left: 2px solid;
       }
     }
   }
