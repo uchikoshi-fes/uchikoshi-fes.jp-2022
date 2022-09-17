@@ -22,7 +22,7 @@ $easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
     height: calc(100% - 20px);
     display: block;
     pointer-events: none;
-    box-shadow: 0 -120px 60px -60px #fff inset;
+    box-shadow: 0 -120px 60px -60px $color-base inset;
   }
 }
 
