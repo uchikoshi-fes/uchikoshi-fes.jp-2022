@@ -13,7 +13,11 @@ const Image = ({ src, ...props }) => {
   const rootRelativePath = useRouter()?.pathname.replace(/[^\/]+$/, "");
   return (
     <NextImage
-      src={(src.startsWith("/") ? "" : rootRelativePath) + src}
+      src={
+        typeof src === "string"
+          ? (src.startsWith("/") ? "" : rootRelativePath) + src
+          : src
+      }
       {...props}
       loader={process.env.isProduct ? null : customLoader}
     />
