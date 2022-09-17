@@ -24,6 +24,9 @@ const Top = () => {
           alt="スローガン"
         />
       </div>
+      <div className={styles.scrolldown}>
+        <span>Scroll</span>
+      </div>
     </div>
   );
 };

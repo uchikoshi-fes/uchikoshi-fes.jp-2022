@@ -34,7 +34,7 @@ const Header = ({ setScrollable }) => {
       style={{
         color: router.pathname !== "/" || scrolled ? "#000" : "#fff",
         backgroundColor:
-          router.pathname !== "/" || scrolled ? "#fff" : "rgba(0, 0, 0, 0)",
+          router.pathname !== "/" || scrolled ? "#fdfdfd" : "rgba(0, 0, 0, 0)",
       }}
     >
       {isClient && isNarrow && (

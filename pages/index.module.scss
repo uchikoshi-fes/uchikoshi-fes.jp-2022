@@ -38,6 +38,84 @@
   height: 400px;
 }
 
+.scrolldown {
+  display: inline-block;
+  position: absolute;
+  right: 7%;
+  bottom: 0;
+  z-index: 1;
+  padding: 10px 10px 100px;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  writing-mode: vertical-lr;
+  transition: 0.2s;
+
+  @include mq("sm") {
+    padding: 10px 10px 80px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 1px);
+    width: 1px;
+    height: 90px;
+    background: rgba(#fff, 0.4);
+
+    @include mq("sm") {
+      height: 70px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 1px);
+    width: 1px;
+    background: #fff;
+    height: 30px;
+    animation: scrolldown 3s ease infinite;
+
+    @include mq("sm") {
+      animation: scrolldown-sm 3s ease infinite;
+    }
+
+    @keyframes scrolldown {
+      0% {
+        transform: translateY(-90px);
+        height: 0;
+      }
+      30% {
+        transform: translateY(-60px);
+        height: 30px;
+      }
+      100% {
+        transform: translateY(30px);
+        height: 30px;
+      }
+    }
+
+    @keyframes scrolldown-sm {
+      0% {
+        transform: translateY(-70px);
+        height: 0;
+      }
+      30% {
+        transform: translateY(-50px);
+        height: 20px;
+      }
+      100% {
+        transform: translateY(20px);
+        height: 20px;
+      }
+    }
+  }
+}
+
 .description {
   margin: 0;
   line-height: 1.5;
