@@ -11,18 +11,16 @@ import Countdown from "@/components/top/countdown";
 import PromotionVideos from "@/components/top/promotion-videos";
 // styles
 import styles from "./index.module.scss";
+// images
+import souichiroImage from "@/public/souichiro.jpeg";
+import sloganImage from "@/public/slogan.svg";
 
 const Top = () => {
   return (
     <div className={styles.top}>
-      <Image src="/souichiro.jpeg" layout="fill" objectFit="cover" alt="" />
+      <Image src={souichiroImage} layout="fill" objectFit="cover" alt="" />
       <div className={styles["slogan-wrap"]}>
-        <Image
-          src="/slogan.svg"
-          layout="fill"
-          objectFit="cover"
-          alt="スローガン"
-        />
+        <Image src={sloganImage} layout="fill" objectFit="cover" alt="" />
       </div>
       <div className={styles.scrolldown}>
         <span>Scroll</span>
