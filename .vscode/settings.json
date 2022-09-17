@@ -7,8 +7,5 @@
   "eslint.format.enable": false,
   "[plaintext]": {
     "editor.formatOnSave": false
-  },
-  "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
   }
 }
