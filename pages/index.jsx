@@ -10,13 +10,15 @@ import Countdown from "@/components/countdown";
 import PromotionVideos from "@/components/promotion-videos";
 // styles
 import styles from "./index.module.scss";
+// images
+import souichiroImage from "@/public/souichiro.jpeg";
 
 const Top = () => {
   return (
     <div className={styles.top}>
       <div>
         <Image
-          src="/souichiro.jpeg"
+          src={souichiroImage}
           alt=""
           layout="fill"
           className={styles["top-image"]}
