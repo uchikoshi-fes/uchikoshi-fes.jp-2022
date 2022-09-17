@@ -4,8 +4,8 @@
 // 基本的に色は [和色大辞典](https://www.colordic.org/w) にある色を使います。
 
 // primary colors
-$color-main: #333631; // 黒緑
-$color-base: #fbfaf5; // 生成り色
+$color-main: #121212;
+$color-base: #fff;
 $color-accent: #b7282e; // 茜色
 
 // secondary colors
@@ -13,6 +13,8 @@ $color-accent-light: rgba($color-accent, 0.667);
 $color-accent-lighter: rgba($color-accent, 0.333);
 $color-black-light: rgba(black, 0.667);
 $color-black-lighter: rgba(black, 0.333);
+$color-gray: rgba(#d5d5d5, 0.2);
+$color-border: rgba(203, 203, 203, 0.6);
 
 // aliases
 $color-marker: $color-accent-lighter;

@@ -4,7 +4,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 // components
-import Countdown from "@/components/countdown";
+import Countdown from "@/components/top/countdown";
 
 // Date.prototype.setHours のタイムゾーンを +9 に固定
 Date.prototype.setHours = jest.fn(function setHours(hoursValue, ...minutes) {

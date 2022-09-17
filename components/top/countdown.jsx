@@ -2,6 +2,8 @@
 
 // react
 import React from "react";
+// framer-motion
+import { motion } from "framer-motion";
 // hooks
 import useClient from "@/hooks/client";
 // styles
@@ -32,7 +34,7 @@ const Counter = ({ unit, children }) => {
       <span className={styles.enhance} data-testid={`counter-${unit}`}>
         {children}
       </span>
-      {unit}
+      <span className={styles.small}>{unit}</span>
     </>
   );
 };
@@ -101,7 +103,15 @@ const Countdown = () => {
   );
 
   return (
-    <div className={styles.countdown}>
+    <motion.div
+      className={styles.countdown}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{
+        duration: 1,
+      }}
+      viewport={{ once: true }}
+    >
       {!isClient ? (
         <>(読込中...)</>
       ) : (
@@ -132,13 +142,14 @@ const Countdown = () => {
           return (
             <div>
               <div className={styles.left}>{fes.name}開幕まで</div>
-              あと
-              <Remaining start={fes.start} now={now} />！
+              <span className={styles.small}>あと</span>
+              <Remaining start={fes.start} now={now} />
+              <span className={styles.small}>！</span>
             </div>
           );
         })()
       )}
-    </div>
+    </motion.div>
   );
 };
 

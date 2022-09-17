@@ -7,16 +7,43 @@ $easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
 
 .tweets {
   @include outermost-container;
+  padding-bottom: 20px;
   margin: 1rem 0;
+  border-top: 1px solid $color-border;
+  position: relative;
+  margin-top: 80px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    height: calc(100% - 20px);
+    display: block;
+    pointer-events: none;
+    box-shadow: 0 -120px 60px -60px #fff inset;
+  }
+}
+
+.tweets-title {
+  @include section-title;
+  padding: 60px 0 40px;
 }
 
 .twitter-tl {
   position: relative;
-  height: 560px;
+  height: 500px;
   overflow: auto;
 
+  @include mq("sm") {
+    height: 400px;
+  }
+
   &::before {
-    content: "(読込中...)";
+    content: "Loading...";
+    color: $color-black-lighter;
+    letter-spacing: 0.1rem;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -29,16 +56,34 @@ $easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .footer {
-  @include outermost-container;
-  // フッターの色は反転させる
   color: $color-base;
   background-color: $color-main;
+  justify-content: center;
+  display: grid;
+  grid-template-rows: 80% 20%;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  padding: 1rem max(10%, 50% - 500px);
+
+  @include mq("sm") {
+    grid-template-rows: 45% 45% 10%;
+    grid-template-columns: repeat(4, 1fr);
+    @include outermost-container;
+  }
 }
 
 .sns {
   width: 20em;
   max-width: 100%;
-  margin: 2em 0;
+  grid-column: -1;
+  grid-row: 1;
+  margin: 2em 0 0 auto;
+
+  @include mq("sm") {
+    grid-column: 1 / 5;
+    grid-row: 2;
+    margin: 2em auto;
+  }
 
   > div {
     margin: 1em 0;
@@ -99,26 +144,47 @@ $easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
 
 .menu {
   margin: 2em 0;
+  grid-column: span 3;
+  grid-row: 1;
+
+  @include mq("sm") {
+    grid-column: span 2;
+    grid-row: 1;
+  }
 }
 
 .menu-title {
-  font-size: 1.2em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
   margin: 0.5em 0;
 }
 
 .menu-links {
   margin: 0.5em 0;
-  display: flex;
-  flex-wrap: wrap;
-  alifn-content: space-around;
-  gap: 0.5em;
+
+  a {
+    text-decoration: none;
+    color: rgba(#fff, 0.8);
+    transition: color ease-in-out 250ms;
+
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 
-.others {
-  margin: 2em 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  align-content: space-around;
-  gap: 0.5em;
+.copyright {
+  font-family: "Noto Serif JP", sans-serif;
+  text-align: right;
+  letter-spacing: 0.1em;
+  grid-column: -1;
+  grid-row: 2;
+  color: rgba(#fff, 0.7);
+  margin-top: 1em;
+
+  @include mq("sm") {
+    text-align: center;
+    grid-row: 3;
+    grid-column: 1 / 5;
+  }
 }
