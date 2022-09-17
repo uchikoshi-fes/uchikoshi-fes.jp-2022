@@ -43,8 +43,8 @@
 
 ## Version
 
-**Version:** 1.4.0 (超オシャレに)  
-**Latest Update:** 2022/09/17
+**Version:** 1.5.0 (幹部インタビュー追加)  
+**Latest Update:** 2022/09/18
 
 ## Feedback & Support
 
