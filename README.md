@@ -35,6 +35,7 @@
 
 - (テーマ) 文化祭実行委員
 - (コーディング) 文化祭実行委員 / 広報部門 / [TwoSquirrels](https://github.com/TwoSquirrles)
+- (コーディング) [gendaineko2222 さん](https://github.com/gendaineko2222)
 
 **コンテンツ:**
 
@@ -42,8 +43,8 @@
 
 ## Version
 
-**Version:** 1.3.0 (校内マップ完成)  
-**Latest Update:** 2022/09/15
+**Version:** 1.4.0 (超オシャレに)  
+**Latest Update:** 2022/09/17
 
 ## Feedback & Support
 
