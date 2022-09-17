@@ -6,7 +6,8 @@
       "@/next-seo.config": ["next-seo.config"],
       "@/hooks/*": ["hooks/*"],
       "@/components/*": ["components/*"],
-      "@/pages/*": ["pages/*"]
+      "@/pages/*": ["pages/*"],
+      "@/public/*": ["public/*"]
     }
   }
 }
