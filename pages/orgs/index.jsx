@@ -131,21 +131,24 @@ const Organizations = ({ organizations }) => {
                   return (
                     <li key={id}>
                       <Link href={`/orgs/${id}`}>
-                        {isClient && !isNarrow && (
-                          <div className={styles.logo}>
-                            <Image
-                              src={`/orgs/${id}/${logo}`}
-                              alt=""
-                              width={80}
-                              height={80}
-                            />
-                          </div>
-                        )}
+                        <div className={styles.logo}>
+                          <Image
+                            src={`/orgs/${id}/${logo}`}
+                            alt=""
+                            width={80}
+                            height={80}
+                            objectFit="contain"
+                          />
+                        </div>
                         <div className={styles.title}>{title}</div>
                         <div className={styles["other-info"]}>
                           <div className={styles.area}>{area?.name}</div>
-                          <div className={styles.room}>{room}</div>
-                          <div className={styles.name}>{name || title}</div>
+                          {isClient && !isNarrow && (
+                            <>
+                              <div className={styles.room}>{room}</div>
+                              <div className={styles.name}>{name || title}</div>
+                            </>
+                          )}
                         </div>
                       </Link>
                     </li>
