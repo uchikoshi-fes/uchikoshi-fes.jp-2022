@@ -151,24 +151,38 @@ const ScheduleTable = ({ title, date, programs, now }) => {
                     }
                     className={styles["attached-icon"]}
                   />
-                  <span>
-                    <span>
-                      {
-                        // 非ホバー時
-                        title instanceof Array
-                          ? joinElement(title, <wbr />)
-                          : title
-                      }
-                    </span>
-                    <span>
-                      {
-                        // ホバー時
-                        ((hover) =>
-                          hover instanceof Array
-                            ? joinElement(hover, <wbr />)
-                            : hover)(hover ?? title)
-                      }
-                    </span>
+                  {
+                    {
+                      guests: (
+                        <>
+                          ゲスト：
+                          <wbr />
+                        </>
+                      ),
+                      free: title !== "フリートーク" && (
+                        <>
+                          フリートーク：
+                          <wbr />
+                        </>
+                      ),
+                    }[type]
+                  }
+                  <span className={styles["program-title"]}>
+                    {
+                      // 非ホバー時
+                      title instanceof Array
+                        ? joinElement(title, <wbr />)
+                        : title
+                    }
+                  </span>
+                  <span className={styles["program-title-hover"]}>
+                    {
+                      // ホバー時
+                      ((hover) =>
+                        hover instanceof Array
+                          ? joinElement(hover, <wbr />)
+                          : hover)(hover ?? title)
+                    }
                   </span>
                 </td>
               </tr>

@@ -66,11 +66,11 @@
       background-color: rgba($color-main, 0.1);
     }
 
-    &:not(:hover) > td:nth-child(2) > span:last-child > span:nth-child(2) {
+    &:not(:hover) .program-title-hover {
       display: none;
     }
 
-    &:hover > td:nth-child(2) > span:last-child > span:nth-child(1) {
+    &:hover .program-title {
       display: none;
     }
 
