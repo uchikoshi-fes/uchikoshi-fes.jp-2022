@@ -44,7 +44,6 @@ const AREAS = [
   { id: "jhs-f3", name: "中学棟３階" },
   { id: "jhs-f4", name: "中学棟４階" },
   { id: "jhs-f5", name: "中学棟５階" },
-  { id: "hs-b1", name: "高校棟地下１階" },
   { id: "hs-f1", name: "高校棟１階" },
   { id: "hs-f2", name: "高校棟２階" },
   { id: "hs-f3", name: "高校棟３階" },

@@ -155,20 +155,6 @@ export const MAPS = [
     texts: [],
   },
   {
-    id: "hs-b1",
-    name: "高校棟地下１階",
-    alt:
-      "アリーナの反対側に女子トイレがあります。展示等はありません。" +
-      "アリーナと繋がっています。",
-    maps: [
-      { id: "hs-f1", x: 21, y: 5 },
-      { id: "hs-f1", x: 41, y: 95 },
-      { id: "arena", x: 13, y: 100 },
-    ],
-    orgs: [],
-    texts: [],
-  },
-  {
     id: "hs-f1",
     name: "高校棟１階",
     alt:
@@ -176,9 +162,8 @@ export const MAPS = [
       "高校棟前には浅野ザ・ベストの投票所があります。",
     maps: [
       { id: "asano", x: 25, y: 69 },
-      { id: "hs-b1", x: 47, y: 6 },
-      { id: "hs-b1", x: 61, y: 97 },
-      { id: "hs-f2", x: 47, y: 3 },
+      { id: "arena", x: 61, y: 97 },
+      { id: "hs-f2", x: 47, y: 5 },
       { id: "hs-f2", x: 61, y: 94 },
     ],
     orgs: [
@@ -309,7 +294,7 @@ export const MAPS = [
       "ただし、３階から高校棟地下１階への通り抜けは可能です。",
     maps: [
       { id: "asano", x: 7, y: 77 },
-      { id: "hs-b1", x: 40, y: 17 },
+      { id: "hs-f1", x: 40, y: 12 },
     ],
     orgs: [
       { id: "awo", x: 14, y: 46, logoOnly: true },
