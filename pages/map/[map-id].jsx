@@ -31,6 +31,11 @@ const SchoolMap = ({ id, name, alt, maps, orgs, texts, image }) => {
       <NextSeo title={name} openGraph={{ title: name }} />
       <article className={styles["school-map"]}>
         <h1>{name}</h1>
+        <p>
+          注意: 雨の場合、浅野ザ・ベストの投票所は<> </>
+          <Link href="/map/main-f1">本館前</Link> から<> </>
+          <Link href="/map/main-f2">職員室前</Link> に移すことになりました。
+        </p>
         <div className={styles["map-container"]}>
           <div
             style={
