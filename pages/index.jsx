@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: CC-BY-NC-4.0
 
+// react
+import React from "react";
+// hooks
+import useClient from "@/hooks/client";
 // components
 import NextSeo from "next-seo";
 import ReactPlayer from "react-player";
@@ -30,6 +34,16 @@ const Top = () => {
 };
 
 const Index = () => {
+  const isClient = useClient();
+  const [now, setNow] = React.useState(Date.now());
+  React.useEffect(() => {
+    if (!isClient) return;
+    const timer = setInterval(() => {
+      setNow(Date.now());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [isClient]);
+
   return (
     <div className={styles.index}>
       <div className={styles["top-container"]}>
@@ -44,9 +58,11 @@ const Index = () => {
       <div className={styles["access-container"]}>
         <Access />
       </div>
-      <div className={styles["reserve-container"]}>
-        <Reserve />
-      </div>
+      {now < Date.UTC(2022, 8, 12, 12, 0) - 9 * 3600000 && (
+        <div className={styles["reserve-container"]}>
+          <Reserve />
+        </div>
+      )}
       <div className={styles["pv-container"]}>
         <PromotionVideos />
       </div>
