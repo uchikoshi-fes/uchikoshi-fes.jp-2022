@@ -43,7 +43,7 @@
 
 ## Version
 
-**Version:** 1.5.1 (開催中サイズ修整)  
+**Version:** 1.5.2 (『秘』スタンプ無効化)  
 **Latest Update:** 2022/09/18
 
 ## Feedback & Support
