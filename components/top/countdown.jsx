@@ -132,7 +132,7 @@ const Countdown = () => {
           // 文化祭開催中
           if (now > fes.start) {
             return (
-              <div>
+              <div className={styles.opening}>
                 <div className={styles.left}>{fes.name}</div>
                 <span className={styles.enhance}>開催中</span>
               </div>
