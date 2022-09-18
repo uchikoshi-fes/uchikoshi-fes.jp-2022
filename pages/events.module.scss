@@ -2,10 +2,16 @@
 
 @use "@/components/mixins" as *;
 
-.events {
+.events-wrap {
   @include outermost-container;
 
   > h1 {
     @include page-title;
+  }
+
+  > .events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }
