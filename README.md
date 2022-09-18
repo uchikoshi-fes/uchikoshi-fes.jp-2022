@@ -43,7 +43,7 @@
 
 ## Version
 
-**Version:** 1.5.0 (幹部インタビュー追加)  
+**Version:** 1.5.1 (開催中サイズ修整)  
 **Latest Update:** 2022/09/18
 
 ## Feedback & Support
