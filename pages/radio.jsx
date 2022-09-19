@@ -211,13 +211,14 @@ const Schedule = () => {
       <div>
         <div>
           {SCHEDULE.map(({ title, date, programs }) => (
-            <ScheduleTable
-              title={title}
-              date={date}
-              programs={programs}
-              now={now}
-              key={title}
-            />
+            <div key={title}>
+              <ScheduleTable
+                title={title}
+                date={date}
+                programs={programs}
+                now={now}
+              />
+            </div>
           ))}
         </div>
       </div>
