@@ -65,7 +65,7 @@ const Access = () => {
             </li>
             <Link
               className={styles["route-button"]}
-              href="https://www.google.co.jp/maps/dir//%E3%80%92221-0012+%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E7%A5%9E%E5%A5%88%E5%B7%9D%E5%8C%BA%E5%AD%90%E5%AE%89%E5%8F%B0%EF%BC%91%E4%B8%81%E7%9B%AE%EF%BC%93%E2%88%92%EF%BC%91+%E6%B5%85%E9%87%8E%E4%B8%AD%E5%AD%A6%E6%A0%A1%E3%83%BB%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1/"
+              href="https://maps.apple.com/maps?dirflg=r&daddr=35.489455621313176,139.6582380936508"
               noIcon={true}
             >
               現在地からのルート
