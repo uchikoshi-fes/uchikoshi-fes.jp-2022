@@ -43,8 +43,8 @@
 
 ## Version
 
-**Version:** 1.5.2 (『秘』スタンプ無効化)  
-**Latest Update:** 2022/09/18
+**Version:** 1.6.0 (記事追加)  
+**Latest Update:** 2022/09/19
 
 ## Feedback & Support
 
