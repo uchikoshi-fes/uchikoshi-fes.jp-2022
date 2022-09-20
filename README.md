@@ -43,8 +43,8 @@
 
 ## Version
 
-**Version:** 1.6.0 (記事追加)  
-**Latest Update:** 2022/09/19
+**Version:** 1.6.1 (記事タイトル修整)  
+**Latest Update:** 2022/09/20
 
 ## Feedback & Support
 
