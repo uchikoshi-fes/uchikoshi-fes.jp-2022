@@ -5,7 +5,7 @@ specifiers:
   '@fortawesome/free-brands-svg-icons': 6.2.0
   '@fortawesome/free-solid-svg-icons': 6.2.0
   '@fortawesome/react-fontawesome': 0.2.0
-  '@mdx-js/loader': 2.1.4
+  '@mdx-js/loader': 2.1.5
   '@next/mdx': 12.3.1
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0
@@ -61,8 +61,8 @@ dependencies:
   '@fortawesome/free-brands-svg-icons': 6.2.0
   '@fortawesome/free-solid-svg-icons': 6.2.0
   '@fortawesome/react-fontawesome': 0.2.0_6j2wdqxompc6mcokhxkpep2gqu
-  '@mdx-js/loader': 2.1.4_webpack@5.74.0
-  '@next/mdx': 12.3.1_mwf2gajdniegmrgvncx74g6ua4
+  '@mdx-js/loader': 2.1.5_webpack@5.74.0
+  '@next/mdx': 12.3.1_5ubengro3mr4ehq4wjt7bymshu
   framer-motion: 7.5.3_biqbaboplfbrettd7655fr4n2y
   image-size: 1.0.2
   license-checker: 25.0.1
@@ -887,8 +887,8 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
 
-  /@mdx-js/loader/2.1.4_webpack@5.74.0:
-    resolution: {integrity: sha512-7k2I1vYht89cONaAkThmbq6CW0yyaEZOHDFngAMj6jqfpMfUnCE+zIbpKYJNPlgmWCR9T5r/deVNvH3BcokbKw==}
+  /@mdx-js/loader/2.1.5_webpack@5.74.0:
+    resolution: {integrity: sha512-oXjfTa/iAcMmW8DdQ+hQFodPCLqw5VKT2yoZkLwrZfPVVpUgKrI+5/ZePYq328xxtAUStZmR3ed0PWJrwd5Pkg==}
     peerDependencies:
       webpack: '>=4'
     dependencies:
@@ -990,13 +990,13 @@ packages:
       glob: 7.1.7
     dev: true
 
-  /@next/mdx/12.3.1_mwf2gajdniegmrgvncx74g6ua4:
+  /@next/mdx/12.3.1_5ubengro3mr4ehq4wjt7bymshu:
     resolution: {integrity: sha512-b7G3CsAwyD/8Eo6uDjCCqNwEi68LTyo/JYPC0N2Yu3yl/iveMDCi03ME+9JsnFPr3DcjmGSKc1ioiYM4dJUkTg==}
     peerDependencies:
       '@mdx-js/loader': '>=0.15.0'
       '@mdx-js/react': '*'
     dependencies:
-      '@mdx-js/loader': 2.1.4_webpack@5.74.0
+      '@mdx-js/loader': 2.1.5_webpack@5.74.0
       '@mdx-js/react': 2.1.3_react@18.2.0
     dev: false
 
